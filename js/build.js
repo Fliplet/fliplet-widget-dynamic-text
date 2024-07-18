@@ -45,9 +45,10 @@ Fliplet.Widget.instance({
         DYNAMIC_TEXT.fields
       );
 
-      const COLUMN = DYNAMIC_TEXT.fields.column;
+      const FIELDS = DYNAMIC_TEXT.fields;
+      const COLUMN = FIELDS.column;
       const VALUE = ENTRY.data[COLUMN];
-      const DATA_FORMAT = DYNAMIC_TEXT.fields.dataFormat;
+      const DATA_FORMAT = FIELDS.dataFormat;
 
       return Fliplet.Widget.findParents({
         instanceId: DYNAMIC_TEXT_INSTANCE_ID
@@ -80,22 +81,6 @@ Fliplet.Widget.instance({
         renderContent();
       });
 
-      function renderURL() {
-        const a = document.createElement('a');
-
-        a.href = VALUE;
-        a.textContent = DYNAMIC_TEXT.fields.urlALtText || VALUE;
-
-        // if (settings.inAppBrowser) {
-        //   a.setAttribute('target', '_self');
-        // } else {
-        //   a.setAttribute('target', '_blank');
-        // }
-
-        $HELPER.find('.dynamic-text-container').html(a);
-      }
-
-
       function renderContent() {
         switch (DATA_FORMAT) {
           case 'text':
@@ -108,36 +93,172 @@ Fliplet.Widget.instance({
             renderURL();
             break;
           case 'telephone':
-            Fliplet.Helper.field('phoneALtText').toggle(true);
+            renderTelephone();
             break;
           case 'email':
-            Fliplet.Helper.field('mailALtText').toggle(true);
+            renderEmail();
             break;
           case 'numberCurrency':
-            Fliplet.Helper.field('noDecimalRound').toggle(true);
-            Fliplet.Helper.field('symbol').toggle(true);
-            Fliplet.Helper.field('symbolPlacement').toggle(true);
+            renderNumber();
             break;
           case 'array':
-            Fliplet.Helper.field('dataVisualization').toggle(true);
+            renderArray();
             break;
           case 'date':
             Fliplet.Helper.field('dateFormat').toggle(true);
             break;
           case 'time':
-            Fliplet.Helper.field('timeFormat').toggle(true);
-            Fliplet.Helper.field('timeTimezone').toggle(true);
+            renderTime();
             break;
           case 'dateTime':
             Fliplet.Helper.field('timeDateFormat').toggle(true);
             Fliplet.Helper.field('timeDateTimezone').toggle(true);
             break;
           case 'custom':
-            Fliplet.Helper.field('customRegex').toggle(true);
+            renderCustom();
             break;
-
           default:
             break;
+        }
+      }
+
+      function renderURL() {
+        const LINK = document.createElement('a');
+
+        LINK.href = VALUE;
+        LINK.textContent = FIELDS.urlALtText || 'Tap to open';
+
+        // TODO missing form figma
+        // if (settings.inAppBrowser) {
+        //   LINK.setAttribute('target', '_self');
+        // } else {
+        //   LINK.setAttribute('target', '_blank');
+        // }
+
+        $HELPER.find('.dynamic-text-container').html(LINK);
+      }
+
+      function renderTelephone() {
+        const LINK = document.createElement('a');
+
+        LINK.href = `tel:${VALUE}`;
+        LINK.textContent =  FIELDS.phoneALtText || 'Tap to call';
+
+        $HELPER.find('.dynamic-text-container').html(LINK);
+      }
+
+      function renderEmail() {
+        const LINK = document.createElement('a');
+
+        LINK.href = `mailto:${VALUE}`;
+        LINK.textContent =  FIELDS.mailALtText || 'Tap to email';
+
+        $HELPER.find('.dynamic-text-container').html(LINK);
+      }
+
+      function getAlphabeticLabel(index) {
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let label = '';
+
+        while (index >= 0) {
+          label = letters[index % 26] + label;
+          index = Math.floor(index / 26) - 1;
+        }
+
+        return label;
+      }
+
+      function renderArray() {
+        let formattedData;
+
+        switch (FIELDS.dataVisualization) {
+          case 'Numbered List':
+            formattedData = (VALUE || []).map((item, index) => `${index + 1}. ${item}`).join('\n');
+            break;
+          case 'Bullet Point List':
+            formattedData = (VALUE || []).map(item => `• ${item}`).join('\n');
+            break;
+          case 'Comma-separated list':
+            formattedData = (VALUE || []).join(', ');
+            break;
+          case 'Semicolon-Separated List':
+            formattedData = (VALUE || []).join('; ');
+            break;
+          case 'Alphabetic List':
+            formattedData = (VALUE || []).map((item, index) => {
+              const letter = getAlphabeticLabel(index);
+
+              return `${letter}. ${item}`;
+            }).join('\n');
+            break;
+          default:
+            formattedData = (VALUE || []).join(', ');
+            break;
+        }
+
+        $HELPER.find('.dynamic-text-container').html(formattedData);
+      }
+
+      function renderCustom() {
+        const regex = new RegExp(FIELDS.customRegex);
+
+        return VALUE.match(regex) ? VALUE.match(regex)[0] : 'No match';
+      }
+
+      function renderNumber() {
+        let toReturnValue = '';
+
+        if (NaN(VALUE)) {
+          // $HELPER.find('.dynamic-text-container').html('N/A');
+          toReturnValue = 'N/A';
+        } else if (FIELDS.noDecimalRound === 0) {
+          toReturnValue = parseInt(VALUE, 10);
+          // $HELPER.find('.dynamic-text-container').html(parseInt(VALUE));
+        } else {
+          toReturnValue = VALUE.toFixed(FIELDS.noDecimalRound);
+        }
+
+        if (FIELDS.symbolPlacement === 'before units') {
+          $HELPER.find('.dynamic-text-container').html(`${FIELDS.symbol}${toReturnValue}`);
+        } else {
+          $HELPER.find('.dynamic-text-container').html(`${toReturnValue}${FIELDS.symbol}`);
+        }
+      }
+
+      // Function to convert UTC date to local time
+      function convertUTCToLocal(utcDateStr) {
+        // Parse the UTC date string to create a Date object
+        const utcDate = new Date(utcDateStr);
+
+        // Get the local time equivalent of the UTC date
+        const localDate = new Date(utcDate.getTime() - utcDate.getTimezoneOffset() * 60000);
+
+        return localDate;
+      }
+
+      function isValidDate(dateStr) {
+        // Create a new Date object with the given date string
+        const date = new Date(dateStr);
+
+        // Check if the date is valid by ensuring it's not "Invalid Date"
+        return !isNaN(date.getTime());
+      }
+
+      function renderTime() {
+        if (!isValidDate(VALUE)) {
+          $HELPER.find('.dynamic-text-container').html('invalid date');
+
+          return;
+        }
+
+        const time = moment(VALUE);
+        const format = FIELDS.timeFormat || 'HH:MM A';
+        const timezone = FIELDS.timeTimezone === 'data_source' ? 'UTC' : '';
+
+        if (timezone) {
+          $HELPER.find('.dynamic-text-container').html(convertUTCToLocal(VALUE).format(format));
+        } else {
+          $HELPER.find('.dynamic-text-container').html(time.format(format));
         }
       }
     }

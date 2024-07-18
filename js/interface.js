@@ -62,6 +62,7 @@ Fliplet.Widget.findParents({
         value: 'numberCurrency',
         label: 'Number / Currency'
       },
+      // TODO objects missing
       {
         value: 'array',
         label: 'Array'
@@ -83,7 +84,7 @@ Fliplet.Widget.findParents({
         label: 'Custom (format with regex)'
       }
     ];
-    const NO_DECIMAL_ROUND_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(
+    const NO_DECIMAL_ROUND_OPTIONS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(
       function(i) {
         return {
           value: i,
@@ -130,18 +131,13 @@ Fliplet.Widget.findParents({
       };
     });
     const TIME_FORMAT_OPTIONS = [
-      'HH AM/PM', // 08:30 AM
-      'HH:MM:SS AM/PM', // 08:30:45 AM
-      'HH (24-hour)', // 14:30
-      'HH:MM:SS (24-hour)', // 14:30:45
-      'HHMM (military)', // 1430
-      'HHMMSS (military' // 143045
-    ].map(function(i) {
-      return {
-        label: i,
-        value: i
-      };
-    });
+      { label: 'HH AM/PM', value: 'HH:MM A' }, // 08:30 AM
+      { label: 'HH:MM:SS AM/PM', value: 'HH:MM:SS A' }, // 08:30:45 AM
+      { label: 'HH (24-hour)', value: 'HH:MM' }, // 14:30
+      { label: 'HH:MM:SS (24-hour)', value: 'HH:MM:SS' }, // 14:30:45
+      { label: 'HHMM (military)', value: 'HHMM' }, // 1430
+      { label: 'HHMMSS (military', value: 'HHMMSS' } // 143045
+    ];
     const TIME_DATE_FORMAT_OPTIONS = [
       'MM-DD-YYYY HH AM/PM', // 07-12-2024 08:30 AM
       'DD-MM-YYYY HH AM/PM', // 12-07-2024 08:30 AM
@@ -254,7 +250,8 @@ Fliplet.Widget.findParents({
           type: 'dropdown',
           name: 'noDecimalRound',
           label: 'Select number of decimals to round this value',
-          options: NO_DECIMAL_ROUND_OPTIONS
+          options: NO_DECIMAL_ROUND_OPTIONS,
+          default: 0
         },
         {
           name: 'symbol',
