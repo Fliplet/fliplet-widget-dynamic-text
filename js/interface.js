@@ -134,13 +134,13 @@ Fliplet.Widget.findParents({
       { label: 'HHMMSS (military', value: 'HHMMSS' } // 143045
     ];
     const TIME_DATE_FORMAT_OPTIONS = [
-      'MM-DD-YYYY HH AM/PM', // 07-12-2024 08:30 AM
-      'DD-MM-YYYY HH AM/PM', // 12-07-2024 08:30 AM
-      'YYYY-MM-DD HH:MM', // 2024-07-12 14:30:45
-      'YYYY/MM/DD HH', // 2024/07/12 14:30
-      'MMM DD, YYYY HH AM/PM', // Jul 12, 2024 08:30 AM
-      'Week, Month, Day, HH AM/PM', // Monday, June, 12 08:30 AM
-      'Week, Month, Day, HH:MM' // Monday, June, 12 08:30
+      { label: 'MM-DD-YYYY HH:MM AM/PM', value: 'MM-DD-YYYY HH:MM A' }, // 07-12-2024 08:30
+      { label: 'DD-MM-YYYY HH:MM AM/PM', value: 'DD-MM-YYYY HH:MM A' }, // 12-07-2024 08:30
+      { label: 'YYYY-MM-DD HH:MM', value: 'YYYY-MM-DD HH:MM' }, // 2024-07-12 14:30:45
+      { label: 'YYYY/MM/DD HH', value: 'YYYY/MM/DD HH' }, // 2024/07/12 14:30
+      { label: 'MMM DD, YYYY HH:MM AM/PM', value: 'MMM DD, YYYY HH:MM A' }, // Jul 12, 2024 08:30 AM
+      { label: 'Week, Month, Day, HH AM/PM', value: 'dddd, MMM, DD, HH A' }, // Monday, June, 12 08:30 AM
+      { label: 'Week, Month, Day, HH:MM', value: 'dddd, MMM, DD, HH:MM' } // Monday, June, 12 08:30
     ].map(function(i) {
       return {
         label: i,
