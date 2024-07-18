@@ -22,6 +22,7 @@ Fliplet.Widget.instance({
       const DYNAMIC_TEXT = this;
       const ENTRY = DYNAMIC_TEXT?.parent?.entry || {};
       const DYNAMIC_TEXT_INSTANCE_ID = DYNAMIC_TEXT.id;
+      const $HELPER = $(DYNAMIC_TEXT.$el);
 
       DYNAMIC_TEXT.fields = _.assign(
         {
@@ -45,6 +46,7 @@ Fliplet.Widget.instance({
       );
 
       const COLUMN = DYNAMIC_TEXT.fields.column;
+      const VALUE = ENTRY.data[COLUMN];
       const DATA_FORMAT = DYNAMIC_TEXT.fields.dataFormat;
 
       return Fliplet.Widget.findParents({
@@ -78,18 +80,32 @@ Fliplet.Widget.instance({
         renderContent();
       });
 
-      function renderContent() {
-        const VALUE = ENTRY.data[COLUMN];
+      function renderURL() {
+        const a = document.createElement('a');
 
+        a.href = VALUE;
+        a.textContent = DYNAMIC_TEXT.fields.urlALtText || VALUE;
+
+        // if (settings.inAppBrowser) {
+        //   a.setAttribute('target', '_self');
+        // } else {
+        //   a.setAttribute('target', '_blank');
+        // }
+
+        $HELPER.find('.dynamic-text-container').html(a);
+      }
+
+
+      function renderContent() {
         switch (DATA_FORMAT) {
           case 'text':
-            $(DYNAMIC_TEXT.$el).find('.dynamic-text-container').text(VALUE || '');
+            $HELPER.find('.dynamic-text-container').text(VALUE || '');
             break;
           case 'html':
-            $(DYNAMIC_TEXT.$el).find('.dynamic-text-container').html(VALUE || '');
+            $HELPER.find('.dynamic-text-container').html(VALUE || '');
             break;
           case 'url':
-            Fliplet.Helper.field('urlALtText').toggle(true);
+            renderURL();
             break;
           case 'telephone':
             Fliplet.Helper.field('phoneALtText').toggle(true);
