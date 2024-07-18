@@ -23,6 +23,11 @@ Fliplet.Widget.instance({
       const ENTRY = DYNAMIC_TEXT?.parent?.entry || {};
       const DYNAMIC_TEXT_INSTANCE_ID = DYNAMIC_TEXT.id;
       const $HELPER = $(DYNAMIC_TEXT.$el);
+      const MODE_INTERACT = Fliplet.Env.get('interact');
+
+      if (MODE_INTERACT) {
+        $HELPER.find('.dynamic-text-container').html('Dynamic Text');
+      }
 
       DYNAMIC_TEXT.fields = _.assign(
         {
@@ -209,11 +214,9 @@ Fliplet.Widget.instance({
         let toReturnValue = '';
 
         if (isNaN(VALUE)) {
-          // $HELPER.find('.dynamic-text-container').html('N/A');
           toReturnValue = 'N/A';
         } else if (FIELDS.noDecimalRound === 0) {
           toReturnValue = parseInt(VALUE, 10);
-          // $HELPER.find('.dynamic-text-container').html(parseInt(VALUE));
         } else {
           toReturnValue = Number(VALUE).toFixed(FIELDS.noDecimalRound);
         }
