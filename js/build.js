@@ -215,7 +215,7 @@ Fliplet.Widget.instance({
           toReturnValue = parseInt(VALUE, 10);
           // $HELPER.find('.dynamic-text-container').html(parseInt(VALUE));
         } else {
-          toReturnValue = VALUE.toFixed(FIELDS.noDecimalRound);
+          toReturnValue = Number(VALUE).toFixed(FIELDS.noDecimalRound);
         }
 
         if (FIELDS.symbolPlacement === 'before units') {
