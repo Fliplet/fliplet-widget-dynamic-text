@@ -113,23 +113,18 @@ Fliplet.Widget.findParents({
       };
     });
     const DATE_FORMAT_OPTIONS = [
-      'MM-DD-YYYY',
-      'DD-MM-YYYY',
-      'YYYY-MM-DD',
-      'Month Day, Year', // July 12, 2024
-      'Day Month Year', // 12 July 2024
-      'MM/DD/YYYY',
-      'DD/MM/YYYY',
-      'YYYY/MM/DD',
-      'MMM DD, YYYY', // Jul 12, 2024
-      'DD MMM YYYY', // 12 Jul 2024
-      'Week Month Day' // Monday July 12
-    ].map(function(i) {
-      return {
-        label: i,
-        value: i
-      };
-    });
+      { label: 'MM-DD-YYYY', value: 'MM-DD-YYYY' },
+      { label: 'DD-MM-YYYY', value: 'DD-MM-YYYY' },
+      { label: 'YYYY-MM-DD', value: 'YYYY-MM-DD' },
+      { label: 'Month Day, Year', value: 'MMM DD, Year' }, // July 12, 2024
+      { label: 'Day Month Year', value: 'DD MMM Year' }, // 12 July 2024
+      { label: 'MM/DD/YYYY', value: 'MM/DD/YYYY' },
+      { label: 'DD/MM/YYYY', value: 'DD/MM/YYYY' },
+      { label: 'YYYY/MM/DD', value: 'YYYY/MM/DD' },
+      { label: 'MMM DD, YYYY', value: 'MMM DD, YYYY' }, // Jul 12, 2024
+      { label: 'DD MMM YYYY', value: 'DD MMM YYYY' }, // 12 Jul 2024
+      { label: 'Week Month Day', value: 'dddd MMM DD' }// Monday July 12
+    ];
     const TIME_FORMAT_OPTIONS = [
       { label: 'HH AM/PM', value: 'HH:MM A' }, // 08:30 AM
       { label: 'HH:MM:SS AM/PM', value: 'HH:MM:SS A' }, // 08:30:45 AM

@@ -112,7 +112,7 @@ Fliplet.Widget.instance({
             renderArray();
             break;
           case 'date':
-            Fliplet.Helper.field('dateFormat').toggle(true);
+            renderDate();
             break;
           case 'time':
             renderTime();
@@ -265,6 +265,19 @@ Fliplet.Widget.instance({
         } else {
           $HELPER.find('.dynamic-text-container').html(time.format(format));
         }
+      }
+
+      function renderDate() {
+        if (!isValidDate(VALUE)) {
+          $HELPER.find('.dynamic-text-container').html('invalid date');
+
+          return;
+        }
+
+        const date = moment(VALUE);
+        const format = FIELDS.dateFormat || 'MM-DD-YYYY';
+
+        $HELPER.find('.dynamic-text-container').html(date.format(format));
       }
     }
   }
