@@ -83,10 +83,10 @@ Fliplet.Widget.instance({
 
         switch (DATA_FORMAT) {
           case 'text':
-            $(this.$el).text(VALUE || '');
+            $(DYNAMIC_TEXT.$el).find('.dynamic-text-container').text(VALUE || '');
             break;
           case 'html':
-            $(this.$el).html(VALUE || '');
+            $(DYNAMIC_TEXT.$el).find('.dynamic-text-container').html(VALUE || '');
             break;
           case 'url':
             Fliplet.Helper.field('urlALtText').toggle(true);
