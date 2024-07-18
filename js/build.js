@@ -180,10 +180,10 @@ Fliplet.Widget.instance({
 
         switch (FIELDS.dataVisualization) {
           case 'Numbered List':
-            formattedData = (VALUE || []).map((item, index) => `${index + 1}. ${item}`).join('\n');
+            formattedData = (VALUE || []).map((item, index) => `${index + 1}. ${item}`).join(' \n');
             break;
           case 'Bullet Point List':
-            formattedData = (VALUE || []).map(item => `• ${item}`).join('\n');
+            formattedData = (VALUE || []).map(item => `• ${item}`).join(' \n');
             break;
           case 'Comma-separated list':
             formattedData = (VALUE || []).join(', ');
