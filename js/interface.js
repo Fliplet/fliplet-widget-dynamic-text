@@ -3,6 +3,7 @@ function hideAllFields() {
   Fliplet.Helper.field('phoneALtText').toggle(false);
   Fliplet.Helper.field('mailALtText').toggle(false);
   Fliplet.Helper.field('noDecimalRound').toggle(false);
+  Fliplet.Helper.field('symbol').toggle(false);
   Fliplet.Helper.field('symbolPlacement').toggle(false);
   Fliplet.Helper.field('dataVisualization').toggle(false);
   Fliplet.Helper.field('dateFormat').toggle(false);
@@ -227,10 +228,6 @@ Fliplet.Widget.findParents({
 
               default:
                 break;
-            }
-
-            if (data.dataFormat === 'custom') {
-              Fliplet.Studio.emit('reload-widget-instance');
             }
           }
         },
