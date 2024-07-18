@@ -19,33 +19,111 @@ Fliplet.Widget.instance({
       }
     },
     ready: async function() {
-      // Initialize children components when this widget is ready
-      let dynamicTextContainer = this;
+      const DYNAMIC_TEXT = this;
+      const ENTRY = DYNAMIC_TEXT?.parent?.entry || {};
+      const DYNAMIC_TEXT_INSTANCE_ID = DYNAMIC_TEXT.id;
 
-      await Fliplet.Widget.initializeChildren(
-        dynamicTextContainer.$el,
-        dynamicTextContainer
-      );
-
-      if (!Fliplet.DynamicContainer) {
-        Fliplet.UI.Toast('Please add Dynamic Container component');
-
-        return Promise.reject('');
-      }
-
-      // todo update fields from interface
-      dynamicTextContainer.fields = _.assign(
+      DYNAMIC_TEXT.fields = _.assign(
         {
-          isFilterOnDifferentScreen: [],
-          action: { action: 'screen' },
-          allowSearching: [],
-          allowSorting: [],
-          bookmarksEnabled: [],
-          searchingOptionsSelected: [],
-          sortingOptionsSelected: []
+          column: '',
+          dataFormat: 'text',
+          urlALtText: '',
+          phoneALtText: '',
+          mailALtText: '',
+          noDecimalRound: '',
+          symbol: '',
+          symbolPlacement: 'before units',
+          dataVisualization: '',
+          dateFormat: '',
+          timeFormat: '',
+          timeDateFormat: '',
+          customRegex: '',
+          timeTimezone: 'data_source',
+          timeDateTimezone: 'data_source'
         },
-        dynamicTextContainer.fields
+        DYNAMIC_TEXT.fields
       );
+
+      const COLUMN = DYNAMIC_TEXT.fields.column;
+      const DATA_FORMAT = DYNAMIC_TEXT.fields.dataFormat;
+
+      return Fliplet.Widget.findParents({
+        instanceId: DYNAMIC_TEXT_INSTANCE_ID
+      }).then((widgets) => {
+        let dynamicContainer = null;
+        let recordContainer = null;
+        let listRepeater = null;
+
+        widgets.forEach((widget) => {
+          if (widget.package === 'com.fliplet.dynamic-container') {
+            dynamicContainer = widget;
+          } else if (widget.package === 'com.fliplet.record-container') {
+            recordContainer = widget;
+          } else if (widget.package === 'com.fliplet.list-repeater') {
+            listRepeater = widget;
+          }
+        });
+
+        if (
+          !dynamicContainer
+          || !dynamicContainer.dataSourceId
+        ) {
+          return Fliplet.UI.Toast('This component needs to be placed inside a Dynamic Container and select a data source');
+        } else if (!recordContainer && !listRepeater) {
+          return Fliplet.UI.Toast('This component needs to be placed inside a Record or List Repeater component');
+        } else if (!COLUMN) {
+          return Fliplet.UI.Toast('This component needs to be configured, please select a column');
+        }
+
+        renderContent();
+      });
+
+      function renderContent() {
+        const VALUE = ENTRY.data[COLUMN];
+
+        switch (DATA_FORMAT) {
+          case 'text':
+            $(this.$el).text(VALUE || '');
+            break;
+          case 'html':
+            $(this.$el).html(VALUE || '');
+            break;
+          case 'url':
+            Fliplet.Helper.field('urlALtText').toggle(true);
+            break;
+          case 'telephone':
+            Fliplet.Helper.field('phoneALtText').toggle(true);
+            break;
+          case 'email':
+            Fliplet.Helper.field('mailALtText').toggle(true);
+            break;
+          case 'numberCurrency':
+            Fliplet.Helper.field('noDecimalRound').toggle(true);
+            Fliplet.Helper.field('symbol').toggle(true);
+            Fliplet.Helper.field('symbolPlacement').toggle(true);
+            break;
+          case 'array':
+            Fliplet.Helper.field('dataVisualization').toggle(true);
+            break;
+          case 'date':
+            Fliplet.Helper.field('dateFormat').toggle(true);
+            break;
+          case 'time':
+            Fliplet.Helper.field('timeFormat').toggle(true);
+            Fliplet.Helper.field('timeTimezone').toggle(true);
+            break;
+          case 'dateTime':
+            Fliplet.Helper.field('timeDateFormat').toggle(true);
+            Fliplet.Helper.field('timeDateTimezone').toggle(true);
+            break;
+          case 'custom':
+            Fliplet.Helper.field('customRegex').toggle(true);
+            break;
+
+          default:
+            break;
+        }
+      }
     }
   }
 });

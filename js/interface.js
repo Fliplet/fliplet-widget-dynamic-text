@@ -187,6 +187,7 @@ Fliplet.Widget.findParents({
           name: 'dataFormat',
           label: 'Select data format',
           options: DATA_FORMATS_OPTIONS,
+          default: 'text',
           change: function(value) {
             hideAllFields();
 
