@@ -27,6 +27,8 @@ Fliplet.Widget.instance({
 
       if (MODE_INTERACT) {
         $HELPER.find('.dynamic-text-container').html('Dynamic Text');
+
+        return;
       }
 
       DYNAMIC_TEXT.fields = _.assign(
