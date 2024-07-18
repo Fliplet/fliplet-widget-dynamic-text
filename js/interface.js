@@ -33,60 +33,60 @@ Fliplet.Widget.findParents({
   ).then((dataSource) => {
     const DATA_SOURCE_COLUMNS_OPTIONS = dataSource.columns.map((el) => {
       return {
-        id: el,
+        value: el,
         label: el
       };
     });
     const DATA_FORMATS_OPTIONS = [
       {
-        id: 'text',
+        value: 'text',
         label: 'Plain text'
       },
       {
-        id: 'html',
+        value: 'html',
         label: 'HTML'
       },
       {
-        id: 'url',
+        value: 'url',
         label: 'URL'
       },
       {
-        id: 'telephone',
+        value: 'telephone',
         label: 'Telephone'
       },
       {
-        id: 'email',
+        value: 'email',
         label: 'Email'
       },
       {
-        id: 'numberCurrency',
+        value: 'numberCurrency',
         label: 'Number / Currency'
       },
       {
-        id: 'array',
+        value: 'array',
         label: 'Array'
       },
       {
-        id: 'date',
+        value: 'date',
         label: 'Date'
       },
       {
-        id: 'time',
+        value: 'time',
         label: 'Time'
       },
       {
-        id: 'dateTime',
+        value: 'dateTime',
         label: 'Date & Time'
       },
       {
-        id: 'custom',
+        value: 'custom',
         label: 'Custom (format with regex)'
       }
     ];
     const NO_DECIMAL_ROUND_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(
       function(i) {
         return {
-          id: i,
+          value: i,
           label: i
         };
       }
@@ -94,7 +94,7 @@ Fliplet.Widget.findParents({
     const SYMBOL_PLACEMENT_OPTIONS = ['before units', 'after units'].map(
       function(i) {
         return {
-          id: i,
+          value: i,
           label: i
         };
       }
@@ -187,10 +187,10 @@ Fliplet.Widget.findParents({
           name: 'dataFormat',
           label: 'Select data format',
           options: DATA_FORMATS_OPTIONS,
-          change: function(data) {
+          change: function(value) {
             hideAllFields();
 
-            switch (data) {
+            switch (value) {
               case 'text':
               case 'html':
                 break;
