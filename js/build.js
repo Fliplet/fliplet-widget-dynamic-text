@@ -209,7 +209,7 @@ Fliplet.Widget.instance({
       function renderCustom() {
         const regex = new RegExp(FIELDS.customRegex);
 
-        return VALUE.match(regex) ? VALUE.match(regex)[0] : 'No match';
+        $HELPER.find('.dynamic-text-container').html(VALUE.match(regex) ? VALUE.match(regex)[0] : 'No match');
       }
 
       function renderNumber() {
