@@ -208,7 +208,7 @@ Fliplet.Widget.instance({
       function renderNumber() {
         let toReturnValue = '';
 
-        if (NaN(VALUE)) {
+        if (isNaN(VALUE)) {
           // $HELPER.find('.dynamic-text-container').html('N/A');
           toReturnValue = 'N/A';
         } else if (FIELDS.noDecimalRound === 0) {
