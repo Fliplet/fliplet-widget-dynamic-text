@@ -261,7 +261,7 @@ Fliplet.Widget.instance({
         const timezone = FIELDS.timeTimezone === 'data_source' ? 'UTC' : '';
 
         if (timezone) {
-          $HELPER.find('.dynamic-text-container').html(convertUTCToLocal(VALUE).format(format));
+          $HELPER.find('.dynamic-text-container').html(moment(convertUTCToLocal(VALUE)).format(format));
         } else {
           $HELPER.find('.dynamic-text-container').html(time.format(format));
         }
