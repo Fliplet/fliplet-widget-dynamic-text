@@ -223,8 +223,8 @@ Fliplet.Widget.findParents({
             }
           },
           ready: function() {
-            Fliplet.Helper.field('userDataSource').set('');
-            Fliplet.Helper.field('userDataSource').set(this.val());
+            Fliplet.Helper.field('dataFormat').set('');
+            Fliplet.Helper.field('dataFormat').set(this.val());
           }
         },
         {
