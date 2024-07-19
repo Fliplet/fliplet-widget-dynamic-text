@@ -171,7 +171,10 @@ Fliplet.Widget.findParents({
           type: 'dropdown',
           name: 'column',
           label: 'Select column',
-          options: DATA_SOURCE_COLUMNS_OPTIONS
+          options: DATA_SOURCE_COLUMNS_OPTIONS,
+          ready: function() {
+            hideAllFields();
+          }
         },
         {
           type: 'dropdown',
@@ -221,12 +224,6 @@ Fliplet.Widget.findParents({
               default:
                 break;
             }
-          },
-          ready: function() {
-            let value = this.val();
-
-            Fliplet.Helper.field('dataFormat').set('');
-            Fliplet.Helper.field('dataFormat').set(value);
           }
         },
         {
