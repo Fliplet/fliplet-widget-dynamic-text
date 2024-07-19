@@ -158,6 +158,8 @@ Fliplet.Widget.instance({
 
         if (FIELDS.dataVisualization === 'Alphabetic List') {
           list.style.listStyle = 'lower-alpha';
+        } else if (FIELDS.dataVisualization === 'Bullet Point List') {
+          list.style.listStyle = 'disc';
         }
 
         (MODE_INTERACT ? ARRAY_INTERACT_VALUES : (VALUE || [])).forEach(item => {
