@@ -14,6 +14,48 @@ function hideAllFields() {
   Fliplet.Helper.field('timeDateTimezone').toggle(false);
 }
 
+function handleFieldVisibility(value) {
+  switch (value) {
+    case 'text':
+    case 'html':
+      break;
+    case 'url':
+      Fliplet.Helper.field('urlALtText').toggle(true);
+      break;
+    case 'telephone':
+      Fliplet.Helper.field('phoneALtText').toggle(true);
+      break;
+    case 'email':
+      Fliplet.Helper.field('mailALtText').toggle(true);
+      break;
+    case 'numberCurrency':
+      Fliplet.Helper.field('noDecimalRound').toggle(true);
+      Fliplet.Helper.field('symbol').toggle(true);
+      Fliplet.Helper.field('symbolPlacement').toggle(true);
+      break;
+    case 'array':
+      Fliplet.Helper.field('dataVisualization').toggle(true);
+      break;
+    case 'date':
+      Fliplet.Helper.field('dateFormat').toggle(true);
+      break;
+    case 'time':
+      Fliplet.Helper.field('timeFormat').toggle(true);
+      Fliplet.Helper.field('timeTimezone').toggle(true);
+      break;
+    case 'dateTime':
+      Fliplet.Helper.field('timeDateFormat').toggle(true);
+      Fliplet.Helper.field('timeDateTimezone').toggle(true);
+      break;
+    case 'custom':
+      Fliplet.Helper.field('customRegex').toggle(true);
+      break;
+
+    default:
+      break;
+  }
+}
+
 Fliplet.Widget.findParents({
   filter: { package: 'com.fliplet.dynamic-container' }
 }).then(async(widgets) => {
@@ -185,45 +227,12 @@ Fliplet.Widget.findParents({
           change: function(value) {
             hideAllFields();
 
-            switch (value) {
-              case 'text':
-              case 'html':
-                break;
-              case 'url':
-                Fliplet.Helper.field('urlALtText').toggle(true);
-                break;
-              case 'telephone':
-                Fliplet.Helper.field('phoneALtText').toggle(true);
-                break;
-              case 'email':
-                Fliplet.Helper.field('mailALtText').toggle(true);
-                break;
-              case 'numberCurrency':
-                Fliplet.Helper.field('noDecimalRound').toggle(true);
-                Fliplet.Helper.field('symbol').toggle(true);
-                Fliplet.Helper.field('symbolPlacement').toggle(true);
-                break;
-              case 'array':
-                Fliplet.Helper.field('dataVisualization').toggle(true);
-                break;
-              case 'date':
-                Fliplet.Helper.field('dateFormat').toggle(true);
-                break;
-              case 'time':
-                Fliplet.Helper.field('timeFormat').toggle(true);
-                Fliplet.Helper.field('timeTimezone').toggle(true);
-                break;
-              case 'dateTime':
-                Fliplet.Helper.field('timeDateFormat').toggle(true);
-                Fliplet.Helper.field('timeDateTimezone').toggle(true);
-                break;
-              case 'custom':
-                Fliplet.Helper.field('customRegex').toggle(true);
-                break;
+            handleFieldVisibility(value);
+          },
+          ready: function() {
+            let value = this.val();
 
-              default:
-                break;
-            }
+            handleFieldVisibility(value);
           }
         },
         {
