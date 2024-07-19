@@ -184,6 +184,10 @@ Fliplet.Widget.instance({
       function renderArray() {
         let formattedData;
 
+        if (!MODE_INTERACT && !Array.isArray(VALUE)) {
+          return; // not an array do not render anything
+        }
+
         switch (FIELDS.dataVisualization) {
           case 'Numbered List':
           case 'Bullet Point List':
