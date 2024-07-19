@@ -158,7 +158,7 @@ Fliplet.Widget.instance({
           list.style.listStyleType = 'lower-alpha';
         }
 
-        VALUE.forEach(item => {
+        (MODE_INTERACT ? ARRAY_INTERACT_VALUES : (VALUE || [])).forEach(item => {
           const li = document.createElement('li');
 
           li.textContent = item;
@@ -175,18 +175,6 @@ Fliplet.Widget.instance({
         LINK.textContent = FIELDS.mailALtText || 'Tap to email';
 
         $HELPER.find('.dynamic-text-container').html(LINK);
-      }
-
-      function getAlphabeticLabel(index) {
-        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        let label = '';
-
-        while (index >= 0) {
-          label = letters[index % 26] + label;
-          index = Math.floor(index / 26) - 1;
-        }
-
-        return label;
       }
 
       function renderArray() {
