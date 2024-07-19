@@ -222,8 +222,9 @@ Fliplet.Widget.findParents({
                 break;
             }
           },
-          ready: function(value) {
-            debugger
+          ready: function() {
+            Fliplet.Helper.field('userDataSource').set('');
+            Fliplet.Helper.field('userDataSource').set(this.val());
           }
         },
         {
@@ -303,7 +304,6 @@ Fliplet.Widget.findParents({
           options: TIMEZONE_OPTIONS,
           default: 'data_source'
         },
-        // todo MISSING timezone
         {
           name: 'customRegex',
           type: 'text',
