@@ -151,6 +151,23 @@ Fliplet.Widget.instance({
         $HELPER.find('.dynamic-text-container').html(LINK);
       }
 
+      function createList() {
+        const list = document.createElement(FIELDS.dataVisualization === 'Numbered List' ? 'ol' : 'ul');
+
+        if (FIELDS.dataVisualization === 'Alphabetic List') {
+          list.style.listStyleType = 'lower-alpha';
+        }
+
+        VALUE.forEach(item => {
+          const li = document.createElement('li');
+
+          li.textContent = item;
+          list.appendChild(li);
+        });
+
+        $HELPER.find('.dynamic-text-container').html(list);
+      }
+
       function renderEmail() {
         const LINK = document.createElement('a');
 
@@ -177,29 +194,15 @@ Fliplet.Widget.instance({
 
         switch (FIELDS.dataVisualization) {
           case 'Numbered List':
-            formattedData = (MODE_INTERACT ? ARRAY_INTERACT_VALUES : (VALUE || []))
-              .map((item, index) => `${index + 1}. ${item}`)
-              .join(' \n');
-            break;
           case 'Bullet Point List':
-            formattedData = (MODE_INTERACT ? ARRAY_INTERACT_VALUES : (VALUE || []))
-              .map((item) => `• ${item}`)
-              .join(' \n');
+          case 'Alphabetic List':
+            createList();
             break;
           case 'Comma-separated list':
             formattedData = (MODE_INTERACT ? ARRAY_INTERACT_VALUES : (VALUE || [])).join(', ');
             break;
           case 'Semicolon-Separated List':
             formattedData = (MODE_INTERACT ? ARRAY_INTERACT_VALUES : (VALUE || [])).join('; ');
-            break;
-          case 'Alphabetic List':
-            formattedData = (MODE_INTERACT ? ARRAY_INTERACT_VALUES : (VALUE || []))
-              .map((item, index) => {
-                const letter = getAlphabeticLabel(index);
-
-                return `${letter}. ${item}`;
-              })
-              .join('\n');
             break;
           default:
             formattedData = (MODE_INTERACT ? ARRAY_INTERACT_VALUES : (VALUE || [])).join(', ');
