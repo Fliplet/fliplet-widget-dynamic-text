@@ -154,8 +154,10 @@ Fliplet.Widget.instance({
       function createList() {
         const list = document.createElement(FIELDS.dataVisualization === 'Numbered List' ? 'ol' : 'ul');
 
+        list.style.paddingLeft = '20px';
+
         if (FIELDS.dataVisualization === 'Alphabetic List') {
-          list.style.listStyleType = 'lower-alpha';
+          list.style.listStyle = 'lower-alpha';
         }
 
         (MODE_INTERACT ? ARRAY_INTERACT_VALUES : (VALUE || [])).forEach(item => {
