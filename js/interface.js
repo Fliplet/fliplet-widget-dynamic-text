@@ -19,7 +19,7 @@ Fliplet.Widget.findParents({
 }).then(async(widgets) => {
   if (widgets.length === 0) {
     return Fliplet.UI.Toast(
-      'This component needs to be placed inside a Dynamic Data Container'
+      'This component needs to be placed inside a Dynamic Container'
     );
   }
 
@@ -221,6 +221,9 @@ Fliplet.Widget.findParents({
               default:
                 break;
             }
+          },
+          ready: function(value) {
+            debugger
           }
         },
         {
