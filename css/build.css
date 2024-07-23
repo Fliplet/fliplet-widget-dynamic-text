@@ -1,1 +1,13 @@
 [data-widget-package="com.fliplet.dynamic-text"] {}
+
+.dynamic-text-container h1 {
+    color: red !important;
+  }
+  
+  .dynamic-text-container h2 {
+    color: blue !important;
+  }
+  
+  .dynamic-text-container h3 {
+    color: green !important;
+  }
