@@ -309,9 +309,9 @@ Fliplet.Widget.findParents({
           name: 'timeTimezoneCheckbox',
           label: 'Convert to another timezone',
           options: [{ value: true, label: 'Yes' }],
-          default: true,
+          default: [true],
           change: function(value) {
-            Fliplet.Helper.field('timeTimezone').toggle(value);
+            Fliplet.Helper.field('timeTimezone').toggle(value.includes(true));
           }
         },
         {
@@ -332,9 +332,9 @@ Fliplet.Widget.findParents({
           name: 'timeDateTimezoneCheckbox',
           label: 'Convert to another timezone',
           options: [{ value: true, label: 'Yes' }],
-          default: true,
+          default: [true],
           change: function(value) {
-            Fliplet.Helper.field('timeDateTimezone').toggle(value);
+            Fliplet.Helper.field('timeDateTimezone').toggle(value.includes(true));
           }
         },
         {
