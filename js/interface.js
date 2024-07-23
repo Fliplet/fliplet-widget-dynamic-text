@@ -213,122 +213,122 @@ Fliplet.Widget.findParents({
 
     Fliplet.Widget.generateInterface({
       title: 'Dynamic Text',
-      fields: [
-        {
-          type: 'html',
-          html: `<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;">List from ${dataSource.name}(ID: <span class="data-source-id">${dynamicContainer.dataSourceId}</span>)</p>
-                <p style="font-size: 10px; font-weight: 400; color: #E7961E;">To change Data source go to Data Container Settings</p>
-                <hr/>`
-        },
-        {
-          type: 'dropdown',
-          name: 'column',
-          label: 'Select column',
-          options: DATA_SOURCE_COLUMNS_OPTIONS,
-          ready: function() {
-            hideAllFields();
-          }
-        },
-        {
-          type: 'dropdown',
-          name: 'dataFormat',
-          label: 'Select data format',
-          options: DATA_FORMATS_OPTIONS,
-          default: 'text',
-          change: function(value) {
-            hideAllFields();
+      // fields: [
+      //   {
+      //     type: 'html',
+      //     html: `<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;">List from ${dataSource.name}(ID: <span class="data-source-id">${dynamicContainer.dataSourceId}</span>)</p>
+      //           <p style="font-size: 10px; font-weight: 400; color: #E7961E;">To change Data source go to Data Container Settings</p>
+      //           <hr/>`
+      //   },
+      //   {
+      //     type: 'dropdown',
+      //     name: 'column',
+      //     label: 'Select column',
+      //     options: DATA_SOURCE_COLUMNS_OPTIONS,
+      //     ready: function() {
+      //       hideAllFields();
+      //     }
+      //   },
+      //   {
+      //     type: 'dropdown',
+      //     name: 'dataFormat',
+      //     label: 'Select data format',
+      //     options: DATA_FORMATS_OPTIONS,
+      //     default: 'text',
+      //     change: function(value) {
+      //       hideAllFields();
 
-            handleFieldVisibility(value);
-          },
-          ready: function() {
-            let value = this.val();
+      //       handleFieldVisibility(value);
+      //     },
+      //     ready: function() {
+      //       let value = this.val();
 
-            handleFieldVisibility(value);
-          }
-        },
-        {
-          name: 'urlALtText',
-          type: 'text',
-          label: 'Alternative text for link',
-          placeholder: 'Specify text here e.g. “Tap to open”'
-        },
-        {
-          name: 'phoneALtText',
-          type: 'text',
-          label: 'Alternative text for phone number',
-          placeholder: 'Specify text here e.g. “Tap to call”'
-        },
-        {
-          name: 'mailALtText',
-          type: 'text',
-          label: 'Alternative text for email',
-          placeholder: 'Specify text here e.g. “Tap to send an email”'
-        },
-        {
-          type: 'dropdown',
-          name: 'noDecimalRound',
-          label: 'Select number of decimals to round this value',
-          options: NO_DECIMAL_ROUND_OPTIONS,
-          default: 0
-        },
-        {
-          name: 'symbol',
-          type: 'text',
-          label: 'Specify a symbol for units',
-          placeholder: '%, $, km',
-          description: 'Leave empty if no symbol required'
-        },
-        {
-          type: 'radio',
-          name: 'symbolPlacement',
-          label: 'Show symbol',
-          options: SYMBOL_PLACEMENT_OPTIONS,
-          default: 'before units'
-        },
-        {
-          type: 'dropdown',
-          name: 'dataVisualization',
-          label: 'Select data visualization',
-          options: DATA_VISUALIZATION_OPTIONS
-        },
-        {
-          type: 'dropdown',
-          name: 'dateFormat',
-          label: 'Select dataview type',
-          options: DATE_FORMAT_OPTIONS
-        },
-        {
-          type: 'dropdown',
-          name: 'timeFormat',
-          label: 'Select dataview type',
-          options: TIME_FORMAT_OPTIONS
-        },
-        {
-          type: 'radio',
-          name: 'timeTimezone',
-          label: 'Timezone',
-          options: TIMEZONE_OPTIONS,
-          default: 'data_source'
-        },
-        {
-          type: 'dropdown',
-          name: 'timeDateFormat',
-          label: 'Select dataview type',
-          options: TIME_DATE_FORMAT_OPTIONS
-        },
-        {
-          type: 'radio',
-          name: 'timeDateTimezone',
-          label: 'Timezone',
-          options: TIMEZONE_OPTIONS,
-          default: 'data_source'
-        },
-        {
-          name: 'customRegex',
-          type: 'text',
-          label: 'Provide regex'
-        }
-      ]
+      //       handleFieldVisibility(value);
+      //     }
+      //   },
+      //   {
+      //     name: 'urlALtText',
+      //     type: 'text',
+      //     label: 'Alternative text for link',
+      //     placeholder: 'Specify text here e.g. “Tap to open”'
+      //   },
+      //   {
+      //     name: 'phoneALtText',
+      //     type: 'text',
+      //     label: 'Alternative text for phone number',
+      //     placeholder: 'Specify text here e.g. “Tap to call”'
+      //   },
+      //   {
+      //     name: 'mailALtText',
+      //     type: 'text',
+      //     label: 'Alternative text for email',
+      //     placeholder: 'Specify text here e.g. “Tap to send an email”'
+      //   },
+      //   {
+      //     type: 'dropdown',
+      //     name: 'noDecimalRound',
+      //     label: 'Select number of decimals to round this value',
+      //     options: NO_DECIMAL_ROUND_OPTIONS,
+      //     default: 0
+      //   },
+      //   {
+      //     name: 'symbol',
+      //     type: 'text',
+      //     label: 'Specify a symbol for units',
+      //     placeholder: '%, $, km',
+      //     description: 'Leave empty if no symbol required'
+      //   },
+      //   {
+      //     type: 'radio',
+      //     name: 'symbolPlacement',
+      //     label: 'Show symbol',
+      //     options: SYMBOL_PLACEMENT_OPTIONS,
+      //     default: 'before units'
+      //   },
+      //   {
+      //     type: 'dropdown',
+      //     name: 'dataVisualization',
+      //     label: 'Select data visualization',
+      //     options: DATA_VISUALIZATION_OPTIONS
+      //   },
+      //   {
+      //     type: 'dropdown',
+      //     name: 'dateFormat',
+      //     label: 'Select dataview type',
+      //     options: DATE_FORMAT_OPTIONS
+      //   },
+      //   {
+      //     type: 'dropdown',
+      //     name: 'timeFormat',
+      //     label: 'Select dataview type',
+      //     options: TIME_FORMAT_OPTIONS
+      //   },
+      //   {
+      //     type: 'radio',
+      //     name: 'timeTimezone',
+      //     label: 'Timezone',
+      //     options: TIMEZONE_OPTIONS,
+      //     default: 'data_source'
+      //   },
+      //   {
+      //     type: 'dropdown',
+      //     name: 'timeDateFormat',
+      //     label: 'Select dataview type',
+      //     options: TIME_DATE_FORMAT_OPTIONS
+      //   },
+      //   {
+      //     type: 'radio',
+      //     name: 'timeDateTimezone',
+      //     label: 'Timezone',
+      //     options: TIMEZONE_OPTIONS,
+      //     default: 'data_source'
+      //   },
+      //   {
+      //     name: 'customRegex',
+      //     type: 'text',
+      //     label: 'Provide regex'
+      //   }
+      // ]
     });
   });
 });
