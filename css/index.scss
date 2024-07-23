@@ -331,534 +331,521 @@ $variablePrefix: "dynamicText";
   }
 
   #{$instanceSelector} {
+    @if map-get($configuration, textBackgroundType)=="Image" {
+      @if map-get($configuration, dynamicText-dynamicTextBackgroundImage)=="none" {
+        background-image: map-get($configuration, dynamicText-dynamicTextBackgroundImage);
+      }
 
-    .dynamic-text-container h1 {
-      color: red !important;
+      @else {
+        background-image: url("#{map-get($configuration, dynamicText-dynamicTextBackgroundImage)}");
+      }
     }
 
-    .dynamic-text-container h2 {
-      color: blue !important;
+    @else if map-get($configuration, dynamicText-dynamicTextBackgroundType)=="Color" {
+      background-image: none;
+      background-color: map-get($configuration, dynamicText-dynamicTextBackgroundColor);
     }
 
-    .dynamic-text-container h3 {
-      color: green !important;
+    @else {
+      background-image: none;
+      background-color: transparent;
     }
 
-    //   @if map-get($configuration, textBackgroundType)=="Image" {
-    //     @if map-get($configuration, dynamicText-dynamicTextBackgroundImage)=="none" {
-    //       background-image: map-get($configuration, dynamicText-dynamicTextBackgroundImage);
-    //     }
-
-    //     @else {
-    //       background-image: url("#{map-get($configuration, dynamicText-dynamicTextBackgroundImage)}");
-    //     }
-    //   }
-
-    //   @else if map-get($configuration, dynamicText-dynamicTextBackgroundType)=="Color" {
-    //     background-image: none;
-    //     background-color: map-get($configuration, dynamicText-dynamicTextBackgroundColor);
-    //   }
-
-    //   @else {
-    //     background-image: none;
-    //     background-color: transparent;
-    //   }
-
-    //   background-size: map-get($configuration, dynamicText-dynamicTextBackgroundSize);
-    //   background-repeat: map-get($configuration, dynamicText-dynamicTextBackgroundRepeat);
-    //   background-position: map-get($configuration, dynamicText-dynamicTextBackgroundPosX) map-get($configuration, dynamicText-dynamicTextBackgroundPosY);
-
-    //   position: map-get($configuration, dynamicText-dynamicTextPosition) !important;
-    //   z-index: map-get($configuration, dynamicText-dynamicTextIndex);
-
-    //   @if map-get($configuration, dynamicText-dynamicTextPosition)=="relative" {
-    //     @if map-get($configuration, dynamicText-dynamicTextVisibility)=="visible" {
-    //       display: map-get($configuration, dynamicText-dynamicTextDisplay) !important;
-    //     }
-
-    //     @else {
-    //       display: none !important;
-    //     }
-    //   }
-
-    //   @else {
-    //     @if map-get($configuration, dynamicText-dynamicTextVisibility)=="visible" {
-    //       display: block !important;
-    //     }
-
-    //     @else {
-    //       display: none !important;
-    //     }
-
-    //     top: map-get($configuration, dynamicText-dynamicTextPositionTop);
-    //     right: map-get($configuration, dynamicText-dynamicTextPositionRight);
-    //     bottom: map-get($configuration, dynamicText-dynamicTextPositionBottom);
-    //     left: map-get($configuration, dynamicText-dynamicTextPositionLeft);
-    //   }
-
-    //   width: map-get($configuration, dynamicText-dynamicTextWidth);
-    //   min-width: map-get($configuration, dynamicText-dynamicTextMinWidth);
-    //   max-width: map-get($configuration, dynamicText-dynamicTextMaxWidth);
-    //   height: auto !important;
-    //   min-height: map-get($configuration, dynamicText-dynamicTextMinHeight);
-    //   max-height: map-get($configuration, dynamicText-dynamicTextMaxHeight);
-    //   margin: map-get($configuration, dynamicText-dynamicTextMarginTop) map-get($configuration, dynamicText-dynamicTextMarginRight) map-get($configuration, dynamicText-dynamicTextMarginBottom) map-get($configuration, dynamicText-dynamicTextMarginLeft);
-    //   padding: map-get($configuration, dynamicText-dynamicTextPaddingTop) map-get($configuration, dynamicText-dynamicTextPaddingRight) map-get($configuration, dynamicText-dynamicTextPaddingBottom) map-get($configuration, dynamicText-dynamicTextPaddingLeft);
-
-    //   @include borderOnly((borderSides: map-get($configuration, dynamicText-dynamicTextBorderSides),
-    //       borderWidth: map-get($configuration, dynamicText-dynamicTextBorderWidth),
-    //       borderStyle: map-get($configuration, dynamicText-dynamicTextBorderStyle),
-    //       borderColor: map-get($configuration, dynamicText-dynamicTextBorderColor)));
-    //   border-radius: map-get($configuration, dynamicText-dynamicTextBorderRadius);
-    //   @include shadowOnly((shadowStyle: map-get($configuration, dynamicText-dynamicTextShadowStyle),
-    //       shadowXOffset: map-get($configuration, dynamicText-dynamicTextShadowXoffset),
-    //       shadowYOffset: map-get($configuration, dynamicText-dynamicTextShadowYoffset),
-    //       shadowBlur: map-get($configuration, dynamicText-dynamicTextShadowBlur),
-    //       shadowSpread: map-get($configuration, dynamicText-dynamicTextShadowSpread),
-    //       shadowColor: map-get($configuration, dynamicText-dynamicTextShadowColor)));
-
-    //   // Styles for tablet
-    //   @include above($tabletBreakpoint) {
-    //     @if map-get($configuration, dynamicText-dynamicTextBackgroundTypeTablet)=="Image" {
-    //       @if map-get($configuration, dynamicText-dynamicTextBackgroundImageTablet)=="none" {
-    //         background-image: map-get($configuration, dynamicText-dynamicTextBackgroundImageTablet);
-    //       }
-
-    //       @else {
-    //         background-image: url("#{map-get($configuration, dynamicText-dynamicTextBackgroundImageTablet)}");
-    //       }
-    //     }
-
-    //     @else if map-get($configuration, dynamicText-dynamicTextBackgroundTypeTablet)=="Color" {
-    //       background-image: none;
-    //       background-color: map-get($configuration, dynamicText-dynamicTextBackgroundColorTablet);
-    //     }
-
-    //     @else {
-    //       background-image: none;
-    //       background-color: transparent;
-    //     }
-
-    //     background-size: map-get($configuration, dynamicText-dynamicTextBackgroundSizeTablet);
-    //     background-repeat: map-get($configuration, dynamicText-dynamicTextBackgroundRepeatTablet);
-    //     background-position: map-get($configuration, dynamicText-dynamicTextBackgroundPosXTablet) map-get($configuration, dynamicText-dynamicTextBackgroundPosYTablet);
-
-    //     position: map-get($configuration, dynamicText-dynamicTextPositionTablet) !important;
-    //     z-index: map-get($configuration, dynamicText-dynamicTextIndexTablet);
-
-    //     @if map-get($configuration, dynamicText-dynamicTextPositionTablet)=="relative" {
-    //       @if map-get($configuration, dynamicText-dynamicTextVisibilityTablet)=="visible" {
-    //         display: map-get($configuration, dynamicText-dynamicTextDisplayTablet) !important;
-    //       }
-
-    //       @else {
-    //         display: none !important;
-    //       }
-    //     }
-
-    //     @else {
-    //       @if map-get($configuration, dynamicText-dynamicTextVisibilityTablet)=="visible" {
-    //         display: block !important;
-    //       }
-
-    //       @else {
-    //         display: none !important;
-    //       }
-
-    //       top: map-get($configuration, dynamicText-dynamicTextPositionTopTablet);
-    //       right: map-get($configuration, dynamicText-dynamicTextPositionRightTablet);
-    //       bottom: map-get($configuration, dynamicText-dynamicTextPositionBottomTablet);
-    //       left: map-get($configuration, dynamicText-dynamicTextPositionLeftTablet);
-    //     }
-
-    //     width: map-get($configuration, dynamicText-dynamicTextWidthTablet);
-    //     min-width: map-get($configuration, dynamicText-dynamicTextMinWidthTablet);
-    //     max-width: map-get($configuration, dynamicText-dynamicTextMaxWidthTablet);
-    //     height: auto !important;
-    //     min-height: map-get($configuration, dynamicText-dynamicTextMinHeightTablet);
-    //     max-height: map-get($configuration, dynamicText-dynamicTextMaxHeightTablet);
-    //     margin: map-get($configuration, dynamicText-dynamicTextMarginTopTablet) map-get($configuration, dynamicText-dynamicTextMarginRightTablet) map-get($configuration, dynamicText-dynamicTextMarginBottomTablet) map-get($configuration, dynamicText-dynamicTextMarginLeftTablet);
-    //     padding: map-get($configuration, dynamicText-dynamicTextPaddingTopTablet) map-get($configuration, dynamicText-dynamicTextPaddingRightTablet) map-get($configuration, dynamicText-dynamicTextPaddingBottomTablet) map-get($configuration, dynamicText-dynamicTextPaddingLeftTablet);
-
-    //     @include borderOnly((borderSides: map-get($configuration, dynamicText-dynamicTextBorderSidesTablet),
-    //         borderWidth: map-get($configuration, dynamicText-dynamicTextBorderWidthTablet),
-    //         borderStyle: map-get($configuration, dynamicText-dynamicTextBorderStyleTablet),
-    //         borderColor: map-get($configuration, dynamicText-dynamicTextBorderColorTablet)));
-    //     border-radius: map-get($configuration, dynamicText-dynamicTextBorderRadiusTablet);
-    //     @include shadowOnly((shadowStyle: map-get($configuration, dynamicText-dynamicTextShadowStyleTablet),
-    //         shadowXOffset: map-get($configuration, dynamicText-dynamicTextShadowXoffsetTablet),
-    //         shadowYOffset: map-get($configuration, dynamicText-dynamicTextShadowYoffsetTablet),
-    //         shadowBlur: map-get($configuration, dynamicText-dynamicTextShadowBlurTablet),
-    //         shadowSpread: map-get($configuration, dynamicText-dynamicTextShadowSpreadTablet),
-    //         shadowColor: map-get($configuration, dynamicText-dynamicTextShadowColorTablet)));
-    //   }
-
-    //   // Styles for desktop
-    //   @include above($desktopBreakpoint) {
-    //     @if map-get($configuration, dynamicText-dynamicTextBackgroundTypeDesktop)=="Image" {
-    //       @if map-get($configuration, dynamicText-dynamicTextBackgroundImageDesktop)=="none" {
-    //         background-image: map-get($configuration, dynamicText-dynamicTextBackgroundImageDesktop);
-    //       }
-
-    //       @else {
-    //         background-image: url("#{map-get($configuration, dynamicText-dynamicTextBackgroundImageDesktop)}");
-    //       }
-    //     }
-
-    //     @else if map-get($configuration, dynamicText-dynamicTextBackgroundTypeDesktop)=="Color" {
-    //       background-image: none;
-    //       background-color: map-get($configuration, dynamicText-dynamicTextBackgroundColorDesktop);
-    //     }
-
-    //     @else {
-    //       background-image: none;
-    //       background-color: transparent;
-    //     }
-
-    //     background-size: map-get($configuration, dynamicText-dynamicTextBackgroundSizeDesktop);
-    //     background-repeat: map-get($configuration, dynamicText-dynamicTextBackgroundRepeatDesktop);
-    //     background-position: map-get($configuration, dynamicText-dynamicTextBackgroundPosXDesktop) map-get($configuration, dynamicText-dynamicTextBackgroundPosYDesktop);
-
-    //     position: map-get($configuration, dynamicText-dynamicTextPositionDesktop) !important;
-    //     z-index: map-get($configuration, dynamicText-dynamicTextIndexDesktop);
-
-    //     @if map-get($configuration, dynamicText-dynamicTextPositionDesktop)=="relative" {
-    //       @if map-get($configuration, dynamicText-dynamicTextVisibilityDesktop)=="visible" {
-    //         display: map-get($configuration, dynamicText-dynamicTextDisplayDesktop) !important;
-    //       }
-
-    //       @else {
-    //         display: none !important;
-    //       }
-    //     }
-
-    //     @else {
-    //       @if map-get($configuration, dynamicText-dynamicTextVisibilityDesktop)=="visible" {
-    //         display: block !important;
-    //       }
-
-    //       @else {
-    //         display: none !important;
-    //       }
-
-    //       top: map-get($configuration, dynamicText-dynamicTextPositionTopDesktop);
-    //       right: map-get($configuration, dynamicText-dynamicTextPositionRightDesktop);
-    //       bottom: map-get($configuration, dynamicText-dynamicTextPositionBottomDesktop);
-    //       left: map-get($configuration, dynamicText-dynamicTextPositionLeftDesktop);
-    //     }
-
-    //     width: map-get($configuration, dynamicText-dynamicTextWidthDesktop);
-    //     min-width: map-get($configuration, dynamicText-dynamicTextMinWidthDesktop);
-    //     max-width: map-get($configuration, dynamicText-dynamicTextMaxWidthDesktop);
-    //     height: auto !important;
-    //     min-height: map-get($configuration, dynamicText-dynamicTextMinHeightDesktop);
-    //     max-height: map-get($configuration, dynamicText-dynamicTextMaxHeightDesktop);
-    //     margin: map-get($configuration, dynamicText-dynamicTextMarginTopDesktop) map-get($configuration, dynamicText-dynamicTextMarginRightDesktop) map-get($configuration, dynamicText-dynamicTextMarginBottomDesktop) map-get($configuration, dynamicText-dynamicTextMarginLeftDesktop);
-    //     padding: map-get($configuration, dynamicText-dynamicTextPaddingTopDesktop) map-get($configuration, dynamicText-dynamicTextPaddingRightDesktop) map-get($configuration, dynamicText-dynamicTextPaddingBottomDesktop) map-get($configuration, dynamicText-dynamicTextPaddingLeftDesktop);
-
-    //     @include borderOnly((borderSides: map-get($configuration, dynamicText-dynamicTextBorderSidesDesktop),
-    //         borderWidth: map-get($configuration, dynamicText-dynamicTextBorderWidthDesktop),
-    //         borderStyle: map-get($configuration, dynamicText-dynamicTextBorderStyleDesktop),
-    //         borderColor: map-get($configuration, dynamicText-dynamicTextBorderColorDesktop)));
-    //     border-radius: map-get($configuration, dynamicText-dynamicTextBorderRadiusDesktop);
-    //     @include shadowOnly((shadowStyle: map-get($configuration, dynamicText-dynamicTextShadowStyleDesktop),
-    //         shadowXOffset: map-get($configuration, dynamicText-dynamicTextShadowXoffsetDesktop),
-    //         shadowYOffset: map-get($configuration, dynamicText-dynamicTextShadowYoffsetDesktop),
-    //         shadowBlur: map-get($configuration, dynamicText-dynamicTextShadowBlurDesktop),
-    //         shadowSpread: map-get($configuration, dynamicText-dynamicTextShadowSpreadDesktop),
-    //         shadowColor: map-get($configuration, dynamicText-dynamicTextShadowColorDesktop)));
-    //   }
-
-    //   // .dynamic-text-container {
-    //   p {
-    //     color: map-get($configuration, paragraphTextColor);
-    //     font-family: map-get($configuration, paragraphFontFamily);
-    //     font-size: map-get($configuration, paragraphFontSize);
-    //     font-style: map-get($configuration, paragraphFontStyle);
-    //     text-decoration: map-get($configuration, paragraphFontDecoration);
-    //     line-height: map-get($configuration, paragraphLineHeight);
-    //     font-weight: map-get($configuration, paragraphFontWeight);
-    //     min-height: 1em;
-
-    //     margin-top: map-get($configuration, paragraphMarginTop);
-    //     margin-bottom: map-get($configuration, paragraphMarginBottom);
-
-    //     // Styles for tablet
-    //     @include above($tabletBreakpoint) {
-    //       color: map-get($configuration, paragraphTextColorTablet);
-    //       font-family: map-get($configuration, paragraphFontFamilyTablet);
-    //       font-size: map-get($configuration, paragraphFontSizeTablet);
-    //       font-style: map-get($configuration, paragraphFontStyleTablet);
-    //       text-decoration: map-get($configuration, paragraphFontDecorationTablet);
-    //       line-height: map-get($configuration, paragraphLineHeightTablet);
-    //       font-weight: map-get($configuration, paragraphFontWeightTablet);
-
-    //       margin-top: map-get($configuration, paragraphMarginTopTablet);
-    //       margin-bottom: map-get($configuration, paragraphMarginBottomTablet);
-    //     }
-
-    //     // Styles for desktop
-    //     @include above($desktopBreakpoint) {
-    //       color: map-get($configuration, paragraphTextColorDesktop);
-    //       font-family: map-get($configuration, paragraphFontFamilyDesktop);
-    //       font-size: map-get($configuration, paragraphFontSizeDesktop);
-    //       font-style: map-get($configuration, paragraphFontStyleDesktop);
-    //       text-decoration: map-get($configuration, paragraphFontDecorationDesktop);
-    //       line-height: map-get($configuration, paragraphLineHeightDesktop);
-    //       font-weight: map-get($configuration, paragraphFontWeightDesktop);
-
-    //       margin-top: map-get($configuration, paragraphMarginTopDesktop);
-    //       margin-bottom: map-get($configuration, paragraphMarginBottomDesktop);
-    //     }
-    //   }
-
-    //   h1 {
-    //     color: map-get($configuration, dynamicText-dynamicTextHeadingOneColor);
-    //     font-family: map-get($configuration, dynamicText-dynamicTextHeadingOneFontFamily);
-    //     font-size: map-get($configuration, dynamicText-dynamicTextHeadingOneSize);
-    //     font-style: map-get($configuration, dynamicText-dynamicTextHeadingOneStyle);
-    //     text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingOneDecoration);
-    //     line-height: map-get($configuration, dynamicText-dynamicTextHeadingOneHeight);
-    //     font-weight: map-get($configuration, dynamicText-dynamicTextHeadingOneWeight);
-
-    //     margin-top: map-get($configuration, dynamicText-dynamicTextHeadingOneMarginTop);
-    //     margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingOneMarginBottom);
-
-    //     // Styles for tablet
-    //     @include above($tabletBreakpoint) {
-    //       color: map-get($configuration, dynamicText-dynamicTextHeadingOneColorTablet);
-    //       font-family: map-get($configuration, dynamicText-dynamicTextHeadingOneFontFamilyTablet);
-    //       font-size: map-get($configuration, dynamicText-dynamicTextHeadingOneSizeTablet);
-    //       font-style: map-get($configuration, dynamicText-dynamicTextHeadingOneStyleTablet);
-    //       text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingOneDecorationTablet);
-    //       line-height: map-get($configuration, dynamicText-dynamicTextHeadingOneHeightTablet);
-    //       font-weight: map-get($configuration, dynamicText-dynamicTextHeadingOneWeightTablet);
-
-    //       margin-top: map-get($configuration, dynamicText-dynamicTextHeadingOneMarginTopTablet);
-    //       margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingOneMarginBottomTablet);
-    //     }
-
-    //     // Styles for desktop
-    //     @include above($desktopBreakpoint) {
-    //       color: map-get($configuration, dynamicText-dynamicTextHeadingOneColorDesktop);
-    //       font-family: map-get($configuration, dynamicText-dynamicTextHeadingOneFontFamilyDesktop);
-    //       font-size: map-get($configuration, dynamicText-dynamicTextHeadingOneSizeDesktop);
-    //       font-style: map-get($configuration, dynamicText-dynamicTextHeadingOneStyleDesktop);
-    //       text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingOneDecorationDesktop);
-    //       line-height: map-get($configuration, dynamicText-dynamicTextHeadingOneHeightDesktop);
-    //       font-weight: map-get($configuration, dynamicText-dynamicTextHeadingOneWeightDesktop);
-
-    //       margin-top: map-get($configuration, dynamicText-dynamicTextHeadingOneMarginTopDesktop);
-    //       margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingOneMarginBottomDesktop);
-    //     }
-    //   }
-
-    //   h2 {
-    //     color: map-get($configuration, dynamicText-dynamicTextHeadingTwoColor);
-    //     font-family: map-get($configuration, dynamicText-dynamicTextHeadingTwoFontFamily);
-    //     font-size: map-get($configuration, dynamicText-dynamicTextHeadingTwoSize);
-    //     font-style: map-get($configuration, dynamicText-dynamicTextHeadingTwoStyle);
-    //     text-decoration: map-get($configuration, textHeadingTwoDecoration);
-    //     line-height: map-get($configuration, dynamicText-dynamicTextHeadingTwoHeight);
-    //     font-weight: map-get($configuration, dynamicText-dynamicTextHeadingTwoWeight);
-
-    //     margin-top: map-get($configuration, dynamicText-dynamicTextHeadingTwoMarginTop);
-    //     margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingTwoMarginBottom);
-
-    //     // Styles for tablet
-    //     @include above($tabletBreakpoint) {
-    //       color: map-get($configuration, dynamicText-dynamicTextHeadingTwoColorTablet);
-    //       font-family: map-get($configuration, dynamicText-dynamicTextHeadingTwoFontFamilyTablet);
-    //       font-size: map-get($configuration, dynamicText-dynamicTextHeadingTwoSizeTablet);
-    //       font-style: map-get($configuration, dynamicText-dynamicTextHeadingTwoStyleTablet);
-    //       text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingTwoDecorationTablet);
-    //       line-height: map-get($configuration, dynamicText-dynamicTextHeadingTwoHeightTablet);
-    //       font-weight: map-get($configuration, dynamicText-dynamicTextHeadingTwoWeightTablet);
-
-    //       margin-top: map-get($configuration, dynamicText-dynamicTextHeadingTwoMarginTopTablet);
-    //       margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingTwoMarginBottomTablet);
-    //     }
-
-    //     // Styles for desktop
-    //     @include above($desktopBreakpoint) {
-    //       color: map-get($configuration, dynamicText-dynamicTextHeadingTwoColorDesktop);
-    //       font-family: map-get($configuration, dynamicText-dynamicTextHeadingTwoFontFamilyDesktop);
-    //       font-size: map-get($configuration, dynamicText-dynamicTextHeadingTwoSizeDesktop);
-    //       font-style: map-get($configuration, dynamicText-dynamicTextHeadingTwoStyleDesktop);
-    //       text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingTwoDecorationDesktop);
-    //       line-height: map-get($configuration, dynamicText-dynamicTextHeadingTwoHeightDesktop);
-    //       font-weight: map-get($configuration, dynamicText-dynamicTextHeadingTwoWeightDesktop);
-
-    //       margin-top: map-get($configuration, dynamicText-dynamicTextHeadingTwoMarginTopDesktop);
-    //       margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingTwoMarginBottomDesktop);
-    //     }
-    //   }
-
-    //   h3 {
-    //     color: map-get($configuration, dynamicText-dynamicTextHeadingThreeColor);
-    //     font-family: map-get($configuration, dynamicText-dynamicTextHeadingThreeFontFamily);
-    //     font-size: map-get($configuration, dynamicText-dynamicTextHeadingThreeSize);
-    //     font-style: map-get($configuration, dynamicText-dynamicTextHeadingThreeStyle);
-    //     text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingThreeDecoration);
-    //     line-height: map-get($configuration, dynamicText-dynamicTextHeadingThreeHeight);
-    //     font-weight: map-get($configuration, dynamicText-dynamicTextHeadingThreeWeight);
-
-    //     margin-top: map-get($configuration, dynamicText-dynamicTextHeadingThreeMarginTop);
-    //     margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingThreeMarginBottom);
-
-    //     // Styles for tablet
-    //     @include above($tabletBreakpoint) {
-    //       color: map-get($configuration, dynamicText-dynamicTextHeadingThreeColorTablet);
-    //       font-family: map-get($configuration, dynamicText-dynamicTextHeadingThreeFontFamilyTablet);
-    //       font-size: map-get($configuration, dynamicText-dynamicTextHeadingThreeSizeTablet);
-    //       font-style: map-get($configuration, dynamicText-dynamicTextHeadingThreeStyleTablet);
-    //       text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingThreeDecorationTablet);
-    //       line-height: map-get($configuration, dynamicText-dynamicTextHeadingThreeHeightTablet);
-    //       font-weight: map-get($configuration, dynamicText-dynamicTextHeadingThreeWeightTablet);
-
-    //       margin-top: map-get($configuration, dynamicText-dynamicTextHeadingThreeMarginTopTablet);
-    //       margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingThreeMarginBottomTablet);
-    //     }
-
-    //     // Styles for desktop
-    //     @include above($desktopBreakpoint) {
-    //       color: map-get($configuration, dynamicText-dynamicTextHeadingThreeColorDesktop);
-    //       font-family: map-get($configuration, dynamicText-dynamicTextHeadingThreeFontFamilyDesktop);
-    //       font-size: map-get($configuration, dynamicText-dynamicTextHeadingThreeSizeDesktop);
-    //       font-style: map-get($configuration, dynamicText-dynamicTextHeadingThreeStyleDesktop);
-    //       text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingThreeDecorationDesktop);
-    //       line-height: map-get($configuration, dynamicText-dynamicTextHeadingThreeHeightDesktop);
-    //       font-weight: map-get($configuration, dynamicText-dynamicTextHeadingThreeWeightDesktop);
-
-    //       margin-top: map-get($configuration, dynamicText-dynamicTextHeadingThreeMarginTopDesktop);
-    //       margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingThreeMarginBottomDesktop);
-    //     }
-    //   }
-
-    //   h4 {
-    //     color: map-get($configuration, dynamicText-dynamicTextHeadingFourColor);
-    //     font-family: map-get($configuration, dynamicText-dynamicTextHeadingFourFontFamily);
-    //     font-size: map-get($configuration, dynamicText-dynamicTextHeadingFourSize);
-    //     font-style: map-get($configuration, dynamicText-dynamicTextHeadingFourStyle);
-    //     text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingFourDecoration);
-    //     line-height: map-get($configuration, dynamicText-dynamicTextHeadingFourHeight);
-    //     font-weight: map-get($configuration, dynamicText-dynamicTextHeadingFourWeight);
-
-    //     margin-top: map-get($configuration, dynamicText-dynamicTextHeadingFourMarginTop);
-    //     margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingFourMarginBottom);
-
-    //     // Styles for tablet
-    //     @include above($tabletBreakpoint) {
-    //       color: map-get($configuration, dynamicText-dynamicTextHeadingFourColorTablet);
-    //       font-family: map-get($configuration, dynamicText-dynamicTextHeadingFourFontFamilyTablet);
-    //       font-size: map-get($configuration, dynamicText-dynamicTextHeadingFourSizeTablet);
-    //       font-style: map-get($configuration, dynamicText-dynamicTextHeadingFourStyleTablet);
-    //       text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingFourDecorationTablet);
-    //       line-height: map-get($configuration, dynamicText-dynamicTextHeadingFourHeightTablet);
-    //       font-weight: map-get($configuration, dynamicText-dynamicTextHeadingFourWeightTablet);
-
-    //       margin-top: map-get($configuration, dynamicText-dynamicTextHeadingFourMarginTopTablet);
-    //       margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingFourMarginBottomTablet);
-    //     }
-
-    //     // Styles for desktop
-    //     @include above($desktopBreakpoint) {
-    //       color: map-get($configuration, dynamicText-dynamicTextHeadingFourColorDesktop);
-    //       font-family: map-get($configuration, dynamicText-dynamicTextHeadingFourFontFamilyDesktop);
-    //       font-size: map-get($configuration, dynamicText-dynamicTextHeadingFourSizeDesktop);
-    //       font-style: map-get($configuration, dynamicText-dynamicTextHeadingFourStyleDesktop);
-    //       text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingFourDecorationDesktop);
-    //       line-height: map-get($configuration, dynamicText-dynamicTextHeadingFourHeightDesktop);
-    //       font-weight: map-get($configuration, dynamicText-dynamicTextHeadingFourWeightDesktop);
-
-    //       margin-top: map-get($configuration, dynamicText-dynamicTextHeadingFourMarginTopDesktop);
-    //       margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingFourMarginBottomDesktop);
-    //     }
-    //   }
-
-    //   h5 {
-    //     color: map-get($configuration, dynamicText-dynamicTextHeadingFiveColor);
-    //     font-family: map-get($configuration, dynamicText-dynamicTextHeadingFiveFontFamily);
-    //     font-size: map-get($configuration, dynamicText-dynamicTextHeadingFiveSize);
-    //     font-style: map-get($configuration, dynamicText-dynamicTextHeadingFiveStyle);
-    //     text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingFiveDecoration);
-    //     line-height: map-get($configuration, dynamicText-dynamicTextHeadingFiveHeight);
-    //     font-weight: map-get($configuration, dynamicText-dynamicTextHeadingFiveWeight);
-
-    //     margin-top: map-get($configuration, dynamicText-dynamicTextHeadingFiveMarginTop);
-    //     margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingFiveMarginBottom);
-
-    //     // Styles for tablet
-    //     @include above($tabletBreakpoint) {
-    //       color: map-get($configuration, dynamicText-dynamicTextHeadingFiveColorTablet);
-    //       font-family: map-get($configuration, dynamicText-dynamicTextHeadingFiveFontFamilyTablet);
-    //       font-size: map-get($configuration, dynamicText-dynamicTextHeadingFiveSizeTablet);
-    //       font-style: map-get($configuration, dynamicText-dynamicTextHeadingFiveStyleTablet);
-    //       text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingFiveDecorationTablet);
-    //       line-height: map-get($configuration, dynamicText-dynamicTextHeadingFiveHeightTablet);
-    //       font-weight: map-get($configuration, dynamicText-dynamicTextHeadingFiveWeightTablet);
-
-    //       margin-top: map-get($configuration, dynamicText-dynamicTextHeadingFiveMarginTopTablet);
-    //       margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingFiveMarginBottomTablet);
-    //     }
-
-    //     // Styles for desktop
-    //     @include above($desktopBreakpoint) {
-    //       color: map-get($configuration, dynamicText-dynamicTextHeadingFiveColorDesktop);
-    //       font-family: map-get($configuration, dynamicText-dynamicTextHeadingFiveFontFamilyDesktop);
-    //       font-size: map-get($configuration, dynamicText-dynamicTextHeadingFiveSizeDesktop);
-    //       font-style: map-get($configuration, dynamicText-dynamicTextHeadingFiveStyleDesktop);
-    //       text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingFiveDecorationDesktop);
-    //       line-height: map-get($configuration, dynamicText-dynamicTextHeadingFiveHeightDesktop);
-    //       font-weight: map-get($configuration, dynamicText-dynamicTextHeadingFiveWeightDesktop);
-
-    //       margin-top: map-get($configuration, dynamicText-dynamicTextHeadingFiveMarginTopDesktop);
-    //       margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingFiveMarginBottomDesktop);
-    //     }
-    //   }
-
-    //   h6 {
-    //     color: map-get($configuration, dynamicText-dynamicTextHeadingSixColor);
-    //     font-family: map-get($configuration, dynamicText-dynamicTextHeadingSixFontFamily);
-    //     font-size: map-get($configuration, dynamicText-dynamicTextHeadingSixSize);
-    //     font-style: map-get($configuration, dynamicText-dynamicTextHeadingSixStyle);
-    //     text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingSixDecoration);
-    //     line-height: map-get($configuration, dynamicText-dynamicTextHeadingSixHeight);
-    //     font-weight: map-get($configuration, dynamicText-dynamicTextHeadingSixWeight);
-
-    //     margin-top: map-get($configuration, dynamicText-dynamicTextHeadingSixMarginTop);
-    //     margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingSixMarginBottom);
-
-    //     // Styles for tablet
-    //     @include above($tabletBreakpoint) {
-    //       color: map-get($configuration, dynamicText-dynamicTextHeadingSixColorTablet);
-    //       font-family: map-get($configuration, dynamicText-dynamicTextHeadingSixFontFamilyTablet);
-    //       font-size: map-get($configuration, dynamicText-dynamicTextHeadingSixSizeTablet);
-    //       font-style: map-get($configuration, dynamicText-dynamicTextHeadingSixStyleTablet);
-    //       text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingSixDecorationTablet);
-    //       line-height: map-get($configuration, dynamicText-dynamicTextHeadingSixHeightTablet);
-    //       font-weight: map-get($configuration, dynamicText-dynamicTextHeadingSixWeightTablet);
-
-    //       margin-top: map-get($configuration, dynamicText-dynamicTextHeadingSixMarginTopTablet);
-    //       margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingSixMarginBottomTablet);
-    //     }
-
-    //     // Styles for desktop
-    //     @include above($desktopBreakpoint) {
-    //       color: map-get($configuration, dynamicText-dynamicTextHeadingSixColorDesktop);
-    //       font-family: map-get($configuration, dynamicText-dynamicTextHeadingSixFontFamilyDesktop);
-    //       font-size: map-get($configuration, dynamicText-dynamicTextHeadingSixSizeDesktop);
-    //       font-style: map-get($configuration, dynamicText-dynamicTextHeadingSixStyleDesktop);
-    //       text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingSixDecorationDesktop);
-    //       line-height: map-get($configuration, dynamicText-dynamicTextHeadingSixHeightDesktop);
-    //       font-weight: map-get($configuration, dynamicText-dynamicTextHeadingSixWeightDesktop);
-
-    //       margin-top: map-get($configuration, dynamicText-dynamicTextHeadingSixMarginTopDesktop);
-    //       margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingSixMarginBottomDesktop);
-    //     }
-    //   }
-
-    //   // }
+    background-size: map-get($configuration, dynamicText-dynamicTextBackgroundSize);
+    background-repeat: map-get($configuration, dynamicText-dynamicTextBackgroundRepeat);
+    background-position: map-get($configuration, dynamicText-dynamicTextBackgroundPosX) map-get($configuration, dynamicText-dynamicTextBackgroundPosY);
+
+    position: map-get($configuration, dynamicText-dynamicTextPosition) !important;
+    z-index: map-get($configuration, dynamicText-dynamicTextIndex);
+
+    @if map-get($configuration, dynamicText-dynamicTextPosition)=="relative" {
+      @if map-get($configuration, dynamicText-dynamicTextVisibility)=="visible" {
+        display: map-get($configuration, dynamicText-dynamicTextDisplay) !important;
+      }
+
+      @else {
+        display: none !important;
+      }
+    }
+
+    @else {
+      @if map-get($configuration, dynamicText-dynamicTextVisibility)=="visible" {
+        display: block !important;
+      }
+
+      @else {
+        display: none !important;
+      }
+
+      top: map-get($configuration, dynamicText-dynamicTextPositionTop);
+      right: map-get($configuration, dynamicText-dynamicTextPositionRight);
+      bottom: map-get($configuration, dynamicText-dynamicTextPositionBottom);
+      left: map-get($configuration, dynamicText-dynamicTextPositionLeft);
+    }
+
+    width: map-get($configuration, dynamicText-dynamicTextWidth);
+    min-width: map-get($configuration, dynamicText-dynamicTextMinWidth);
+    max-width: map-get($configuration, dynamicText-dynamicTextMaxWidth);
+    height: auto !important;
+    min-height: map-get($configuration, dynamicText-dynamicTextMinHeight);
+    max-height: map-get($configuration, dynamicText-dynamicTextMaxHeight);
+    margin: map-get($configuration, dynamicText-dynamicTextMarginTop) map-get($configuration, dynamicText-dynamicTextMarginRight) map-get($configuration, dynamicText-dynamicTextMarginBottom) map-get($configuration, dynamicText-dynamicTextMarginLeft);
+    padding: map-get($configuration, dynamicText-dynamicTextPaddingTop) map-get($configuration, dynamicText-dynamicTextPaddingRight) map-get($configuration, dynamicText-dynamicTextPaddingBottom) map-get($configuration, dynamicText-dynamicTextPaddingLeft);
+
+    @include borderOnly((borderSides: map-get($configuration, dynamicText-dynamicTextBorderSides),
+        borderWidth: map-get($configuration, dynamicText-dynamicTextBorderWidth),
+        borderStyle: map-get($configuration, dynamicText-dynamicTextBorderStyle),
+        borderColor: map-get($configuration, dynamicText-dynamicTextBorderColor)));
+    border-radius: map-get($configuration, dynamicText-dynamicTextBorderRadius);
+    @include shadowOnly((shadowStyle: map-get($configuration, dynamicText-dynamicTextShadowStyle),
+        shadowXOffset: map-get($configuration, dynamicText-dynamicTextShadowXoffset),
+        shadowYOffset: map-get($configuration, dynamicText-dynamicTextShadowYoffset),
+        shadowBlur: map-get($configuration, dynamicText-dynamicTextShadowBlur),
+        shadowSpread: map-get($configuration, dynamicText-dynamicTextShadowSpread),
+        shadowColor: map-get($configuration, dynamicText-dynamicTextShadowColor)));
+
+    // Styles for tablet
+    @include above($tabletBreakpoint) {
+      @if map-get($configuration, dynamicText-dynamicTextBackgroundTypeTablet)=="Image" {
+        @if map-get($configuration, dynamicText-dynamicTextBackgroundImageTablet)=="none" {
+          background-image: map-get($configuration, dynamicText-dynamicTextBackgroundImageTablet);
+        }
+
+        @else {
+          background-image: url("#{map-get($configuration, dynamicText-dynamicTextBackgroundImageTablet)}");
+        }
+      }
+
+      @else if map-get($configuration, dynamicText-dynamicTextBackgroundTypeTablet)=="Color" {
+        background-image: none;
+        background-color: map-get($configuration, dynamicText-dynamicTextBackgroundColorTablet);
+      }
+
+      @else {
+        background-image: none;
+        background-color: transparent;
+      }
+
+      background-size: map-get($configuration, dynamicText-dynamicTextBackgroundSizeTablet);
+      background-repeat: map-get($configuration, dynamicText-dynamicTextBackgroundRepeatTablet);
+      background-position: map-get($configuration, dynamicText-dynamicTextBackgroundPosXTablet) map-get($configuration, dynamicText-dynamicTextBackgroundPosYTablet);
+
+      position: map-get($configuration, dynamicText-dynamicTextPositionTablet) !important;
+      z-index: map-get($configuration, dynamicText-dynamicTextIndexTablet);
+
+      @if map-get($configuration, dynamicText-dynamicTextPositionTablet)=="relative" {
+        @if map-get($configuration, dynamicText-dynamicTextVisibilityTablet)=="visible" {
+          display: map-get($configuration, dynamicText-dynamicTextDisplayTablet) !important;
+        }
+
+        @else {
+          display: none !important;
+        }
+      }
+
+      @else {
+        @if map-get($configuration, dynamicText-dynamicTextVisibilityTablet)=="visible" {
+          display: block !important;
+        }
+
+        @else {
+          display: none !important;
+        }
+
+        top: map-get($configuration, dynamicText-dynamicTextPositionTopTablet);
+        right: map-get($configuration, dynamicText-dynamicTextPositionRightTablet);
+        bottom: map-get($configuration, dynamicText-dynamicTextPositionBottomTablet);
+        left: map-get($configuration, dynamicText-dynamicTextPositionLeftTablet);
+      }
+
+      width: map-get($configuration, dynamicText-dynamicTextWidthTablet);
+      min-width: map-get($configuration, dynamicText-dynamicTextMinWidthTablet);
+      max-width: map-get($configuration, dynamicText-dynamicTextMaxWidthTablet);
+      height: auto !important;
+      min-height: map-get($configuration, dynamicText-dynamicTextMinHeightTablet);
+      max-height: map-get($configuration, dynamicText-dynamicTextMaxHeightTablet);
+      margin: map-get($configuration, dynamicText-dynamicTextMarginTopTablet) map-get($configuration, dynamicText-dynamicTextMarginRightTablet) map-get($configuration, dynamicText-dynamicTextMarginBottomTablet) map-get($configuration, dynamicText-dynamicTextMarginLeftTablet);
+      padding: map-get($configuration, dynamicText-dynamicTextPaddingTopTablet) map-get($configuration, dynamicText-dynamicTextPaddingRightTablet) map-get($configuration, dynamicText-dynamicTextPaddingBottomTablet) map-get($configuration, dynamicText-dynamicTextPaddingLeftTablet);
+
+      @include borderOnly((borderSides: map-get($configuration, dynamicText-dynamicTextBorderSidesTablet),
+          borderWidth: map-get($configuration, dynamicText-dynamicTextBorderWidthTablet),
+          borderStyle: map-get($configuration, dynamicText-dynamicTextBorderStyleTablet),
+          borderColor: map-get($configuration, dynamicText-dynamicTextBorderColorTablet)));
+      border-radius: map-get($configuration, dynamicText-dynamicTextBorderRadiusTablet);
+      @include shadowOnly((shadowStyle: map-get($configuration, dynamicText-dynamicTextShadowStyleTablet),
+          shadowXOffset: map-get($configuration, dynamicText-dynamicTextShadowXoffsetTablet),
+          shadowYOffset: map-get($configuration, dynamicText-dynamicTextShadowYoffsetTablet),
+          shadowBlur: map-get($configuration, dynamicText-dynamicTextShadowBlurTablet),
+          shadowSpread: map-get($configuration, dynamicText-dynamicTextShadowSpreadTablet),
+          shadowColor: map-get($configuration, dynamicText-dynamicTextShadowColorTablet)));
+    }
+
+    // Styles for desktop
+    @include above($desktopBreakpoint) {
+      @if map-get($configuration, dynamicText-dynamicTextBackgroundTypeDesktop)=="Image" {
+        @if map-get($configuration, dynamicText-dynamicTextBackgroundImageDesktop)=="none" {
+          background-image: map-get($configuration, dynamicText-dynamicTextBackgroundImageDesktop);
+        }
+
+        @else {
+          background-image: url("#{map-get($configuration, dynamicText-dynamicTextBackgroundImageDesktop)}");
+        }
+      }
+
+      @else if map-get($configuration, dynamicText-dynamicTextBackgroundTypeDesktop)=="Color" {
+        background-image: none;
+        background-color: map-get($configuration, dynamicText-dynamicTextBackgroundColorDesktop);
+      }
+
+      @else {
+        background-image: none;
+        background-color: transparent;
+      }
+
+      background-size: map-get($configuration, dynamicText-dynamicTextBackgroundSizeDesktop);
+      background-repeat: map-get($configuration, dynamicText-dynamicTextBackgroundRepeatDesktop);
+      background-position: map-get($configuration, dynamicText-dynamicTextBackgroundPosXDesktop) map-get($configuration, dynamicText-dynamicTextBackgroundPosYDesktop);
+
+      position: map-get($configuration, dynamicText-dynamicTextPositionDesktop) !important;
+      z-index: map-get($configuration, dynamicText-dynamicTextIndexDesktop);
+
+      @if map-get($configuration, dynamicText-dynamicTextPositionDesktop)=="relative" {
+        @if map-get($configuration, dynamicText-dynamicTextVisibilityDesktop)=="visible" {
+          display: map-get($configuration, dynamicText-dynamicTextDisplayDesktop) !important;
+        }
+
+        @else {
+          display: none !important;
+        }
+      }
+
+      @else {
+        @if map-get($configuration, dynamicText-dynamicTextVisibilityDesktop)=="visible" {
+          display: block !important;
+        }
+
+        @else {
+          display: none !important;
+        }
+
+        top: map-get($configuration, dynamicText-dynamicTextPositionTopDesktop);
+        right: map-get($configuration, dynamicText-dynamicTextPositionRightDesktop);
+        bottom: map-get($configuration, dynamicText-dynamicTextPositionBottomDesktop);
+        left: map-get($configuration, dynamicText-dynamicTextPositionLeftDesktop);
+      }
+
+      width: map-get($configuration, dynamicText-dynamicTextWidthDesktop);
+      min-width: map-get($configuration, dynamicText-dynamicTextMinWidthDesktop);
+      max-width: map-get($configuration, dynamicText-dynamicTextMaxWidthDesktop);
+      height: auto !important;
+      min-height: map-get($configuration, dynamicText-dynamicTextMinHeightDesktop);
+      max-height: map-get($configuration, dynamicText-dynamicTextMaxHeightDesktop);
+      margin: map-get($configuration, dynamicText-dynamicTextMarginTopDesktop) map-get($configuration, dynamicText-dynamicTextMarginRightDesktop) map-get($configuration, dynamicText-dynamicTextMarginBottomDesktop) map-get($configuration, dynamicText-dynamicTextMarginLeftDesktop);
+      padding: map-get($configuration, dynamicText-dynamicTextPaddingTopDesktop) map-get($configuration, dynamicText-dynamicTextPaddingRightDesktop) map-get($configuration, dynamicText-dynamicTextPaddingBottomDesktop) map-get($configuration, dynamicText-dynamicTextPaddingLeftDesktop);
+
+      @include borderOnly((borderSides: map-get($configuration, dynamicText-dynamicTextBorderSidesDesktop),
+          borderWidth: map-get($configuration, dynamicText-dynamicTextBorderWidthDesktop),
+          borderStyle: map-get($configuration, dynamicText-dynamicTextBorderStyleDesktop),
+          borderColor: map-get($configuration, dynamicText-dynamicTextBorderColorDesktop)));
+      border-radius: map-get($configuration, dynamicText-dynamicTextBorderRadiusDesktop);
+      @include shadowOnly((shadowStyle: map-get($configuration, dynamicText-dynamicTextShadowStyleDesktop),
+          shadowXOffset: map-get($configuration, dynamicText-dynamicTextShadowXoffsetDesktop),
+          shadowYOffset: map-get($configuration, dynamicText-dynamicTextShadowYoffsetDesktop),
+          shadowBlur: map-get($configuration, dynamicText-dynamicTextShadowBlurDesktop),
+          shadowSpread: map-get($configuration, dynamicText-dynamicTextShadowSpreadDesktop),
+          shadowColor: map-get($configuration, dynamicText-dynamicTextShadowColorDesktop)));
+    }
+
+    // .dynamic-text-container {
+    p {
+      color: map-get($configuration, paragraphTextColor);
+      font-family: map-get($configuration, paragraphFontFamily);
+      font-size: map-get($configuration, paragraphFontSize);
+      font-style: map-get($configuration, paragraphFontStyle);
+      text-decoration: map-get($configuration, paragraphFontDecoration);
+      line-height: map-get($configuration, paragraphLineHeight);
+      font-weight: map-get($configuration, paragraphFontWeight);
+      min-height: 1em;
+
+      margin-top: map-get($configuration, paragraphMarginTop);
+      margin-bottom: map-get($configuration, paragraphMarginBottom);
+
+      // Styles for tablet
+      @include above($tabletBreakpoint) {
+        color: map-get($configuration, paragraphTextColorTablet);
+        font-family: map-get($configuration, paragraphFontFamilyTablet);
+        font-size: map-get($configuration, paragraphFontSizeTablet);
+        font-style: map-get($configuration, paragraphFontStyleTablet);
+        text-decoration: map-get($configuration, paragraphFontDecorationTablet);
+        line-height: map-get($configuration, paragraphLineHeightTablet);
+        font-weight: map-get($configuration, paragraphFontWeightTablet);
+
+        margin-top: map-get($configuration, paragraphMarginTopTablet);
+        margin-bottom: map-get($configuration, paragraphMarginBottomTablet);
+      }
+
+      // Styles for desktop
+      @include above($desktopBreakpoint) {
+        color: map-get($configuration, paragraphTextColorDesktop);
+        font-family: map-get($configuration, paragraphFontFamilyDesktop);
+        font-size: map-get($configuration, paragraphFontSizeDesktop);
+        font-style: map-get($configuration, paragraphFontStyleDesktop);
+        text-decoration: map-get($configuration, paragraphFontDecorationDesktop);
+        line-height: map-get($configuration, paragraphLineHeightDesktop);
+        font-weight: map-get($configuration, paragraphFontWeightDesktop);
+
+        margin-top: map-get($configuration, paragraphMarginTopDesktop);
+        margin-bottom: map-get($configuration, paragraphMarginBottomDesktop);
+      }
+    }
+
+    h1 {
+      color: map-get($configuration, dynamicText-dynamicTextHeadingOneColor);
+      font-family: map-get($configuration, dynamicText-dynamicTextHeadingOneFontFamily);
+      font-size: map-get($configuration, dynamicText-dynamicTextHeadingOneSize);
+      font-style: map-get($configuration, dynamicText-dynamicTextHeadingOneStyle);
+      text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingOneDecoration);
+      line-height: map-get($configuration, dynamicText-dynamicTextHeadingOneHeight);
+      font-weight: map-get($configuration, dynamicText-dynamicTextHeadingOneWeight);
+
+      margin-top: map-get($configuration, dynamicText-dynamicTextHeadingOneMarginTop);
+      margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingOneMarginBottom);
+
+      // Styles for tablet
+      @include above($tabletBreakpoint) {
+        color: map-get($configuration, dynamicText-dynamicTextHeadingOneColorTablet);
+        font-family: map-get($configuration, dynamicText-dynamicTextHeadingOneFontFamilyTablet);
+        font-size: map-get($configuration, dynamicText-dynamicTextHeadingOneSizeTablet);
+        font-style: map-get($configuration, dynamicText-dynamicTextHeadingOneStyleTablet);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingOneDecorationTablet);
+        line-height: map-get($configuration, dynamicText-dynamicTextHeadingOneHeightTablet);
+        font-weight: map-get($configuration, dynamicText-dynamicTextHeadingOneWeightTablet);
+
+        margin-top: map-get($configuration, dynamicText-dynamicTextHeadingOneMarginTopTablet);
+        margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingOneMarginBottomTablet);
+      }
+
+      // Styles for desktop
+      @include above($desktopBreakpoint) {
+        color: map-get($configuration, dynamicText-dynamicTextHeadingOneColorDesktop);
+        font-family: map-get($configuration, dynamicText-dynamicTextHeadingOneFontFamilyDesktop);
+        font-size: map-get($configuration, dynamicText-dynamicTextHeadingOneSizeDesktop);
+        font-style: map-get($configuration, dynamicText-dynamicTextHeadingOneStyleDesktop);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingOneDecorationDesktop);
+        line-height: map-get($configuration, dynamicText-dynamicTextHeadingOneHeightDesktop);
+        font-weight: map-get($configuration, dynamicText-dynamicTextHeadingOneWeightDesktop);
+
+        margin-top: map-get($configuration, dynamicText-dynamicTextHeadingOneMarginTopDesktop);
+        margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingOneMarginBottomDesktop);
+      }
+    }
+
+    h2 {
+      color: map-get($configuration, dynamicText-dynamicTextHeadingTwoColor);
+      font-family: map-get($configuration, dynamicText-dynamicTextHeadingTwoFontFamily);
+      font-size: map-get($configuration, dynamicText-dynamicTextHeadingTwoSize);
+      font-style: map-get($configuration, dynamicText-dynamicTextHeadingTwoStyle);
+      text-decoration: map-get($configuration, textHeadingTwoDecoration);
+      line-height: map-get($configuration, dynamicText-dynamicTextHeadingTwoHeight);
+      font-weight: map-get($configuration, dynamicText-dynamicTextHeadingTwoWeight);
+
+      margin-top: map-get($configuration, dynamicText-dynamicTextHeadingTwoMarginTop);
+      margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingTwoMarginBottom);
+
+      // Styles for tablet
+      @include above($tabletBreakpoint) {
+        color: map-get($configuration, dynamicText-dynamicTextHeadingTwoColorTablet);
+        font-family: map-get($configuration, dynamicText-dynamicTextHeadingTwoFontFamilyTablet);
+        font-size: map-get($configuration, dynamicText-dynamicTextHeadingTwoSizeTablet);
+        font-style: map-get($configuration, dynamicText-dynamicTextHeadingTwoStyleTablet);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingTwoDecorationTablet);
+        line-height: map-get($configuration, dynamicText-dynamicTextHeadingTwoHeightTablet);
+        font-weight: map-get($configuration, dynamicText-dynamicTextHeadingTwoWeightTablet);
+
+        margin-top: map-get($configuration, dynamicText-dynamicTextHeadingTwoMarginTopTablet);
+        margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingTwoMarginBottomTablet);
+      }
+
+      // Styles for desktop
+      @include above($desktopBreakpoint) {
+        color: map-get($configuration, dynamicText-dynamicTextHeadingTwoColorDesktop);
+        font-family: map-get($configuration, dynamicText-dynamicTextHeadingTwoFontFamilyDesktop);
+        font-size: map-get($configuration, dynamicText-dynamicTextHeadingTwoSizeDesktop);
+        font-style: map-get($configuration, dynamicText-dynamicTextHeadingTwoStyleDesktop);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingTwoDecorationDesktop);
+        line-height: map-get($configuration, dynamicText-dynamicTextHeadingTwoHeightDesktop);
+        font-weight: map-get($configuration, dynamicText-dynamicTextHeadingTwoWeightDesktop);
+
+        margin-top: map-get($configuration, dynamicText-dynamicTextHeadingTwoMarginTopDesktop);
+        margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingTwoMarginBottomDesktop);
+      }
+    }
+
+    h3 {
+      color: map-get($configuration, dynamicText-dynamicTextHeadingThreeColor);
+      font-family: map-get($configuration, dynamicText-dynamicTextHeadingThreeFontFamily);
+      font-size: map-get($configuration, dynamicText-dynamicTextHeadingThreeSize);
+      font-style: map-get($configuration, dynamicText-dynamicTextHeadingThreeStyle);
+      text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingThreeDecoration);
+      line-height: map-get($configuration, dynamicText-dynamicTextHeadingThreeHeight);
+      font-weight: map-get($configuration, dynamicText-dynamicTextHeadingThreeWeight);
+
+      margin-top: map-get($configuration, dynamicText-dynamicTextHeadingThreeMarginTop);
+      margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingThreeMarginBottom);
+
+      // Styles for tablet
+      @include above($tabletBreakpoint) {
+        color: map-get($configuration, dynamicText-dynamicTextHeadingThreeColorTablet);
+        font-family: map-get($configuration, dynamicText-dynamicTextHeadingThreeFontFamilyTablet);
+        font-size: map-get($configuration, dynamicText-dynamicTextHeadingThreeSizeTablet);
+        font-style: map-get($configuration, dynamicText-dynamicTextHeadingThreeStyleTablet);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingThreeDecorationTablet);
+        line-height: map-get($configuration, dynamicText-dynamicTextHeadingThreeHeightTablet);
+        font-weight: map-get($configuration, dynamicText-dynamicTextHeadingThreeWeightTablet);
+
+        margin-top: map-get($configuration, dynamicText-dynamicTextHeadingThreeMarginTopTablet);
+        margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingThreeMarginBottomTablet);
+      }
+
+      // Styles for desktop
+      @include above($desktopBreakpoint) {
+        color: map-get($configuration, dynamicText-dynamicTextHeadingThreeColorDesktop);
+        font-family: map-get($configuration, dynamicText-dynamicTextHeadingThreeFontFamilyDesktop);
+        font-size: map-get($configuration, dynamicText-dynamicTextHeadingThreeSizeDesktop);
+        font-style: map-get($configuration, dynamicText-dynamicTextHeadingThreeStyleDesktop);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingThreeDecorationDesktop);
+        line-height: map-get($configuration, dynamicText-dynamicTextHeadingThreeHeightDesktop);
+        font-weight: map-get($configuration, dynamicText-dynamicTextHeadingThreeWeightDesktop);
+
+        margin-top: map-get($configuration, dynamicText-dynamicTextHeadingThreeMarginTopDesktop);
+        margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingThreeMarginBottomDesktop);
+      }
+    }
+
+    h4 {
+      color: map-get($configuration, dynamicText-dynamicTextHeadingFourColor);
+      font-family: map-get($configuration, dynamicText-dynamicTextHeadingFourFontFamily);
+      font-size: map-get($configuration, dynamicText-dynamicTextHeadingFourSize);
+      font-style: map-get($configuration, dynamicText-dynamicTextHeadingFourStyle);
+      text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingFourDecoration);
+      line-height: map-get($configuration, dynamicText-dynamicTextHeadingFourHeight);
+      font-weight: map-get($configuration, dynamicText-dynamicTextHeadingFourWeight);
+
+      margin-top: map-get($configuration, dynamicText-dynamicTextHeadingFourMarginTop);
+      margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingFourMarginBottom);
+
+      // Styles for tablet
+      @include above($tabletBreakpoint) {
+        color: map-get($configuration, dynamicText-dynamicTextHeadingFourColorTablet);
+        font-family: map-get($configuration, dynamicText-dynamicTextHeadingFourFontFamilyTablet);
+        font-size: map-get($configuration, dynamicText-dynamicTextHeadingFourSizeTablet);
+        font-style: map-get($configuration, dynamicText-dynamicTextHeadingFourStyleTablet);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingFourDecorationTablet);
+        line-height: map-get($configuration, dynamicText-dynamicTextHeadingFourHeightTablet);
+        font-weight: map-get($configuration, dynamicText-dynamicTextHeadingFourWeightTablet);
+
+        margin-top: map-get($configuration, dynamicText-dynamicTextHeadingFourMarginTopTablet);
+        margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingFourMarginBottomTablet);
+      }
+
+      // Styles for desktop
+      @include above($desktopBreakpoint) {
+        color: map-get($configuration, dynamicText-dynamicTextHeadingFourColorDesktop);
+        font-family: map-get($configuration, dynamicText-dynamicTextHeadingFourFontFamilyDesktop);
+        font-size: map-get($configuration, dynamicText-dynamicTextHeadingFourSizeDesktop);
+        font-style: map-get($configuration, dynamicText-dynamicTextHeadingFourStyleDesktop);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingFourDecorationDesktop);
+        line-height: map-get($configuration, dynamicText-dynamicTextHeadingFourHeightDesktop);
+        font-weight: map-get($configuration, dynamicText-dynamicTextHeadingFourWeightDesktop);
+
+        margin-top: map-get($configuration, dynamicText-dynamicTextHeadingFourMarginTopDesktop);
+        margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingFourMarginBottomDesktop);
+      }
+    }
+
+    h5 {
+      color: map-get($configuration, dynamicText-dynamicTextHeadingFiveColor);
+      font-family: map-get($configuration, dynamicText-dynamicTextHeadingFiveFontFamily);
+      font-size: map-get($configuration, dynamicText-dynamicTextHeadingFiveSize);
+      font-style: map-get($configuration, dynamicText-dynamicTextHeadingFiveStyle);
+      text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingFiveDecoration);
+      line-height: map-get($configuration, dynamicText-dynamicTextHeadingFiveHeight);
+      font-weight: map-get($configuration, dynamicText-dynamicTextHeadingFiveWeight);
+
+      margin-top: map-get($configuration, dynamicText-dynamicTextHeadingFiveMarginTop);
+      margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingFiveMarginBottom);
+
+      // Styles for tablet
+      @include above($tabletBreakpoint) {
+        color: map-get($configuration, dynamicText-dynamicTextHeadingFiveColorTablet);
+        font-family: map-get($configuration, dynamicText-dynamicTextHeadingFiveFontFamilyTablet);
+        font-size: map-get($configuration, dynamicText-dynamicTextHeadingFiveSizeTablet);
+        font-style: map-get($configuration, dynamicText-dynamicTextHeadingFiveStyleTablet);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingFiveDecorationTablet);
+        line-height: map-get($configuration, dynamicText-dynamicTextHeadingFiveHeightTablet);
+        font-weight: map-get($configuration, dynamicText-dynamicTextHeadingFiveWeightTablet);
+
+        margin-top: map-get($configuration, dynamicText-dynamicTextHeadingFiveMarginTopTablet);
+        margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingFiveMarginBottomTablet);
+      }
+
+      // Styles for desktop
+      @include above($desktopBreakpoint) {
+        color: map-get($configuration, dynamicText-dynamicTextHeadingFiveColorDesktop);
+        font-family: map-get($configuration, dynamicText-dynamicTextHeadingFiveFontFamilyDesktop);
+        font-size: map-get($configuration, dynamicText-dynamicTextHeadingFiveSizeDesktop);
+        font-style: map-get($configuration, dynamicText-dynamicTextHeadingFiveStyleDesktop);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingFiveDecorationDesktop);
+        line-height: map-get($configuration, dynamicText-dynamicTextHeadingFiveHeightDesktop);
+        font-weight: map-get($configuration, dynamicText-dynamicTextHeadingFiveWeightDesktop);
+
+        margin-top: map-get($configuration, dynamicText-dynamicTextHeadingFiveMarginTopDesktop);
+        margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingFiveMarginBottomDesktop);
+      }
+    }
+
+    h6 {
+      color: map-get($configuration, dynamicText-dynamicTextHeadingSixColor);
+      font-family: map-get($configuration, dynamicText-dynamicTextHeadingSixFontFamily);
+      font-size: map-get($configuration, dynamicText-dynamicTextHeadingSixSize);
+      font-style: map-get($configuration, dynamicText-dynamicTextHeadingSixStyle);
+      text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingSixDecoration);
+      line-height: map-get($configuration, dynamicText-dynamicTextHeadingSixHeight);
+      font-weight: map-get($configuration, dynamicText-dynamicTextHeadingSixWeight);
+
+      margin-top: map-get($configuration, dynamicText-dynamicTextHeadingSixMarginTop);
+      margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingSixMarginBottom);
+
+      // Styles for tablet
+      @include above($tabletBreakpoint) {
+        color: map-get($configuration, dynamicText-dynamicTextHeadingSixColorTablet);
+        font-family: map-get($configuration, dynamicText-dynamicTextHeadingSixFontFamilyTablet);
+        font-size: map-get($configuration, dynamicText-dynamicTextHeadingSixSizeTablet);
+        font-style: map-get($configuration, dynamicText-dynamicTextHeadingSixStyleTablet);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingSixDecorationTablet);
+        line-height: map-get($configuration, dynamicText-dynamicTextHeadingSixHeightTablet);
+        font-weight: map-get($configuration, dynamicText-dynamicTextHeadingSixWeightTablet);
+
+        margin-top: map-get($configuration, dynamicText-dynamicTextHeadingSixMarginTopTablet);
+        margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingSixMarginBottomTablet);
+      }
+
+      // Styles for desktop
+      @include above($desktopBreakpoint) {
+        color: map-get($configuration, dynamicText-dynamicTextHeadingSixColorDesktop);
+        font-family: map-get($configuration, dynamicText-dynamicTextHeadingSixFontFamilyDesktop);
+        font-size: map-get($configuration, dynamicText-dynamicTextHeadingSixSizeDesktop);
+        font-style: map-get($configuration, dynamicText-dynamicTextHeadingSixStyleDesktop);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextHeadingSixDecorationDesktop);
+        line-height: map-get($configuration, dynamicText-dynamicTextHeadingSixHeightDesktop);
+        font-weight: map-get($configuration, dynamicText-dynamicTextHeadingSixWeightDesktop);
+
+        margin-top: map-get($configuration, dynamicText-dynamicTextHeadingSixMarginTopDesktop);
+        margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingSixMarginBottomDesktop);
+      }
+    }
+
+    // }
   }
 }
 
