@@ -858,6 +858,13 @@ $variablePrefix: "dynamicText";
       }
     }
   }
+
+  
+  .dynamic-text-container { 
+     h1 {
+      color: red!important;
+     }
+  }
 }
 
 /* Export common styles */
