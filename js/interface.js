@@ -1,5 +1,6 @@
 Fliplet.Widget.generateInterface({
-  title: 'Dynamic Text'
+  title: 'Dynamic Text',
+  fields: []
 });
 
 // function hideAllFields() {
