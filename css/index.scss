@@ -331,29 +331,18 @@ $variablePrefix: "dynamicText";
   }
 
   #{$instanceSelector} {
-    $instanceSelector: '[data-widget-package="com.fliplet.dynamic-text"]';
 
-    @if $widgetInstanceUUID !="" {
-      $instanceSelector: '#{$instanceSelector}[data-uuid="#{$widgetInstanceUUID}"]';
+    .dynamic-text-container h1 {
+      color: red !important;
     }
 
-    @else if $widgetInstanceId !="" {
-      $instanceSelector: '#{$instanceSelector}[data-id="#{$widgetInstanceId}"]';
+    .dynamic-text-container h2 {
+      color: blue !important;
     }
 
-    #{$instanceSelector} {
-      
-.dynamic-text-container h1 {
-  color: red !important;
-}
-
-.dynamic-text-container h2 {
-  color: blue !important;
-}
-
-.dynamic-text-container h3 {
-  color: green !important;
-}
+    .dynamic-text-container h3 {
+      color: green !important;
+    }
 
     //   @if map-get($configuration, textBackgroundType)=="Image" {
     //     @if map-get($configuration, dynamicText-dynamicTextBackgroundImage)=="none" {
@@ -870,7 +859,6 @@ $variablePrefix: "dynamicText";
     //   }
 
     //   // }
-    }
   }
 }
 
