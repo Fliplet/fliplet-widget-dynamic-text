@@ -33,8 +33,8 @@ Fliplet.Widget.instance({
           phoneALtText: '',
           mailALtText: '',
           noDecimalRound: '',
-          symbol: '',
-          symbolPlacement: 'before units',
+          symbolBefore: '',
+          symbolAfter: '',
           dataVisualization: '',
           dateFormat: '',
           timeFormat: '',
@@ -48,7 +48,7 @@ Fliplet.Widget.instance({
 
       const FIELDS = DYNAMIC_TEXT.fields;
       const COLUMN = FIELDS.column;
-      const VALUE = ENTRY.data[COLUMN];
+      let VALUE = ENTRY.data[COLUMN];
       const DATA_FORMAT = FIELDS.dataFormat;
       const ARRAY_INTERACT_VALUES = ['array item 1', 'array item 2', 'array item 3'];
 
@@ -184,8 +184,12 @@ Fliplet.Widget.instance({
       function renderArray() {
         let formattedData;
 
-        if (!MODE_INTERACT && !Array.isArray(VALUE)) {
-          return; // not an array do not render anything
+        if (!VALUE) {
+          VALUE = [];
+        }
+
+        if (!MODE_INTERACT && !Array.isArray(VALUE)) { // comma separated string
+          VALUE = VALUE.split(',').map(item => item.trim());
         }
 
         switch (FIELDS.dataVisualization) {
@@ -227,15 +231,9 @@ Fliplet.Widget.instance({
           toReturnValue = Number(MODE_INTERACT ? 555 : VALUE).toFixed(FIELDS.noDecimalRound);
         }
 
-        if (FIELDS.symbolPlacement === 'before units') {
-          $HELPER
-            .find('.dynamic-text-container')
-            .html(`${FIELDS.symbol}${toReturnValue}`);
-        } else {
-          $HELPER
-            .find('.dynamic-text-container')
-            .html(`${toReturnValue}${FIELDS.symbol}`);
-        }
+        $HELPER
+          .find('.dynamic-text-container')
+          .html(`${FIELDS.symbolBefore}${toReturnValue}${FIELDS.symbolAfter}`);
       }
 
       // Function to convert UTC date to local time

@@ -73,14 +73,6 @@ Fliplet.Widget.findParents({
       attributes: ['name', 'columns']
     }
   ).then((dataSource) => {
-    // const DATA_SOURCE_COLUMNS_OPTIONS = [];
-    // const DATA_FORMATS_OPTIONS = [];
-    // const NO_DECIMAL_ROUND_OPTIONS = [];
-    // const SYMBOL_PLACEMENT_OPTIONS = [];
-    // const DATA_VISUALIZATION_OPTIONS = [];
-    // const DATE_FORMAT_OPTIONS = [];
-    // const TIME_FORMAT_OPTIONS = [];
-
     const DATA_SOURCE_COLUMNS_OPTIONS = dataSource.columns.map((el) => {
       return {
         value: el,
@@ -116,7 +108,7 @@ Fliplet.Widget.findParents({
       // TODO objects missing
       {
         value: 'array',
-        label: 'Array'
+        label: 'Multiple values'
       },
       {
         value: 'date',
@@ -220,7 +212,7 @@ Fliplet.Widget.findParents({
           </br>
           <span class="data-source-id">${dynamicContainer.dataSourceId}</span> 
           ${dataSource.name}</p>
-                <p style="font-size: 10px; font-weight: 400; color: #E7961E;">To change this Data Source, go to parent data container</p>
+                <p style="font-size: 10px; font-weight: 400; color: #8E8E8E;">To change this Data Source, go to parent data container</p>
                 <hr/>`
         },
         {
@@ -252,19 +244,22 @@ Fliplet.Widget.findParents({
         {
           name: 'urlALtText',
           type: 'text',
-          label: 'Alternative text for link',
+          label: 'Link label',
+          description: 'When configured, clicking on this link will open the URL',
           placeholder: 'Specify text here e.g. “Tap to open”'
         },
         {
           name: 'phoneALtText',
           type: 'text',
-          label: 'Alternative text for phone number',
+          label: 'Label for phone number',
+          description: 'When configured, clicking on this link will initiate a call to the specified number.',
           placeholder: 'Specify text here e.g. “Tap to call”'
         },
         {
           name: 'mailALtText',
           type: 'text',
-          label: 'Alternative text for email',
+          label: 'Label for email',
+          description: 'When configured,  clicking on this link will compose a new email to the specified address',
           placeholder: 'Specify text here e.g. “Tap to send an email”'
         },
         {
@@ -275,35 +270,39 @@ Fliplet.Widget.findParents({
           default: 0
         },
         {
-          name: 'symbol',
+          name: 'symbolBefore',
           type: 'text',
-          label: 'Specify a symbol for units',
+          label: 'Specify a symbol before number',
           placeholder: '%, $, km',
           description: 'Leave empty if no symbol required'
         },
         {
-          type: 'radio',
-          name: 'symbolPlacement',
-          label: 'Show symbol',
-          options: SYMBOL_PLACEMENT_OPTIONS,
-          default: 'before units'
+          name: 'symbolAfter',
+          type: 'text',
+          label: 'Specify a symbol after number',
+          placeholder: '%, $, km',
+          description: 'Leave empty if no symbol required'
         },
         {
           type: 'dropdown',
           name: 'dataVisualization',
           label: 'Select data visualization',
+          description: 'Data should be formatted as an array: [“value”, “value”] or a coma-separated list:  value,value',
           options: DATA_VISUALIZATION_OPTIONS
         },
         {
           type: 'dropdown',
           name: 'dateFormat',
           label: 'Select dataview type',
+          description: 'Note, date will be displayed in user\'s local device format',
           options: DATE_FORMAT_OPTIONS
         },
         {
+          // TODO Convert to another timezone
           type: 'dropdown',
           name: 'timeFormat',
           label: 'Select dataview type',
+          description: 'Note, date will be displayed in user\'s local device format',
           options: TIME_FORMAT_OPTIONS
         },
         {
@@ -317,6 +316,7 @@ Fliplet.Widget.findParents({
           type: 'dropdown',
           name: 'timeDateFormat',
           label: 'Select dataview type',
+          description: 'Note, date & time will be displayed in user’s local device format',
           options: TIME_DATE_FORMAT_OPTIONS
         },
         {
@@ -329,7 +329,9 @@ Fliplet.Widget.findParents({
         {
           name: 'customRegex',
           type: 'text',
-          label: 'Provide regex'
+          label: 'Provide regex',
+          placeholder: '/[A-Z]/g',
+          description: 'We use the RegExp in javaScript. An example to find an uppercase string is /[A-Z]/g. See guide <a href="https://builtin.com/software-engineering-perspectives/javascript-regex" target="_blank">here<a/>'
         }
       ]
     });
