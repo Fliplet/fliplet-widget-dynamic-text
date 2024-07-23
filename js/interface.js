@@ -3,7 +3,8 @@ function hideAllFields() {
   Fliplet.Helper.field('phoneALtText').toggle(false);
   Fliplet.Helper.field('mailALtText').toggle(false);
   Fliplet.Helper.field('noDecimalRound').toggle(false);
-  Fliplet.Helper.field('symbol').toggle(false);
+  Fliplet.Helper.field('symbolBefore').toggle(false);
+  Fliplet.Helper.field('symbolAfter').toggle(false);
   Fliplet.Helper.field('symbolPlacement').toggle(false);
   Fliplet.Helper.field('dataVisualization').toggle(false);
   Fliplet.Helper.field('dateFormat').toggle(false);
@@ -105,7 +106,6 @@ Fliplet.Widget.findParents({
         value: 'numberCurrency',
         label: 'Number / Currency'
       },
-      // TODO objects missing
       {
         value: 'array',
         label: 'Multiple values'
