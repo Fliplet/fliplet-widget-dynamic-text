@@ -48,15 +48,15 @@ $variablePrefix: "dynamicText";
         dynamicText-dynamicTextShadowBlur: $dynamicText-dynamicTextShadowBlur,
         dynamicText-dynamicTextShadowSpread: $dynamicText-dynamicTextShadowSpread,
         dynamicText-dynamicTextShadowColor: $dynamicText-dynamicTextShadowColor,
-        paragraphFontFamily: $dynamicText-paragraphFontFamily,
-        paragraphFontSize: $dynamicText-paragraphFontSize,
-        paragraphTextColor: $dynamicText-paragraphTextColor,
-        paragraphFontWeight: $dynamicText-paragraphFontWeight,
-        paragraphFontStyle: $dynamicText-paragraphFontStyle,
-        paragraphFontDecoration: $dynamicText-paragraphFontDecoration,
-        paragraphLineHeight: $dynamicText-paragraphLineHeight,
-        paragraphMarginTop: $dynamicText-paragraphMarginTop,
-        paragraphMarginBottom: $dynamicText-paragraphMarginBottom,
+        dynamicText-paragraphFontFamily: $dynamicText-paragraphFontFamily,
+        dynamicText-paragraphFontSize: $dynamicText-paragraphFontSize,
+        dynamicText-paragraphTextColor: $dynamicText-paragraphTextColor,
+        dynamicText-paragraphFontWeight: $dynamicText-paragraphFontWeight,
+        dynamicText-paragraphFontStyle: $dynamicText-paragraphFontStyle,
+        dynamicText-paragraphFontDecoration: $dynamicText-paragraphFontDecoration,
+        dynamicText-paragraphLineHeight: $dynamicText-paragraphLineHeight,
+        dynamicText-paragraphMarginTop: $dynamicText-paragraphMarginTop,
+        dynamicText-paragraphMarginBottom: $dynamicText-paragraphMarginBottom,
         dynamicText-dynamicTextVisibility: $dynamicText-dynamicTextVisibility,
         dynamicText-dynamicTextBackgroundImageTablet: $dynamicText-dynamicTextBackgroundImageTablet,
         dynamicText-dynamicTextBackgroundColorTablet: $dynamicText-dynamicTextBackgroundColorTablet,
@@ -97,15 +97,15 @@ $variablePrefix: "dynamicText";
         dynamicText-dynamicTextShadowBlurTablet: $dynamicText-dynamicTextShadowBlurTablet,
         dynamicText-dynamicTextShadowSpreadTablet: $dynamicText-dynamicTextShadowSpreadTablet,
         dynamicText-dynamicTextShadowColorTablet: $dynamicText-dynamicTextShadowColorTablet,
-        paragraphFontFamilyTablet: $paragraphFontFamilyTablet,
-        paragraphFontSizeTablet: $paragraphFontSizeTablet,
-        paragraphTextColorTablet: $paragraphTextColorTablet,
-        paragraphFontWeightTablet: $paragraphFontWeightTablet,
-        paragraphFontStyleTablet: $paragraphFontStyleTablet,
-        paragraphFontDecorationTablet: $paragraphFontDecorationTablet,
-        paragraphLineHeightTablet: $paragraphLineHeightTablet,
-        paragraphMarginTopTablet: $paragraphMarginTopTablet,
-        paragraphMarginBottomTablet: $paragraphMarginBottomTablet,
+        dynamicText-paragraphFontFamilyTablet: $dynamicText-paragraphFontFamilyTablet,
+        dynamicText-paragraphFontSizeTablet: $dynamicText-paragraphFontSizeTablet,
+        dynamicText-paragraphTextColorTablet: $dynamicText-paragraphTextColorTablet,
+        dynamicText-paragraphFontWeightTablet: $dynamicText-paragraphFontWeightTablet,
+        dynamicText-paragraphFontStyleTablet: $dynamicText-paragraphFontStyleTablet,
+        dynamicText-paragraphFontDecorationTablet: $dynamicText-paragraphFontDecorationTablet,
+        dynamicText-paragraphLineHeightTablet: $dynamicText-paragraphLineHeightTablet,
+        dynamicText-paragraphMarginTopTablet: $dynamicText-paragraphMarginTopTablet,
+        dynamicText-paragraphMarginBottomTablet: $dynamicText-paragraphMarginBottomTablet,
         dynamicText-dynamicTextVisibilityTablet: $dynamicText-dynamicTextVisibilityTablet,
         dynamicText-dynamicTextBackgroundImageDesktop: $dynamicText-dynamicTextBackgroundImageDesktop,
         dynamicText-dynamicTextBackgroundColorDesktop: $dynamicText-dynamicTextBackgroundColorDesktop,
@@ -146,15 +146,15 @@ $variablePrefix: "dynamicText";
         dynamicText-dynamicTextShadowBlurDesktop: $dynamicText-dynamicTextShadowBlurDesktop,
         dynamicText-dynamicTextShadowSpreadDesktop: $dynamicText-dynamicTextShadowSpreadDesktop,
         dynamicText-dynamicTextShadowColorDesktop: $dynamicText-dynamicTextShadowColorDesktop,
-        paragraphFontFamilyDesktop: $paragraphFontFamilyDesktop,
-        paragraphFontSizeDesktop: $paragraphFontSizeDesktop,
-        paragraphTextColorDesktop: $paragraphTextColorDesktop,
-        paragraphFontWeightDesktop: $paragraphFontWeightDesktop,
-        paragraphFontStyleDesktop: $paragraphFontStyleDesktop,
-        paragraphFontDecorationDesktop: $paragraphFontDecorationDesktop,
-        paragraphLineHeightDesktop: $paragraphLineHeightDesktop,
-        paragraphMarginTopDesktop: $paragraphMarginTopDesktop,
-        paragraphMarginBottomDesktop: $paragraphMarginBottomDesktop,
+        dynamicText-paragraphFontFamilyDesktop: $dynamicText-paragraphFontFamilyDesktop,
+        dynamicText-paragraphFontSizeDesktop: $dynamicText-paragraphFontSizeDesktop,
+        dynamicText-paragraphTextColorDesktop: $dynamicText-paragraphTextColorDesktop,
+        dynamicText-paragraphFontWeightDesktop: $dynamicText-paragraphFontWeightDesktop,
+        dynamicText-paragraphFontStyleDesktop: $dynamicText-paragraphFontStyleDesktop,
+        dynamicText-paragraphFontDecorationDesktop: $dynamicText-paragraphFontDecorationDesktop,
+        dynamicText-paragraphLineHeightDesktop: $dynamicText-paragraphLineHeightDesktop,
+        dynamicText-paragraphMarginTopDesktop: $dynamicText-paragraphMarginTopDesktop,
+        dynamicText-paragraphMarginBottomDesktop: $dynamicText-paragraphMarginBottomDesktop,
         dynamicText-dynamicTextVisibilityDesktop: $dynamicText-dynamicTextVisibilityDesktop,
         dynamicText-dynamicTextHeadingOneColor: $dynamicText-dynamicTextHeadingOneColor,
         dynamicText-dynamicTextHeadingOneFontFamily: $dynamicText-dynamicTextHeadingOneFontFamily,
@@ -558,44 +558,44 @@ $variablePrefix: "dynamicText";
 
     // .dynamic-text-container {
     p {
-      color: map-get($configuration, paragraphTextColor);
-      font-family: map-get($configuration, paragraphFontFamily);
-      font-size: map-get($configuration, paragraphFontSize);
-      font-style: map-get($configuration, paragraphFontStyle);
-      text-decoration: map-get($configuration, paragraphFontDecoration);
-      line-height: map-get($configuration, paragraphLineHeight);
-      font-weight: map-get($configuration, paragraphFontWeight);
+      color: map-get($configuration, dynamicText-paragraphTextColor);
+      font-family: map-get($configuration, dynamicText-paragraphFontFamily);
+      font-size: map-get($configuration, dynamicText-paragraphFontSize);
+      font-style: map-get($configuration, dynamicText-paragraphFontStyle);
+      text-decoration: map-get($configuration, dynamicText-paragraphFontDecoration);
+      line-height: map-get($configuration, dynamicText-paragraphLineHeight);
+      font-weight: map-get($configuration, dynamicText-paragraphFontWeight);
       min-height: 1em;
 
-      margin-top: map-get($configuration, paragraphMarginTop);
-      margin-bottom: map-get($configuration, paragraphMarginBottom);
+      margin-top: map-get($configuration, dynamicText-paragraphMarginTop);
+      margin-bottom: map-get($configuration, dynamicText-paragraphMarginBottom);
 
       // Styles for tablet
       @include above($tabletBreakpoint) {
-        color: map-get($configuration, paragraphTextColorTablet);
-        font-family: map-get($configuration, paragraphFontFamilyTablet);
-        font-size: map-get($configuration, paragraphFontSizeTablet);
-        font-style: map-get($configuration, paragraphFontStyleTablet);
-        text-decoration: map-get($configuration, paragraphFontDecorationTablet);
-        line-height: map-get($configuration, paragraphLineHeightTablet);
-        font-weight: map-get($configuration, paragraphFontWeightTablet);
+        color: map-get($configuration, dynamicText-paragraphTextColorTablet);
+        font-family: map-get($configuration, dynamicText-paragraphFontFamilyTablet);
+        font-size: map-get($configuration, dynamicText-paragraphFontSizeTablet);
+        font-style: map-get($configuration, dynamicText-paragraphFontStyleTablet);
+        text-decoration: map-get($configuration, dynamicText-paragraphFontDecorationTablet);
+        line-height: map-get($configuration, dynamicText-paragraphLineHeightTablet);
+        font-weight: map-get($configuration, dynamicText-paragraphFontWeightTablet);
 
-        margin-top: map-get($configuration, paragraphMarginTopTablet);
-        margin-bottom: map-get($configuration, paragraphMarginBottomTablet);
+        margin-top: map-get($configuration, dynamicText-paragraphMarginTopTablet);
+        margin-bottom: map-get($configuration, dynamicText-paragraphMarginBottomTablet);
       }
 
       // Styles for desktop
       @include above($desktopBreakpoint) {
-        color: map-get($configuration, paragraphTextColorDesktop);
-        font-family: map-get($configuration, paragraphFontFamilyDesktop);
-        font-size: map-get($configuration, paragraphFontSizeDesktop);
-        font-style: map-get($configuration, paragraphFontStyleDesktop);
-        text-decoration: map-get($configuration, paragraphFontDecorationDesktop);
-        line-height: map-get($configuration, paragraphLineHeightDesktop);
-        font-weight: map-get($configuration, paragraphFontWeightDesktop);
+        color: map-get($configuration, dynamicText-paragraphTextColorDesktop);
+        font-family: map-get($configuration, dynamicText-paragraphFontFamilyDesktop);
+        font-size: map-get($configuration, dynamicText-paragraphFontSizeDesktop);
+        font-style: map-get($configuration, dynamicText-paragraphFontStyleDesktop);
+        text-decoration: map-get($configuration, dynamicText-paragraphFontDecorationDesktop);
+        line-height: map-get($configuration, dynamicText-paragraphLineHeightDesktop);
+        font-weight: map-get($configuration, dynamicText-paragraphFontWeightDesktop);
 
-        margin-top: map-get($configuration, paragraphMarginTopDesktop);
-        margin-bottom: map-get($configuration, paragraphMarginBottomDesktop);
+        margin-top: map-get($configuration, dynamicText-paragraphMarginTopDesktop);
+        margin-bottom: map-get($configuration, dynamicText-paragraphMarginBottomDesktop);
       }
     }
 
