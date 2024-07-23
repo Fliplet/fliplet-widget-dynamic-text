@@ -216,7 +216,10 @@ Fliplet.Widget.findParents({
       fields: [
         {
           type: 'html',
-          html: `<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;">Get data from: ${dataSource.name}(ID: <span class="data-source-id">${dynamicContainer.dataSourceId}</span>)</p>
+          html: `<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;"><strong>Get data from: </strong>
+          </br>
+          <span class="data-source-id">${dynamicContainer.dataSourceId}</span> 
+          ${dataSource.name}</p>
                 <p style="font-size: 10px; font-weight: 400; color: #E7961E;">To change this Data Source, go to parent data container</p>
                 <hr/>`
         },
