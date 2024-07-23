@@ -245,7 +245,7 @@
           "description": "Width and Height",
           "fields": [
             {
-              "name": "textWidth",
+              "name": "Width",
               "default": "100%",
               "styles": [
                 {
