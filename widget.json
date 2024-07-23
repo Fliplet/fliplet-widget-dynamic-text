@@ -9,7 +9,7 @@
   "settings": {
     "asyncRendering": true,
     "interfaceWidgetPackage": "com.fliplet.helper-configuration",
-    "hideThemeSettings": true
+    "hideThemeSettings": false
   },
   "html_tag": "div",
   "interface": {
