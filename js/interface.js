@@ -73,135 +73,145 @@ Fliplet.Widget.findParents({
       attributes: ['name', 'columns']
     }
   ).then((dataSource) => {
-    const DATA_SOURCE_COLUMNS_OPTIONS = dataSource.columns.map((el) => {
-      return {
-        value: el,
-        label: el
-      };
-    });
+    const DATA_SOURCE_COLUMNS_OPTIONS = [];
+    const DATA_FORMATS_OPTIONS = [];
+    const NO_DECIMAL_ROUND_OPTIONS = [];
+    const SYMBOL_PLACEMENT_OPTIONS = [];
+    const DATA_VISUALIZATION_OPTIONS = [];
+    const DATE_FORMAT_OPTIONS = [];
+    const TIME_FORMAT_OPTIONS = [];
+    const TIME_DATE_FORMAT_OPTIONS = [];
+    const TIMEZONE_OPTIONS = [];
 
-    const DATA_FORMATS_OPTIONS = [
-      {
-        value: 'text',
-        label: 'Plain text'
-      },
-      {
-        value: 'html',
-        label: 'HTML'
-      },
-      {
-        value: 'url',
-        label: 'URL'
-      },
-      {
-        value: 'telephone',
-        label: 'Telephone'
-      },
-      {
-        value: 'email',
-        label: 'Email'
-      },
-      {
-        value: 'numberCurrency',
-        label: 'Number / Currency'
-      },
-      // TODO objects missing
-      {
-        value: 'array',
-        label: 'Array'
-      },
-      {
-        value: 'date',
-        label: 'Date'
-      },
-      {
-        value: 'time',
-        label: 'Time'
-      },
-      {
-        value: 'dateTime',
-        label: 'Date & Time'
-      },
-      {
-        value: 'custom',
-        label: 'Custom (format with regex)'
-      }
-    ];
+    // const DATA_SOURCE_COLUMNS_OPTIONS = dataSource.columns.map((el) => {
+    //   return {
+    //     value: el,
+    //     label: el
+    //   };
+    // });
 
-    const NO_DECIMAL_ROUND_OPTIONS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(
-      function(i) {
-        return {
-          value: i,
-          label: i
-        };
-      }
-    );
+    // const DATA_FORMATS_OPTIONS = [
+    //   {
+    //     value: 'text',
+    //     label: 'Plain text'
+    //   },
+    //   {
+    //     value: 'html',
+    //     label: 'HTML'
+    //   },
+    //   {
+    //     value: 'url',
+    //     label: 'URL'
+    //   },
+    //   {
+    //     value: 'telephone',
+    //     label: 'Telephone'
+    //   },
+    //   {
+    //     value: 'email',
+    //     label: 'Email'
+    //   },
+    //   {
+    //     value: 'numberCurrency',
+    //     label: 'Number / Currency'
+    //   },
+    //   // TODO objects missing
+    //   {
+    //     value: 'array',
+    //     label: 'Array'
+    //   },
+    //   {
+    //     value: 'date',
+    //     label: 'Date'
+    //   },
+    //   {
+    //     value: 'time',
+    //     label: 'Time'
+    //   },
+    //   {
+    //     value: 'dateTime',
+    //     label: 'Date & Time'
+    //   },
+    //   {
+    //     value: 'custom',
+    //     label: 'Custom (format with regex)'
+    //   }
+    // ];
 
-    const SYMBOL_PLACEMENT_OPTIONS = ['before units', 'after units'].map(
-      function(i) {
-        return {
-          value: i,
-          label: i
-        };
-      }
-    );
+    // const NO_DECIMAL_ROUND_OPTIONS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(
+    //   function(i) {
+    //     return {
+    //       value: i,
+    //       label: i
+    //     };
+    //   }
+    // );
 
-    const DATA_VISUALIZATION_OPTIONS = [
-      'Comma-separated list',
-      'Semicolon-Separated List',
-      'Bullet Point List',
-      'Numbered List',
-      'Alphabetic List'
-    ].map(function(i) {
-      return {
-        label: i,
-        value: i
-      };
-    });
+    // const SYMBOL_PLACEMENT_OPTIONS = ['before units', 'after units'].map(
+    //   function(i) {
+    //     return {
+    //       value: i,
+    //       label: i
+    //     };
+    //   }
+    // );
 
-    const DATE_FORMAT_OPTIONS = [
-      { label: 'MM-DD-YYYY', value: 'MM-DD-YYYY' },
-      { label: 'DD-MM-YYYY', value: 'DD-MM-YYYY' },
-      { label: 'YYYY-MM-DD', value: 'YYYY-MM-DD' },
-      { label: 'Month Day, Year', value: 'MMM DD, Year' }, // July 12, 2024
-      { label: 'Day Month Year', value: 'DD MMM Year' }, // 12 July 2024
-      { label: 'MM/DD/YYYY', value: 'MM/DD/YYYY' },
-      { label: 'DD/MM/YYYY', value: 'DD/MM/YYYY' },
-      { label: 'YYYY/MM/DD', value: 'YYYY/MM/DD' },
-      { label: 'MMM DD, YYYY', value: 'MMM DD, YYYY' }, // Jul 12, 2024
-      { label: 'DD MMM YYYY', value: 'DD MMM YYYY' }, // 12 Jul 2024
-      { label: 'Week Month Day', value: 'dddd MMM DD' }// Monday July 12
-    ];
+    // const DATA_VISUALIZATION_OPTIONS = [
+    //   'Comma-separated list',
+    //   'Semicolon-Separated List',
+    //   'Bullet Point List',
+    //   'Numbered List',
+    //   'Alphabetic List'
+    // ].map(function(i) {
+    //   return {
+    //     label: i,
+    //     value: i
+    //   };
+    // });
 
-    const TIME_FORMAT_OPTIONS = [
-      { label: 'HH AM/PM', value: 'HH:MM A' }, // 08:30 AM
-      { label: 'HH:MM:SS AM/PM', value: 'HH:MM:SS A' }, // 08:30:45 AM
-      { label: 'HH (24-hour)', value: 'HH:MM' }, // 14:30
-      { label: 'HH:MM:SS (24-hour)', value: 'HH:MM:SS' }, // 14:30:45
-      { label: 'HHMM (military)', value: 'HHMM' }, // 1430
-      { label: 'HHMMSS (military', value: 'HHMMSS' } // 143045
-    ];
+    // const DATE_FORMAT_OPTIONS = [
+    //   { label: 'MM-DD-YYYY', value: 'MM-DD-YYYY' },
+    //   { label: 'DD-MM-YYYY', value: 'DD-MM-YYYY' },
+    //   { label: 'YYYY-MM-DD', value: 'YYYY-MM-DD' },
+    //   { label: 'Month Day, Year', value: 'MMM DD, Year' }, // July 12, 2024
+    //   { label: 'Day Month Year', value: 'DD MMM Year' }, // 12 July 2024
+    //   { label: 'MM/DD/YYYY', value: 'MM/DD/YYYY' },
+    //   { label: 'DD/MM/YYYY', value: 'DD/MM/YYYY' },
+    //   { label: 'YYYY/MM/DD', value: 'YYYY/MM/DD' },
+    //   { label: 'MMM DD, YYYY', value: 'MMM DD, YYYY' }, // Jul 12, 2024
+    //   { label: 'DD MMM YYYY', value: 'DD MMM YYYY' }, // 12 Jul 2024
+    //   { label: 'Week Month Day', value: 'dddd MMM DD' }// Monday July 12
+    // ];
 
-    const TIME_DATE_FORMAT_OPTIONS = [
-      { label: 'MM-DD-YYYY HH:MM AM/PM', value: 'MM-DD-YYYY HH:MM A' }, // 07-12-2024 08:30
-      { label: 'DD-MM-YYYY HH:MM AM/PM', value: 'DD-MM-YYYY HH:MM A' }, // 12-07-2024 08:30
-      { label: 'YYYY-MM-DD HH:MM', value: 'YYYY-MM-DD HH:MM' }, // 2024-07-12 14:30:45
-      { label: 'YYYY/MM/DD HH', value: 'YYYY/MM/DD HH' }, // 2024/07/12 14:30
-      { label: 'MMM DD, YYYY HH:MM AM/PM', value: 'MMM DD, YYYY HH:MM A' }, // Jul 12, 2024 08:30 AM
-      { label: 'Week, Month, Day, HH AM/PM', value: 'dddd, MMM, DD, HH A' }, // Monday, June, 12 08:30 AM
-      { label: 'Week, Month, Day, HH:MM', value: 'dddd, MMM, DD, HH:MM' } // Monday, June, 12 08:30
-    ];
+    // const TIME_FORMAT_OPTIONS = [
+    //   { label: 'HH AM/PM', value: 'HH:MM A' }, // 08:30 AM
+    //   { label: 'HH:MM:SS AM/PM', value: 'HH:MM:SS A' }, // 08:30:45 AM
+    //   { label: 'HH (24-hour)', value: 'HH:MM' }, // 14:30
+    //   { label: 'HH:MM:SS (24-hour)', value: 'HH:MM:SS' }, // 14:30:45
+    //   { label: 'HHMM (military)', value: 'HHMM' }, // 1430
+    //   { label: 'HHMMSS (military', value: 'HHMMSS' } // 143045
+    // ];
 
-    const TIMEZONE_OPTIONS = [
-      {
-        label: 'display in device timezone',
-        value: 'device'
-      },
-      {
-        label: 'display data source value',
-        value: 'data_source'
-      }
-    ];
+    // const TIME_DATE_FORMAT_OPTIONS = [
+    //   { label: 'MM-DD-YYYY HH:MM AM/PM', value: 'MM-DD-YYYY HH:MM A' }, // 07-12-2024 08:30
+    //   { label: 'DD-MM-YYYY HH:MM AM/PM', value: 'DD-MM-YYYY HH:MM A' }, // 12-07-2024 08:30
+    //   { label: 'YYYY-MM-DD HH:MM', value: 'YYYY-MM-DD HH:MM' }, // 2024-07-12 14:30:45
+    //   { label: 'YYYY/MM/DD HH', value: 'YYYY/MM/DD HH' }, // 2024/07/12 14:30
+    //   { label: 'MMM DD, YYYY HH:MM AM/PM', value: 'MMM DD, YYYY HH:MM A' }, // Jul 12, 2024 08:30 AM
+    //   { label: 'Week, Month, Day, HH AM/PM', value: 'dddd, MMM, DD, HH A' }, // Monday, June, 12 08:30 AM
+    //   { label: 'Week, Month, Day, HH:MM', value: 'dddd, MMM, DD, HH:MM' } // Monday, June, 12 08:30
+    // ];
+
+    // const TIMEZONE_OPTIONS = [
+    //   {
+    //     label: 'display in device timezone',
+    //     value: 'device'
+    //   },
+    //   {
+    //     label: 'display data source value',
+    //     value: 'data_source'
+    //   }
+    // ];
 
     return Fliplet.Widget.generateInterface({
       title: 'Dynamic Text',
