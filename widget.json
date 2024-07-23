@@ -243,7 +243,7 @@
           "description": "Width and Height",
           "fields": [
             {
-              "name": "textWidth",
+              "name": "dynamicTextWidth",
               "default": "100%",
               "styles": [
                 {
