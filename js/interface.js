@@ -5,7 +5,6 @@ function hideAllFields() {
   Fliplet.Helper.field('noDecimalRound').toggle(false);
   Fliplet.Helper.field('symbolBefore').toggle(false);
   Fliplet.Helper.field('symbolAfter').toggle(false);
-  Fliplet.Helper.field('symbolPlacement').toggle(false);
   Fliplet.Helper.field('dataVisualization').toggle(false);
   Fliplet.Helper.field('dateFormat').toggle(false);
   Fliplet.Helper.field('timeFormat').toggle(false);
@@ -31,8 +30,8 @@ function handleFieldVisibility(value) {
       break;
     case 'numberCurrency':
       Fliplet.Helper.field('noDecimalRound').toggle(true);
-      Fliplet.Helper.field('symbol').toggle(true);
-      Fliplet.Helper.field('symbolPlacement').toggle(true);
+      Fliplet.Helper.field('symbolBefore').toggle(true);
+      Fliplet.Helper.field('symbolAfter').toggle(true);
       break;
     case 'array':
       Fliplet.Helper.field('dataVisualization').toggle(true);
