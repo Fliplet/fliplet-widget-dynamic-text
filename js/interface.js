@@ -8,10 +8,12 @@ function hideAllFields() {
   Fliplet.Helper.field('dataVisualization').toggle(false);
   Fliplet.Helper.field('dateFormat').toggle(false);
   Fliplet.Helper.field('timeFormat').toggle(false);
+  Fliplet.Helper.field('timeTimezone').toggle(false);
   Fliplet.Helper.field('timeDateFormat').toggle(false);
   Fliplet.Helper.field('customRegex').toggle(false);
-  Fliplet.Helper.field('timeTimezone').toggle(false);
+  Fliplet.Helper.field('timeTimezoneCheckbox').toggle(false);
   Fliplet.Helper.field('timeDateTimezone').toggle(false);
+  Fliplet.Helper.field('timeDateTimezoneCheckbox').toggle(false);
 }
 
 function handleFieldVisibility(value) {
@@ -41,11 +43,13 @@ function handleFieldVisibility(value) {
       break;
     case 'time':
       Fliplet.Helper.field('timeFormat').toggle(true);
+      Fliplet.Helper.field('timeTimezoneCheckbox').toggle(true);
       Fliplet.Helper.field('timeTimezone').toggle(true);
       break;
     case 'dateTime':
       Fliplet.Helper.field('timeDateFormat').toggle(true);
       Fliplet.Helper.field('timeDateTimezone').toggle(true);
+      Fliplet.Helper.field('timeDateTimezoneCheckbox').toggle(true);
       break;
     case 'custom':
       Fliplet.Helper.field('customRegex').toggle(true);
@@ -136,15 +140,6 @@ Fliplet.Widget.findParents({
       }
     );
 
-    const SYMBOL_PLACEMENT_OPTIONS = ['before units', 'after units'].map(
-      function(i) {
-        return {
-          value: i,
-          label: i
-        };
-      }
-    );
-
     const DATA_VISUALIZATION_OPTIONS = [
       'Comma-separated list',
       'Semicolon-Separated List',
@@ -200,6 +195,12 @@ Fliplet.Widget.findParents({
         label: 'display data source value',
         value: 'data_source'
       }
+    ];
+
+    const TIMEZONES_OPTIONS = [
+      'London',
+      'New York',
+      'Los Angeles'
     ];
 
     return Fliplet.Widget.generateInterface({
@@ -294,22 +295,30 @@ Fliplet.Widget.findParents({
           name: 'dateFormat',
           label: 'Select dataview type',
           description: 'Note, date will be displayed in user\'s local device format',
-          options: DATE_FORMAT_OPTIONS
+          options: DATE_FORMAT_OPTIONS // TODO check values
         },
         {
           // TODO Convert to another timezone
           type: 'dropdown',
           name: 'timeFormat',
           label: 'Select dataview type',
-          description: 'Note, date will be displayed in user\'s local device format',
           options: TIME_FORMAT_OPTIONS
         },
         {
-          type: 'radio',
+          type: 'checkbox',
+          name: 'timeTimezoneCheckbox',
+          label: 'Convert to another timezone',
+          options: [{ value: true, label: 'Yes' }],
+          default: true,
+          change: function(value) {
+            Fliplet.Helper.field('timeTimezone').toggle(value);
+          }
+        },
+        {
+          type: 'dropdown',
           name: 'timeTimezone',
-          label: 'Timezone',
-          options: TIMEZONE_OPTIONS,
-          default: 'data_source'
+          label: 'Select timezone',
+          options: TIMEZONES_OPTIONS
         },
         {
           type: 'dropdown',
@@ -319,11 +328,20 @@ Fliplet.Widget.findParents({
           options: TIME_DATE_FORMAT_OPTIONS
         },
         {
-          type: 'radio',
+          type: 'checkbox',
+          name: 'timeDateTimezoneCheckbox',
+          label: 'Convert to another timezone',
+          options: [{ value: true, label: 'Yes' }],
+          default: true,
+          change: function(value) {
+            Fliplet.Helper.field('timeDateTimezone').toggle(value);
+          }
+        },
+        {
+          type: 'dropdown',
           name: 'timeDateTimezone',
-          label: 'Timezone',
-          options: TIMEZONE_OPTIONS,
-          default: 'data_source'
+          label: 'Select timezone',
+          options: TIMEZONES_OPTIONS
         },
         {
           name: 'customRegex',
