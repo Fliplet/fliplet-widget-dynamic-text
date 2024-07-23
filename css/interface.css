@@ -1,4 +1,16 @@
 .form-group.fl-typeahead.selectize-control {
-  margin-left: 0!important;
-  margin-right: 0!important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.dynamic-text-container h1 {
+  color: red !important;
+}
+
+.dynamic-text-container h2 {
+  color: blue !important;
+}
+
+.dynamic-text-container h3 {
+  color: green !important;
 }
