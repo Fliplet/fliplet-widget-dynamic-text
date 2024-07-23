@@ -342,20 +342,94 @@ $variablePrefix: "dynamicText";
     }
 
     #{$instanceSelector} {
-      .dynamic-text-container {
-        @if map-get($configuration, textBackgroundType)=="Image" {
-          @if map-get($configuration, dynamicText-BackgroundImage)=="none" {
-            background-image: map-get($configuration, dynamicText-BackgroundImage);
+      @if map-get($configuration, textBackgroundType)=="Image" {
+        @if map-get($configuration, dynamicText-BackgroundImage)=="none" {
+          background-image: map-get($configuration, dynamicText-BackgroundImage);
+        }
+
+        @else {
+          background-image: url("#{map-get($configuration, dynamicText-BackgroundImage)}");
+        }
+      }
+
+      @else if map-get($configuration, dynamicText-BackgroundType)=="Color" {
+        background-image: none;
+        background-color: map-get($configuration, dynamicText-BackgroundColor);
+      }
+
+      @else {
+        background-image: none;
+        background-color: transparent;
+      }
+
+      background-size: map-get($configuration, dynamicText-BackgroundSize);
+      background-repeat: map-get($configuration, dynamicText-BackgroundRepeat);
+      background-position: map-get($configuration, dynamicText-BackgroundPosX) map-get($configuration, dynamicText-BackgroundPosY);
+
+      position: map-get($configuration, dynamicText-Position) !important;
+      z-index: map-get($configuration, dynamicText-Index);
+
+      @if map-get($configuration, dynamicText-Position)=="relative" {
+        @if map-get($configuration, dynamicText-Visibility)=="visible" {
+          display: map-get($configuration, dynamicText-Display) !important;
+        }
+
+        @else {
+          display: none !important;
+        }
+      }
+
+      @else {
+        @if map-get($configuration, dynamicText-Visibility)=="visible" {
+          display: block !important;
+        }
+
+        @else {
+          display: none !important;
+        }
+
+        top: map-get($configuration, dynamicText-PositionTop);
+        right: map-get($configuration, dynamicText-PositionRight);
+        bottom: map-get($configuration, dynamicText-PositionBottom);
+        left: map-get($configuration, dynamicText-PositionLeft);
+      }
+
+      width: map-get($configuration, dynamicText-Width);
+      min-width: map-get($configuration, dynamicText-MinWidth);
+      max-width: map-get($configuration, dynamicText-MaxWidth);
+      height: auto !important;
+      min-height: map-get($configuration, dynamicText-MinHeight);
+      max-height: map-get($configuration, dynamicText-MaxHeight);
+      margin: map-get($configuration, dynamicText-MarginTop) map-get($configuration, dynamicText-MarginRight) map-get($configuration, dynamicText-MarginBottom) map-get($configuration, dynamicText-MarginLeft);
+      padding: map-get($configuration, dynamicText-PaddingTop) map-get($configuration, dynamicText-PaddingRight) map-get($configuration, dynamicText-PaddingBottom) map-get($configuration, dynamicText-PaddingLeft);
+
+      @include borderOnly((borderSides: map-get($configuration, dynamicText-BorderSides),
+          borderWidth: map-get($configuration, dynamicText-BorderWidth),
+          borderStyle: map-get($configuration, dynamicText-BorderStyle),
+          borderColor: map-get($configuration, dynamicText-BorderColor)));
+      border-radius: map-get($configuration, dynamicText-BorderRadius);
+      @include shadowOnly((shadowStyle: map-get($configuration, dynamicText-ShadowStyle),
+          shadowXOffset: map-get($configuration, dynamicText-ShadowXoffset),
+          shadowYOffset: map-get($configuration, dynamicText-ShadowYoffset),
+          shadowBlur: map-get($configuration, dynamicText-ShadowBlur),
+          shadowSpread: map-get($configuration, dynamicText-ShadowSpread),
+          shadowColor: map-get($configuration, dynamicText-ShadowColor)));
+
+      // Styles for tablet
+      @include above($tabletBreakpoint) {
+        @if map-get($configuration, dynamicText-BackgroundTypeTablet)=="Image" {
+          @if map-get($configuration, dynamicText-BackgroundImageTablet)=="none" {
+            background-image: map-get($configuration, dynamicText-BackgroundImageTablet);
           }
 
           @else {
-            background-image: url("#{map-get($configuration, dynamicText-BackgroundImage)}");
+            background-image: url("#{map-get($configuration, dynamicText-BackgroundImageTablet)}");
           }
         }
 
-        @else if map-get($configuration, dynamicText-BackgroundType)=="Color" {
+        @else if map-get($configuration, dynamicText-BackgroundTypeTablet)=="Color" {
           background-image: none;
-          background-color: map-get($configuration, dynamicText-BackgroundColor);
+          background-color: map-get($configuration, dynamicText-BackgroundColorTablet);
         }
 
         @else {
@@ -363,16 +437,16 @@ $variablePrefix: "dynamicText";
           background-color: transparent;
         }
 
-        background-size: map-get($configuration, dynamicText-BackgroundSize);
-        background-repeat: map-get($configuration, dynamicText-BackgroundRepeat);
-        background-position: map-get($configuration, dynamicText-BackgroundPosX) map-get($configuration, dynamicText-BackgroundPosY);
+        background-size: map-get($configuration, dynamicText-BackgroundSizeTablet);
+        background-repeat: map-get($configuration, dynamicText-BackgroundRepeatTablet);
+        background-position: map-get($configuration, dynamicText-BackgroundPosXTablet) map-get($configuration, dynamicText-BackgroundPosYTablet);
 
-        position: map-get($configuration, dynamicText-Position) !important;
-        z-index: map-get($configuration, dynamicText-Index);
+        position: map-get($configuration, dynamicText-PositionTablet) !important;
+        z-index: map-get($configuration, dynamicText-IndexTablet);
 
-        @if map-get($configuration, dynamicText-Position)=="relative" {
-          @if map-get($configuration, dynamicText-Visibility)=="visible" {
-            display: map-get($configuration, dynamicText-Display) !important;
+        @if map-get($configuration, dynamicText-PositionTablet)=="relative" {
+          @if map-get($configuration, dynamicText-VisibilityTablet)=="visible" {
+            display: map-get($configuration, dynamicText-DisplayTablet) !important;
           }
 
           @else {
@@ -381,7 +455,7 @@ $variablePrefix: "dynamicText";
         }
 
         @else {
-          @if map-get($configuration, dynamicText-Visibility)=="visible" {
+          @if map-get($configuration, dynamicText-VisibilityTablet)=="visible" {
             display: block !important;
           }
 
@@ -389,185 +463,111 @@ $variablePrefix: "dynamicText";
             display: none !important;
           }
 
-          top: map-get($configuration, dynamicText-PositionTop);
-          right: map-get($configuration, dynamicText-PositionRight);
-          bottom: map-get($configuration, dynamicText-PositionBottom);
-          left: map-get($configuration, dynamicText-PositionLeft);
+          top: map-get($configuration, dynamicText-PositionTopTablet);
+          right: map-get($configuration, dynamicText-PositionRightTablet);
+          bottom: map-get($configuration, dynamicText-PositionBottomTablet);
+          left: map-get($configuration, dynamicText-PositionLeftTablet);
         }
 
-        width: map-get($configuration, dynamicText-Width);
-        min-width: map-get($configuration, dynamicText-MinWidth);
-        max-width: map-get($configuration, dynamicText-MaxWidth);
+        width: map-get($configuration, dynamicText-WidthTablet);
+        min-width: map-get($configuration, dynamicText-MinWidthTablet);
+        max-width: map-get($configuration, dynamicText-MaxWidthTablet);
         height: auto !important;
-        min-height: map-get($configuration, dynamicText-MinHeight);
-        max-height: map-get($configuration, dynamicText-MaxHeight);
-        margin: map-get($configuration, dynamicText-MarginTop) map-get($configuration, dynamicText-MarginRight) map-get($configuration, dynamicText-MarginBottom) map-get($configuration, dynamicText-MarginLeft);
-        padding: map-get($configuration, dynamicText-PaddingTop) map-get($configuration, dynamicText-PaddingRight) map-get($configuration, dynamicText-PaddingBottom) map-get($configuration, dynamicText-PaddingLeft);
+        min-height: map-get($configuration, dynamicText-MinHeightTablet);
+        max-height: map-get($configuration, dynamicText-MaxHeightTablet);
+        margin: map-get($configuration, dynamicText-MarginTopTablet) map-get($configuration, dynamicText-MarginRightTablet) map-get($configuration, dynamicText-MarginBottomTablet) map-get($configuration, dynamicText-MarginLeftTablet);
+        padding: map-get($configuration, dynamicText-PaddingTopTablet) map-get($configuration, dynamicText-PaddingRightTablet) map-get($configuration, dynamicText-PaddingBottomTablet) map-get($configuration, dynamicText-PaddingLeftTablet);
 
-        @include borderOnly((borderSides: map-get($configuration, dynamicText-BorderSides),
-            borderWidth: map-get($configuration, dynamicText-BorderWidth),
-            borderStyle: map-get($configuration, dynamicText-BorderStyle),
-            borderColor: map-get($configuration, dynamicText-BorderColor)));
-        border-radius: map-get($configuration, dynamicText-BorderRadius);
-        @include shadowOnly((shadowStyle: map-get($configuration, dynamicText-ShadowStyle),
-            shadowXOffset: map-get($configuration, dynamicText-ShadowXoffset),
-            shadowYOffset: map-get($configuration, dynamicText-ShadowYoffset),
-            shadowBlur: map-get($configuration, dynamicText-ShadowBlur),
-            shadowSpread: map-get($configuration, dynamicText-ShadowSpread),
-            shadowColor: map-get($configuration, dynamicText-ShadowColor)));
+        @include borderOnly((borderSides: map-get($configuration, dynamicText-BorderSidesTablet),
+            borderWidth: map-get($configuration, dynamicText-BorderWidthTablet),
+            borderStyle: map-get($configuration, dynamicText-BorderStyleTablet),
+            borderColor: map-get($configuration, dynamicText-BorderColorTablet)));
+        border-radius: map-get($configuration, dynamicText-BorderRadiusTablet);
+        @include shadowOnly((shadowStyle: map-get($configuration, dynamicText-ShadowStyleTablet),
+            shadowXOffset: map-get($configuration, dynamicText-ShadowXoffsetTablet),
+            shadowYOffset: map-get($configuration, dynamicText-ShadowYoffsetTablet),
+            shadowBlur: map-get($configuration, dynamicText-ShadowBlurTablet),
+            shadowSpread: map-get($configuration, dynamicText-ShadowSpreadTablet),
+            shadowColor: map-get($configuration, dynamicText-ShadowColorTablet)));
+      }
 
-        // Styles for tablet
-        @include above($tabletBreakpoint) {
-          @if map-get($configuration, dynamicText-BackgroundTypeTablet)=="Image" {
-            @if map-get($configuration, dynamicText-BackgroundImageTablet)=="none" {
-              background-image: map-get($configuration, dynamicText-BackgroundImageTablet);
-            }
-
-            @else {
-              background-image: url("#{map-get($configuration, dynamicText-BackgroundImageTablet)}");
-            }
-          }
-
-          @else if map-get($configuration, dynamicText-BackgroundTypeTablet)=="Color" {
-            background-image: none;
-            background-color: map-get($configuration, dynamicText-BackgroundColorTablet);
+      // Styles for desktop
+      @include above($desktopBreakpoint) {
+        @if map-get($configuration, dynamicText-BackgroundTypeDesktop)=="Image" {
+          @if map-get($configuration, dynamicText-BackgroundImageDesktop)=="none" {
+            background-image: map-get($configuration, dynamicText-BackgroundImageDesktop);
           }
 
           @else {
-            background-image: none;
-            background-color: transparent;
+            background-image: url("#{map-get($configuration, dynamicText-BackgroundImageDesktop)}");
           }
-
-          background-size: map-get($configuration, dynamicText-BackgroundSizeTablet);
-          background-repeat: map-get($configuration, dynamicText-BackgroundRepeatTablet);
-          background-position: map-get($configuration, dynamicText-BackgroundPosXTablet) map-get($configuration, dynamicText-BackgroundPosYTablet);
-
-          position: map-get($configuration, dynamicText-PositionTablet) !important;
-          z-index: map-get($configuration, dynamicText-IndexTablet);
-
-          @if map-get($configuration, dynamicText-PositionTablet)=="relative" {
-            @if map-get($configuration, dynamicText-VisibilityTablet)=="visible" {
-              display: map-get($configuration, dynamicText-DisplayTablet) !important;
-            }
-
-            @else {
-              display: none !important;
-            }
-          }
-
-          @else {
-            @if map-get($configuration, dynamicText-VisibilityTablet)=="visible" {
-              display: block !important;
-            }
-
-            @else {
-              display: none !important;
-            }
-
-            top: map-get($configuration, dynamicText-PositionTopTablet);
-            right: map-get($configuration, dynamicText-PositionRightTablet);
-            bottom: map-get($configuration, dynamicText-PositionBottomTablet);
-            left: map-get($configuration, dynamicText-PositionLeftTablet);
-          }
-
-          width: map-get($configuration, dynamicText-WidthTablet);
-          min-width: map-get($configuration, dynamicText-MinWidthTablet);
-          max-width: map-get($configuration, dynamicText-MaxWidthTablet);
-          height: auto !important;
-          min-height: map-get($configuration, dynamicText-MinHeightTablet);
-          max-height: map-get($configuration, dynamicText-MaxHeightTablet);
-          margin: map-get($configuration, dynamicText-MarginTopTablet) map-get($configuration, dynamicText-MarginRightTablet) map-get($configuration, dynamicText-MarginBottomTablet) map-get($configuration, dynamicText-MarginLeftTablet);
-          padding: map-get($configuration, dynamicText-PaddingTopTablet) map-get($configuration, dynamicText-PaddingRightTablet) map-get($configuration, dynamicText-PaddingBottomTablet) map-get($configuration, dynamicText-PaddingLeftTablet);
-
-          @include borderOnly((borderSides: map-get($configuration, dynamicText-BorderSidesTablet),
-              borderWidth: map-get($configuration, dynamicText-BorderWidthTablet),
-              borderStyle: map-get($configuration, dynamicText-BorderStyleTablet),
-              borderColor: map-get($configuration, dynamicText-BorderColorTablet)));
-          border-radius: map-get($configuration, dynamicText-BorderRadiusTablet);
-          @include shadowOnly((shadowStyle: map-get($configuration, dynamicText-ShadowStyleTablet),
-              shadowXOffset: map-get($configuration, dynamicText-ShadowXoffsetTablet),
-              shadowYOffset: map-get($configuration, dynamicText-ShadowYoffsetTablet),
-              shadowBlur: map-get($configuration, dynamicText-ShadowBlurTablet),
-              shadowSpread: map-get($configuration, dynamicText-ShadowSpreadTablet),
-              shadowColor: map-get($configuration, dynamicText-ShadowColorTablet)));
         }
 
-        // Styles for desktop
-        @include above($desktopBreakpoint) {
-          @if map-get($configuration, dynamicText-BackgroundTypeDesktop)=="Image" {
-            @if map-get($configuration, dynamicText-BackgroundImageDesktop)=="none" {
-              background-image: map-get($configuration, dynamicText-BackgroundImageDesktop);
-            }
-
-            @else {
-              background-image: url("#{map-get($configuration, dynamicText-BackgroundImageDesktop)}");
-            }
-          }
-
-          @else if map-get($configuration, dynamicText-BackgroundTypeDesktop)=="Color" {
-            background-image: none;
-            background-color: map-get($configuration, dynamicText-BackgroundColorDesktop);
-          }
-
-          @else {
-            background-image: none;
-            background-color: transparent;
-          }
-
-          background-size: map-get($configuration, dynamicText-BackgroundSizeDesktop);
-          background-repeat: map-get($configuration, dynamicText-BackgroundRepeatDesktop);
-          background-position: map-get($configuration, dynamicText-BackgroundPosXDesktop) map-get($configuration, dynamicText-BackgroundPosYDesktop);
-
-          position: map-get($configuration, dynamicText-PositionDesktop) !important;
-          z-index: map-get($configuration, dynamicText-IndexDesktop);
-
-          @if map-get($configuration, dynamicText-PositionDesktop)=="relative" {
-            @if map-get($configuration, dynamicText-VisibilityDesktop)=="visible" {
-              display: map-get($configuration, dynamicText-DisplayDesktop) !important;
-            }
-
-            @else {
-              display: none !important;
-            }
-          }
-
-          @else {
-            @if map-get($configuration, dynamicText-VisibilityDesktop)=="visible" {
-              display: block !important;
-            }
-
-            @else {
-              display: none !important;
-            }
-
-            top: map-get($configuration, dynamicText-PositionTopDesktop);
-            right: map-get($configuration, dynamicText-PositionRightDesktop);
-            bottom: map-get($configuration, dynamicText-PositionBottomDesktop);
-            left: map-get($configuration, dynamicText-PositionLeftDesktop);
-          }
-
-          width: map-get($configuration, dynamicText-WidthDesktop);
-          min-width: map-get($configuration, dynamicText-MinWidthDesktop);
-          max-width: map-get($configuration, dynamicText-MaxWidthDesktop);
-          height: auto !important;
-          min-height: map-get($configuration, dynamicText-MinHeightDesktop);
-          max-height: map-get($configuration, dynamicText-MaxHeightDesktop);
-          margin: map-get($configuration, dynamicText-MarginTopDesktop) map-get($configuration, dynamicText-MarginRightDesktop) map-get($configuration, dynamicText-MarginBottomDesktop) map-get($configuration, dynamicText-MarginLeftDesktop);
-          padding: map-get($configuration, dynamicText-PaddingTopDesktop) map-get($configuration, dynamicText-PaddingRightDesktop) map-get($configuration, dynamicText-PaddingBottomDesktop) map-get($configuration, dynamicText-PaddingLeftDesktop);
-
-          @include borderOnly((borderSides: map-get($configuration, dynamicText-BorderSidesDesktop),
-              borderWidth: map-get($configuration, dynamicText-BorderWidthDesktop),
-              borderStyle: map-get($configuration, dynamicText-BorderStyleDesktop),
-              borderColor: map-get($configuration, dynamicText-BorderColorDesktop)));
-          border-radius: map-get($configuration, dynamicText-BorderRadiusDesktop);
-          @include shadowOnly((shadowStyle: map-get($configuration, dynamicText-ShadowStyleDesktop),
-              shadowXOffset: map-get($configuration, dynamicText-ShadowXoffsetDesktop),
-              shadowYOffset: map-get($configuration, dynamicText-ShadowYoffsetDesktop),
-              shadowBlur: map-get($configuration, dynamicText-ShadowBlurDesktop),
-              shadowSpread: map-get($configuration, dynamicText-ShadowSpreadDesktop),
-              shadowColor: map-get($configuration, dynamicText-ShadowColorDesktop)));
+        @else if map-get($configuration, dynamicText-BackgroundTypeDesktop)=="Color" {
+          background-image: none;
+          background-color: map-get($configuration, dynamicText-BackgroundColorDesktop);
         }
 
+        @else {
+          background-image: none;
+          background-color: transparent;
+        }
+
+        background-size: map-get($configuration, dynamicText-BackgroundSizeDesktop);
+        background-repeat: map-get($configuration, dynamicText-BackgroundRepeatDesktop);
+        background-position: map-get($configuration, dynamicText-BackgroundPosXDesktop) map-get($configuration, dynamicText-BackgroundPosYDesktop);
+
+        position: map-get($configuration, dynamicText-PositionDesktop) !important;
+        z-index: map-get($configuration, dynamicText-IndexDesktop);
+
+        @if map-get($configuration, dynamicText-PositionDesktop)=="relative" {
+          @if map-get($configuration, dynamicText-VisibilityDesktop)=="visible" {
+            display: map-get($configuration, dynamicText-DisplayDesktop) !important;
+          }
+
+          @else {
+            display: none !important;
+          }
+        }
+
+        @else {
+          @if map-get($configuration, dynamicText-VisibilityDesktop)=="visible" {
+            display: block !important;
+          }
+
+          @else {
+            display: none !important;
+          }
+
+          top: map-get($configuration, dynamicText-PositionTopDesktop);
+          right: map-get($configuration, dynamicText-PositionRightDesktop);
+          bottom: map-get($configuration, dynamicText-PositionBottomDesktop);
+          left: map-get($configuration, dynamicText-PositionLeftDesktop);
+        }
+
+        width: map-get($configuration, dynamicText-WidthDesktop);
+        min-width: map-get($configuration, dynamicText-MinWidthDesktop);
+        max-width: map-get($configuration, dynamicText-MaxWidthDesktop);
+        height: auto !important;
+        min-height: map-get($configuration, dynamicText-MinHeightDesktop);
+        max-height: map-get($configuration, dynamicText-MaxHeightDesktop);
+        margin: map-get($configuration, dynamicText-MarginTopDesktop) map-get($configuration, dynamicText-MarginRightDesktop) map-get($configuration, dynamicText-MarginBottomDesktop) map-get($configuration, dynamicText-MarginLeftDesktop);
+        padding: map-get($configuration, dynamicText-PaddingTopDesktop) map-get($configuration, dynamicText-PaddingRightDesktop) map-get($configuration, dynamicText-PaddingBottomDesktop) map-get($configuration, dynamicText-PaddingLeftDesktop);
+
+        @include borderOnly((borderSides: map-get($configuration, dynamicText-BorderSidesDesktop),
+            borderWidth: map-get($configuration, dynamicText-BorderWidthDesktop),
+            borderStyle: map-get($configuration, dynamicText-BorderStyleDesktop),
+            borderColor: map-get($configuration, dynamicText-BorderColorDesktop)));
+        border-radius: map-get($configuration, dynamicText-BorderRadiusDesktop);
+        @include shadowOnly((shadowStyle: map-get($configuration, dynamicText-ShadowStyleDesktop),
+            shadowXOffset: map-get($configuration, dynamicText-ShadowXoffsetDesktop),
+            shadowYOffset: map-get($configuration, dynamicText-ShadowYoffsetDesktop),
+            shadowBlur: map-get($configuration, dynamicText-ShadowBlurDesktop),
+            shadowSpread: map-get($configuration, dynamicText-ShadowSpreadDesktop),
+            shadowColor: map-get($configuration, dynamicText-ShadowColorDesktop)));
+      }
+
+      .dynamic-text-container {
         p {
           color: map-get($configuration, paragraphTextColor);
           font-family: map-get($configuration, paragraphFontFamily);
