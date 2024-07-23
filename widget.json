@@ -6,8 +6,7 @@
   "tags": ["type:component", "category:general", "beta:true"],
   "provider_only": false,
   "references": [
-    "dynamicText:richContent",
-    "redirectEndScreen:page"
+    "dynamicText:richContent"
   ],
   "settings": {
     "asyncRendering": true,
