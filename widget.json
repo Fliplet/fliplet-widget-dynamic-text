@@ -5,9 +5,7 @@
   "icon": "img/icon.png",
   "tags": ["type:component", "category:general", "beta:true"],
   "provider_only": false,
-  "references": [
-    "dynamicText:richContent"
-  ],
+  "references": [],
   "settings": {
     "asyncRendering": true,
     "interfaceWidgetPackage": "com.fliplet.helper-configuration"
@@ -41,56 +39,56 @@
   },
   "themeSettings": {
     "name": "Dynamic Text",
+    "variablePrefix": "dynamicText",
     "packages": ["com.fliplet.dynamic-text"],
     "appSupportsContainers": true,
-    "variablePrefix": "dynamicText",
       "variables": [
         {
           "description": "Background",
           "fields": [
             {
-              "name": "BackgroundType",
+              "name": "dynamicTextBackgroundType",
               "default": "None",
               "columns": 12,
               "logic": {
                 "None": {
                   "hide": [
-                    "BackgroundImage",
-                    "BackgroundPosX",
-                    "BackgroundPosY",
-                    "BackgroundSize",
-                    "BackgroundRepeat",
-                    "BackgroundColor"
+                    "dynamicTextBackgroundImage",
+                    "dynamicTextBackgroundPosX",
+                    "dynamicTextBackgroundPosY",
+                    "dynamicTextBackgroundSize",
+                    "dynamicTextBackgroundRepeat",
+                    "dynamicTextBackgroundColor"
                   ]
                 },
                 "Color": {
                   "hide": [
-                    "BackgroundImage",
-                    "BackgroundPosX",
-                    "BackgroundPosY",
-                    "BackgroundSize",
-                    "BackgroundRepeat"
+                    "dynamicTextBackgroundImage",
+                    "dynamicTextBackgroundPosX",
+                    "dynamicTextBackgroundPosY",
+                    "dynamicTextBackgroundSize",
+                    "dynamicTextBackgroundRepeat"
                   ],
-                  "show": ["BackgroundColor"]
+                  "show": ["dynamicTextBackgroundColor"]
                 },
                 "Image": {
-                  "hide": ["BackgroundColor"],
+                  "hide": ["dynamicTextBackgroundColor"],
                   "show": [
-                    "BackgroundImage",
-                    "BackgroundPosX",
-                    "BackgroundPosY",
-                    "BackgroundSize",
-                    "BackgroundRepeat"
+                    "dynamicTextBackgroundImage",
+                    "dynamicTextBackgroundPosX",
+                    "dynamicTextBackgroundPosY",
+                    "dynamicTextBackgroundSize",
+                    "dynamicTextBackgroundRepeat"
                   ]
                 }
               },
               "breakpoints": {
                 "tablet": {
-                  "name": "BackgroundTypeTablet",
+                  "name": "dynamicTextBackgroundTypeTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "BackgroundTypeDesktop",
+                  "name": "dynamicTextBackgroundTypeDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -98,7 +96,7 @@
               "properties": "background"
             },
             {
-              "name": "BackgroundColor",
+              "name": "dynamicTextBackgroundColor",
               "default": "$bodyBackground",
               "styles": [
                 {
@@ -108,18 +106,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "BackgroundColorTablet",
+                  "name": "dynamicTextBackgroundColorTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "BackgroundColorDesktop",
+                  "name": "dynamicTextBackgroundColorDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "color"
             },
             {
-              "name": "BackgroundImage",
+              "name": "dynamicTextBackgroundImage",
               "default": "none",
               "styles": [
                 {
@@ -129,18 +127,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "BackgroundImageTablet",
+                  "name": "dynamicTextBackgroundImageTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "BackgroundImageDesktop",
+                  "name": "dynamicTextBackgroundImageDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "image"
             },
             {
-              "name": "BackgroundPosX",
+              "name": "dynamicTextBackgroundPosX",
               "default": "center",
               "styles": [
                 {
@@ -150,11 +148,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "BackgroundPosXTablet",
+                  "name": "dynamicTextBackgroundPosXTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "BackgroundPosXDesktop",
+                  "name": "dynamicTextBackgroundPosXDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -163,7 +161,7 @@
               "properties": "alignHorizontal"
             },
             {
-              "name": "BackgroundPosY",
+              "name": "dynamicTextBackgroundPosY",
               "default": "center",
               "styles": [
                 {
@@ -173,11 +171,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "BackgroundPosYTablet",
+                  "name": "dynamicTextBackgroundPosYTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "BackgroundPosYDesktop",
+                  "name": "dynamicTextBackgroundPosYDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -186,7 +184,7 @@
               "properties": "alignVertical"
             },
             {
-              "name": "BackgroundSize",
+              "name": "dynamicTextBackgroundSize",
               "default": "cover",
               "styles": [
                 {
@@ -196,11 +194,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "BackgroundSizeTablet",
+                  "name": "dynamicTextBackgroundSizeTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "BackgroundSizeDesktop",
+                  "name": "dynamicTextBackgroundSizeDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -213,7 +211,7 @@
               }
             },
             {
-              "name": "BackgroundRepeat",
+              "name": "dynamicTextBackgroundRepeat",
               "default": "no-repeat",
               "styles": [
                 {
@@ -223,11 +221,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "BackgroundRepeatTablet",
+                  "name": "dynamicTextBackgroundRepeatTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "BackgroundRepeatDesktop",
+                  "name": "dynamicTextBackgroundRepeatDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -245,7 +243,7 @@
           "description": "Width and Height",
           "fields": [
             {
-              "name": "Width",
+              "name": "textWidth",
               "default": "100%",
               "styles": [
                 {
@@ -255,11 +253,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "WidthTablet",
+                  "name": "dynamicTextWidthTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "WidthDesktop",
+                  "name": "dynamicTextWidthDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -268,7 +266,7 @@
               "label": "Width"
             },
             {
-              "name": "MinWidth",
+              "name": "dynamicTextMinWidth",
               "default": "auto",
               "styles": [
                 {
@@ -278,11 +276,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "MinWidthTablet",
+                  "name": "dynamicTextMinWidthTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "MinWidthDesktop",
+                  "name": "dynamicTextMinWidthDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -291,7 +289,7 @@
               "label": "Min"
             },
             {
-              "name": "MaxWidth",
+              "name": "dynamicTextMaxWidth",
               "default": "none",
               "styles": [
                 {
@@ -301,11 +299,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "MaxWidthTablet",
+                  "name": "dynamicTextMaxWidthTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "MaxWidthDesktop",
+                  "name": "dynamicTextMaxWidthDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -314,7 +312,7 @@
               "label": "Max"
             },
             {
-              "name": "Height",
+              "name": "dynamicTextHeight",
               "default": "auto",
               "styles": [
                 {
@@ -325,11 +323,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeightTablet",
+                  "name": "dynamicTextHeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeightDesktop",
+                  "name": "dynamicTextHeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -338,7 +336,7 @@
               "label": "Height"
             },
             {
-              "name": "MinHeight",
+              "name": "dynamicTextMinHeight",
               "default": "auto",
               "styles": [
                 {
@@ -348,11 +346,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "MinHeightTablet",
+                  "name": "dynamicTextMinHeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "MinHeightDesktop",
+                  "name": "dynamicTextMinHeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -361,7 +359,7 @@
               "label": "Min"
             },
             {
-              "name": "MaxHeight",
+              "name": "dynamicTextMaxHeight",
               "default": "none",
               "styles": [
                 {
@@ -371,11 +369,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "MaxHeightTablet",
+                  "name": "dynamicTextMaxHeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "MaxHeightDesktop",
+                  "name": "dynamicTextMaxHeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -389,32 +387,32 @@
           "description": "Positioning",
           "fields": [
             {
-              "name": "Position",
+              "name": "dynamicTextPosition",
               "default": "relative",
               "columns": 12,
               "logic": {
                 "relative": {
                   "hide": [
-                    "PositionTop",
-                    "PositionRight",
-                    "PositionBottom",
-                    "PositionLeft"
+                    "dynamicTextPositionTop",
+                    "dynamicTextPositionRight",
+                    "dynamicTextPositionBottom",
+                    "dynamicTextPositionLeft"
                   ]
                 },
                 "absolute": {
                   "show": [
-                    "PositionTop",
-                    "PositionRight",
-                    "PositionBottom",
-                    "PositionLeft"
+                    "dynamicTextPositionTop",
+                    "dynamicTextPositionRight",
+                    "dynamicTextPositionBottom",
+                    "dynamicTextPositionLeft"
                   ]
                 },
                 "fixed": {
                   "show": [
-                    "PositionTop",
-                    "PositionRight",
-                    "PositionBottom",
-                    "PositionLeft"
+                    "dynamicTextPositionTop",
+                    "dynamicTextPositionRight",
+                    "dynamicTextPositionBottom",
+                    "dynamicTextPositionLeft"
                   ]
                 }
               },
@@ -424,35 +422,35 @@
                   "properties": ["position"],
                   "type": "position",
                   "siblings": {
-                    "top": "PositionTop",
-                    "right": "PositionRight",
-                    "bottom": "PositionBottom",
-                    "left": "PositionLeft"
+                    "top": "dynamicTextPositionTop",
+                    "right": "dynamicTextPositionRight",
+                    "bottom": "dynamicTextPositionBottom",
+                    "left": "dynamicTextPositionLeft"
                   }
                 }
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "PositionTablet",
+                  "name": "dynamicTextPositionTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "PositionDesktop",
+                  "name": "dynamicTextPositionDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "position"
             },
             {
-              "name": "Display",
+              "name": "dynamicTextDisplay",
               "default": "block",
               "columns": 12,
               "logic": {
                 "block": {
-                  "show": ["MarginAlign"]
+                  "show": ["dynamicTextMarginAlign"]
                 },
                 "inline-block": {
-                  "hide": ["MarginAlign"]
+                  "hide": ["dynamicTextMarginAlign"]
                 }
               },
               "styles": [
@@ -463,18 +461,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "DisplayTablet",
+                  "name": "dynamicTextDisplayTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "DisplayDesktop",
+                  "name": "dynamicTextDisplayDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "display"
             },
             {
-              "name": "PositionTop",
+              "name": "dynamicTextPositionTop",
               "default": "auto",
               "columns": 6,
               "styles": [
@@ -485,11 +483,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "PositionTopTablet",
+                  "name": "dynamicTextPositionTopTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "PositionTopDesktop",
+                  "name": "dynamicTextPositionTopDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -499,7 +497,7 @@
               "allowNegative": true
             },
             {
-              "name": "PositionRight",
+              "name": "dynamicTextPositionRight",
               "default": "auto",
               "columns": 6,
               "styles": [
@@ -510,11 +508,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "PositionRightTablet",
+                  "name": "dynamicTextPositionRightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "PositionRightDesktop",
+                  "name": "dynamicTextPositionRightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -524,7 +522,7 @@
               "allowNegative": true
             },
             {
-              "name": "PositionBottom",
+              "name": "dynamicTextPositionBottom",
               "default": "auto",
               "columns": 6,
               "styles": [
@@ -535,11 +533,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "PositionBottomTablet",
+                  "name": "dynamicTextPositionBottomTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "PositionBottomDesktop",
+                  "name": "dynamicTextPositionBottomDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -549,7 +547,7 @@
               "allowNegative": true
             },
             {
-              "name": "PositionLeft",
+              "name": "dynamicTextPositionLeft",
               "default": "auto",
               "columns": 6,
               "styles": [
@@ -560,11 +558,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "PositionLeftTablet",
+                  "name": "dynamicTextPositionLeftTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "PositionLeftDesktop",
+                  "name": "dynamicTextPositionLeftDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -579,7 +577,7 @@
           "description": "Layer order",
           "fields": [
             {
-              "name": "Index",
+              "name": "dynamicTextIndex",
               "default": "auto",
               "columns": 12,
               "styles": [
@@ -590,11 +588,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "IndexTablet",
+                  "name": "dynamicTextIndexTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "IndexDesktop",
+                  "name": "dynamicTextIndexDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -607,27 +605,27 @@
           "description": "Margin",
           "fields": [
             {
-              "name": "MarginAlign",
+              "name": "dynamicTextMarginAlign",
               "default": "center",
               "columns": 12,
               "logic": {
                 "left": {
-                  "MarginRight": "auto",
-                  "MarginLeft": "0px"
+                  "dynamicTextMarginRight": "auto",
+                  "dynamicTextMarginLeft": "0px"
                 },
                 "center": {
-                  "MarginRight": "auto",
-                  "MarginLeft": "auto"
+                  "dynamicTextMarginRight": "auto",
+                  "dynamicTextMarginLeft": "auto"
                 },
                 "right": {
-                  "MarginRight": "0px",
-                  "MarginLeft": "auto"
+                  "dynamicTextMarginRight": "0px",
+                  "dynamicTextMarginLeft": "auto"
                 },
                 "custom": [
-                  "MarginTop",
-                  "MarginRight",
-                  "MarginBottom",
-                  "MarginLeft"
+                  "dynamicTextMarginTop",
+                  "dynamicTextMarginRight",
+                  "dynamicTextMarginBottom",
+                  "dynamicTextMarginLeft"
                 ]
               },
               "styles": [
@@ -639,21 +637,21 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "MarginAlignTablet",
+                  "name": "dynamicTextMarginAlignTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "MarginAlignDesktop",
+                  "name": "dynamicTextMarginAlignDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "margin-align"
             },
             {
-              "name": "MarginTop",
+              "name": "dynamicTextMarginTop",
               "default": "0px",
               "columns": 6,
-              "logic": "MarginAlign",
+              "logic": "dynamicTextMarginAlign",
               "styles": [
                 {
                   "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
@@ -662,11 +660,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "MarginTopTablet",
+                  "name": "dynamicTextMarginTopTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "MarginTopDesktop",
+                  "name": "dynamicTextMarginTopDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -676,10 +674,10 @@
               "allowNegative": true
             },
             {
-              "name": "MarginRight",
+              "name": "dynamicTextMarginRight",
               "default": "0px",
               "columns": 6,
-              "logic": "MarginAlign",
+              "logic": "dynamicTextMarginAlign",
               "styles": [
                 {
                   "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
@@ -688,11 +686,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "MarginRightTablet",
+                  "name": "dynamicTextMarginRightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "MarginRightDesktop",
+                  "name": "dynamicTextMarginRightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -702,10 +700,10 @@
               "allowNegative": true
             },
             {
-              "name": "MarginBottom",
+              "name": "dynamicTextMarginBottom",
               "default": "0px",
               "columns": 6,
-              "logic": "MarginAlign",
+              "logic": "dynamicTextMarginAlign",
               "styles": [
                 {
                   "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
@@ -714,11 +712,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "MarginBottomTablet",
+                  "name": "dynamicTextMarginBottomTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "MarginBottomDesktop",
+                  "name": "dynamicTextMarginBottomDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -728,10 +726,10 @@
               "allowNegative": true
             },
             {
-              "name": "MarginLeft",
+              "name": "dynamicTextMarginLeft",
               "default": "0px",
               "columns": 6,
-              "logic": "MarginAlign",
+              "logic": "dynamicTextMarginAlign",
               "styles": [
                 {
                   "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
@@ -740,11 +738,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "MarginLeftTablet",
+                  "name": "dynamicTextMarginLeftTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "MarginLeftDesktop",
+                  "name": "dynamicTextMarginLeftDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -759,7 +757,7 @@
           "description": "Padding",
           "fields": [
             {
-              "name": "PaddingTop",
+              "name": "dynamicTextPaddingTop",
               "default": "15px",
               "columns": 6,
               "styles": [
@@ -770,11 +768,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "PaddingTopTablet",
+                  "name": "dynamicTextPaddingTopTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "PaddingTopDesktop",
+                  "name": "dynamicTextPaddingTopDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -783,7 +781,7 @@
               "label": "Top"
             },
             {
-              "name": "PaddingRight",
+              "name": "dynamicTextPaddingRight",
               "default": "15px",
               "columns": 6,
               "styles": [
@@ -794,11 +792,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "PaddingRightTablet",
+                  "name": "dynamicTextPaddingRightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "PaddingRightDesktop",
+                  "name": "dynamicTextPaddingRightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -807,7 +805,7 @@
               "label": "Right"
             },
             {
-              "name": "PaddingBottom",
+              "name": "dynamicTextPaddingBottom",
               "default": "0px",
               "columns": 6,
               "styles": [
@@ -818,11 +816,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "PaddingBottomTablet",
+                  "name": "dynamicTextPaddingBottomTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "PaddingBottomDesktop",
+                  "name": "dynamicTextPaddingBottomDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -831,7 +829,7 @@
               "label": "Bottom"
             },
             {
-              "name": "PaddingLeft",
+              "name": "dynamicTextPaddingLeft",
               "default": "15px",
               "columns": 6,
               "styles": [
@@ -842,11 +840,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "PaddingLeftTablet",
+                  "name": "dynamicTextPaddingLeftTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "PaddingLeftDesktop",
+                  "name": "dynamicTextPaddingLeftDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -860,26 +858,26 @@
           "description": "Border",
           "fields": [
             {
-              "name": "BorderSides",
+              "name": "dynamicTextBorderSides",
               "default": "none",
               "logic": {
                 "none": {
-                  "hide": ["BorderWidth", "BorderStyle", "BorderColor"]
+                  "hide": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
                 },
                 "all": {
-                  "show": ["BorderWidth", "BorderStyle", "BorderColor"]
+                  "show": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
                 },
                 "top": {
-                  "show": ["BorderWidth", "BorderStyle", "BorderColor"]
+                  "show": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
                 },
                 "right": {
-                  "show": ["BorderWidth", "BorderStyle", "BorderColor"]
+                  "show": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
                 },
                 "bottom": {
-                  "show": ["BorderWidth", "BorderStyle", "BorderColor"]
+                  "show": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
                 },
                 "left": {
-                  "show": ["BorderWidth", "BorderStyle", "BorderColor"]
+                  "show": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
                 }
               },
               "styles": [
@@ -888,20 +886,20 @@
                   "properties": ["border"],
                   "type": "border",
                   "siblings": {
-                    "sides": "BorderSides",
-                    "width": "BorderWidth",
-                    "style": "BorderStyle",
-                    "color": "BorderColor"
+                    "sides": "dynamicTextBorderSides",
+                    "width": "dynamicTextBorderWidth",
+                    "style": "dynamicTextBorderStyle",
+                    "color": "dynamicTextBorderColor"
                   }
                 }
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "BorderSidesTablet",
+                  "name": "dynamicTextBorderSidesTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "BorderSidesDesktop",
+                  "name": "dynamicTextBorderSidesDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -909,7 +907,7 @@
               "subtype": "border-sides"
             },
             {
-              "name": "BorderColor",
+              "name": "dynamicTextBorderColor",
               "default": "#666666",
               "styles": [
                 {
@@ -917,27 +915,27 @@
                   "properties": ["border"],
                   "type": "border",
                   "siblings": {
-                    "sides": "BorderSides",
-                    "width": "BorderWidth",
-                    "style": "BorderStyle",
-                    "color": "BorderColor"
+                    "sides": "dynamicTextBorderSides",
+                    "width": "dynamicTextBorderWidth",
+                    "style": "dynamicTextBorderStyle",
+                    "color": "dynamicTextBorderColor"
                   }
                 }
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "BorderColorTablet",
+                  "name": "dynamicTextBorderColorTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "BorderColorDesktop",
+                  "name": "dynamicTextBorderColorDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "color"
             },
             {
-              "name": "BorderWidth",
+              "name": "dynamicTextBorderWidth",
               "default": "1px",
               "styles": [
                 {
@@ -945,20 +943,20 @@
                   "properties": ["border"],
                   "type": "border",
                   "siblings": {
-                    "sides": "BorderSides",
-                    "width": "BorderWidth",
-                    "style": "BorderStyle",
-                    "color": "BorderColor"
+                    "sides": "dynamicTextBorderSides",
+                    "width": "dynamicTextBorderWidth",
+                    "style": "dynamicTextBorderStyle",
+                    "color": "dynamicTextBorderColor"
                   }
                 }
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "BorderWidthTablet",
+                  "name": "dynamicTextBorderWidthTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "BorderWidthDesktop",
+                  "name": "dynamicTextBorderWidthDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -966,7 +964,7 @@
               "subtype": "border"
             },
             {
-              "name": "BorderStyle",
+              "name": "dynamicTextBorderStyle",
               "default": "solid",
               "styles": [
                 {
@@ -974,27 +972,27 @@
                   "properties": ["border"],
                   "type": "border",
                   "siblings": {
-                    "sides": "BorderSides",
-                    "width": "BorderWidth",
-                    "style": "BorderStyle",
-                    "color": "BorderColor"
+                    "sides": "dynamicTextBorderSides",
+                    "width": "dynamicTextBorderWidth",
+                    "style": "dynamicTextBorderStyle",
+                    "color": "dynamicTextBorderColor"
                   }
                 }
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "BorderStyleTablet",
+                  "name": "dynamicTextBorderStyleTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "BorderStyleDesktop",
+                  "name": "dynamicTextBorderStyleDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "border-style"
             },
             {
-              "name": "BorderRadius",
+              "name": "dynamicTextBorderRadius",
               "default": "0px",
               "styles": [
                 {
@@ -1004,11 +1002,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "BorderRadiusTablet",
+                  "name": "dynamicTextBorderRadiusTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "BorderRadiusDesktop",
+                  "name": "dynamicTextBorderRadiusDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1022,34 +1020,34 @@
           "description": "Shadow",
           "fields": [
             {
-              "name": "ShadowStyle",
+              "name": "dynamicTextShadowStyle",
               "default": "none",
               "logic": {
                 "none": {
                   "hide": [
-                    "ShadowXoffset",
-                    "ShadowYoffset",
-                    "ShadowBlur",
-                    "ShadowSpread",
-                    "ShadowColor"
+                    "dynamicTextShadowXoffset",
+                    "dynamicTextShadowYoffset",
+                    "dynamicTextShadowBlur",
+                    "dynamicTextShadowSpread",
+                    "dynamicTextShadowColor"
                   ]
                 },
                 "outset": {
                   "show": [
-                    "ShadowXoffset",
-                    "ShadowYoffset",
-                    "ShadowBlur",
-                    "ShadowSpread",
-                    "ShadowColor"
+                    "dynamicTextShadowXoffset",
+                    "dynamicTextShadowYoffset",
+                    "dynamicTextShadowBlur",
+                    "dynamicTextShadowSpread",
+                    "dynamicTextShadowColor"
                   ]
                 },
                 "inset": {
                   "show": [
-                    "ShadowXoffset",
-                    "ShadowYoffset",
-                    "ShadowBlur",
-                    "ShadowSpread",
-                    "ShadowColor"
+                    "dynamicTextShadowXoffset",
+                    "dynamicTextShadowYoffset",
+                    "dynamicTextShadowBlur",
+                    "dynamicTextShadowSpread",
+                    "dynamicTextShadowColor"
                   ]
                 }
               },
@@ -1059,22 +1057,22 @@
                   "properties": ["box-shadow"],
                   "type": "shadow",
                   "siblings": {
-                    "style": "ShadowStyle",
-                    "xoffset": "ShadowXoffset",
-                    "yoffset": "ShadowYoffset",
-                    "blur": "ShadowBlur",
-                    "spread": "ShadowSpread",
-                    "color": "ShadowColor"
+                    "style": "dynamicTextShadowStyle",
+                    "xoffset": "dynamicTextShadowXoffset",
+                    "yoffset": "dynamicTextShadowYoffset",
+                    "blur": "dynamicTextShadowBlur",
+                    "spread": "dynamicTextShadowSpread",
+                    "color": "dynamicTextShadowColor"
                   }
                 }
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "ShadowStyleTablet",
+                  "name": "dynamicTextShadowStyleTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "ShadowStyleDesktop",
+                  "name": "dynamicTextShadowStyleDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1082,7 +1080,7 @@
               "subtype": "shadow-style"
             },
             {
-              "name": "ShadowXoffset",
+              "name": "dynamicTextShadowXoffset",
               "default": "0px",
               "styles": [
                 {
@@ -1090,22 +1088,22 @@
                   "properties": ["box-shadow"],
                   "type": "shadow",
                   "siblings": {
-                    "style": "ShadowStyle",
-                    "xoffset": "ShadowXoffset",
-                    "yoffset": "ShadowYoffset",
-                    "blur": "ShadowBlur",
-                    "spread": "ShadowSpread",
-                    "color": "ShadowColor"
+                    "style": "dynamicTextShadowStyle",
+                    "xoffset": "dynamicTextShadowXoffset",
+                    "yoffset": "dynamicTextShadowYoffset",
+                    "blur": "dynamicTextShadowBlur",
+                    "spread": "dynamicTextShadowSpread",
+                    "color": "dynamicTextShadowColor"
                   }
                 }
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "ShadowXoffsetTablet",
+                  "name": "dynamicTextShadowXoffsetTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "ShadowXoffsetDesktop",
+                  "name": "dynamicTextShadowXoffsetDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1115,7 +1113,7 @@
               "allowNegative": true
             },
             {
-              "name": "ShadowYoffset",
+              "name": "dynamicTextShadowYoffset",
               "default": "10px",
               "styles": [
                 {
@@ -1123,22 +1121,22 @@
                   "properties": ["box-shadow"],
                   "type": "shadow",
                   "siblings": {
-                    "style": "ShadowStyle",
-                    "xoffset": "ShadowXoffset",
-                    "yoffset": "ShadowYoffset",
-                    "blur": "ShadowBlur",
-                    "spread": "ShadowSpread",
-                    "color": "ShadowColor"
+                    "style": "dynamicTextShadowStyle",
+                    "xoffset": "dynamicTextShadowXoffset",
+                    "yoffset": "dynamicTextShadowYoffset",
+                    "blur": "dynamicTextShadowBlur",
+                    "spread": "dynamicTextShadowSpread",
+                    "color": "dynamicTextShadowColor"
                   }
                 }
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "ShadowYoffsetTablet",
+                  "name": "dynamicTextShadowYoffsetTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "ShadowYoffsetDesktop",
+                  "name": "dynamicTextShadowYoffsetDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1148,7 +1146,7 @@
               "allowNegative": true
             },
             {
-              "name": "ShadowBlur",
+              "name": "dynamicTextShadowBlur",
               "default": "20px",
               "styles": [
                 {
@@ -1156,22 +1154,22 @@
                   "properties": ["box-shadow"],
                   "type": "shadow",
                   "siblings": {
-                    "style": "ShadowStyle",
-                    "xoffset": "ShadowXoffset",
-                    "yoffset": "ShadowYoffset",
-                    "blur": "ShadowBlur",
-                    "spread": "ShadowSpread",
-                    "color": "ShadowColor"
+                    "style": "dynamicTextShadowStyle",
+                    "xoffset": "dynamicTextShadowXoffset",
+                    "yoffset": "dynamicTextShadowYoffset",
+                    "blur": "dynamicTextShadowBlur",
+                    "spread": "dynamicTextShadowSpread",
+                    "color": "dynamicTextShadowColor"
                   }
                 }
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "ShadowBlurTablet",
+                  "name": "dynamicTextShadowBlurTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "ShadowBlurDesktop",
+                  "name": "dynamicTextShadowBlurDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1180,7 +1178,7 @@
               "subtype": "shadow"
             },
             {
-              "name": "ShadowSpread",
+              "name": "dynamicTextShadowSpread",
               "default": "0px",
               "styles": [
                 {
@@ -1188,22 +1186,22 @@
                   "properties": ["box-shadow"],
                   "type": "shadow",
                   "siblings": {
-                    "style": "ShadowStyle",
-                    "xoffset": "ShadowXoffset",
-                    "yoffset": "ShadowYoffset",
-                    "blur": "ShadowBlur",
-                    "spread": "ShadowSpread",
-                    "color": "ShadowColor"
+                    "style": "dynamicTextShadowStyle",
+                    "xoffset": "dynamicTextShadowXoffset",
+                    "yoffset": "dynamicTextShadowYoffset",
+                    "blur": "dynamicTextShadowBlur",
+                    "spread": "dynamicTextShadowSpread",
+                    "color": "dynamicTextShadowColor"
                   }
                 }
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "ShadowSpreadTablet",
+                  "name": "dynamicTextShadowSpreadTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "ShadowSpreadDesktop",
+                  "name": "dynamicTextShadowSpreadDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1212,7 +1210,7 @@
               "subtype": "shadow"
             },
             {
-              "name": "ShadowColor",
+              "name": "dynamicTextShadowColor",
               "default": "rgba(0, 0, 0, 0.2)",
               "styles": [
                 {
@@ -1220,22 +1218,22 @@
                   "properties": ["box-shadow"],
                   "type": "shadow",
                   "siblings": {
-                    "style": "ShadowStyle",
-                    "xoffset": "ShadowXoffset",
-                    "yoffset": "ShadowYoffset",
-                    "blur": "ShadowBlur",
-                    "spread": "ShadowSpread",
-                    "color": "ShadowColor"
+                    "style": "dynamicTextShadowStyle",
+                    "xoffset": "dynamicTextShadowXoffset",
+                    "yoffset": "dynamicTextShadowYoffset",
+                    "blur": "dynamicTextShadowBlur",
+                    "spread": "dynamicTextShadowSpread",
+                    "color": "dynamicTextShadowColor"
                   }
                 }
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "ShadowColorTablet",
+                  "name": "dynamicTextShadowColorTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "ShadowColorDesktop",
+                  "name": "dynamicTextShadowColorDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1551,7 +1549,7 @@
           "description": "Heading 1",
           "fields": [
             {
-              "name": "HeadingOneFontFamily",
+              "name": "dynamicTextHeadingOneFontFamily",
               "default": "$headingOneFontFamily",
               "styles": [
                 {
@@ -1562,18 +1560,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingOneFontFamilyTablet",
+                  "name": "dynamicTextHeadingOneFontFamilyTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingOneFontFamilyDesktop",
+                  "name": "dynamicTextHeadingOneFontFamilyDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "font"
             },
             {
-              "name": "HeadingOneSize",
+              "name": "dynamicTextHeadingOneSize",
               "default": "$headingOneSize",
               "styles": [
                 {
@@ -1584,11 +1582,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingOneSizeTablet",
+                  "name": "dynamicTextHeadingOneSizeTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingOneSizeDesktop",
+                  "name": "dynamicTextHeadingOneSizeDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1596,7 +1594,7 @@
               "subtype": "font"
             },
             {
-              "name": "HeadingOneColor",
+              "name": "dynamicTextHeadingOneColor",
               "default": "$headingOneColor",
               "styles": [
                 {
@@ -1607,18 +1605,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingOneColorTablet",
+                  "name": "dynamicTextHeadingOneColorTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingOneColorDesktop",
+                  "name": "dynamicTextHeadingOneColorDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "color"
             },
             {
-              "name": "HeadingOneWeight",
+              "name": "dynamicTextHeadingOneWeight",
               "default": "$headingOneWeight",
               "styles": [
                 {
@@ -1629,11 +1627,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingOneWeightTablet",
+                  "name": "dynamicTextHeadingOneWeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingOneWeightDesktop",
+                  "name": "dynamicTextHeadingOneWeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1641,7 +1639,7 @@
               "properties": "weight"
             },
             {
-              "name": "HeadingOneStyle",
+              "name": "dynamicTextHeadingOneStyle",
               "default": "$headingOneStyle",
               "styles": [
                 {
@@ -1652,11 +1650,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingOneStyleTablet",
+                  "name": "dynamicTextHeadingOneStyleTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingOneStyleDesktop",
+                  "name": "dynamicTextHeadingOneStyleDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1664,7 +1662,7 @@
               "properties": "italic"
             },
             {
-              "name": "HeadingOneDecoration",
+              "name": "dynamicTextHeadingOneDecoration",
               "default": "$headingOneDecoration",
               "styles": [
                 {
@@ -1675,11 +1673,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingOneDecorationTablet",
+                  "name": "dynamicTextHeadingOneDecorationTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingOneDecorationDesktop",
+                  "name": "dynamicTextHeadingOneDecorationDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1688,7 +1686,7 @@
               "properties": "underline"
             },
             {
-              "name": "HeadingOneHeight",
+              "name": "dynamicTextHeadingOneHeight",
               "default": "$headingOneHeight",
               "styles": [
                 {
@@ -1699,11 +1697,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingOneHeightTablet",
+                  "name": "dynamicTextHeadingOneHeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingOneHeightDesktop",
+                  "name": "dynamicTextHeadingOneHeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1712,7 +1710,7 @@
               "subtype": "line-height"
             },
             {
-              "name": "HeadingOneMarginTop",
+              "name": "dynamicTextHeadingOneMarginTop",
               "default": "0px",
               "styles": [
                 {
@@ -1723,11 +1721,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingOneMarginTopTablet",
+                  "name": "dynamicTextHeadingOneMarginTopTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingOneMarginTopDesktop",
+                  "name": "dynamicTextHeadingOneMarginTopDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1737,7 +1735,7 @@
               "allowNegative": true
             },
             {
-              "name": "HeadingOneMarginBottom",
+              "name": "dynamicTextHeadingOneMarginBottom",
               "default": "10px",
               "styles": [
                 {
@@ -1748,11 +1746,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingOneMarginBottomTablet",
+                  "name": "dynamicTextHeadingOneMarginBottomTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingOneMarginBottomDesktop",
+                  "name": "dynamicTextHeadingOneMarginBottomDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1767,7 +1765,7 @@
           "description": "Heading 2",
           "fields": [
             {
-              "name": "HeadingTwoFontFamily",
+              "name": "dynamicTextHeadingTwoFontFamily",
               "default": "$headingTwoFontFamily",
               "styles": [
                 {
@@ -1778,18 +1776,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingTwoFontFamilyTablet",
+                  "name": "dynamicTextHeadingTwoFontFamilyTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingTwoFontFamilyDesktop",
+                  "name": "dynamicTextHeadingTwoFontFamilyDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "font"
             },
             {
-              "name": "HeadingTwoSize",
+              "name": "dynamicTextHeadingTwoSize",
               "default": "$headingTwoSize",
               "styles": [
                 {
@@ -1800,11 +1798,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingTwoSizeTablet",
+                  "name": "dynamicTextHeadingTwoSizeTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingTwoSizeDesktop",
+                  "name": "dynamicTextHeadingTwoSizeDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1812,7 +1810,7 @@
               "subtype": "font"
             },
             {
-              "name": "HeadingTwoColor",
+              "name": "dynamicTextHeadingTwoColor",
               "default": "$headingTwoColor",
               "styles": [
                 {
@@ -1823,18 +1821,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingTwoColorTablet",
+                  "name": "dynamicTextHeadingTwoColorTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingTwoColorDesktop",
+                  "name": "dynamicTextHeadingTwoColorDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "color"
             },
             {
-              "name": "HeadingTwoWeight",
+              "name": "dynamicTextHeadingTwoWeight",
               "default": "$headingTwoWeight",
               "styles": [
                 {
@@ -1845,11 +1843,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingTwoWeightTablet",
+                  "name": "dynamicTextHeadingTwoWeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingTwoWeightDesktop",
+                  "name": "dynamicTextHeadingTwoWeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1857,7 +1855,7 @@
               "properties": "weight"
             },
             {
-              "name": "HeadingTwoStyle",
+              "name": "dynamicTextHeadingTwoStyle",
               "default": "$headingTwoStyle",
               "styles": [
                 {
@@ -1868,11 +1866,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingTwoStyleTablet",
+                  "name": "dynamicTextHeadingTwoStyleTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingTwoStyleDesktop",
+                  "name": "dynamicTextHeadingTwoStyleDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1880,7 +1878,7 @@
               "properties": "italic"
             },
             {
-              "name": "HeadingTwoDecoration",
+              "name": "dynamicTextHeadingTwoDecoration",
               "default": "$headingTwoDecoration",
               "styles": [
                 {
@@ -1891,11 +1889,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingTwoDecorationTablet",
+                  "name": "dynamicTextHeadingTwoDecorationTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingTwoDecorationDesktop",
+                  "name": "dynamicTextHeadingTwoDecorationDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1904,7 +1902,7 @@
               "properties": "underline"
             },
             {
-              "name": "HeadingTwoHeight",
+              "name": "dynamicTextHeadingTwoHeight",
               "default": "$headingTwoHeight",
               "styles": [
                 {
@@ -1915,11 +1913,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingTwoHeightTablet",
+                  "name": "dynamicTextHeadingTwoHeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingTwoHeightDesktop",
+                  "name": "dynamicTextHeadingTwoHeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1928,7 +1926,7 @@
               "subtype": "line-height"
             },
             {
-              "name": "HeadingTwoMarginTop",
+              "name": "dynamicTextHeadingTwoMarginTop",
               "default": "0px",
               "styles": [
                 {
@@ -1939,11 +1937,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingTwoMarginTopTablet",
+                  "name": "dynamicTextHeadingTwoMarginTopTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingTwoMarginTopDesktop",
+                  "name": "dynamicTextHeadingTwoMarginTopDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1953,7 +1951,7 @@
               "allowNegative": true
             },
             {
-              "name": "HeadingTwoMarginBottom",
+              "name": "dynamicTextHeadingTwoMarginBottom",
               "default": "10px",
               "styles": [
                 {
@@ -1964,11 +1962,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingTwoMarginBottomTablet",
+                  "name": "dynamicTextHeadingTwoMarginBottomTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingTwoMarginBottomDesktop",
+                  "name": "dynamicTextHeadingTwoMarginBottomDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1983,7 +1981,7 @@
           "description": "Heading 3",
           "fields": [
             {
-              "name": "HeadingThreeFontFamily",
+              "name": "dynamicTextHeadingThreeFontFamily",
               "default": "$headingThreeFontFamily",
               "styles": [
                 {
@@ -1994,18 +1992,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingThreeFontFamilyTablet",
+                  "name": "dynamicTextHeadingThreeFontFamilyTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingThreeFontFamilyDesktop",
+                  "name": "dynamicTextHeadingThreeFontFamilyDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "font"
             },
             {
-              "name": "HeadingThreeSize",
+              "name": "dynamicTextHeadingThreeSize",
               "default": "$headingThreeSize",
               "styles": [
                 {
@@ -2016,11 +2014,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingThreeSizeTablet",
+                  "name": "dynamicTextHeadingThreeSizeTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingThreeSizeDesktop",
+                  "name": "dynamicTextHeadingThreeSizeDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2028,7 +2026,7 @@
               "subtype": "font"
             },
             {
-              "name": "HeadingThreeColor",
+              "name": "dynamicTextHeadingThreeColor",
               "default": "$headingThreeColor",
               "styles": [
                 {
@@ -2040,18 +2038,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingThreeColorTablet",
+                  "name": "dynamicTextHeadingThreeColorTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingThreeColorDesktop",
+                  "name": "dynamicTextHeadingThreeColorDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "color"
             },
             {
-              "name": "HeadingThreeWeight",
+              "name": "dynamicTextHeadingThreeWeight",
               "default": "$headingThreeWeight",
               "styles": [
                 {
@@ -2062,11 +2060,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingThreeWeightTablet",
+                  "name": "dynamicTextHeadingThreeWeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingThreeWeightDesktop",
+                  "name": "dynamicTextHeadingThreeWeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2074,7 +2072,7 @@
               "properties": "weight"
             },
             {
-              "name": "HeadingThreeStyle",
+              "name": "dynamicTextHeadingThreeStyle",
               "default": "$headingThreeStyle",
               "styles": [
                 {
@@ -2085,11 +2083,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingThreeStyleTablet",
+                  "name": "dynamicTextHeadingThreeStyleTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingThreeStyleDesktop",
+                  "name": "dynamicTextHeadingThreeStyleDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2097,7 +2095,7 @@
               "properties": "italic"
             },
             {
-              "name": "HeadingThreeDecoration",
+              "name": "dynamicTextHeadingThreeDecoration",
               "default": "$headingThreeDecoration",
               "styles": [
                 {
@@ -2108,11 +2106,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingThreeDecorationTablet",
+                  "name": "dynamicTextHeadingThreeDecorationTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingThreeDecorationDesktop",
+                  "name": "dynamicTextHeadingThreeDecorationDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2121,7 +2119,7 @@
               "properties": "underline"
             },
             {
-              "name": "HeadingThreeHeight",
+              "name": "dynamicTextHeadingThreeHeight",
               "default": "$headingThreeHeight",
               "styles": [
                 {
@@ -2132,11 +2130,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingThreeHeightTablet",
+                  "name": "dynamicTextHeadingThreeHeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingThreeHeightDesktop",
+                  "name": "dynamicTextHeadingThreeHeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2145,7 +2143,7 @@
               "subtype": "line-height"
             },
             {
-              "name": "HeadingThreeMarginTop",
+              "name": "dynamicTextHeadingThreeMarginTop",
               "default": "0px",
               "styles": [
                 {
@@ -2156,11 +2154,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingThreeMarginTopTablet",
+                  "name": "dynamicTextHeadingThreeMarginTopTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingThreeMarginTopDesktop",
+                  "name": "dynamicTextHeadingThreeMarginTopDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2170,7 +2168,7 @@
               "allowNegative": true
             },
             {
-              "name": "HeadingThreeMarginBottom",
+              "name": "dynamicTextHeadingThreeMarginBottom",
               "default": "10px",
               "styles": [
                 {
@@ -2181,11 +2179,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingThreeMarginBottomTablet",
+                  "name": "dynamicTextHeadingThreeMarginBottomTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingThreeMarginBottomDesktop",
+                  "name": "dynamicTextHeadingThreeMarginBottomDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2200,7 +2198,7 @@
           "description": "Heading 4",
           "fields": [
             {
-              "name": "HeadingFourFontFamily",
+              "name": "dynamicTextHeadingFourFontFamily",
               "default": "$headingFourFontFamily",
               "styles": [
                 {
@@ -2211,18 +2209,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFourFontFamilyTablet",
+                  "name": "dynamicTextHeadingFourFontFamilyTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFourFontFamilyDesktop",
+                  "name": "dynamicTextHeadingFourFontFamilyDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "font"
             },
             {
-              "name": "HeadingFourSize",
+              "name": "dynamicTextHeadingFourSize",
               "default": "$headingFourSize",
               "styles": [
                 {
@@ -2233,11 +2231,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFourSizeTablet",
+                  "name": "dynamicTextHeadingFourSizeTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFourSizeDesktop",
+                  "name": "dynamicTextHeadingFourSizeDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2245,7 +2243,7 @@
               "subtype": "font"
             },
             {
-              "name": "HeadingFourColor",
+              "name": "dynamicTextHeadingFourColor",
               "default": "$headingFourColor",
               "styles": [
                 {
@@ -2256,18 +2254,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFourColorTablet",
+                  "name": "dynamicTextHeadingFourColorTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFourColorDesktop",
+                  "name": "dynamicTextHeadingFourColorDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "color"
             },
             {
-              "name": "HeadingFourWeight",
+              "name": "dynamicTextHeadingFourWeight",
               "default": "$headingFourWeight",
               "styles": [
                 {
@@ -2278,11 +2276,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFourWeightTablet",
+                  "name": "dynamicTextHeadingFourWeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFourWeightDesktop",
+                  "name": "dynamicTextHeadingFourWeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2290,7 +2288,7 @@
               "properties": "weight"
             },
             {
-              "name": "HeadingFourStyle",
+              "name": "dynamicTextHeadingFourStyle",
               "default": "$headingFourStyle",
               "styles": [
                 {
@@ -2301,11 +2299,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFourStyleTablet",
+                  "name": "dynamicTextHeadingFourStyleTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFourStyleDesktop",
+                  "name": "dynamicTextHeadingFourStyleDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2313,7 +2311,7 @@
               "properties": "italic"
             },
             {
-              "name": "HeadingFourDecoration",
+              "name": "dynamicTextHeadingFourDecoration",
               "default": "$headingFourDecoration",
               "styles": [
                 {
@@ -2324,11 +2322,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFourDecorationTablet",
+                  "name": "dynamicTextHeadingFourDecorationTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFourDecorationDesktop",
+                  "name": "dynamicTextHeadingFourDecorationDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2337,7 +2335,7 @@
               "properties": "underline"
             },
             {
-              "name": "HeadingFourHeight",
+              "name": "dynamicTextHeadingFourHeight",
               "default": "$headingFourHeight",
               "styles": [
                 {
@@ -2348,11 +2346,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFourHeightTablet",
+                  "name": "dynamicTextHeadingFourHeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFourHeightDesktop",
+                  "name": "dynamicTextHeadingFourHeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2361,7 +2359,7 @@
               "subtype": "line-height"
             },
             {
-              "name": "HeadingFourMarginTop",
+              "name": "dynamicTextHeadingFourMarginTop",
               "default": "0px",
               "styles": [
                 {
@@ -2372,11 +2370,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFourMarginTopTablet",
+                  "name": "dynamicTextHeadingFourMarginTopTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFourMarginTopDesktop",
+                  "name": "dynamicTextHeadingFourMarginTopDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2386,7 +2384,7 @@
               "allowNegative": true
             },
             {
-              "name": "HeadingFourMarginBottom",
+              "name": "dynamicTextHeadingFourMarginBottom",
               "default": "10px",
               "styles": [
                 {
@@ -2397,11 +2395,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFourMarginBottomTablet",
+                  "name": "dynamicTextHeadingFourMarginBottomTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFourMarginBottomDesktop",
+                  "name": "dynamicTextHeadingFourMarginBottomDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2416,7 +2414,7 @@
           "description": "Heading 5",
           "fields": [
             {
-              "name": "HeadingFiveFontFamily",
+              "name": "dynamicTextHeadingFiveFontFamily",
               "default": "$headingFiveFontFamily",
               "styles": [
                 {
@@ -2427,18 +2425,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFiveFontFamilyTablet",
+                  "name": "dynamicTextHeadingFiveFontFamilyTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFiveFontFamilyDesktop",
+                  "name": "dynamicTextHeadingFiveFontFamilyDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "font"
             },
             {
-              "name": "HeadingFiveSize",
+              "name": "dynamicTextHeadingFiveSize",
               "default": "$headingFiveSize",
               "styles": [
                 {
@@ -2449,11 +2447,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFiveSizeTablet",
+                  "name": "dynamicTextHeadingFiveSizeTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFiveSizeDesktop",
+                  "name": "dynamicTextHeadingFiveSizeDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2461,7 +2459,7 @@
               "subtype": "font"
             },
             {
-              "name": "HeadingFiveColor",
+              "name": "dynamicTextHeadingFiveColor",
               "default": "$headingFiveColor",
               "styles": [
                 {
@@ -2472,18 +2470,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFiveColorTablet",
+                  "name": "dynamicTextHeadingFiveColorTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFiveColorDesktop",
+                  "name": "dynamicTextHeadingFiveColorDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "color"
             },
             {
-              "name": "HeadingFiveWeight",
+              "name": "dynamicTextHeadingFiveWeight",
               "default": "$headingFiveWeight",
               "styles": [
                 {
@@ -2494,11 +2492,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFiveWeightTablet",
+                  "name": "dynamicTextHeadingFiveWeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFiveWeightDesktop",
+                  "name": "dynamicTextHeadingFiveWeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2506,7 +2504,7 @@
               "properties": "weight"
             },
             {
-              "name": "HeadingFiveStyle",
+              "name": "dynamicTextHeadingFiveStyle",
               "default": "$headingFiveStyle",
               "styles": [
                 {
@@ -2517,11 +2515,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFiveStyleTablet",
+                  "name": "dynamicTextHeadingFiveStyleTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFiveStyleDesktop",
+                  "name": "dynamicTextHeadingFiveStyleDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2529,7 +2527,7 @@
               "properties": "italic"
             },
             {
-              "name": "HeadingFiveDecoration",
+              "name": "dynamicTextHeadingFiveDecoration",
               "default": "$headingFiveDecoration",
               "styles": [
                 {
@@ -2540,11 +2538,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFiveDecorationTablet",
+                  "name": "dynamicTextHeadingFiveDecorationTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFiveDecorationDesktop",
+                  "name": "dynamicTextHeadingFiveDecorationDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2553,7 +2551,7 @@
               "properties": "underline"
             },
             {
-              "name": "HeadingFiveHeight",
+              "name": "dynamicTextHeadingFiveHeight",
               "default": "$headingFiveHeight",
               "styles": [
                 {
@@ -2564,11 +2562,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFiveHeightTablet",
+                  "name": "dynamicTextHeadingFiveHeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFiveHeightDesktop",
+                  "name": "dynamicTextHeadingFiveHeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2577,7 +2575,7 @@
               "subtype": "line-height"
             },
             {
-              "name": "HeadingFiveMarginTop",
+              "name": "dynamicTextHeadingFiveMarginTop",
               "default": "0px",
               "styles": [
                 {
@@ -2588,11 +2586,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFiveMarginTopTablet",
+                  "name": "dynamicTextHeadingFiveMarginTopTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFiveMarginTopDesktop",
+                  "name": "dynamicTextHeadingFiveMarginTopDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2602,7 +2600,7 @@
               "allowNegative": true
             },
             {
-              "name": "HeadingFiveMarginBottom",
+              "name": "dynamicTextHeadingFiveMarginBottom",
               "default": "10px",
               "styles": [
                 {
@@ -2613,11 +2611,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingFiveMarginBottomTablet",
+                  "name": "dynamicTextHeadingFiveMarginBottomTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingFiveMarginBottomDesktop",
+                  "name": "dynamicTextHeadingFiveMarginBottomDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2632,7 +2630,7 @@
           "description": "Heading 6",
           "fields": [
             {
-              "name": "HeadingSixFontFamily",
+              "name": "dynamicTextHeadingSixFontFamily",
               "default": "$headingSixFontFamily",
               "styles": [
                 {
@@ -2643,18 +2641,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingSixFontFamilyTablet",
+                  "name": "dynamicTextHeadingSixFontFamilyTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingSixFontFamilyDesktop",
+                  "name": "dynamicTextHeadingSixFontFamilyDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "font"
             },
             {
-              "name": "HeadingSixSize",
+              "name": "dynamicTextHeadingSixSize",
               "default": "$headingSixSize",
               "styles": [
                 {
@@ -2665,11 +2663,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingSixSizeTablet",
+                  "name": "dynamicTextHeadingSixSizeTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingSixSizeDesktop",
+                  "name": "dynamicTextHeadingSixSizeDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2677,7 +2675,7 @@
               "subtype": "font"
             },
             {
-              "name": "HeadingSixColor",
+              "name": "dynamicTextHeadingSixColor",
               "default": "$headingSixColor",
               "styles": [
                 {
@@ -2688,18 +2686,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingSixColorTablet",
+                  "name": "dynamicTextHeadingSixColorTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingSixColorDesktop",
+                  "name": "dynamicTextHeadingSixColorDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "color"
             },
             {
-              "name": "HeadingSixWeight",
+              "name": "dynamicTextHeadingSixWeight",
               "default": "$headingSixWeight",
               "styles": [
                 {
@@ -2710,11 +2708,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingSixWeightTablet",
+                  "name": "dynamicTextHeadingSixWeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingSixWeightDesktop",
+                  "name": "dynamicTextHeadingSixWeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2722,7 +2720,7 @@
               "properties": "weight"
             },
             {
-              "name": "HeadingSixStyle",
+              "name": "dynamicTextHeadingSixStyle",
               "default": "$headingSixStyle",
               "styles": [
                 {
@@ -2733,11 +2731,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingSixStyleTablet",
+                  "name": "dynamicTextHeadingSixStyleTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingSixStyleDesktop",
+                  "name": "dynamicTextHeadingSixStyleDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2745,7 +2743,7 @@
               "properties": "italic"
             },
             {
-              "name": "HeadingSixDecoration",
+              "name": "dynamicTextHeadingSixDecoration",
               "default": "$headingSixDecoration",
               "styles": [
                 {
@@ -2756,11 +2754,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingSixDecorationTablet",
+                  "name": "dynamicTextHeadingSixDecorationTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingSixDecorationDesktop",
+                  "name": "dynamicTextHeadingSixDecorationDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2769,7 +2767,7 @@
               "properties": "underline"
             },
             {
-              "name": "HeadingSixHeight",
+              "name": "dynamicTextHeadingSixHeight",
               "default": "$headingSixHeight",
               "styles": [
                 {
@@ -2780,11 +2778,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingSixHeightTablet",
+                  "name": "dynamicTextHeadingSixHeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingSixHeightDesktop",
+                  "name": "dynamicTextHeadingSixHeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2793,7 +2791,7 @@
               "subtype": "line-height"
             },
             {
-              "name": "HeadingSixMarginTop",
+              "name": "dynamicTextHeadingSixMarginTop",
               "default": "0px",
               "styles": [
                 {
@@ -2804,11 +2802,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingSixMarginTopTablet",
+                  "name": "dynamicTextHeadingSixMarginTopTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingSixMarginTopDesktop",
+                  "name": "dynamicTextHeadingSixMarginTopDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2818,7 +2816,7 @@
               "allowNegative": true
             },
             {
-              "name": "HeadingSixMarginBottom",
+              "name": "dynamicTextHeadingSixMarginBottom",
               "default": "10px",
               "styles": [
                 {
@@ -2829,11 +2827,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "HeadingSixMarginBottomTablet",
+                  "name": "dynamicTextHeadingSixMarginBottomTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "HeadingSixMarginBottomDesktop",
+                  "name": "dynamicTextHeadingSixMarginBottomDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2849,12 +2847,12 @@
           "appSupportsContainers": true,
           "fields": [
             {
-              "name": "Visibility",
+              "name": "dynamicTextVisibility",
               "default": "visible",
               "columns": 12,
               "breakpoints": {
                 "tablet": {
-                  "name": "VisibilityTablet",
+                  "name": "dynamicTextVisibilityTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
