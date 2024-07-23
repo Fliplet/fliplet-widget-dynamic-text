@@ -9,45 +9,45 @@ $variablePrefix: "slider";
 
 @mixin componentStyles($options: (), $widgetInstanceId: "", $widgetInstanceUUID: "") {
   /* LIST HERE ALL VARIABLES FROM YOUR THEME, INCLUDING TABLET AND DESKTOP */
-  $configuration: map-merge((dynamicTextBackgroundImage: $dynamicTextBackgroundImage,
-        dynamicTextBackgroundColor: $dynamicTextBackgroundColor,
-        dynamicTextBackgroundType: $dynamicTextBackgroundType,
-        dynamicTextBackgroundSize: $dynamicTextBackgroundSize,
-        dynamicTextBackgroundRepeat: $dynamicTextBackgroundRepeat,
-        dynamicTextBackgroundPosX: $dynamicTextBackgroundPosX,
-        dynamicTextBackgroundPosY: $dynamicTextBackgroundPosY,
-        dynamicTextWidth: $dynamicTextWidth,
-        dynamicTextHeight: $dynamicTextHeight,
-        dynamicTextMinWidth: $dynamicTextMinWidth,
-        dynamicTextMaxWidth: $dynamicTextMaxWidth,
-        dynamicTextMinHeight: $dynamicTextMinHeight,
-        dynamicTextMaxHeight: $dynamicTextMaxHeight,
-        dynamicTextPosition: $dynamicTextPosition,
-        dynamicTextDisplay: $dynamicTextDisplay,
-        dynamicTextPositionTop: $dynamicTextPositionTop,
-        dynamicTextPositionRight: $dynamicTextPositionRight,
-        dynamicTextPositionBottom: $dynamicTextPositionBottom,
-        dynamicTextPositionLeft: $dynamicTextPositionLeft,
-        dynamicTextIndex: $dynamicTextIndex,
-        dynamicTextMarginTop: $dynamicTextMarginTop,
-        dynamicTextMarginRight: $dynamicTextMarginRight,
-        dynamicTextMarginBottom: $dynamicTextMarginBottom,
-        dynamicTextMarginLeft: $dynamicTextMarginLeft,
-        dynamicTextPaddingTop: $dynamicTextPaddingTop,
-        dynamicTextPaddingRight: $dynamicTextPaddingRight,
-        dynamicTextPaddingBottom: $dynamicTextPaddingBottom,
-        dynamicTextPaddingLeft: $dynamicTextPaddingLeft,
-        dynamicTextBorderSides: $dynamicTextBorderSides,
-        dynamicTextBorderWidth: $dynamicTextBorderWidth,
-        dynamicTextBorderStyle: $dynamicTextBorderStyle,
-        dynamicTextBorderColor: $dynamicTextBorderColor,
-        dynamicTextBorderRadius: $dynamicTextBorderRadius,
-        dynamicTextShadowStyle: $dynamicTextShadowStyle,
-        dynamicTextShadowXoffset: $dynamicTextShadowXoffset,
-        dynamicTextShadowYoffset: $dynamicTextShadowYoffset,
-        dynamicTextShadowBlur: $dynamicTextShadowBlur,
-        dynamicTextShadowSpread: $dynamicTextShadowSpread,
-        dynamicTextShadowColor: $dynamicTextShadowColor,
+  $configuration: map-merge((dynamicText-BackgroundImage: $dynamicText-BackgroundImage,
+        dynamicText-BackgroundColor: $dynamicText-BackgroundColor,
+        dynamicText-BackgroundType: $dynamicText-BackgroundType,
+        dynamicText-BackgroundSize: $dynamicText-BackgroundSize,
+        dynamicText-BackgroundRepeat: $dynamicText-BackgroundRepeat,
+        dynamicText-BackgroundPosX: $dynamicText-BackgroundPosX,
+        dynamicText-BackgroundPosY: $dynamicText-BackgroundPosY,
+        dynamicText-Width: $dynamicText-Width,
+        dynamicText-Height: $dynamicText-Height,
+        dynamicText-MinWidth: $dynamicText-MinWidth,
+        dynamicText-MaxWidth: $dynamicText-MaxWidth,
+        dynamicText-MinHeight: $dynamicText-MinHeight,
+        dynamicText-MaxHeight: $dynamicText-MaxHeight,
+        dynamicText-Position: $dynamicText-Position,
+        dynamicText-Display: $dynamicText-Display,
+        dynamicText-PositionTop: $dynamicText-PositionTop,
+        dynamicText-PositionRight: $dynamicText-PositionRight,
+        dynamicText-PositionBottom: $dynamicText-PositionBottom,
+        dynamicText-PositionLeft: $dynamicText-PositionLeft,
+        dynamicText-Index: $dynamicText-Index,
+        dynamicText-MarginTop: $dynamicText-MarginTop,
+        dynamicText-MarginRight: $dynamicText-MarginRight,
+        dynamicText-MarginBottom: $dynamicText-MarginBottom,
+        dynamicText-MarginLeft: $dynamicText-MarginLeft,
+        dynamicText-PaddingTop: $dynamicText-PaddingTop,
+        dynamicText-PaddingRight: $dynamicText-PaddingRight,
+        dynamicText-PaddingBottom: $dynamicText-PaddingBottom,
+        dynamicText-PaddingLeft: $dynamicText-PaddingLeft,
+        dynamicText-BorderSides: $dynamicText-BorderSides,
+        dynamicText-BorderWidth: $dynamicText-BorderWidth,
+        dynamicText-BorderStyle: $dynamicText-BorderStyle,
+        dynamicText-BorderColor: $dynamicText-BorderColor,
+        dynamicText-BorderRadius: $dynamicText-BorderRadius,
+        dynamicText-ShadowStyle: $dynamicText-ShadowStyle,
+        dynamicText-ShadowXoffset: $dynamicText-ShadowXoffset,
+        dynamicText-ShadowYoffset: $dynamicText-ShadowYoffset,
+        dynamicText-ShadowBlur: $dynamicText-ShadowBlur,
+        dynamicText-ShadowSpread: $dynamicText-ShadowSpread,
+        dynamicText-ShadowColor: $dynamicText-ShadowColor,
         paragraphFontFamily: $paragraphFontFamily,
         paragraphFontSize: $paragraphFontSize,
         paragraphTextColor: $paragraphTextColor,
@@ -57,46 +57,46 @@ $variablePrefix: "slider";
         paragraphLineHeight: $paragraphLineHeight,
         paragraphMarginTop: $paragraphMarginTop,
         paragraphMarginBottom: $paragraphMarginBottom,
-        dynamicTextVisibility: $dynamicTextVisibility,
-        dynamicTextBackgroundImageTablet: $dynamicTextBackgroundImageTablet,
-        dynamicTextBackgroundColorTablet: $dynamicTextBackgroundColorTablet,
-        dynamicTextBackgroundTypeTablet: $dynamicTextBackgroundTypeTablet,
-        dynamicTextBackgroundSizeTablet: $dynamicTextBackgroundSizeTablet,
-        dynamicTextBackgroundRepeatTablet: $dynamicTextBackgroundRepeatTablet,
-        dynamicTextBackgroundPosXTablet: $dynamicTextBackgroundPosXTablet,
-        dynamicTextBackgroundPosYTablet: $dynamicTextBackgroundPosYTablet,
-        dynamicTextWidthTablet: $dynamicTextWidthTablet,
-        dynamicTextHeightTablet: $dynamicTextHeightTablet,
-        dynamicTextMinWidthTablet: $dynamicTextMinWidthTablet,
-        dynamicTextMaxWidthTablet: $dynamicTextMaxWidthTablet,
-        dynamicTextMinHeightTablet: $dynamicTextMinHeightTablet,
-        dynamicTextMaxHeightTablet: $dynamicTextMaxHeightTablet,
-        dynamicTextPositionTablet: $dynamicTextPositionTablet,
-        dynamicTextDisplayTablet: $dynamicTextDisplayTablet,
-        dynamicTextPositionTopTablet: $dynamicTextPositionTopTablet,
-        dynamicTextPositionRightTablet: $dynamicTextPositionRightTablet,
-        dynamicTextPositionBottomTablet: $dynamicTextPositionBottomTablet,
-        dynamicTextPositionLeftTablet: $dynamicTextPositionLeftTablet,
-        dynamicTextIndexTablet: $dynamicTextIndexTablet,
-        dynamicTextMarginTopTablet: $dynamicTextMarginTopTablet,
-        dynamicTextMarginRightTablet: $dynamicTextMarginRightTablet,
-        dynamicTextMarginBottomTablet: $dynamicTextMarginBottomTablet,
-        dynamicTextMarginLeftTablet: $dynamicTextMarginLeftTablet,
-        dynamicTextPaddingTopTablet: $dynamicTextPaddingTopTablet,
-        dynamicTextPaddingRightTablet: $dynamicTextPaddingRightTablet,
-        dynamicTextPaddingBottomTablet: $dynamicTextPaddingBottomTablet,
-        dynamicTextPaddingLeftTablet: $dynamicTextPaddingLeftTablet,
-        dynamicTextBorderSidesTablet: $dynamicTextBorderSidesTablet,
-        dynamicTextBorderWidthTablet: $dynamicTextBorderWidthTablet,
-        dynamicTextBorderStyleTablet: $dynamicTextBorderStyleTablet,
-        dynamicTextBorderColorTablet: $dynamicTextBorderColorTablet,
-        dynamicTextBorderRadiusTablet: $dynamicTextBorderRadiusTablet,
-        dynamicTextShadowStyleTablet: $dynamicTextShadowStyleTablet,
-        dynamicTextShadowXoffsetTablet: $dynamicTextShadowXoffsetTablet,
-        dynamicTextShadowYoffsetTablet: $dynamicTextShadowYoffsetTablet,
-        dynamicTextShadowBlurTablet: $dynamicTextShadowBlurTablet,
-        dynamicTextShadowSpreadTablet: $dynamicTextShadowSpreadTablet,
-        dynamicTextShadowColorTablet: $dynamicTextShadowColorTablet,
+        dynamicText-Visibility: $dynamicText-Visibility,
+        dynamicText-BackgroundImageTablet: $dynamicText-BackgroundImageTablet,
+        dynamicText-BackgroundColorTablet: $dynamicText-BackgroundColorTablet,
+        dynamicText-BackgroundTypeTablet: $dynamicText-BackgroundTypeTablet,
+        dynamicText-BackgroundSizeTablet: $dynamicText-BackgroundSizeTablet,
+        dynamicText-BackgroundRepeatTablet: $dynamicText-BackgroundRepeatTablet,
+        dynamicText-BackgroundPosXTablet: $dynamicText-BackgroundPosXTablet,
+        dynamicText-BackgroundPosYTablet: $dynamicText-BackgroundPosYTablet,
+        dynamicText-WidthTablet: $dynamicText-WidthTablet,
+        dynamicText-HeightTablet: $dynamicText-HeightTablet,
+        dynamicText-MinWidthTablet: $dynamicText-MinWidthTablet,
+        dynamicText-MaxWidthTablet: $dynamicText-MaxWidthTablet,
+        dynamicText-MinHeightTablet: $dynamicText-MinHeightTablet,
+        dynamicText-MaxHeightTablet: $dynamicText-MaxHeightTablet,
+        dynamicText-PositionTablet: $dynamicText-PositionTablet,
+        dynamicText-DisplayTablet: $dynamicText-DisplayTablet,
+        dynamicText-PositionTopTablet: $dynamicText-PositionTopTablet,
+        dynamicText-PositionRightTablet: $dynamicText-PositionRightTablet,
+        dynamicText-PositionBottomTablet: $dynamicText-PositionBottomTablet,
+        dynamicText-PositionLeftTablet: $dynamicText-PositionLeftTablet,
+        dynamicText-IndexTablet: $dynamicText-IndexTablet,
+        dynamicText-MarginTopTablet: $dynamicText-MarginTopTablet,
+        dynamicText-MarginRightTablet: $dynamicText-MarginRightTablet,
+        dynamicText-MarginBottomTablet: $dynamicText-MarginBottomTablet,
+        dynamicText-MarginLeftTablet: $dynamicText-MarginLeftTablet,
+        dynamicText-PaddingTopTablet: $dynamicText-PaddingTopTablet,
+        dynamicText-PaddingRightTablet: $dynamicText-PaddingRightTablet,
+        dynamicText-PaddingBottomTablet: $dynamicText-PaddingBottomTablet,
+        dynamicText-PaddingLeftTablet: $dynamicText-PaddingLeftTablet,
+        dynamicText-BorderSidesTablet: $dynamicText-BorderSidesTablet,
+        dynamicText-BorderWidthTablet: $dynamicText-BorderWidthTablet,
+        dynamicText-BorderStyleTablet: $dynamicText-BorderStyleTablet,
+        dynamicText-BorderColorTablet: $dynamicText-BorderColorTablet,
+        dynamicText-BorderRadiusTablet: $dynamicText-BorderRadiusTablet,
+        dynamicText-ShadowStyleTablet: $dynamicText-ShadowStyleTablet,
+        dynamicText-ShadowXoffsetTablet: $dynamicText-ShadowXoffsetTablet,
+        dynamicText-ShadowYoffsetTablet: $dynamicText-ShadowYoffsetTablet,
+        dynamicText-ShadowBlurTablet: $dynamicText-ShadowBlurTablet,
+        dynamicText-ShadowSpreadTablet: $dynamicText-ShadowSpreadTablet,
+        dynamicText-ShadowColorTablet: $dynamicText-ShadowColorTablet,
         paragraphFontFamilyTablet: $paragraphFontFamilyTablet,
         paragraphFontSizeTablet: $paragraphFontSizeTablet,
         paragraphTextColorTablet: $paragraphTextColorTablet,
@@ -106,46 +106,46 @@ $variablePrefix: "slider";
         paragraphLineHeightTablet: $paragraphLineHeightTablet,
         paragraphMarginTopTablet: $paragraphMarginTopTablet,
         paragraphMarginBottomTablet: $paragraphMarginBottomTablet,
-        dynamicTextVisibilityTablet: $dynamicTextVisibilityTablet,
-        dynamicTextBackgroundImageDesktop: $dynamicTextBackgroundImageDesktop,
-        dynamicTextBackgroundColorDesktop: $dynamicTextBackgroundColorDesktop,
-        dynamicTextBackgroundTypeDesktop: $dynamicTextBackgroundTypeDesktop,
-        dynamicTextBackgroundSizeDesktop: $dynamicTextBackgroundSizeDesktop,
-        dynamicTextBackgroundRepeatDesktop: $dynamicTextBackgroundRepeatDesktop,
-        dynamicTextBackgroundPosXDesktop: $dynamicTextBackgroundPosXDesktop,
-        dynamicTextBackgroundPosYDesktop: $dynamicTextBackgroundPosYDesktop,
-        dynamicTextWidthDesktop: $dynamicTextWidthDesktop,
-        dynamicTextHeightDesktop: $dynamicTextHeightDesktop,
-        dynamicTextMinWidthDesktop: $dynamicTextMinWidthDesktop,
-        dynamicTextMaxWidthDesktop: $dynamicTextMaxWidthDesktop,
-        dynamicTextMinHeightDesktop: $dynamicTextMinHeightDesktop,
-        dynamicTextMaxHeightDesktop: $dynamicTextMaxHeightDesktop,
-        dynamicTextPositionDesktop: $dynamicTextPositionDesktop,
-        dynamicTextPositionTopDesktop: $dynamicTextPositionTopDesktop,
-        dynamicTextDisplayDesktop: $dynamicTextDisplayDesktop,
-        dynamicTextPositionRightDesktop: $dynamicTextPositionRightDesktop,
-        dynamicTextPositionBottomDesktop: $dynamicTextPositionBottomDesktop,
-        dynamicTextPositionLeftDesktop: $dynamicTextPositionLeftDesktop,
-        dynamicTextIndexDesktop: $dynamicTextIndexDesktop,
-        dynamicTextMarginTopDesktop: $dynamicTextMarginTopDesktop,
-        dynamicTextMarginRightDesktop: $dynamicTextMarginRightDesktop,
-        dynamicTextMarginBottomDesktop: $dynamicTextMarginBottomDesktop,
-        dynamicTextMarginLeftDesktop: $dynamicTextMarginLeftDesktop,
-        dynamicTextPaddingTopDesktop: $dynamicTextPaddingTopDesktop,
-        dynamicTextPaddingRightDesktop: $dynamicTextPaddingRightDesktop,
-        dynamicTextPaddingBottomDesktop: $dynamicTextPaddingBottomDesktop,
-        dynamicTextPaddingLeftDesktop: $dynamicTextPaddingLeftDesktop,
-        dynamicTextBorderSidesDesktop: $dynamicTextBorderSidesDesktop,
-        dynamicTextBorderWidthDesktop: $dynamicTextBorderWidthDesktop,
-        dynamicTextBorderStyleDesktop: $dynamicTextBorderStyleDesktop,
-        dynamicTextBorderColorDesktop: $dynamicTextBorderColorDesktop,
-        dynamicTextBorderRadiusDesktop: $dynamicTextBorderRadiusDesktop,
-        dynamicTextShadowStyleDesktop: $dynamicTextShadowStyleDesktop,
-        dynamicTextShadowXoffsetDesktop: $dynamicTextShadowXoffsetDesktop,
-        dynamicTextShadowYoffsetDesktop: $dynamicTextShadowYoffsetDesktop,
-        dynamicTextShadowBlurDesktop: $dynamicTextShadowBlurDesktop,
-        dynamicTextShadowSpreadDesktop: $dynamicTextShadowSpreadDesktop,
-        dynamicTextShadowColorDesktop: $dynamicTextShadowColorDesktop,
+        dynamicText-VisibilityTablet: $dynamicText-VisibilityTablet,
+        dynamicText-BackgroundImageDesktop: $dynamicText-BackgroundImageDesktop,
+        dynamicText-BackgroundColorDesktop: $dynamicText-BackgroundColorDesktop,
+        dynamicText-BackgroundTypeDesktop: $dynamicText-BackgroundTypeDesktop,
+        dynamicText-BackgroundSizeDesktop: $dynamicText-BackgroundSizeDesktop,
+        dynamicText-BackgroundRepeatDesktop: $dynamicText-BackgroundRepeatDesktop,
+        dynamicText-BackgroundPosXDesktop: $dynamicText-BackgroundPosXDesktop,
+        dynamicText-BackgroundPosYDesktop: $dynamicText-BackgroundPosYDesktop,
+        dynamicText-WidthDesktop: $dynamicText-WidthDesktop,
+        dynamicText-HeightDesktop: $dynamicText-HeightDesktop,
+        dynamicText-MinWidthDesktop: $dynamicText-MinWidthDesktop,
+        dynamicText-MaxWidthDesktop: $dynamicText-MaxWidthDesktop,
+        dynamicText-MinHeightDesktop: $dynamicText-MinHeightDesktop,
+        dynamicText-MaxHeightDesktop: $dynamicText-MaxHeightDesktop,
+        dynamicText-PositionDesktop: $dynamicText-PositionDesktop,
+        dynamicText-PositionTopDesktop: $dynamicText-PositionTopDesktop,
+        dynamicText-DisplayDesktop: $dynamicText-DisplayDesktop,
+        dynamicText-PositionRightDesktop: $dynamicText-PositionRightDesktop,
+        dynamicText-PositionBottomDesktop: $dynamicText-PositionBottomDesktop,
+        dynamicText-PositionLeftDesktop: $dynamicText-PositionLeftDesktop,
+        dynamicText-IndexDesktop: $dynamicText-IndexDesktop,
+        dynamicText-MarginTopDesktop: $dynamicText-MarginTopDesktop,
+        dynamicText-MarginRightDesktop: $dynamicText-MarginRightDesktop,
+        dynamicText-MarginBottomDesktop: $dynamicText-MarginBottomDesktop,
+        dynamicText-MarginLeftDesktop: $dynamicText-MarginLeftDesktop,
+        dynamicText-PaddingTopDesktop: $dynamicText-PaddingTopDesktop,
+        dynamicText-PaddingRightDesktop: $dynamicText-PaddingRightDesktop,
+        dynamicText-PaddingBottomDesktop: $dynamicText-PaddingBottomDesktop,
+        dynamicText-PaddingLeftDesktop: $dynamicText-PaddingLeftDesktop,
+        dynamicText-BorderSidesDesktop: $dynamicText-BorderSidesDesktop,
+        dynamicText-BorderWidthDesktop: $dynamicText-BorderWidthDesktop,
+        dynamicText-BorderStyleDesktop: $dynamicText-BorderStyleDesktop,
+        dynamicText-BorderColorDesktop: $dynamicText-BorderColorDesktop,
+        dynamicText-BorderRadiusDesktop: $dynamicText-BorderRadiusDesktop,
+        dynamicText-ShadowStyleDesktop: $dynamicText-ShadowStyleDesktop,
+        dynamicText-ShadowXoffsetDesktop: $dynamicText-ShadowXoffsetDesktop,
+        dynamicText-ShadowYoffsetDesktop: $dynamicText-ShadowYoffsetDesktop,
+        dynamicText-ShadowBlurDesktop: $dynamicText-ShadowBlurDesktop,
+        dynamicText-ShadowSpreadDesktop: $dynamicText-ShadowSpreadDesktop,
+        dynamicText-ShadowColorDesktop: $dynamicText-ShadowColorDesktop,
         paragraphFontFamilyDesktop: $paragraphFontFamilyDesktop,
         paragraphFontSizeDesktop: $paragraphFontSizeDesktop,
         paragraphTextColorDesktop: $paragraphTextColorDesktop,
@@ -155,169 +155,169 @@ $variablePrefix: "slider";
         paragraphLineHeightDesktop: $paragraphLineHeightDesktop,
         paragraphMarginTopDesktop: $paragraphMarginTopDesktop,
         paragraphMarginBottomDesktop: $paragraphMarginBottomDesktop,
-        dynamicTextVisibilityDesktop: $dynamicTextVisibilityDesktop,
-        dynamicTextHeadingOneColor: $dynamicTextHeadingOneColor,
-        dynamicTextHeadingOneFontFamily: $dynamicTextHeadingOneFontFamily,
-        dynamicTextHeadingOneSize: $dynamicTextHeadingOneSize,
-        dynamicTextHeadingOneHeight: $dynamicTextHeadingOneHeight,
-        dynamicTextHeadingOneWeight: $dynamicTextHeadingOneWeight,
-        dynamicTextHeadingOneStyle: $dynamicTextHeadingOneStyle,
-        dynamicTextHeadingOneDecoration: $dynamicTextHeadingOneDecoration,
-        dynamicTextHeadingOneMarginTop: $dynamicTextHeadingOneMarginTop,
-        dynamicTextHeadingOneMarginBottom: $dynamicTextHeadingOneMarginBottom,
-        dynamicTextHeadingOneColorTablet: $dynamicTextHeadingOneColorTablet,
-        dynamicTextHeadingOneFontFamilyTablet: $dynamicTextHeadingOneFontFamilyTablet,
-        dynamicTextHeadingOneSizeTablet: $dynamicTextHeadingOneSizeTablet,
-        dynamicTextHeadingOneHeightTablet: $dynamicTextHeadingOneHeightTablet,
-        dynamicTextHeadingOneWeightTablet: $dynamicTextHeadingOneWeightTablet,
-        dynamicTextHeadingOneStyleTablet: $dynamicTextHeadingOneStyleTablet,
-        dynamicTextHeadingOneDecorationTablet: $dynamicTextHeadingOneDecorationTablet,
-        dynamicTextHeadingOneMarginTopTablet: $dynamicTextHeadingOneMarginTopTablet,
-        dynamicTextHeadingOneMarginBottomTablet: $dynamicTextHeadingOneMarginBottomTablet,
-        dynamicTextHeadingOneColorDesktop: $dynamicTextHeadingOneColorDesktop,
-        dynamicTextHeadingOneFontFamilyDesktop: $dynamicTextHeadingOneFontFamilyDesktop,
-        dynamicTextHeadingOneSizeDesktop: $dynamicTextHeadingOneSizeDesktop,
-        dynamicTextHeadingOneHeightDesktop: $dynamicTextHeadingOneHeightDesktop,
-        dynamicTextHeadingOneWeightDesktop: $dynamicTextHeadingOneWeightDesktop,
-        dynamicTextHeadingOneStyleDesktop: $dynamicTextHeadingOneStyleDesktop,
-        dynamicTextHeadingOneDecorationDesktop: $dynamicTextHeadingOneDecorationDesktop,
-        dynamicTextHeadingOneMarginTopDesktop: $dynamicTextHeadingOneMarginTopDesktop,
-        dynamicTextHeadingOneMarginBottomDesktop: $dynamicTextHeadingOneMarginBottomDesktop,
-        dynamicTextHeadingTwoColor: $dynamicTextHeadingTwoColor,
-        dynamicTextHeadingTwoFontFamily: $dynamicTextHeadingTwoFontFamily,
-        dynamicTextHeadingTwoSize: $dynamicTextHeadingTwoSize,
-        dynamicTextHeadingTwoHeight: $dynamicTextHeadingTwoHeight,
-        dynamicTextHeadingTwoWeight: $dynamicTextHeadingTwoWeight,
-        dynamicTextHeadingTwoStyle: $dynamicTextHeadingTwoStyle,
-        dynamicTextHeadingTwoDecoration: $dynamicTextHeadingTwoDecoration,
-        dynamicTextHeadingTwoMarginTop: $dynamicTextHeadingTwoMarginTop,
-        dynamicTextHeadingTwoMarginBottom: $dynamicTextHeadingTwoMarginBottom,
-        dynamicTextHeadingTwoColorTablet: $dynamicTextHeadingTwoColorTablet,
-        dynamicTextHeadingTwoFontFamilyTablet: $dynamicTextHeadingTwoFontFamilyTablet,
-        dynamicTextHeadingTwoSizeTablet: $dynamicTextHeadingTwoSizeTablet,
-        dynamicTextHeadingTwoHeightTablet: $dynamicTextHeadingTwoHeightTablet,
-        dynamicTextHeadingTwoWeightTablet: $dynamicTextHeadingTwoWeightTablet,
-        dynamicTextHeadingTwoStyleTablet: $dynamicTextHeadingTwoStyleTablet,
-        dynamicTextHeadingTwoDecorationTablet: $dynamicTextHeadingTwoDecorationTablet,
-        dynamicTextHeadingTwoMarginTopTablet: $dynamicTextHeadingTwoMarginTopTablet,
-        dynamicTextHeadingTwoMarginBottomTablet: $dynamicTextHeadingTwoMarginBottomTablet,
-        dynamicTextHeadingTwoColorDesktop: $dynamicTextHeadingTwoColorDesktop,
-        dynamicTextHeadingTwoFontFamilyDesktop: $dynamicTextHeadingTwoFontFamilyDesktop,
-        dynamicTextHeadingTwoSizeDesktop: $dynamicTextHeadingTwoSizeDesktop,
-        dynamicTextHeadingTwoHeightDesktop: $dynamicTextHeadingTwoHeightDesktop,
-        dynamicTextHeadingTwoWeightDesktop: $dynamicTextHeadingTwoWeightDesktop,
-        dynamicTextHeadingTwoStyleDesktop: $dynamicTextHeadingTwoStyleDesktop,
-        dynamicTextHeadingTwoDecorationDesktop: $dynamicTextHeadingTwoDecorationDesktop,
-        dynamicTextHeadingTwoMarginTopDesktop: $dynamicTextHeadingTwoMarginTopDesktop,
-        dynamicTextHeadingTwoMarginBottomDesktop: $dynamicTextHeadingTwoMarginBottomDesktop,
-        dynamicTextHeadingThreeColor: $dynamicTextHeadingThreeColor,
-        dynamicTextHeadingThreeFontFamily: $dynamicTextHeadingThreeFontFamily,
-        dynamicTextHeadingThreeSize: $dynamicTextHeadingThreeSize,
-        dynamicTextHeadingThreeHeight: $dynamicTextHeadingThreeHeight,
-        dynamicTextHeadingThreeWeight: $dynamicTextHeadingThreeWeight,
-        dynamicTextHeadingThreeStyle: $dynamicTextHeadingThreeStyle,
-        dynamicTextHeadingThreeDecoration: $dynamicTextHeadingThreeDecoration,
-        dynamicTextHeadingThreeMarginTop: $dynamicTextHeadingThreeMarginTop,
-        dynamicTextHeadingThreeMarginBottom: $dynamicTextHeadingThreeMarginBottom,
-        dynamicTextHeadingThreeColorTablet: $dynamicTextHeadingThreeColorTablet,
-        dynamicTextHeadingThreeFontFamilyTablet: $dynamicTextHeadingThreeFontFamilyTablet,
-        dynamicTextHeadingThreeSizeTablet: $dynamicTextHeadingThreeSizeTablet,
-        dynamicTextHeadingThreeHeightTablet: $dynamicTextHeadingThreeHeightTablet,
-        dynamicTextHeadingThreeWeightTablet: $dynamicTextHeadingThreeWeightTablet,
-        dynamicTextHeadingThreeStyleTablet: $dynamicTextHeadingThreeStyleTablet,
-        dynamicTextHeadingThreeDecorationTablet: $dynamicTextHeadingThreeDecorationTablet,
-        dynamicTextHeadingThreeMarginTopTablet: $dynamicTextHeadingThreeMarginTopTablet,
-        dynamicTextHeadingThreeMarginBottomTablet: $dynamicTextHeadingThreeMarginBottomTablet,
-        dynamicTextHeadingThreeColorDesktop: $dynamicTextHeadingThreeColorDesktop,
-        dynamicTextHeadingThreeFontFamilyDesktop: $dynamicTextHeadingThreeFontFamilyDesktop,
-        dynamicTextHeadingThreeSizeDesktop: $dynamicTextHeadingThreeSizeDesktop,
-        dynamicTextHeadingThreeHeightDesktop: $dynamicTextHeadingThreeHeightDesktop,
-        dynamicTextHeadingThreeWeightDesktop: $dynamicTextHeadingThreeWeightDesktop,
-        dynamicTextHeadingThreeStyleDesktop: $dynamicTextHeadingThreeStyleDesktop,
-        dynamicTextHeadingThreeDecorationDesktop: $dynamicTextHeadingThreeDecorationDesktop,
-        dynamicTextHeadingThreeMarginTopDesktop: $dynamicTextHeadingThreeMarginTopDesktop,
-        dynamicTextHeadingThreeMarginBottomDesktop: $dynamicTextHeadingThreeMarginBottomDesktop,
-        dynamicTextHeadingFourColor: $dynamicTextHeadingFourColor,
-        dynamicTextHeadingFourFontFamily: $dynamicTextHeadingFourFontFamily,
-        dynamicTextHeadingFourSize: $dynamicTextHeadingFourSize,
-        dynamicTextHeadingFourHeight: $dynamicTextHeadingFourHeight,
-        dynamicTextHeadingFourWeight: $dynamicTextHeadingFourWeight,
-        dynamicTextHeadingFourStyle: $dynamicTextHeadingFourStyle,
-        dynamicTextHeadingFourDecoration: $dynamicTextHeadingFourDecoration,
-        dynamicTextHeadingFourMarginTop: $dynamicTextHeadingFourMarginTop,
-        dynamicTextHeadingFourMarginBottom: $dynamicTextHeadingFourMarginBottom,
-        dynamicTextHeadingFourColorTablet: $dynamicTextHeadingFourColorTablet,
-        dynamicTextHeadingFourFontFamilyTablet: $dynamicTextHeadingFourFontFamilyTablet,
-        dynamicTextHeadingFourSizeTablet: $dynamicTextHeadingFourSizeTablet,
-        dynamicTextHeadingFourHeightTablet: $dynamicTextHeadingFourHeightTablet,
-        dynamicTextHeadingFourWeightTablet: $dynamicTextHeadingFourWeightTablet,
-        dynamicTextHeadingFourStyleTablet: $dynamicTextHeadingFourStyleTablet,
-        dynamicTextHeadingFourDecorationTablet: $dynamicTextHeadingFourDecorationTablet,
-        dynamicTextHeadingFourMarginTopTablet: $dynamicTextHeadingFourMarginTopTablet,
-        dynamicTextHeadingFourMarginBottomTablet: $dynamicTextHeadingFourMarginBottomTablet,
-        dynamicTextHeadingFourColorDesktop: $dynamicTextHeadingFourColorDesktop,
-        dynamicTextHeadingFourFontFamilyDesktop: $dynamicTextHeadingFourFontFamilyDesktop,
-        dynamicTextHeadingFourSizeDesktop: $dynamicTextHeadingFourSizeDesktop,
-        dynamicTextHeadingFourHeightDesktop: $dynamicTextHeadingFourHeightDesktop,
-        dynamicTextHeadingFourWeightDesktop: $dynamicTextHeadingFourWeightDesktop,
-        dynamicTextHeadingFourStyleDesktop: $dynamicTextHeadingFourStyleDesktop,
-        dynamicTextHeadingFourDecorationDesktop: $dynamicTextHeadingFourDecorationDesktop,
-        dynamicTextHeadingFourMarginTopDesktop: $dynamicTextHeadingFourMarginTopDesktop,
-        dynamicTextHeadingFourMarginBottomDesktop: $dynamicTextHeadingFourMarginBottomDesktop,
-        dynamicTextHeadingFiveColor: $dynamicTextHeadingFiveColor,
-        dynamicTextHeadingFiveFontFamily: $dynamicTextHeadingFiveFontFamily,
-        dynamicTextHeadingFiveSize: $dynamicTextHeadingFiveSize,
-        dynamicTextHeadingFiveHeight: $dynamicTextHeadingFiveHeight,
-        dynamicTextHeadingFiveWeight: $dynamicTextHeadingFiveWeight,
-        dynamicTextHeadingFiveStyle: $dynamicTextHeadingFiveStyle,
-        dynamicTextHeadingFiveDecoration: $dynamicTextHeadingFiveDecoration,
-        dynamicTextHeadingFiveMarginTop: $dynamicTextHeadingFiveMarginTop,
-        dynamicTextHeadingFiveMarginBottom: $dynamicTextHeadingFiveMarginBottom,
-        dynamicTextHeadingFiveColorTablet: $dynamicTextHeadingFiveColorTablet,
-        dynamicTextHeadingFiveFontFamilyTablet: $dynamicTextHeadingFiveFontFamilyTablet,
-        dynamicTextHeadingFiveSizeTablet: $dynamicTextHeadingFiveSizeTablet,
-        dynamicTextHeadingFiveHeightTablet: $dynamicTextHeadingFiveHeightTablet,
-        dynamicTextHeadingFiveWeightTablet: $dynamicTextHeadingFiveWeightTablet,
-        dynamicTextHeadingFiveStyleTablet: $dynamicTextHeadingFiveStyleTablet,
-        dynamicTextHeadingFiveDecorationTablet: $dynamicTextHeadingFiveDecorationTablet,
-        dynamicTextHeadingFiveMarginTopTablet: $dynamicTextHeadingFiveMarginTopTablet,
-        dynamicTextHeadingFiveMarginBottomTablet: $dynamicTextHeadingFiveMarginBottomTablet,
-        dynamicTextHeadingFiveColorDesktop: $dynamicTextHeadingFiveColorDesktop,
-        dynamicTextHeadingFiveFontFamilyDesktop: $dynamicTextHeadingFiveFontFamilyDesktop,
-        dynamicTextHeadingFiveSizeDesktop: $dynamicTextHeadingFiveSizeDesktop,
-        dynamicTextHeadingFiveHeightDesktop: $dynamicTextHeadingFiveHeightDesktop,
-        dynamicTextHeadingFiveWeightDesktop: $dynamicTextHeadingFiveWeightDesktop,
-        dynamicTextHeadingFiveStyleDesktop: $dynamicTextHeadingFiveStyleDesktop,
-        dynamicTextHeadingFiveDecorationDesktop: $dynamicTextHeadingFiveDecorationDesktop,
-        dynamicTextHeadingFiveMarginTopDesktop: $dynamicTextHeadingFiveMarginTopDesktop,
-        dynamicTextHeadingFiveMarginBottomDesktop: $dynamicTextHeadingFiveMarginBottomDesktop,
-        dynamicTextHeadingSixColor: $dynamicTextHeadingSixColor,
-        dynamicTextHeadingSixFontFamily: $dynamicTextHeadingSixFontFamily,
-        dynamicTextHeadingSixSize: $dynamicTextHeadingSixSize,
-        dynamicTextHeadingSixHeight: $dynamicTextHeadingSixHeight,
-        dynamicTextHeadingSixWeight: $dynamicTextHeadingSixWeight,
-        dynamicTextHeadingSixStyle: $dynamicTextHeadingSixStyle,
-        dynamicTextHeadingSixDecoration: $dynamicTextHeadingSixDecoration,
-        dynamicTextHeadingSixMarginTop: $dynamicTextHeadingSixMarginTop,
-        dynamicTextHeadingSixMarginBottom: $dynamicTextHeadingSixMarginBottom,
-        dynamicTextHeadingSixColorTablet: $dynamicTextHeadingSixColorTablet,
-        dynamicTextHeadingSixFontFamilyTablet: $dynamicTextHeadingSixFontFamilyTablet,
-        dynamicTextHeadingSixSizeTablet: $dynamicTextHeadingSixSizeTablet,
-        dynamicTextHeadingSixHeightTablet: $dynamicTextHeadingSixHeightTablet,
-        dynamicTextHeadingSixWeightTablet: $dynamicTextHeadingSixWeightTablet,
-        dynamicTextHeadingSixStyleTablet: $dynamicTextHeadingSixStyleTablet,
-        dynamicTextHeadingSixDecorationTablet: $dynamicTextHeadingSixDecorationTablet,
-        dynamicTextHeadingSixMarginTopTablet: $dynamicTextHeadingSixMarginTopTablet,
-        dynamicTextHeadingSixMarginBottomTablet: $dynamicTextHeadingSixMarginBottomTablet,
-        dynamicTextHeadingSixColorDesktop: $dynamicTextHeadingSixColorDesktop,
-        dynamicTextHeadingSixFontFamilyDesktop: $dynamicTextHeadingSixFontFamilyDesktop,
-        dynamicTextHeadingSixSizeDesktop: $dynamicTextHeadingSixSizeDesktop,
-        dynamicTextHeadingSixHeightDesktop: $dynamicTextHeadingSixHeightDesktop,
-        dynamicTextHeadingSixWeightDesktop: $dynamicTextHeadingSixWeightDesktop,
-        dynamicTextHeadingSixStyleDesktop: $dynamicTextHeadingSixStyleDesktop,
-        dynamicTextHeadingSixDecorationDesktop: $dynamicTextHeadingSixDecorationDesktop,
-        dynamicTextHeadingSixMarginTopDesktop: $dynamicTextHeadingSixMarginTopDesktop,
-        dynamicTextHeadingSixMarginBottomDesktop: $dynamicTextHeadingSixMarginBottomDesktop),
+        dynamicText-VisibilityDesktop: $dynamicText-VisibilityDesktop,
+        dynamicText-HeadingOneColor: $dynamicText-HeadingOneColor,
+        dynamicText-HeadingOneFontFamily: $dynamicText-HeadingOneFontFamily,
+        dynamicText-HeadingOneSize: $dynamicText-HeadingOneSize,
+        dynamicText-HeadingOneHeight: $dynamicText-HeadingOneHeight,
+        dynamicText-HeadingOneWeight: $dynamicText-HeadingOneWeight,
+        dynamicText-HeadingOneStyle: $dynamicText-HeadingOneStyle,
+        dynamicText-HeadingOneDecoration: $dynamicText-HeadingOneDecoration,
+        dynamicText-HeadingOneMarginTop: $dynamicText-HeadingOneMarginTop,
+        dynamicText-HeadingOneMarginBottom: $dynamicText-HeadingOneMarginBottom,
+        dynamicText-HeadingOneColorTablet: $dynamicText-HeadingOneColorTablet,
+        dynamicText-HeadingOneFontFamilyTablet: $dynamicText-HeadingOneFontFamilyTablet,
+        dynamicText-HeadingOneSizeTablet: $dynamicText-HeadingOneSizeTablet,
+        dynamicText-HeadingOneHeightTablet: $dynamicText-HeadingOneHeightTablet,
+        dynamicText-HeadingOneWeightTablet: $dynamicText-HeadingOneWeightTablet,
+        dynamicText-HeadingOneStyleTablet: $dynamicText-HeadingOneStyleTablet,
+        dynamicText-HeadingOneDecorationTablet: $dynamicText-HeadingOneDecorationTablet,
+        dynamicText-HeadingOneMarginTopTablet: $dynamicText-HeadingOneMarginTopTablet,
+        dynamicText-HeadingOneMarginBottomTablet: $dynamicText-HeadingOneMarginBottomTablet,
+        dynamicText-HeadingOneColorDesktop: $dynamicText-HeadingOneColorDesktop,
+        dynamicText-HeadingOneFontFamilyDesktop: $dynamicText-HeadingOneFontFamilyDesktop,
+        dynamicText-HeadingOneSizeDesktop: $dynamicText-HeadingOneSizeDesktop,
+        dynamicText-HeadingOneHeightDesktop: $dynamicText-HeadingOneHeightDesktop,
+        dynamicText-HeadingOneWeightDesktop: $dynamicText-HeadingOneWeightDesktop,
+        dynamicText-HeadingOneStyleDesktop: $dynamicText-HeadingOneStyleDesktop,
+        dynamicText-HeadingOneDecorationDesktop: $dynamicText-HeadingOneDecorationDesktop,
+        dynamicText-HeadingOneMarginTopDesktop: $dynamicText-HeadingOneMarginTopDesktop,
+        dynamicText-HeadingOneMarginBottomDesktop: $dynamicText-HeadingOneMarginBottomDesktop,
+        dynamicText-HeadingTwoColor: $dynamicText-HeadingTwoColor,
+        dynamicText-HeadingTwoFontFamily: $dynamicText-HeadingTwoFontFamily,
+        dynamicText-HeadingTwoSize: $dynamicText-HeadingTwoSize,
+        dynamicText-HeadingTwoHeight: $dynamicText-HeadingTwoHeight,
+        dynamicText-HeadingTwoWeight: $dynamicText-HeadingTwoWeight,
+        dynamicText-HeadingTwoStyle: $dynamicText-HeadingTwoStyle,
+        dynamicText-HeadingTwoDecoration: $dynamicText-HeadingTwoDecoration,
+        dynamicText-HeadingTwoMarginTop: $dynamicText-HeadingTwoMarginTop,
+        dynamicText-HeadingTwoMarginBottom: $dynamicText-HeadingTwoMarginBottom,
+        dynamicText-HeadingTwoColorTablet: $dynamicText-HeadingTwoColorTablet,
+        dynamicText-HeadingTwoFontFamilyTablet: $dynamicText-HeadingTwoFontFamilyTablet,
+        dynamicText-HeadingTwoSizeTablet: $dynamicText-HeadingTwoSizeTablet,
+        dynamicText-HeadingTwoHeightTablet: $dynamicText-HeadingTwoHeightTablet,
+        dynamicText-HeadingTwoWeightTablet: $dynamicText-HeadingTwoWeightTablet,
+        dynamicText-HeadingTwoStyleTablet: $dynamicText-HeadingTwoStyleTablet,
+        dynamicText-HeadingTwoDecorationTablet: $dynamicText-HeadingTwoDecorationTablet,
+        dynamicText-HeadingTwoMarginTopTablet: $dynamicText-HeadingTwoMarginTopTablet,
+        dynamicText-HeadingTwoMarginBottomTablet: $dynamicText-HeadingTwoMarginBottomTablet,
+        dynamicText-HeadingTwoColorDesktop: $dynamicText-HeadingTwoColorDesktop,
+        dynamicText-HeadingTwoFontFamilyDesktop: $dynamicText-HeadingTwoFontFamilyDesktop,
+        dynamicText-HeadingTwoSizeDesktop: $dynamicText-HeadingTwoSizeDesktop,
+        dynamicText-HeadingTwoHeightDesktop: $dynamicText-HeadingTwoHeightDesktop,
+        dynamicText-HeadingTwoWeightDesktop: $dynamicText-HeadingTwoWeightDesktop,
+        dynamicText-HeadingTwoStyleDesktop: $dynamicText-HeadingTwoStyleDesktop,
+        dynamicText-HeadingTwoDecorationDesktop: $dynamicText-HeadingTwoDecorationDesktop,
+        dynamicText-HeadingTwoMarginTopDesktop: $dynamicText-HeadingTwoMarginTopDesktop,
+        dynamicText-HeadingTwoMarginBottomDesktop: $dynamicText-HeadingTwoMarginBottomDesktop,
+        dynamicText-HeadingThreeColor: $dynamicText-HeadingThreeColor,
+        dynamicText-HeadingThreeFontFamily: $dynamicText-HeadingThreeFontFamily,
+        dynamicText-HeadingThreeSize: $dynamicText-HeadingThreeSize,
+        dynamicText-HeadingThreeHeight: $dynamicText-HeadingThreeHeight,
+        dynamicText-HeadingThreeWeight: $dynamicText-HeadingThreeWeight,
+        dynamicText-HeadingThreeStyle: $dynamicText-HeadingThreeStyle,
+        dynamicText-HeadingThreeDecoration: $dynamicText-HeadingThreeDecoration,
+        dynamicText-HeadingThreeMarginTop: $dynamicText-HeadingThreeMarginTop,
+        dynamicText-HeadingThreeMarginBottom: $dynamicText-HeadingThreeMarginBottom,
+        dynamicText-HeadingThreeColorTablet: $dynamicText-HeadingThreeColorTablet,
+        dynamicText-HeadingThreeFontFamilyTablet: $dynamicText-HeadingThreeFontFamilyTablet,
+        dynamicText-HeadingThreeSizeTablet: $dynamicText-HeadingThreeSizeTablet,
+        dynamicText-HeadingThreeHeightTablet: $dynamicText-HeadingThreeHeightTablet,
+        dynamicText-HeadingThreeWeightTablet: $dynamicText-HeadingThreeWeightTablet,
+        dynamicText-HeadingThreeStyleTablet: $dynamicText-HeadingThreeStyleTablet,
+        dynamicText-HeadingThreeDecorationTablet: $dynamicText-HeadingThreeDecorationTablet,
+        dynamicText-HeadingThreeMarginTopTablet: $dynamicText-HeadingThreeMarginTopTablet,
+        dynamicText-HeadingThreeMarginBottomTablet: $dynamicText-HeadingThreeMarginBottomTablet,
+        dynamicText-HeadingThreeColorDesktop: $dynamicText-HeadingThreeColorDesktop,
+        dynamicText-HeadingThreeFontFamilyDesktop: $dynamicText-HeadingThreeFontFamilyDesktop,
+        dynamicText-HeadingThreeSizeDesktop: $dynamicText-HeadingThreeSizeDesktop,
+        dynamicText-HeadingThreeHeightDesktop: $dynamicText-HeadingThreeHeightDesktop,
+        dynamicText-HeadingThreeWeightDesktop: $dynamicText-HeadingThreeWeightDesktop,
+        dynamicText-HeadingThreeStyleDesktop: $dynamicText-HeadingThreeStyleDesktop,
+        dynamicText-HeadingThreeDecorationDesktop: $dynamicText-HeadingThreeDecorationDesktop,
+        dynamicText-HeadingThreeMarginTopDesktop: $dynamicText-HeadingThreeMarginTopDesktop,
+        dynamicText-HeadingThreeMarginBottomDesktop: $dynamicText-HeadingThreeMarginBottomDesktop,
+        dynamicText-HeadingFourColor: $dynamicText-HeadingFourColor,
+        dynamicText-HeadingFourFontFamily: $dynamicText-HeadingFourFontFamily,
+        dynamicText-HeadingFourSize: $dynamicText-HeadingFourSize,
+        dynamicText-HeadingFourHeight: $dynamicText-HeadingFourHeight,
+        dynamicText-HeadingFourWeight: $dynamicText-HeadingFourWeight,
+        dynamicText-HeadingFourStyle: $dynamicText-HeadingFourStyle,
+        dynamicText-HeadingFourDecoration: $dynamicText-HeadingFourDecoration,
+        dynamicText-HeadingFourMarginTop: $dynamicText-HeadingFourMarginTop,
+        dynamicText-HeadingFourMarginBottom: $dynamicText-HeadingFourMarginBottom,
+        dynamicText-HeadingFourColorTablet: $dynamicText-HeadingFourColorTablet,
+        dynamicText-HeadingFourFontFamilyTablet: $dynamicText-HeadingFourFontFamilyTablet,
+        dynamicText-HeadingFourSizeTablet: $dynamicText-HeadingFourSizeTablet,
+        dynamicText-HeadingFourHeightTablet: $dynamicText-HeadingFourHeightTablet,
+        dynamicText-HeadingFourWeightTablet: $dynamicText-HeadingFourWeightTablet,
+        dynamicText-HeadingFourStyleTablet: $dynamicText-HeadingFourStyleTablet,
+        dynamicText-HeadingFourDecorationTablet: $dynamicText-HeadingFourDecorationTablet,
+        dynamicText-HeadingFourMarginTopTablet: $dynamicText-HeadingFourMarginTopTablet,
+        dynamicText-HeadingFourMarginBottomTablet: $dynamicText-HeadingFourMarginBottomTablet,
+        dynamicText-HeadingFourColorDesktop: $dynamicText-HeadingFourColorDesktop,
+        dynamicText-HeadingFourFontFamilyDesktop: $dynamicText-HeadingFourFontFamilyDesktop,
+        dynamicText-HeadingFourSizeDesktop: $dynamicText-HeadingFourSizeDesktop,
+        dynamicText-HeadingFourHeightDesktop: $dynamicText-HeadingFourHeightDesktop,
+        dynamicText-HeadingFourWeightDesktop: $dynamicText-HeadingFourWeightDesktop,
+        dynamicText-HeadingFourStyleDesktop: $dynamicText-HeadingFourStyleDesktop,
+        dynamicText-HeadingFourDecorationDesktop: $dynamicText-HeadingFourDecorationDesktop,
+        dynamicText-HeadingFourMarginTopDesktop: $dynamicText-HeadingFourMarginTopDesktop,
+        dynamicText-HeadingFourMarginBottomDesktop: $dynamicText-HeadingFourMarginBottomDesktop,
+        dynamicText-HeadingFiveColor: $dynamicText-HeadingFiveColor,
+        dynamicText-HeadingFiveFontFamily: $dynamicText-HeadingFiveFontFamily,
+        dynamicText-HeadingFiveSize: $dynamicText-HeadingFiveSize,
+        dynamicText-HeadingFiveHeight: $dynamicText-HeadingFiveHeight,
+        dynamicText-HeadingFiveWeight: $dynamicText-HeadingFiveWeight,
+        dynamicText-HeadingFiveStyle: $dynamicText-HeadingFiveStyle,
+        dynamicText-HeadingFiveDecoration: $dynamicText-HeadingFiveDecoration,
+        dynamicText-HeadingFiveMarginTop: $dynamicText-HeadingFiveMarginTop,
+        dynamicText-HeadingFiveMarginBottom: $dynamicText-HeadingFiveMarginBottom,
+        dynamicText-HeadingFiveColorTablet: $dynamicText-HeadingFiveColorTablet,
+        dynamicText-HeadingFiveFontFamilyTablet: $dynamicText-HeadingFiveFontFamilyTablet,
+        dynamicText-HeadingFiveSizeTablet: $dynamicText-HeadingFiveSizeTablet,
+        dynamicText-HeadingFiveHeightTablet: $dynamicText-HeadingFiveHeightTablet,
+        dynamicText-HeadingFiveWeightTablet: $dynamicText-HeadingFiveWeightTablet,
+        dynamicText-HeadingFiveStyleTablet: $dynamicText-HeadingFiveStyleTablet,
+        dynamicText-HeadingFiveDecorationTablet: $dynamicText-HeadingFiveDecorationTablet,
+        dynamicText-HeadingFiveMarginTopTablet: $dynamicText-HeadingFiveMarginTopTablet,
+        dynamicText-HeadingFiveMarginBottomTablet: $dynamicText-HeadingFiveMarginBottomTablet,
+        dynamicText-HeadingFiveColorDesktop: $dynamicText-HeadingFiveColorDesktop,
+        dynamicText-HeadingFiveFontFamilyDesktop: $dynamicText-HeadingFiveFontFamilyDesktop,
+        dynamicText-HeadingFiveSizeDesktop: $dynamicText-HeadingFiveSizeDesktop,
+        dynamicText-HeadingFiveHeightDesktop: $dynamicText-HeadingFiveHeightDesktop,
+        dynamicText-HeadingFiveWeightDesktop: $dynamicText-HeadingFiveWeightDesktop,
+        dynamicText-HeadingFiveStyleDesktop: $dynamicText-HeadingFiveStyleDesktop,
+        dynamicText-HeadingFiveDecorationDesktop: $dynamicText-HeadingFiveDecorationDesktop,
+        dynamicText-HeadingFiveMarginTopDesktop: $dynamicText-HeadingFiveMarginTopDesktop,
+        dynamicText-HeadingFiveMarginBottomDesktop: $dynamicText-HeadingFiveMarginBottomDesktop,
+        dynamicText-HeadingSixColor: $dynamicText-HeadingSixColor,
+        dynamicText-HeadingSixFontFamily: $dynamicText-HeadingSixFontFamily,
+        dynamicText-HeadingSixSize: $dynamicText-HeadingSixSize,
+        dynamicText-HeadingSixHeight: $dynamicText-HeadingSixHeight,
+        dynamicText-HeadingSixWeight: $dynamicText-HeadingSixWeight,
+        dynamicText-HeadingSixStyle: $dynamicText-HeadingSixStyle,
+        dynamicText-HeadingSixDecoration: $dynamicText-HeadingSixDecoration,
+        dynamicText-HeadingSixMarginTop: $dynamicText-HeadingSixMarginTop,
+        dynamicText-HeadingSixMarginBottom: $dynamicText-HeadingSixMarginBottom,
+        dynamicText-HeadingSixColorTablet: $dynamicText-HeadingSixColorTablet,
+        dynamicText-HeadingSixFontFamilyTablet: $dynamicText-HeadingSixFontFamilyTablet,
+        dynamicText-HeadingSixSizeTablet: $dynamicText-HeadingSixSizeTablet,
+        dynamicText-HeadingSixHeightTablet: $dynamicText-HeadingSixHeightTablet,
+        dynamicText-HeadingSixWeightTablet: $dynamicText-HeadingSixWeightTablet,
+        dynamicText-HeadingSixStyleTablet: $dynamicText-HeadingSixStyleTablet,
+        dynamicText-HeadingSixDecorationTablet: $dynamicText-HeadingSixDecorationTablet,
+        dynamicText-HeadingSixMarginTopTablet: $dynamicText-HeadingSixMarginTopTablet,
+        dynamicText-HeadingSixMarginBottomTablet: $dynamicText-HeadingSixMarginBottomTablet,
+        dynamicText-HeadingSixColorDesktop: $dynamicText-HeadingSixColorDesktop,
+        dynamicText-HeadingSixFontFamilyDesktop: $dynamicText-HeadingSixFontFamilyDesktop,
+        dynamicText-HeadingSixSizeDesktop: $dynamicText-HeadingSixSizeDesktop,
+        dynamicText-HeadingSixHeightDesktop: $dynamicText-HeadingSixHeightDesktop,
+        dynamicText-HeadingSixWeightDesktop: $dynamicText-HeadingSixWeightDesktop,
+        dynamicText-HeadingSixStyleDesktop: $dynamicText-HeadingSixStyleDesktop,
+        dynamicText-HeadingSixDecorationDesktop: $dynamicText-HeadingSixDecorationDesktop,
+        dynamicText-HeadingSixMarginTopDesktop: $dynamicText-HeadingSixMarginTopDesktop,
+        dynamicText-HeadingSixMarginBottomDesktop: $dynamicText-HeadingSixMarginBottomDesktop),
       $options);
 
   $instanceSelector: '[data-widget-package="#{$packageName}"]';
@@ -343,18 +343,18 @@ $variablePrefix: "slider";
 
     #{$instanceSelector} {
       @if map-get($configuration, textBackgroundType)=="Image" {
-        @if map-get($configuration, dynamicTextBackgroundImage)=="none" {
-          background-image: map-get($configuration, dynamicTextBackgroundImage);
+        @if map-get($configuration, dynamicText-BackgroundImage)=="none" {
+          background-image: map-get($configuration, dynamicText-BackgroundImage);
         }
 
         @else {
-          background-image: url("#{map-get($configuration, dynamicTextBackgroundImage)}");
+          background-image: url("#{map-get($configuration, dynamicText-BackgroundImage)}");
         }
       }
 
-      @else if map-get($configuration, dynamicTextBackgroundType)=="Color" {
+      @else if map-get($configuration, dynamicText-BackgroundType)=="Color" {
         background-image: none;
-        background-color: map-get($configuration, dynamicTextBackgroundColor);
+        background-color: map-get($configuration, dynamicText-BackgroundColor);
       }
 
       @else {
@@ -362,16 +362,16 @@ $variablePrefix: "slider";
         background-color: transparent;
       }
 
-      background-size: map-get($configuration, dynamicTextBackgroundSize);
-      background-repeat: map-get($configuration, dynamicTextBackgroundRepeat);
-      background-position: map-get($configuration, dynamicTextBackgroundPosX) map-get($configuration, dynamicTextBackgroundPosY);
+      background-size: map-get($configuration, dynamicText-BackgroundSize);
+      background-repeat: map-get($configuration, dynamicText-BackgroundRepeat);
+      background-position: map-get($configuration, dynamicText-BackgroundPosX) map-get($configuration, dynamicText-BackgroundPosY);
 
-      position: map-get($configuration, dynamicTextPosition) !important;
-      z-index: map-get($configuration, dynamicTextIndex);
+      position: map-get($configuration, dynamicText-Position) !important;
+      z-index: map-get($configuration, dynamicText-Index);
 
-      @if map-get($configuration, dynamicTextPosition)=="relative" {
-        @if map-get($configuration, dynamicTextVisibility)=="visible" {
-          display: map-get($configuration, dynamicTextDisplay) !important;
+      @if map-get($configuration, dynamicText-Position)=="relative" {
+        @if map-get($configuration, dynamicText-Visibility)=="visible" {
+          display: map-get($configuration, dynamicText-Display) !important;
         }
 
         @else {
@@ -380,7 +380,7 @@ $variablePrefix: "slider";
       }
 
       @else {
-        @if map-get($configuration, dynamicTextVisibility)=="visible" {
+        @if map-get($configuration, dynamicText-Visibility)=="visible" {
           display: block !important;
         }
 
@@ -388,48 +388,48 @@ $variablePrefix: "slider";
           display: none !important;
         }
 
-        top: map-get($configuration, dynamicTextPositionTop);
-        right: map-get($configuration, dynamicTextPositionRight);
-        bottom: map-get($configuration, dynamicTextPositionBottom);
-        left: map-get($configuration, dynamicTextPositionLeft);
+        top: map-get($configuration, dynamicText-PositionTop);
+        right: map-get($configuration, dynamicText-PositionRight);
+        bottom: map-get($configuration, dynamicText-PositionBottom);
+        left: map-get($configuration, dynamicText-PositionLeft);
       }
 
-      width: map-get($configuration, dynamicTextWidth);
-      min-width: map-get($configuration, dynamicTextMinWidth);
-      max-width: map-get($configuration, dynamicTextMaxWidth);
+      width: map-get($configuration, dynamicText-Width);
+      min-width: map-get($configuration, dynamicText-MinWidth);
+      max-width: map-get($configuration, dynamicText-MaxWidth);
       height: auto !important;
-      min-height: map-get($configuration, dynamicTextMinHeight);
-      max-height: map-get($configuration, dynamicTextMaxHeight);
-      margin: map-get($configuration, dynamicTextMarginTop) map-get($configuration, dynamicTextMarginRight) map-get($configuration, dynamicTextMarginBottom) map-get($configuration, dynamicTextMarginLeft);
-      padding: map-get($configuration, dynamicTextPaddingTop) map-get($configuration, dynamicTextPaddingRight) map-get($configuration, dynamicTextPaddingBottom) map-get($configuration, dynamicTextPaddingLeft);
+      min-height: map-get($configuration, dynamicText-MinHeight);
+      max-height: map-get($configuration, dynamicText-MaxHeight);
+      margin: map-get($configuration, dynamicText-MarginTop) map-get($configuration, dynamicText-MarginRight) map-get($configuration, dynamicText-MarginBottom) map-get($configuration, dynamicText-MarginLeft);
+      padding: map-get($configuration, dynamicText-PaddingTop) map-get($configuration, dynamicText-PaddingRight) map-get($configuration, dynamicText-PaddingBottom) map-get($configuration, dynamicText-PaddingLeft);
 
-      @include borderOnly((borderSides: map-get($configuration, dynamicTextBorderSides),
-          borderWidth: map-get($configuration, dynamicTextBorderWidth),
-          borderStyle: map-get($configuration, dynamicTextBorderStyle),
-          borderColor: map-get($configuration, dynamicTextBorderColor)));
-      border-radius: map-get($configuration, dynamicTextBorderRadius);
-      @include shadowOnly((shadowStyle: map-get($configuration, dynamicTextShadowStyle),
-          shadowXOffset: map-get($configuration, dynamicTextShadowXoffset),
-          shadowYOffset: map-get($configuration, dynamicTextShadowYoffset),
-          shadowBlur: map-get($configuration, dynamicTextShadowBlur),
-          shadowSpread: map-get($configuration, dynamicTextShadowSpread),
-          shadowColor: map-get($configuration, dynamicTextShadowColor)));
+      @include borderOnly((borderSides: map-get($configuration, dynamicText-BorderSides),
+          borderWidth: map-get($configuration, dynamicText-BorderWidth),
+          borderStyle: map-get($configuration, dynamicText-BorderStyle),
+          borderColor: map-get($configuration, dynamicText-BorderColor)));
+      border-radius: map-get($configuration, dynamicText-BorderRadius);
+      @include shadowOnly((shadowStyle: map-get($configuration, dynamicText-ShadowStyle),
+          shadowXOffset: map-get($configuration, dynamicText-ShadowXoffset),
+          shadowYOffset: map-get($configuration, dynamicText-ShadowYoffset),
+          shadowBlur: map-get($configuration, dynamicText-ShadowBlur),
+          shadowSpread: map-get($configuration, dynamicText-ShadowSpread),
+          shadowColor: map-get($configuration, dynamicText-ShadowColor)));
 
       // Styles for tablet
       @include above($tabletBreakpoint) {
-        @if map-get($configuration, dynamicTextBackgroundTypeTablet)=="Image" {
-          @if map-get($configuration, dynamicTextBackgroundImageTablet)=="none" {
-            background-image: map-get($configuration, dynamicTextBackgroundImageTablet);
+        @if map-get($configuration, dynamicText-BackgroundTypeTablet)=="Image" {
+          @if map-get($configuration, dynamicText-BackgroundImageTablet)=="none" {
+            background-image: map-get($configuration, dynamicText-BackgroundImageTablet);
           }
 
           @else {
-            background-image: url("#{map-get($configuration, dynamicTextBackgroundImageTablet)}");
+            background-image: url("#{map-get($configuration, dynamicText-BackgroundImageTablet)}");
           }
         }
 
-        @else if map-get($configuration, dynamicTextBackgroundTypeTablet)=="Color" {
+        @else if map-get($configuration, dynamicText-BackgroundTypeTablet)=="Color" {
           background-image: none;
-          background-color: map-get($configuration, dynamicTextBackgroundColorTablet);
+          background-color: map-get($configuration, dynamicText-BackgroundColorTablet);
         }
 
         @else {
@@ -437,16 +437,16 @@ $variablePrefix: "slider";
           background-color: transparent;
         }
 
-        background-size: map-get($configuration, dynamicTextBackgroundSizeTablet);
-        background-repeat: map-get($configuration, dynamicTextBackgroundRepeatTablet);
-        background-position: map-get($configuration, dynamicTextBackgroundPosXTablet) map-get($configuration, dynamicTextBackgroundPosYTablet);
+        background-size: map-get($configuration, dynamicText-BackgroundSizeTablet);
+        background-repeat: map-get($configuration, dynamicText-BackgroundRepeatTablet);
+        background-position: map-get($configuration, dynamicText-BackgroundPosXTablet) map-get($configuration, dynamicText-BackgroundPosYTablet);
 
-        position: map-get($configuration, dynamicTextPositionTablet) !important;
-        z-index: map-get($configuration, dynamicTextIndexTablet);
+        position: map-get($configuration, dynamicText-PositionTablet) !important;
+        z-index: map-get($configuration, dynamicText-IndexTablet);
 
-        @if map-get($configuration, dynamicTextPositionTablet)=="relative" {
-          @if map-get($configuration, dynamicTextVisibilityTablet)=="visible" {
-            display: map-get($configuration, dynamicTextDisplayTablet) !important;
+        @if map-get($configuration, dynamicText-PositionTablet)=="relative" {
+          @if map-get($configuration, dynamicText-VisibilityTablet)=="visible" {
+            display: map-get($configuration, dynamicText-DisplayTablet) !important;
           }
 
           @else {
@@ -455,7 +455,7 @@ $variablePrefix: "slider";
         }
 
         @else {
-          @if map-get($configuration, dynamicTextVisibilityTablet)=="visible" {
+          @if map-get($configuration, dynamicText-VisibilityTablet)=="visible" {
             display: block !important;
           }
 
@@ -463,49 +463,49 @@ $variablePrefix: "slider";
             display: none !important;
           }
 
-          top: map-get($configuration, dynamicTextPositionTopTablet);
-          right: map-get($configuration, dynamicTextPositionRightTablet);
-          bottom: map-get($configuration, dynamicTextPositionBottomTablet);
-          left: map-get($configuration, dynamicTextPositionLeftTablet);
+          top: map-get($configuration, dynamicText-PositionTopTablet);
+          right: map-get($configuration, dynamicText-PositionRightTablet);
+          bottom: map-get($configuration, dynamicText-PositionBottomTablet);
+          left: map-get($configuration, dynamicText-PositionLeftTablet);
         }
 
-        width: map-get($configuration, dynamicTextWidthTablet);
-        min-width: map-get($configuration, dynamicTextMinWidthTablet);
-        max-width: map-get($configuration, dynamicTextMaxWidthTablet);
+        width: map-get($configuration, dynamicText-WidthTablet);
+        min-width: map-get($configuration, dynamicText-MinWidthTablet);
+        max-width: map-get($configuration, dynamicText-MaxWidthTablet);
         height: auto !important;
-        min-height: map-get($configuration, dynamicTextMinHeightTablet);
-        max-height: map-get($configuration, dynamicTextMaxHeightTablet);
-        margin: map-get($configuration, dynamicTextMarginTopTablet) map-get($configuration, dynamicTextMarginRightTablet) map-get($configuration, dynamicTextMarginBottomTablet) map-get($configuration, dynamicTextMarginLeftTablet);
-        padding: map-get($configuration, dynamicTextPaddingTopTablet) map-get($configuration, dynamicTextPaddingRightTablet) map-get($configuration, dynamicTextPaddingBottomTablet) map-get($configuration, dynamicTextPaddingLeftTablet);
+        min-height: map-get($configuration, dynamicText-MinHeightTablet);
+        max-height: map-get($configuration, dynamicText-MaxHeightTablet);
+        margin: map-get($configuration, dynamicText-MarginTopTablet) map-get($configuration, dynamicText-MarginRightTablet) map-get($configuration, dynamicText-MarginBottomTablet) map-get($configuration, dynamicText-MarginLeftTablet);
+        padding: map-get($configuration, dynamicText-PaddingTopTablet) map-get($configuration, dynamicText-PaddingRightTablet) map-get($configuration, dynamicText-PaddingBottomTablet) map-get($configuration, dynamicText-PaddingLeftTablet);
 
-        @include borderOnly((borderSides: map-get($configuration, dynamicTextBorderSidesTablet),
-            borderWidth: map-get($configuration, dynamicTextBorderWidthTablet),
-            borderStyle: map-get($configuration, dynamicTextBorderStyleTablet),
-            borderColor: map-get($configuration, dynamicTextBorderColorTablet)));
-        border-radius: map-get($configuration, dynamicTextBorderRadiusTablet);
-        @include shadowOnly((shadowStyle: map-get($configuration, dynamicTextShadowStyleTablet),
-            shadowXOffset: map-get($configuration, dynamicTextShadowXoffsetTablet),
-            shadowYOffset: map-get($configuration, dynamicTextShadowYoffsetTablet),
-            shadowBlur: map-get($configuration, dynamicTextShadowBlurTablet),
-            shadowSpread: map-get($configuration, dynamicTextShadowSpreadTablet),
-            shadowColor: map-get($configuration, dynamicTextShadowColorTablet)));
+        @include borderOnly((borderSides: map-get($configuration, dynamicText-BorderSidesTablet),
+            borderWidth: map-get($configuration, dynamicText-BorderWidthTablet),
+            borderStyle: map-get($configuration, dynamicText-BorderStyleTablet),
+            borderColor: map-get($configuration, dynamicText-BorderColorTablet)));
+        border-radius: map-get($configuration, dynamicText-BorderRadiusTablet);
+        @include shadowOnly((shadowStyle: map-get($configuration, dynamicText-ShadowStyleTablet),
+            shadowXOffset: map-get($configuration, dynamicText-ShadowXoffsetTablet),
+            shadowYOffset: map-get($configuration, dynamicText-ShadowYoffsetTablet),
+            shadowBlur: map-get($configuration, dynamicText-ShadowBlurTablet),
+            shadowSpread: map-get($configuration, dynamicText-ShadowSpreadTablet),
+            shadowColor: map-get($configuration, dynamicText-ShadowColorTablet)));
       }
 
       // Styles for desktop
       @include above($desktopBreakpoint) {
-        @if map-get($configuration, dynamicTextBackgroundTypeDesktop)=="Image" {
-          @if map-get($configuration, dynamicTextBackgroundImageDesktop)=="none" {
-            background-image: map-get($configuration, dynamicTextBackgroundImageDesktop);
+        @if map-get($configuration, dynamicText-BackgroundTypeDesktop)=="Image" {
+          @if map-get($configuration, dynamicText-BackgroundImageDesktop)=="none" {
+            background-image: map-get($configuration, dynamicText-BackgroundImageDesktop);
           }
 
           @else {
-            background-image: url("#{map-get($configuration, dynamicTextBackgroundImageDesktop)}");
+            background-image: url("#{map-get($configuration, dynamicText-BackgroundImageDesktop)}");
           }
         }
 
-        @else if map-get($configuration, dynamicTextBackgroundTypeDesktop)=="Color" {
+        @else if map-get($configuration, dynamicText-BackgroundTypeDesktop)=="Color" {
           background-image: none;
-          background-color: map-get($configuration, dynamicTextBackgroundColorDesktop);
+          background-color: map-get($configuration, dynamicText-BackgroundColorDesktop);
         }
 
         @else {
@@ -513,16 +513,16 @@ $variablePrefix: "slider";
           background-color: transparent;
         }
 
-        background-size: map-get($configuration, dynamicTextBackgroundSizeDesktop);
-        background-repeat: map-get($configuration, dynamicTextBackgroundRepeatDesktop);
-        background-position: map-get($configuration, dynamicTextBackgroundPosXDesktop) map-get($configuration, dynamicTextBackgroundPosYDesktop);
+        background-size: map-get($configuration, dynamicText-BackgroundSizeDesktop);
+        background-repeat: map-get($configuration, dynamicText-BackgroundRepeatDesktop);
+        background-position: map-get($configuration, dynamicText-BackgroundPosXDesktop) map-get($configuration, dynamicText-BackgroundPosYDesktop);
 
-        position: map-get($configuration, dynamicTextPositionDesktop) !important;
-        z-index: map-get($configuration, dynamicTextIndexDesktop);
+        position: map-get($configuration, dynamicText-PositionDesktop) !important;
+        z-index: map-get($configuration, dynamicText-IndexDesktop);
 
-        @if map-get($configuration, dynamicTextPositionDesktop)=="relative" {
-          @if map-get($configuration, dynamicTextVisibilityDesktop)=="visible" {
-            display: map-get($configuration, dynamicTextDisplayDesktop) !important;
+        @if map-get($configuration, dynamicText-PositionDesktop)=="relative" {
+          @if map-get($configuration, dynamicText-VisibilityDesktop)=="visible" {
+            display: map-get($configuration, dynamicText-DisplayDesktop) !important;
           }
 
           @else {
@@ -531,7 +531,7 @@ $variablePrefix: "slider";
         }
 
         @else {
-          @if map-get($configuration, dynamicTextVisibilityDesktop)=="visible" {
+          @if map-get($configuration, dynamicText-VisibilityDesktop)=="visible" {
             display: block !important;
           }
 
@@ -539,32 +539,32 @@ $variablePrefix: "slider";
             display: none !important;
           }
 
-          top: map-get($configuration, dynamicTextPositionTopDesktop);
-          right: map-get($configuration, dynamicTextPositionRightDesktop);
-          bottom: map-get($configuration, dynamicTextPositionBottomDesktop);
-          left: map-get($configuration, dynamicTextPositionLeftDesktop);
+          top: map-get($configuration, dynamicText-PositionTopDesktop);
+          right: map-get($configuration, dynamicText-PositionRightDesktop);
+          bottom: map-get($configuration, dynamicText-PositionBottomDesktop);
+          left: map-get($configuration, dynamicText-PositionLeftDesktop);
         }
 
-        width: map-get($configuration, dynamicTextWidthDesktop);
-        min-width: map-get($configuration, dynamicTextMinWidthDesktop);
-        max-width: map-get($configuration, dynamicTextMaxWidthDesktop);
+        width: map-get($configuration, dynamicText-WidthDesktop);
+        min-width: map-get($configuration, dynamicText-MinWidthDesktop);
+        max-width: map-get($configuration, dynamicText-MaxWidthDesktop);
         height: auto !important;
-        min-height: map-get($configuration, dynamicTextMinHeightDesktop);
-        max-height: map-get($configuration, dynamicTextMaxHeightDesktop);
-        margin: map-get($configuration, dynamicTextMarginTopDesktop) map-get($configuration, dynamicTextMarginRightDesktop) map-get($configuration, dynamicTextMarginBottomDesktop) map-get($configuration, dynamicTextMarginLeftDesktop);
-        padding: map-get($configuration, dynamicTextPaddingTopDesktop) map-get($configuration, dynamicTextPaddingRightDesktop) map-get($configuration, dynamicTextPaddingBottomDesktop) map-get($configuration, dynamicTextPaddingLeftDesktop);
+        min-height: map-get($configuration, dynamicText-MinHeightDesktop);
+        max-height: map-get($configuration, dynamicText-MaxHeightDesktop);
+        margin: map-get($configuration, dynamicText-MarginTopDesktop) map-get($configuration, dynamicText-MarginRightDesktop) map-get($configuration, dynamicText-MarginBottomDesktop) map-get($configuration, dynamicText-MarginLeftDesktop);
+        padding: map-get($configuration, dynamicText-PaddingTopDesktop) map-get($configuration, dynamicText-PaddingRightDesktop) map-get($configuration, dynamicText-PaddingBottomDesktop) map-get($configuration, dynamicText-PaddingLeftDesktop);
 
-        @include borderOnly((borderSides: map-get($configuration, dynamicTextBorderSidesDesktop),
-            borderWidth: map-get($configuration, dynamicTextBorderWidthDesktop),
-            borderStyle: map-get($configuration, dynamicTextBorderStyleDesktop),
-            borderColor: map-get($configuration, dynamicTextBorderColorDesktop)));
-        border-radius: map-get($configuration, dynamicTextBorderRadiusDesktop);
-        @include shadowOnly((shadowStyle: map-get($configuration, dynamicTextShadowStyleDesktop),
-            shadowXOffset: map-get($configuration, dynamicTextShadowXoffsetDesktop),
-            shadowYOffset: map-get($configuration, dynamicTextShadowYoffsetDesktop),
-            shadowBlur: map-get($configuration, dynamicTextShadowBlurDesktop),
-            shadowSpread: map-get($configuration, dynamicTextShadowSpreadDesktop),
-            shadowColor: map-get($configuration, dynamicTextShadowColorDesktop)));
+        @include borderOnly((borderSides: map-get($configuration, dynamicText-BorderSidesDesktop),
+            borderWidth: map-get($configuration, dynamicText-BorderWidthDesktop),
+            borderStyle: map-get($configuration, dynamicText-BorderStyleDesktop),
+            borderColor: map-get($configuration, dynamicText-BorderColorDesktop)));
+        border-radius: map-get($configuration, dynamicText-BorderRadiusDesktop);
+        @include shadowOnly((shadowStyle: map-get($configuration, dynamicText-ShadowStyleDesktop),
+            shadowXOffset: map-get($configuration, dynamicText-ShadowXoffsetDesktop),
+            shadowYOffset: map-get($configuration, dynamicText-ShadowYoffsetDesktop),
+            shadowBlur: map-get($configuration, dynamicText-ShadowBlurDesktop),
+            shadowSpread: map-get($configuration, dynamicText-ShadowSpreadDesktop),
+            shadowColor: map-get($configuration, dynamicText-ShadowColorDesktop)));
       }
 
       p {
@@ -610,248 +610,248 @@ $variablePrefix: "slider";
       }
 
       h1 {
-        color: map-get($configuration, dynamicTextHeadingOneColor);
-        font-family: map-get($configuration, dynamicTextHeadingOneFontFamily);
-        font-size: map-get($configuration, dynamicTextHeadingOneSize);
-        font-style: map-get($configuration, dynamicTextHeadingOneStyle);
-        text-decoration: map-get($configuration, dynamicTextHeadingOneDecoration);
-        line-height: map-get($configuration, dynamicTextHeadingOneHeight);
-        font-weight: map-get($configuration, dynamicTextHeadingOneWeight);
+        color: map-get($configuration, dynamicText-HeadingOneColor);
+        font-family: map-get($configuration, dynamicText-HeadingOneFontFamily);
+        font-size: map-get($configuration, dynamicText-HeadingOneSize);
+        font-style: map-get($configuration, dynamicText-HeadingOneStyle);
+        text-decoration: map-get($configuration, dynamicText-HeadingOneDecoration);
+        line-height: map-get($configuration, dynamicText-HeadingOneHeight);
+        font-weight: map-get($configuration, dynamicText-HeadingOneWeight);
 
-        margin-top: map-get($configuration, dynamicTextHeadingOneMarginTop);
-        margin-bottom: map-get($configuration, dynamicTextHeadingOneMarginBottom);
+        margin-top: map-get($configuration, dynamicText-HeadingOneMarginTop);
+        margin-bottom: map-get($configuration, dynamicText-HeadingOneMarginBottom);
 
         // Styles for tablet
         @include above($tabletBreakpoint) {
-          color: map-get($configuration, dynamicTextHeadingOneColorTablet);
-          font-family: map-get($configuration, dynamicTextHeadingOneFontFamilyTablet);
-          font-size: map-get($configuration, dynamicTextHeadingOneSizeTablet);
-          font-style: map-get($configuration, dynamicTextHeadingOneStyleTablet);
-          text-decoration: map-get($configuration, dynamicTextHeadingOneDecorationTablet);
-          line-height: map-get($configuration, dynamicTextHeadingOneHeightTablet);
-          font-weight: map-get($configuration, dynamicTextHeadingOneWeightTablet);
+          color: map-get($configuration, dynamicText-HeadingOneColorTablet);
+          font-family: map-get($configuration, dynamicText-HeadingOneFontFamilyTablet);
+          font-size: map-get($configuration, dynamicText-HeadingOneSizeTablet);
+          font-style: map-get($configuration, dynamicText-HeadingOneStyleTablet);
+          text-decoration: map-get($configuration, dynamicText-HeadingOneDecorationTablet);
+          line-height: map-get($configuration, dynamicText-HeadingOneHeightTablet);
+          font-weight: map-get($configuration, dynamicText-HeadingOneWeightTablet);
 
-          margin-top: map-get($configuration, dynamicTextHeadingOneMarginTopTablet);
-          margin-bottom: map-get($configuration, dynamicTextHeadingOneMarginBottomTablet);
+          margin-top: map-get($configuration, dynamicText-HeadingOneMarginTopTablet);
+          margin-bottom: map-get($configuration, dynamicText-HeadingOneMarginBottomTablet);
         }
 
         // Styles for desktop
         @include above($desktopBreakpoint) {
-          color: map-get($configuration, dynamicTextHeadingOneColorDesktop);
-          font-family: map-get($configuration, dynamicTextHeadingOneFontFamilyDesktop);
-          font-size: map-get($configuration, dynamicTextHeadingOneSizeDesktop);
-          font-style: map-get($configuration, dynamicTextHeadingOneStyleDesktop);
-          text-decoration: map-get($configuration, dynamicTextHeadingOneDecorationDesktop);
-          line-height: map-get($configuration, dynamicTextHeadingOneHeightDesktop);
-          font-weight: map-get($configuration, dynamicTextHeadingOneWeightDesktop);
+          color: map-get($configuration, dynamicText-HeadingOneColorDesktop);
+          font-family: map-get($configuration, dynamicText-HeadingOneFontFamilyDesktop);
+          font-size: map-get($configuration, dynamicText-HeadingOneSizeDesktop);
+          font-style: map-get($configuration, dynamicText-HeadingOneStyleDesktop);
+          text-decoration: map-get($configuration, dynamicText-HeadingOneDecorationDesktop);
+          line-height: map-get($configuration, dynamicText-HeadingOneHeightDesktop);
+          font-weight: map-get($configuration, dynamicText-HeadingOneWeightDesktop);
 
-          margin-top: map-get($configuration, dynamicTextHeadingOneMarginTopDesktop);
-          margin-bottom: map-get($configuration, dynamicTextHeadingOneMarginBottomDesktop);
+          margin-top: map-get($configuration, dynamicText-HeadingOneMarginTopDesktop);
+          margin-bottom: map-get($configuration, dynamicText-HeadingOneMarginBottomDesktop);
         }
       }
 
       h2 {
-        color: map-get($configuration, dynamicTextHeadingTwoColor);
-        font-family: map-get($configuration, dynamicTextHeadingTwoFontFamily);
-        font-size: map-get($configuration, dynamicTextHeadingTwoSize);
-        font-style: map-get($configuration, dynamicTextHeadingTwoStyle);
+        color: map-get($configuration, dynamicText-HeadingTwoColor);
+        font-family: map-get($configuration, dynamicText-HeadingTwoFontFamily);
+        font-size: map-get($configuration, dynamicText-HeadingTwoSize);
+        font-style: map-get($configuration, dynamicText-HeadingTwoStyle);
         text-decoration: map-get($configuration, textHeadingTwoDecoration);
-        line-height: map-get($configuration, dynamicTextHeadingTwoHeight);
-        font-weight: map-get($configuration, dynamicTextHeadingTwoWeight);
+        line-height: map-get($configuration, dynamicText-HeadingTwoHeight);
+        font-weight: map-get($configuration, dynamicText-HeadingTwoWeight);
 
-        margin-top: map-get($configuration, dynamicTextHeadingTwoMarginTop);
-        margin-bottom: map-get($configuration, dynamicTextHeadingTwoMarginBottom);
+        margin-top: map-get($configuration, dynamicText-HeadingTwoMarginTop);
+        margin-bottom: map-get($configuration, dynamicText-HeadingTwoMarginBottom);
 
         // Styles for tablet
         @include above($tabletBreakpoint) {
-          color: map-get($configuration, dynamicTextHeadingTwoColorTablet);
-          font-family: map-get($configuration, dynamicTextHeadingTwoFontFamilyTablet);
-          font-size: map-get($configuration, dynamicTextHeadingTwoSizeTablet);
-          font-style: map-get($configuration, dynamicTextHeadingTwoStyleTablet);
-          text-decoration: map-get($configuration, dynamicTextHeadingTwoDecorationTablet);
-          line-height: map-get($configuration, dynamicTextHeadingTwoHeightTablet);
-          font-weight: map-get($configuration, dynamicTextHeadingTwoWeightTablet);
+          color: map-get($configuration, dynamicText-HeadingTwoColorTablet);
+          font-family: map-get($configuration, dynamicText-HeadingTwoFontFamilyTablet);
+          font-size: map-get($configuration, dynamicText-HeadingTwoSizeTablet);
+          font-style: map-get($configuration, dynamicText-HeadingTwoStyleTablet);
+          text-decoration: map-get($configuration, dynamicText-HeadingTwoDecorationTablet);
+          line-height: map-get($configuration, dynamicText-HeadingTwoHeightTablet);
+          font-weight: map-get($configuration, dynamicText-HeadingTwoWeightTablet);
 
-          margin-top: map-get($configuration, dynamicTextHeadingTwoMarginTopTablet);
-          margin-bottom: map-get($configuration, dynamicTextHeadingTwoMarginBottomTablet);
+          margin-top: map-get($configuration, dynamicText-HeadingTwoMarginTopTablet);
+          margin-bottom: map-get($configuration, dynamicText-HeadingTwoMarginBottomTablet);
         }
 
         // Styles for desktop
         @include above($desktopBreakpoint) {
-          color: map-get($configuration, dynamicTextHeadingTwoColorDesktop);
-          font-family: map-get($configuration, dynamicTextHeadingTwoFontFamilyDesktop);
-          font-size: map-get($configuration, dynamicTextHeadingTwoSizeDesktop);
-          font-style: map-get($configuration, dynamicTextHeadingTwoStyleDesktop);
-          text-decoration: map-get($configuration, dynamicTextHeadingTwoDecorationDesktop);
-          line-height: map-get($configuration, dynamicTextHeadingTwoHeightDesktop);
-          font-weight: map-get($configuration, dynamicTextHeadingTwoWeightDesktop);
+          color: map-get($configuration, dynamicText-HeadingTwoColorDesktop);
+          font-family: map-get($configuration, dynamicText-HeadingTwoFontFamilyDesktop);
+          font-size: map-get($configuration, dynamicText-HeadingTwoSizeDesktop);
+          font-style: map-get($configuration, dynamicText-HeadingTwoStyleDesktop);
+          text-decoration: map-get($configuration, dynamicText-HeadingTwoDecorationDesktop);
+          line-height: map-get($configuration, dynamicText-HeadingTwoHeightDesktop);
+          font-weight: map-get($configuration, dynamicText-HeadingTwoWeightDesktop);
 
-          margin-top: map-get($configuration, dynamicTextHeadingTwoMarginTopDesktop);
-          margin-bottom: map-get($configuration, dynamicTextHeadingTwoMarginBottomDesktop);
+          margin-top: map-get($configuration, dynamicText-HeadingTwoMarginTopDesktop);
+          margin-bottom: map-get($configuration, dynamicText-HeadingTwoMarginBottomDesktop);
         }
       }
 
       h3 {
-        color: map-get($configuration, dynamicTextHeadingThreeColor);
-        font-family: map-get($configuration, dynamicTextHeadingThreeFontFamily);
-        font-size: map-get($configuration, dynamicTextHeadingThreeSize);
-        font-style: map-get($configuration, dynamicTextHeadingThreeStyle);
-        text-decoration: map-get($configuration, dynamicTextHeadingThreeDecoration);
-        line-height: map-get($configuration, dynamicTextHeadingThreeHeight);
-        font-weight: map-get($configuration, dynamicTextHeadingThreeWeight);
+        color: map-get($configuration, dynamicText-HeadingThreeColor);
+        font-family: map-get($configuration, dynamicText-HeadingThreeFontFamily);
+        font-size: map-get($configuration, dynamicText-HeadingThreeSize);
+        font-style: map-get($configuration, dynamicText-HeadingThreeStyle);
+        text-decoration: map-get($configuration, dynamicText-HeadingThreeDecoration);
+        line-height: map-get($configuration, dynamicText-HeadingThreeHeight);
+        font-weight: map-get($configuration, dynamicText-HeadingThreeWeight);
 
-        margin-top: map-get($configuration, dynamicTextHeadingThreeMarginTop);
-        margin-bottom: map-get($configuration, dynamicTextHeadingThreeMarginBottom);
+        margin-top: map-get($configuration, dynamicText-HeadingThreeMarginTop);
+        margin-bottom: map-get($configuration, dynamicText-HeadingThreeMarginBottom);
 
         // Styles for tablet
         @include above($tabletBreakpoint) {
-          color: map-get($configuration, dynamicTextHeadingThreeColorTablet);
-          font-family: map-get($configuration, dynamicTextHeadingThreeFontFamilyTablet);
-          font-size: map-get($configuration, dynamicTextHeadingThreeSizeTablet);
-          font-style: map-get($configuration, dynamicTextHeadingThreeStyleTablet);
-          text-decoration: map-get($configuration, dynamicTextHeadingThreeDecorationTablet);
-          line-height: map-get($configuration, dynamicTextHeadingThreeHeightTablet);
-          font-weight: map-get($configuration, dynamicTextHeadingThreeWeightTablet);
+          color: map-get($configuration, dynamicText-HeadingThreeColorTablet);
+          font-family: map-get($configuration, dynamicText-HeadingThreeFontFamilyTablet);
+          font-size: map-get($configuration, dynamicText-HeadingThreeSizeTablet);
+          font-style: map-get($configuration, dynamicText-HeadingThreeStyleTablet);
+          text-decoration: map-get($configuration, dynamicText-HeadingThreeDecorationTablet);
+          line-height: map-get($configuration, dynamicText-HeadingThreeHeightTablet);
+          font-weight: map-get($configuration, dynamicText-HeadingThreeWeightTablet);
 
-          margin-top: map-get($configuration, dynamicTextHeadingThreeMarginTopTablet);
-          margin-bottom: map-get($configuration, dynamicTextHeadingThreeMarginBottomTablet);
+          margin-top: map-get($configuration, dynamicText-HeadingThreeMarginTopTablet);
+          margin-bottom: map-get($configuration, dynamicText-HeadingThreeMarginBottomTablet);
         }
 
         // Styles for desktop
         @include above($desktopBreakpoint) {
-          color: map-get($configuration, dynamicTextHeadingThreeColorDesktop);
-          font-family: map-get($configuration, dynamicTextHeadingThreeFontFamilyDesktop);
-          font-size: map-get($configuration, dynamicTextHeadingThreeSizeDesktop);
-          font-style: map-get($configuration, dynamicTextHeadingThreeStyleDesktop);
-          text-decoration: map-get($configuration, dynamicTextHeadingThreeDecorationDesktop);
-          line-height: map-get($configuration, dynamicTextHeadingThreeHeightDesktop);
-          font-weight: map-get($configuration, dynamicTextHeadingThreeWeightDesktop);
+          color: map-get($configuration, dynamicText-HeadingThreeColorDesktop);
+          font-family: map-get($configuration, dynamicText-HeadingThreeFontFamilyDesktop);
+          font-size: map-get($configuration, dynamicText-HeadingThreeSizeDesktop);
+          font-style: map-get($configuration, dynamicText-HeadingThreeStyleDesktop);
+          text-decoration: map-get($configuration, dynamicText-HeadingThreeDecorationDesktop);
+          line-height: map-get($configuration, dynamicText-HeadingThreeHeightDesktop);
+          font-weight: map-get($configuration, dynamicText-HeadingThreeWeightDesktop);
 
-          margin-top: map-get($configuration, dynamicTextHeadingThreeMarginTopDesktop);
-          margin-bottom: map-get($configuration, dynamicTextHeadingThreeMarginBottomDesktop);
+          margin-top: map-get($configuration, dynamicText-HeadingThreeMarginTopDesktop);
+          margin-bottom: map-get($configuration, dynamicText-HeadingThreeMarginBottomDesktop);
         }
       }
 
       h4 {
-        color: map-get($configuration, dynamicTextHeadingFourColor);
-        font-family: map-get($configuration, dynamicTextHeadingFourFontFamily);
-        font-size: map-get($configuration, dynamicTextHeadingFourSize);
-        font-style: map-get($configuration, dynamicTextHeadingFourStyle);
-        text-decoration: map-get($configuration, dynamicTextHeadingFourDecoration);
-        line-height: map-get($configuration, dynamicTextHeadingFourHeight);
-        font-weight: map-get($configuration, dynamicTextHeadingFourWeight);
+        color: map-get($configuration, dynamicText-HeadingFourColor);
+        font-family: map-get($configuration, dynamicText-HeadingFourFontFamily);
+        font-size: map-get($configuration, dynamicText-HeadingFourSize);
+        font-style: map-get($configuration, dynamicText-HeadingFourStyle);
+        text-decoration: map-get($configuration, dynamicText-HeadingFourDecoration);
+        line-height: map-get($configuration, dynamicText-HeadingFourHeight);
+        font-weight: map-get($configuration, dynamicText-HeadingFourWeight);
 
-        margin-top: map-get($configuration, dynamicTextHeadingFourMarginTop);
-        margin-bottom: map-get($configuration, dynamicTextHeadingFourMarginBottom);
+        margin-top: map-get($configuration, dynamicText-HeadingFourMarginTop);
+        margin-bottom: map-get($configuration, dynamicText-HeadingFourMarginBottom);
 
         // Styles for tablet
         @include above($tabletBreakpoint) {
-          color: map-get($configuration, dynamicTextHeadingFourColorTablet);
-          font-family: map-get($configuration, dynamicTextHeadingFourFontFamilyTablet);
-          font-size: map-get($configuration, dynamicTextHeadingFourSizeTablet);
-          font-style: map-get($configuration, dynamicTextHeadingFourStyleTablet);
-          text-decoration: map-get($configuration, dynamicTextHeadingFourDecorationTablet);
-          line-height: map-get($configuration, dynamicTextHeadingFourHeightTablet);
-          font-weight: map-get($configuration, dynamicTextHeadingFourWeightTablet);
+          color: map-get($configuration, dynamicText-HeadingFourColorTablet);
+          font-family: map-get($configuration, dynamicText-HeadingFourFontFamilyTablet);
+          font-size: map-get($configuration, dynamicText-HeadingFourSizeTablet);
+          font-style: map-get($configuration, dynamicText-HeadingFourStyleTablet);
+          text-decoration: map-get($configuration, dynamicText-HeadingFourDecorationTablet);
+          line-height: map-get($configuration, dynamicText-HeadingFourHeightTablet);
+          font-weight: map-get($configuration, dynamicText-HeadingFourWeightTablet);
 
-          margin-top: map-get($configuration, dynamicTextHeadingFourMarginTopTablet);
-          margin-bottom: map-get($configuration, dynamicTextHeadingFourMarginBottomTablet);
+          margin-top: map-get($configuration, dynamicText-HeadingFourMarginTopTablet);
+          margin-bottom: map-get($configuration, dynamicText-HeadingFourMarginBottomTablet);
         }
 
         // Styles for desktop
         @include above($desktopBreakpoint) {
-          color: map-get($configuration, dynamicTextHeadingFourColorDesktop);
-          font-family: map-get($configuration, dynamicTextHeadingFourFontFamilyDesktop);
-          font-size: map-get($configuration, dynamicTextHeadingFourSizeDesktop);
-          font-style: map-get($configuration, dynamicTextHeadingFourStyleDesktop);
-          text-decoration: map-get($configuration, dynamicTextHeadingFourDecorationDesktop);
-          line-height: map-get($configuration, dynamicTextHeadingFourHeightDesktop);
-          font-weight: map-get($configuration, dynamicTextHeadingFourWeightDesktop);
+          color: map-get($configuration, dynamicText-HeadingFourColorDesktop);
+          font-family: map-get($configuration, dynamicText-HeadingFourFontFamilyDesktop);
+          font-size: map-get($configuration, dynamicText-HeadingFourSizeDesktop);
+          font-style: map-get($configuration, dynamicText-HeadingFourStyleDesktop);
+          text-decoration: map-get($configuration, dynamicText-HeadingFourDecorationDesktop);
+          line-height: map-get($configuration, dynamicText-HeadingFourHeightDesktop);
+          font-weight: map-get($configuration, dynamicText-HeadingFourWeightDesktop);
 
-          margin-top: map-get($configuration, dynamicTextHeadingFourMarginTopDesktop);
-          margin-bottom: map-get($configuration, dynamicTextHeadingFourMarginBottomDesktop);
+          margin-top: map-get($configuration, dynamicText-HeadingFourMarginTopDesktop);
+          margin-bottom: map-get($configuration, dynamicText-HeadingFourMarginBottomDesktop);
         }
       }
 
       h5 {
-        color: map-get($configuration, dynamicTextHeadingFiveColor);
-        font-family: map-get($configuration, dynamicTextHeadingFiveFontFamily);
-        font-size: map-get($configuration, dynamicTextHeadingFiveSize);
-        font-style: map-get($configuration, dynamicTextHeadingFiveStyle);
-        text-decoration: map-get($configuration, dynamicTextHeadingFiveDecoration);
-        line-height: map-get($configuration, dynamicTextHeadingFiveHeight);
-        font-weight: map-get($configuration, dynamicTextHeadingFiveWeight);
+        color: map-get($configuration, dynamicText-HeadingFiveColor);
+        font-family: map-get($configuration, dynamicText-HeadingFiveFontFamily);
+        font-size: map-get($configuration, dynamicText-HeadingFiveSize);
+        font-style: map-get($configuration, dynamicText-HeadingFiveStyle);
+        text-decoration: map-get($configuration, dynamicText-HeadingFiveDecoration);
+        line-height: map-get($configuration, dynamicText-HeadingFiveHeight);
+        font-weight: map-get($configuration, dynamicText-HeadingFiveWeight);
 
-        margin-top: map-get($configuration, dynamicTextHeadingFiveMarginTop);
-        margin-bottom: map-get($configuration, dynamicTextHeadingFiveMarginBottom);
+        margin-top: map-get($configuration, dynamicText-HeadingFiveMarginTop);
+        margin-bottom: map-get($configuration, dynamicText-HeadingFiveMarginBottom);
 
         // Styles for tablet
         @include above($tabletBreakpoint) {
-          color: map-get($configuration, dynamicTextHeadingFiveColorTablet);
-          font-family: map-get($configuration, dynamicTextHeadingFiveFontFamilyTablet);
-          font-size: map-get($configuration, dynamicTextHeadingFiveSizeTablet);
-          font-style: map-get($configuration, dynamicTextHeadingFiveStyleTablet);
-          text-decoration: map-get($configuration, dynamicTextHeadingFiveDecorationTablet);
-          line-height: map-get($configuration, dynamicTextHeadingFiveHeightTablet);
-          font-weight: map-get($configuration, dynamicTextHeadingFiveWeightTablet);
+          color: map-get($configuration, dynamicText-HeadingFiveColorTablet);
+          font-family: map-get($configuration, dynamicText-HeadingFiveFontFamilyTablet);
+          font-size: map-get($configuration, dynamicText-HeadingFiveSizeTablet);
+          font-style: map-get($configuration, dynamicText-HeadingFiveStyleTablet);
+          text-decoration: map-get($configuration, dynamicText-HeadingFiveDecorationTablet);
+          line-height: map-get($configuration, dynamicText-HeadingFiveHeightTablet);
+          font-weight: map-get($configuration, dynamicText-HeadingFiveWeightTablet);
 
-          margin-top: map-get($configuration, dynamicTextHeadingFiveMarginTopTablet);
-          margin-bottom: map-get($configuration, dynamicTextHeadingFiveMarginBottomTablet);
+          margin-top: map-get($configuration, dynamicText-HeadingFiveMarginTopTablet);
+          margin-bottom: map-get($configuration, dynamicText-HeadingFiveMarginBottomTablet);
         }
 
         // Styles for desktop
         @include above($desktopBreakpoint) {
-          color: map-get($configuration, dynamicTextHeadingFiveColorDesktop);
-          font-family: map-get($configuration, dynamicTextHeadingFiveFontFamilyDesktop);
-          font-size: map-get($configuration, dynamicTextHeadingFiveSizeDesktop);
-          font-style: map-get($configuration, dynamicTextHeadingFiveStyleDesktop);
-          text-decoration: map-get($configuration, dynamicTextHeadingFiveDecorationDesktop);
-          line-height: map-get($configuration, dynamicTextHeadingFiveHeightDesktop);
-          font-weight: map-get($configuration, dynamicTextHeadingFiveWeightDesktop);
+          color: map-get($configuration, dynamicText-HeadingFiveColorDesktop);
+          font-family: map-get($configuration, dynamicText-HeadingFiveFontFamilyDesktop);
+          font-size: map-get($configuration, dynamicText-HeadingFiveSizeDesktop);
+          font-style: map-get($configuration, dynamicText-HeadingFiveStyleDesktop);
+          text-decoration: map-get($configuration, dynamicText-HeadingFiveDecorationDesktop);
+          line-height: map-get($configuration, dynamicText-HeadingFiveHeightDesktop);
+          font-weight: map-get($configuration, dynamicText-HeadingFiveWeightDesktop);
 
-          margin-top: map-get($configuration, dynamicTextHeadingFiveMarginTopDesktop);
-          margin-bottom: map-get($configuration, dynamicTextHeadingFiveMarginBottomDesktop);
+          margin-top: map-get($configuration, dynamicText-HeadingFiveMarginTopDesktop);
+          margin-bottom: map-get($configuration, dynamicText-HeadingFiveMarginBottomDesktop);
         }
       }
 
       h6 {
-        color: map-get($configuration, dynamicTextHeadingSixColor);
-        font-family: map-get($configuration, dynamicTextHeadingSixFontFamily);
-        font-size: map-get($configuration, dynamicTextHeadingSixSize);
-        font-style: map-get($configuration, dynamicTextHeadingSixStyle);
-        text-decoration: map-get($configuration, dynamicTextHeadingSixDecoration);
-        line-height: map-get($configuration, dynamicTextHeadingSixHeight);
-        font-weight: map-get($configuration, dynamicTextHeadingSixWeight);
+        color: map-get($configuration, dynamicText-HeadingSixColor);
+        font-family: map-get($configuration, dynamicText-HeadingSixFontFamily);
+        font-size: map-get($configuration, dynamicText-HeadingSixSize);
+        font-style: map-get($configuration, dynamicText-HeadingSixStyle);
+        text-decoration: map-get($configuration, dynamicText-HeadingSixDecoration);
+        line-height: map-get($configuration, dynamicText-HeadingSixHeight);
+        font-weight: map-get($configuration, dynamicText-HeadingSixWeight);
 
-        margin-top: map-get($configuration, dynamicTextHeadingSixMarginTop);
-        margin-bottom: map-get($configuration, dynamicTextHeadingSixMarginBottom);
+        margin-top: map-get($configuration, dynamicText-HeadingSixMarginTop);
+        margin-bottom: map-get($configuration, dynamicText-HeadingSixMarginBottom);
 
         // Styles for tablet
         @include above($tabletBreakpoint) {
-          color: map-get($configuration, dynamicTextHeadingSixColorTablet);
-          font-family: map-get($configuration, dynamicTextHeadingSixFontFamilyTablet);
-          font-size: map-get($configuration, dynamicTextHeadingSixSizeTablet);
-          font-style: map-get($configuration, dynamicTextHeadingSixStyleTablet);
-          text-decoration: map-get($configuration, dynamicTextHeadingSixDecorationTablet);
-          line-height: map-get($configuration, dynamicTextHeadingSixHeightTablet);
-          font-weight: map-get($configuration, dynamicTextHeadingSixWeightTablet);
+          color: map-get($configuration, dynamicText-HeadingSixColorTablet);
+          font-family: map-get($configuration, dynamicText-HeadingSixFontFamilyTablet);
+          font-size: map-get($configuration, dynamicText-HeadingSixSizeTablet);
+          font-style: map-get($configuration, dynamicText-HeadingSixStyleTablet);
+          text-decoration: map-get($configuration, dynamicText-HeadingSixDecorationTablet);
+          line-height: map-get($configuration, dynamicText-HeadingSixHeightTablet);
+          font-weight: map-get($configuration, dynamicText-HeadingSixWeightTablet);
 
-          margin-top: map-get($configuration, dynamicTextHeadingSixMarginTopTablet);
-          margin-bottom: map-get($configuration, dynamicTextHeadingSixMarginBottomTablet);
+          margin-top: map-get($configuration, dynamicText-HeadingSixMarginTopTablet);
+          margin-bottom: map-get($configuration, dynamicText-HeadingSixMarginBottomTablet);
         }
 
         // Styles for desktop
         @include above($desktopBreakpoint) {
-          color: map-get($configuration, dynamicTextHeadingSixColorDesktop);
-          font-family: map-get($configuration, dynamicTextHeadingSixFontFamilyDesktop);
-          font-size: map-get($configuration, dynamicTextHeadingSixSizeDesktop);
-          font-style: map-get($configuration, dynamicTextHeadingSixStyleDesktop);
-          text-decoration: map-get($configuration, dynamicTextHeadingSixDecorationDesktop);
-          line-height: map-get($configuration, dynamicTextHeadingSixHeightDesktop);
-          font-weight: map-get($configuration, dynamicTextHeadingSixWeightDesktop);
+          color: map-get($configuration, dynamicText-HeadingSixColorDesktop);
+          font-family: map-get($configuration, dynamicText-HeadingSixFontFamilyDesktop);
+          font-size: map-get($configuration, dynamicText-HeadingSixSizeDesktop);
+          font-style: map-get($configuration, dynamicText-HeadingSixStyleDesktop);
+          text-decoration: map-get($configuration, dynamicText-HeadingSixDecorationDesktop);
+          line-height: map-get($configuration, dynamicText-HeadingSixHeightDesktop);
+          font-weight: map-get($configuration, dynamicText-HeadingSixWeightDesktop);
 
-          margin-top: map-get($configuration, dynamicTextHeadingSixMarginTopDesktop);
-          margin-bottom: map-get($configuration, dynamicTextHeadingSixMarginBottomDesktop);
+          margin-top: map-get($configuration, dynamicText-HeadingSixMarginTopDesktop);
+          margin-bottom: map-get($configuration, dynamicText-HeadingSixMarginBottomDesktop);
         }
       }
     }
