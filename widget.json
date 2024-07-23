@@ -38,7 +38,6 @@
     "appAssets": []
   },
   "themeSettings": {
-    "variablePrefix": "",
     "variables": [
       {
         "name": "Dynamic Text",
