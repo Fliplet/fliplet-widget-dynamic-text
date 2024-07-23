@@ -8,8 +8,7 @@
   "references": [],
   "settings": {
     "asyncRendering": true,
-    "interfaceWidgetPackage": "com.fliplet.helper-configuration",
-    "hideThemeSettings": true
+    "interfaceWidgetPackage": "com.fliplet.helper-configuration"
   },
   "html_tag": "div",
   "interface": {
@@ -33,8 +32,2843 @@
     ],
     "assets": [
       "css/build.css",
-      "js/build.js"
+      "js/build.js",
+      "css/index.scss"
     ],
     "appAssets": []
+  },
+  "themeSettings": {
+    "variablePrefix": "",
+    "variables": [
+      {
+        "name": "Dynamic Text",
+        "packages": ["com.fliplet.dynamic-text"],
+        "appSupportsContainers": true,
+        "variables": [
+          {
+            "description": "Background",
+            "fields": [
+              {
+                "name": "dynamicTextBackgroundType",
+                "default": "None",
+                "columns": 12,
+                "logic": {
+                  "None": {
+                    "hide": [
+                      "dynamicTextBackgroundImage",
+                      "dynamicTextBackgroundPosX",
+                      "dynamicTextBackgroundPosY",
+                      "dynamicTextBackgroundSize",
+                      "dynamicTextBackgroundRepeat",
+                      "dynamicTextBackgroundColor"
+                    ]
+                  },
+                  "Color": {
+                    "hide": [
+                      "dynamicTextBackgroundImage",
+                      "dynamicTextBackgroundPosX",
+                      "dynamicTextBackgroundPosY",
+                      "dynamicTextBackgroundSize",
+                      "dynamicTextBackgroundRepeat"
+                    ],
+                    "show": ["dynamicTextBackgroundColor"]
+                  },
+                  "Image": {
+                    "hide": ["dynamicTextBackgroundColor"],
+                    "show": [
+                      "dynamicTextBackgroundImage",
+                      "dynamicTextBackgroundPosX",
+                      "dynamicTextBackgroundPosY",
+                      "dynamicTextBackgroundSize",
+                      "dynamicTextBackgroundRepeat"
+                    ]
+                  }
+                },
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextBackgroundTypeTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextBackgroundTypeDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "background",
+                "properties": "background"
+              },
+              {
+                "name": "dynamicTextBackgroundColor",
+                "default": "$bodyBackground",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["background-color"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextBackgroundColorTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextBackgroundColorDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "color"
+              },
+              {
+                "name": "dynamicTextBackgroundImage",
+                "default": "none",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["background-image"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextBackgroundImageTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextBackgroundImageDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "image"
+              },
+              {
+                "name": "dynamicTextBackgroundPosX",
+                "default": "center",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["background-position-x"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextBackgroundPosXTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextBackgroundPosXDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "align",
+                "orientation": "horizontal",
+                "properties": "alignHorizontal"
+              },
+              {
+                "name": "dynamicTextBackgroundPosY",
+                "default": "center",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["background-position-y"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextBackgroundPosYTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextBackgroundPosYDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "align",
+                "orientation": "vertical",
+                "properties": "alignVertical"
+              },
+              {
+                "name": "dynamicTextBackgroundSize",
+                "default": "cover",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["background-size"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextBackgroundSizeTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextBackgroundSizeDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Size",
+                "type": "select",
+                "properties": {
+                  "cover": "Expand to fill",
+                  "contain": "Contained",
+                  "auto": "Keep original size"
+                }
+              },
+              {
+                "name": "dynamicTextBackgroundRepeat",
+                "default": "no-repeat",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["background-repeat"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextBackgroundRepeatTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextBackgroundRepeatDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Repeat",
+                "type": "select",
+                "properties": {
+                  "no-repeat": "Do not repeat",
+                  "repeat-x": "Repeat horizontally",
+                  "repeat-y": "Repeat vertically"
+                }
+              }
+            ]
+          },
+          {
+            "description": "Width and Height",
+            "fields": [
+              {
+                "name": "textWidth",
+                "default": "100%",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["width"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextWidthTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextWidthDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "all-props",
+                "label": "Width"
+              },
+              {
+                "name": "dynamicTextMinWidth",
+                "default": "auto",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["min-width"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextMinWidthTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextMinWidthDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "all-props",
+                "label": "Min"
+              },
+              {
+                "name": "dynamicTextMaxWidth",
+                "default": "none",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["max-width"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextMaxWidthTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextMaxWidthDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "max-width",
+                "label": "Max"
+              },
+              {
+                "name": "dynamicTextHeight",
+                "default": "auto",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": ".btn.btn-primary",
+                    "properties": ["height"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "all-props",
+                "label": "Height"
+              },
+              {
+                "name": "dynamicTextMinHeight",
+                "default": "auto",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["min-height"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextMinHeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextMinHeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "all-props",
+                "label": "Min"
+              },
+              {
+                "name": "dynamicTextMaxHeight",
+                "default": "none",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["max-height"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextMaxHeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextMaxHeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "max-height",
+                "label": "Max"
+              }
+            ]
+          },
+          {
+            "description": "Positioning",
+            "fields": [
+              {
+                "name": "dynamicTextPosition",
+                "default": "relative",
+                "columns": 12,
+                "logic": {
+                  "relative": {
+                    "hide": [
+                      "dynamicTextPositionTop",
+                      "dynamicTextPositionRight",
+                      "dynamicTextPositionBottom",
+                      "dynamicTextPositionLeft"
+                    ]
+                  },
+                  "absolute": {
+                    "show": [
+                      "dynamicTextPositionTop",
+                      "dynamicTextPositionRight",
+                      "dynamicTextPositionBottom",
+                      "dynamicTextPositionLeft"
+                    ]
+                  },
+                  "fixed": {
+                    "show": [
+                      "dynamicTextPositionTop",
+                      "dynamicTextPositionRight",
+                      "dynamicTextPositionBottom",
+                      "dynamicTextPositionLeft"
+                    ]
+                  }
+                },
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["position"],
+                    "type": "position",
+                    "siblings": {
+                      "top": "dynamicTextPositionTop",
+                      "right": "dynamicTextPositionRight",
+                      "bottom": "dynamicTextPositionBottom",
+                      "left": "dynamicTextPositionLeft"
+                    }
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextPositionTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextPositionDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "position"
+              },
+              {
+                "name": "dynamicTextDisplay",
+                "default": "block",
+                "columns": 12,
+                "logic": {
+                  "block": {
+                    "show": ["dynamicTextMarginAlign"]
+                  },
+                  "inline-block": {
+                    "hide": ["dynamicTextMarginAlign"]
+                  }
+                },
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["display"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextDisplayTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextDisplayDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "display"
+              },
+              {
+                "name": "dynamicTextPositionTop",
+                "default": "auto",
+                "columns": 6,
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["top"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextPositionTopTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextPositionTopDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Top",
+                "type": "size",
+                "subtype": "position",
+                "allowNegative": true
+              },
+              {
+                "name": "dynamicTextPositionRight",
+                "default": "auto",
+                "columns": 6,
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["right"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextPositionRightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextPositionRightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Right",
+                "type": "size",
+                "subtype": "position",
+                "allowNegative": true
+              },
+              {
+                "name": "dynamicTextPositionBottom",
+                "default": "auto",
+                "columns": 6,
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["bottom"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextPositionBottomTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextPositionBottomDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Bottom",
+                "type": "size",
+                "subtype": "position",
+                "allowNegative": true
+              },
+              {
+                "name": "dynamicTextPositionLeft",
+                "default": "auto",
+                "columns": 6,
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["left"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextPositionLeftTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextPositionLeftDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Left",
+                "type": "size",
+                "subtype": "position",
+                "allowNegative": true
+              }
+            ]
+          },
+          {
+            "description": "Layer order",
+            "fields": [
+              {
+                "name": "dynamicTextIndex",
+                "default": "auto",
+                "columns": 12,
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["z-index"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextIndexTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextIndexDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "z-index"
+              }
+            ]
+          },
+          {
+            "description": "Margin",
+            "fields": [
+              {
+                "name": "dynamicTextMarginAlign",
+                "default": "center",
+                "columns": 12,
+                "logic": {
+                  "left": {
+                    "dynamicTextMarginRight": "auto",
+                    "dynamicTextMarginLeft": "0px"
+                  },
+                  "center": {
+                    "dynamicTextMarginRight": "auto",
+                    "dynamicTextMarginLeft": "auto"
+                  },
+                  "right": {
+                    "dynamicTextMarginRight": "0px",
+                    "dynamicTextMarginLeft": "auto"
+                  },
+                  "custom": [
+                    "dynamicTextMarginTop",
+                    "dynamicTextMarginRight",
+                    "dynamicTextMarginBottom",
+                    "dynamicTextMarginLeft"
+                  ]
+                },
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["margin"],
+                    "type": "margin"
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextMarginAlignTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextMarginAlignDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "margin-align"
+              },
+              {
+                "name": "dynamicTextMarginTop",
+                "default": "0px",
+                "columns": 6,
+                "logic": "dynamicTextMarginAlign",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["margin-top"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextMarginTopTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextMarginTopDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "margin",
+                "label": "Top",
+                "allowNegative": true
+              },
+              {
+                "name": "dynamicTextMarginRight",
+                "default": "0px",
+                "columns": 6,
+                "logic": "dynamicTextMarginAlign",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["margin-right"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextMarginRightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextMarginRightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "margin",
+                "label": "Right",
+                "allowNegative": true
+              },
+              {
+                "name": "dynamicTextMarginBottom",
+                "default": "0px",
+                "columns": 6,
+                "logic": "dynamicTextMarginAlign",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["margin-bottom"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextMarginBottomTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextMarginBottomDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "margin",
+                "label": "Bottom",
+                "allowNegative": true
+              },
+              {
+                "name": "dynamicTextMarginLeft",
+                "default": "0px",
+                "columns": 6,
+                "logic": "dynamicTextMarginAlign",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["margin-left"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextMarginLeftTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextMarginLeftDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "margin",
+                "label": "Left",
+                "allowNegative": true
+              }
+            ]
+          },
+          {
+            "description": "Padding",
+            "fields": [
+              {
+                "name": "dynamicTextPaddingTop",
+                "default": "15px",
+                "columns": 6,
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["padding-top"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextPaddingTopTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextPaddingTopDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "padding",
+                "label": "Top"
+              },
+              {
+                "name": "dynamicTextPaddingRight",
+                "default": "15px",
+                "columns": 6,
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["padding-right"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextPaddingRightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextPaddingRightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "padding",
+                "label": "Right"
+              },
+              {
+                "name": "dynamicTextPaddingBottom",
+                "default": "0px",
+                "columns": 6,
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["padding-bottom"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextPaddingBottomTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextPaddingBottomDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "padding",
+                "label": "Bottom"
+              },
+              {
+                "name": "dynamicTextPaddingLeft",
+                "default": "15px",
+                "columns": 6,
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["padding-left"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextPaddingLeftTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextPaddingLeftDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "padding",
+                "label": "Left"
+              }
+            ]
+          },
+          {
+            "description": "Border",
+            "fields": [
+              {
+                "name": "dynamicTextBorderSides",
+                "default": "none",
+                "logic": {
+                  "none": {
+                    "hide": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
+                  },
+                  "all": {
+                    "show": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
+                  },
+                  "top": {
+                    "show": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
+                  },
+                  "right": {
+                    "show": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
+                  },
+                  "bottom": {
+                    "show": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
+                  },
+                  "left": {
+                    "show": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
+                  }
+                },
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["border"],
+                    "type": "border",
+                    "siblings": {
+                      "sides": "dynamicTextBorderSides",
+                      "width": "dynamicTextBorderWidth",
+                      "style": "dynamicTextBorderStyle",
+                      "color": "dynamicTextBorderColor"
+                    }
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextBorderSidesTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextBorderSidesDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "select",
+                "subtype": "border-sides"
+              },
+              {
+                "name": "dynamicTextBorderColor",
+                "default": "#666666",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["border"],
+                    "type": "border",
+                    "siblings": {
+                      "sides": "dynamicTextBorderSides",
+                      "width": "dynamicTextBorderWidth",
+                      "style": "dynamicTextBorderStyle",
+                      "color": "dynamicTextBorderColor"
+                    }
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextBorderColorTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextBorderColorDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "color"
+              },
+              {
+                "name": "dynamicTextBorderWidth",
+                "default": "1px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["border"],
+                    "type": "border",
+                    "siblings": {
+                      "sides": "dynamicTextBorderSides",
+                      "width": "dynamicTextBorderWidth",
+                      "style": "dynamicTextBorderStyle",
+                      "color": "dynamicTextBorderColor"
+                    }
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextBorderWidthTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextBorderWidthDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "border"
+              },
+              {
+                "name": "dynamicTextBorderStyle",
+                "default": "solid",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["border"],
+                    "type": "border",
+                    "siblings": {
+                      "sides": "dynamicTextBorderSides",
+                      "width": "dynamicTextBorderWidth",
+                      "style": "dynamicTextBorderStyle",
+                      "color": "dynamicTextBorderColor"
+                    }
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextBorderStyleTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextBorderStyleDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "border-style"
+              },
+              {
+                "name": "dynamicTextBorderRadius",
+                "default": "0px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["border-radius"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextBorderRadiusTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextBorderRadiusDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Corner radius",
+                "type": "size",
+                "subtype": "border"
+              }
+            ]
+          },
+          {
+            "description": "Shadow",
+            "fields": [
+              {
+                "name": "dynamicTextShadowStyle",
+                "default": "none",
+                "logic": {
+                  "none": {
+                    "hide": [
+                      "dynamicTextShadowXoffset",
+                      "dynamicTextShadowYoffset",
+                      "dynamicTextShadowBlur",
+                      "dynamicTextShadowSpread",
+                      "dynamicTextShadowColor"
+                    ]
+                  },
+                  "outset": {
+                    "show": [
+                      "dynamicTextShadowXoffset",
+                      "dynamicTextShadowYoffset",
+                      "dynamicTextShadowBlur",
+                      "dynamicTextShadowSpread",
+                      "dynamicTextShadowColor"
+                    ]
+                  },
+                  "inset": {
+                    "show": [
+                      "dynamicTextShadowXoffset",
+                      "dynamicTextShadowYoffset",
+                      "dynamicTextShadowBlur",
+                      "dynamicTextShadowSpread",
+                      "dynamicTextShadowColor"
+                    ]
+                  }
+                },
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["box-shadow"],
+                    "type": "shadow",
+                    "siblings": {
+                      "style": "dynamicTextShadowStyle",
+                      "xoffset": "dynamicTextShadowXoffset",
+                      "yoffset": "dynamicTextShadowYoffset",
+                      "blur": "dynamicTextShadowBlur",
+                      "spread": "dynamicTextShadowSpread",
+                      "color": "dynamicTextShadowColor"
+                    }
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextShadowStyleTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextShadowStyleDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "select",
+                "subtype": "shadow-style"
+              },
+              {
+                "name": "dynamicTextShadowXoffset",
+                "default": "0px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["box-shadow"],
+                    "type": "shadow",
+                    "siblings": {
+                      "style": "dynamicTextShadowStyle",
+                      "xoffset": "dynamicTextShadowXoffset",
+                      "yoffset": "dynamicTextShadowYoffset",
+                      "blur": "dynamicTextShadowBlur",
+                      "spread": "dynamicTextShadowSpread",
+                      "color": "dynamicTextShadowColor"
+                    }
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextShadowXoffsetTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextShadowXoffsetDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "X offset",
+                "type": "size",
+                "subtype": "shadow",
+                "allowNegative": true
+              },
+              {
+                "name": "dynamicTextShadowYoffset",
+                "default": "10px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["box-shadow"],
+                    "type": "shadow",
+                    "siblings": {
+                      "style": "dynamicTextShadowStyle",
+                      "xoffset": "dynamicTextShadowXoffset",
+                      "yoffset": "dynamicTextShadowYoffset",
+                      "blur": "dynamicTextShadowBlur",
+                      "spread": "dynamicTextShadowSpread",
+                      "color": "dynamicTextShadowColor"
+                    }
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextShadowYoffsetTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextShadowYoffsetDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Y offset",
+                "type": "size",
+                "subtype": "shadow",
+                "allowNegative": true
+              },
+              {
+                "name": "dynamicTextShadowBlur",
+                "default": "20px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["box-shadow"],
+                    "type": "shadow",
+                    "siblings": {
+                      "style": "dynamicTextShadowStyle",
+                      "xoffset": "dynamicTextShadowXoffset",
+                      "yoffset": "dynamicTextShadowYoffset",
+                      "blur": "dynamicTextShadowBlur",
+                      "spread": "dynamicTextShadowSpread",
+                      "color": "dynamicTextShadowColor"
+                    }
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextShadowBlurTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextShadowBlurDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Blur",
+                "type": "size",
+                "subtype": "shadow"
+              },
+              {
+                "name": "dynamicTextShadowSpread",
+                "default": "0px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["box-shadow"],
+                    "type": "shadow",
+                    "siblings": {
+                      "style": "dynamicTextShadowStyle",
+                      "xoffset": "dynamicTextShadowXoffset",
+                      "yoffset": "dynamicTextShadowYoffset",
+                      "blur": "dynamicTextShadowBlur",
+                      "spread": "dynamicTextShadowSpread",
+                      "color": "dynamicTextShadowColor"
+                    }
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextShadowSpreadTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextShadowSpreadDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Spread",
+                "type": "size",
+                "subtype": "shadow"
+              },
+              {
+                "name": "dynamicTextShadowColor",
+                "default": "rgba(0, 0, 0, 0.2)",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "properties": ["box-shadow"],
+                    "type": "shadow",
+                    "siblings": {
+                      "style": "dynamicTextShadowStyle",
+                      "xoffset": "dynamicTextShadowXoffset",
+                      "yoffset": "dynamicTextShadowYoffset",
+                      "blur": "dynamicTextShadowBlur",
+                      "spread": "dynamicTextShadowSpread",
+                      "color": "dynamicTextShadowColor"
+                    }
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextShadowColorTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextShadowColorDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "color"
+              }
+            ]
+          },
+          {
+            "description": "Paragraph",
+            "fields": [
+              {
+                "name": "paragraphFontFamily",
+                "default": "$quickTextFontFamily",
+                "styles": [
+                  {
+                    "selectors": "body",
+                    "properties": ["font-family"]
+                  },
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "p",
+                    "properties": ["font-family"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "paragraphFontFamilyTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "paragraphFontFamilyDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font"
+              },
+              {
+                "name": "paragraphFontSize",
+                "default": "$bodyFontSize",
+                "styles": [
+                  {
+                    "selectors": "body",
+                    "properties": ["font-size"]
+                  },
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "p",
+                    "properties": ["font-size"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "paragraphFontSizeTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "paragraphFontSizeDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "font"
+              },
+              {
+                "name": "paragraphTextColor",
+                "default": "$bodyTextColor",
+                "styles": [
+                  {
+                    "selectors": [
+                      "body",
+                      ".overlay-about-app .overlayNavbar",
+                      ".overlay-update-notes .overlayNavbar",
+                      ".overlay-about-app .overlayPanel",
+                      ".overlay-update-notes .overlayPanel",
+                      ".overlay-about-app .overlayPanel .closeButton",
+                      ".overlay-update-notes .overlayPanel .closeButton",
+                      ".overlay-about-app .overlayPanelContent",
+                      ".overlay-update-notes .overlayPanelContent",
+                      ".overlay-about-app .fliplet-info",
+                      ".overlay-update-notes .fliplet-info",
+                      ".collapse-end"
+                    ],
+                    "properties": ["color"]
+                  },
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "p",
+                    "properties": ["color"]
+                  },
+                  {
+                    "parentSelector": "[data-widget-package='app-list']",
+                    "selectors": ".helper.app-offline-notification",
+                    "properties": ["border-color"]
+                  },
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.chart.bar']",
+                    "selectors": ".highcharts-axis-title",
+                    "properties": ["fill", "color"]
+                  },
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.chart.column']",
+                    "selectors": ".highcharts-axis-title",
+                    "properties": ["fill", "color"]
+                  },
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.chart.scatter']",
+                    "selectors": [".highcharts-axis-title", ".highcharts-axis-labels text"],
+                    "properties": ["fill", "color"]
+                  },
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.chart.line']",
+                    "selectors": ".highcharts-axis-title",
+                    "properties": ["fill", "color"]
+                  },
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.chart.donut']",
+                    "selectors": ".highcharts-axis-title",
+                    "properties": ["fill", "color"]
+                  },
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.chart.pie']",
+                    "selectors": ".highcharts-axis-title",
+                    "properties": ["fill", "color"]
+                  },
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.form-builder']",
+                    "selectors": [".input-group-addon", ".sending-form"],
+                    "properties": ["color"]
+                  },
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-lists']",
+                    "selectors": [
+                      ".new-small-card-list-container .search-holder .form-control",
+                      ".small-card-list-container .search-holder .form-control",
+                      ".new-news-feed-list-container .search-holder .form-control",
+                      ".news-feed-list-container .search-holder .form-control",
+                      ".simple-list-container .search-holder .form-control"
+                    ],
+                    "properties": ["color"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "paragraphTextColorTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "paragraphTextColorDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "color"
+              },
+              {
+                "name": "paragraphFontWeight",
+                "default": "$bodyFontWeight",
+                "styles": [
+                  {
+                    "selectors": "body",
+                    "properties": ["font-weight"]
+                  },
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "p",
+                    "properties": ["font-weight"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "paragraphFontWeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "paragraphFontWeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "properties": "weight"
+              },
+              {
+                "name": "paragraphFontStyle",
+                "default": "$bodyFontStyle",
+                "styles": [
+                  {
+                    "selectors": "body",
+                    "properties": ["font-style"]
+                  },
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "p",
+                    "properties": ["font-style"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "paragraphFontStyleTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "paragraphFontStyleDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "properties": "italic"
+              },
+              {
+                "name": "paragraphFontDecoration",
+                "default": "none",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "p",
+                    "properties": ["text-decoration"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "paragraphFontDecorationTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "paragraphFontDecorationDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "subType": "decoration",
+                "properties": "underline"
+              },
+              {
+                "name": "paragraphLineHeight",
+                "default": "$bodyLineHeight",
+                "styles": [
+                  {
+                    "selectors": "body",
+                    "properties": ["line-height"]
+                  },
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "p",
+                    "properties": ["line-height"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "paragraphLineHeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "paragraphLineHeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Line height",
+                "type": "size",
+                "subtype": "line-height"
+              },
+              {
+                "name": "paragraphMarginTop",
+                "default": "0px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "p",
+                    "properties": ["margin-top"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "paragraphMarginTopTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "paragraphMarginTopDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Margin top",
+                "type": "size",
+                "subtype": "margin",
+                "allowNegative": true
+              },
+              {
+                "name": "paragraphMarginBottom",
+                "default": "10px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "p",
+                    "properties": ["margin-bottom"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "paragraphMarginBottomTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "paragraphMarginBottomDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Margin bottom",
+                "type": "size",
+                "subtype": "margin",
+                "allowNegative": true
+              }
+            ]
+          },
+          {
+            "description": "Heading 1",
+            "fields": [
+              {
+                "name": "dynamicTextHeadingOneFontFamily",
+                "default": "$headingOneFontFamily",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h1",
+                    "properties": ["font-family"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingOneFontFamilyTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingOneFontFamilyDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font"
+              },
+              {
+                "name": "dynamicTextHeadingOneSize",
+                "default": "$headingOneSize",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h1",
+                    "properties": ["font-size"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingOneSizeTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingOneSizeDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "font"
+              },
+              {
+                "name": "dynamicTextHeadingOneColor",
+                "default": "$headingOneColor",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h1",
+                    "properties": ["color"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingOneColorTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingOneColorDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "color"
+              },
+              {
+                "name": "dynamicTextHeadingOneWeight",
+                "default": "$headingOneWeight",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h1",
+                    "properties": ["font-weight"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingOneWeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingOneWeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "properties": "weight"
+              },
+              {
+                "name": "dynamicTextHeadingOneStyle",
+                "default": "$headingOneStyle",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h1",
+                    "properties": ["font-style"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingOneStyleTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingOneStyleDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "properties": "italic"
+              },
+              {
+                "name": "dynamicTextHeadingOneDecoration",
+                "default": "$headingOneDecoration",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h1",
+                    "properties": ["text-decoration"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingOneDecorationTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingOneDecorationDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "subType": "decoration",
+                "properties": "underline"
+              },
+              {
+                "name": "dynamicTextHeadingOneHeight",
+                "default": "$headingOneHeight",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h1",
+                    "properties": ["line-height"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingOneHeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingOneHeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Line height",
+                "type": "size",
+                "subtype": "line-height"
+              },
+              {
+                "name": "dynamicTextHeadingOneMarginTop",
+                "default": "0px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h1",
+                    "properties": ["margin-top"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingOneMarginTopTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingOneMarginTopDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Margin top",
+                "type": "size",
+                "subtype": "margin",
+                "allowNegative": true
+              },
+              {
+                "name": "dynamicTextHeadingOneMarginBottom",
+                "default": "10px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h1",
+                    "properties": ["margin-bottom"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingOneMarginBottomTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingOneMarginBottomDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Margin bottom",
+                "type": "size",
+                "subtype": "margin",
+                "allowNegative": true
+              }
+            ]
+          },
+          {
+            "description": "Heading 2",
+            "fields": [
+              {
+                "name": "dynamicTextHeadingTwoFontFamily",
+                "default": "$headingTwoFontFamily",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h2",
+                    "properties": ["font-family"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingTwoFontFamilyTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingTwoFontFamilyDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font"
+              },
+              {
+                "name": "dynamicTextHeadingTwoSize",
+                "default": "$headingTwoSize",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h2",
+                    "properties": ["font-size"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingTwoSizeTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingTwoSizeDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "font"
+              },
+              {
+                "name": "dynamicTextHeadingTwoColor",
+                "default": "$headingTwoColor",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h2",
+                    "properties": ["color"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingTwoColorTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingTwoColorDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "color"
+              },
+              {
+                "name": "dynamicTextHeadingTwoWeight",
+                "default": "$headingTwoWeight",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h2",
+                    "properties": ["font-weight"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingTwoWeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingTwoWeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "properties": "weight"
+              },
+              {
+                "name": "dynamicTextHeadingTwoStyle",
+                "default": "$headingTwoStyle",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h2",
+                    "properties": ["font-style"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingTwoStyleTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingTwoStyleDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "properties": "italic"
+              },
+              {
+                "name": "dynamicTextHeadingTwoDecoration",
+                "default": "$headingTwoDecoration",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h2",
+                    "properties": ["text-decoration"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingTwoDecorationTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingTwoDecorationDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "subType": "decoration",
+                "properties": "underline"
+              },
+              {
+                "name": "dynamicTextHeadingTwoHeight",
+                "default": "$headingTwoHeight",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h2",
+                    "properties": ["line-height"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingTwoHeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingTwoHeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Line height",
+                "type": "size",
+                "subtype": "line-height"
+              },
+              {
+                "name": "dynamicTextHeadingTwoMarginTop",
+                "default": "0px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h2",
+                    "properties": ["margin-top"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingTwoMarginTopTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingTwoMarginTopDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Margin top",
+                "type": "size",
+                "subtype": "margin",
+                "allowNegative": true
+              },
+              {
+                "name": "dynamicTextHeadingTwoMarginBottom",
+                "default": "10px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h2",
+                    "properties": ["margin-bottom"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingTwoMarginBottomTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingTwoMarginBottomDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Margin bottom",
+                "type": "size",
+                "subtype": "margin",
+                "allowNegative": true
+              }
+            ]
+          },
+          {
+            "description": "Heading 3",
+            "fields": [
+              {
+                "name": "dynamicTextHeadingThreeFontFamily",
+                "default": "$headingThreeFontFamily",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h3",
+                    "properties": ["font-family"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingThreeFontFamilyTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingThreeFontFamilyDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font"
+              },
+              {
+                "name": "dynamicTextHeadingThreeSize",
+                "default": "$headingThreeSize",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h3",
+                    "properties": ["font-size"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingThreeSizeTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingThreeSizeDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "font"
+              },
+              {
+                "name": "dynamicTextHeadingThreeColor",
+                "default": "$headingThreeColor",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h3",
+                    "ignore": [".fl-intro-layout h3"],
+                    "properties": ["color"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingThreeColorTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingThreeColorDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "color"
+              },
+              {
+                "name": "dynamicTextHeadingThreeWeight",
+                "default": "$headingThreeWeight",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h3",
+                    "properties": ["font-weight"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingThreeWeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingThreeWeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "properties": "weight"
+              },
+              {
+                "name": "dynamicTextHeadingThreeStyle",
+                "default": "$headingThreeStyle",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h3",
+                    "properties": ["font-style"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingThreeStyleTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingThreeStyleDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "properties": "italic"
+              },
+              {
+                "name": "dynamicTextHeadingThreeDecoration",
+                "default": "$headingThreeDecoration",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h3",
+                    "properties": ["text-decoration"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingThreeDecorationTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingThreeDecorationDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "subType": "decoration",
+                "properties": "underline"
+              },
+              {
+                "name": "dynamicTextHeadingThreeHeight",
+                "default": "$headingThreeHeight",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h3",
+                    "properties": ["line-height"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingThreeHeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingThreeHeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Line height",
+                "type": "size",
+                "subtype": "line-height"
+              },
+              {
+                "name": "dynamicTextHeadingThreeMarginTop",
+                "default": "0px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h3",
+                    "properties": ["margin-top"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingThreeMarginTopTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingThreeMarginTopDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Margin top",
+                "type": "size",
+                "subtype": "margin",
+                "allowNegative": true
+              },
+              {
+                "name": "dynamicTextHeadingThreeMarginBottom",
+                "default": "10px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h3",
+                    "properties": ["margin-bottom"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingThreeMarginBottomTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingThreeMarginBottomDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Margin bottom",
+                "type": "size",
+                "subtype": "margin",
+                "allowNegative": true
+              }
+            ]
+          },
+          {
+            "description": "Heading 4",
+            "fields": [
+              {
+                "name": "dynamicTextHeadingFourFontFamily",
+                "default": "$headingFourFontFamily",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h4",
+                    "properties": ["font-family"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFourFontFamilyTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFourFontFamilyDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font"
+              },
+              {
+                "name": "dynamicTextHeadingFourSize",
+                "default": "$headingFourSize",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h4",
+                    "properties": ["font-size"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFourSizeTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFourSizeDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "font"
+              },
+              {
+                "name": "dynamicTextHeadingFourColor",
+                "default": "$headingFourColor",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h4",
+                    "properties": ["color"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFourColorTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFourColorDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "color"
+              },
+              {
+                "name": "dynamicTextHeadingFourWeight",
+                "default": "$headingFourWeight",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h4",
+                    "properties": ["font-weight"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFourWeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFourWeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "properties": "weight"
+              },
+              {
+                "name": "dynamicTextHeadingFourStyle",
+                "default": "$headingFourStyle",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h4",
+                    "properties": ["font-style"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFourStyleTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFourStyleDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "properties": "italic"
+              },
+              {
+                "name": "dynamicTextHeadingFourDecoration",
+                "default": "$headingFourDecoration",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h4",
+                    "properties": ["text-decoration"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFourDecorationTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFourDecorationDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "subType": "decoration",
+                "properties": "underline"
+              },
+              {
+                "name": "dynamicTextHeadingFourHeight",
+                "default": "$headingFourHeight",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h4",
+                    "properties": ["line-height"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFourHeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFourHeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Line height",
+                "type": "size",
+                "subtype": "line-height"
+              },
+              {
+                "name": "dynamicTextHeadingFourMarginTop",
+                "default": "0px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h4",
+                    "properties": ["margin-top"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFourMarginTopTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFourMarginTopDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Margin top",
+                "type": "size",
+                "subtype": "margin",
+                "allowNegative": true
+              },
+              {
+                "name": "dynamicTextHeadingFourMarginBottom",
+                "default": "10px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h4",
+                    "properties": ["margin-bottom"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFourMarginBottomTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFourMarginBottomDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Margin bottom",
+                "type": "size",
+                "subtype": "margin",
+                "allowNegative": true
+              }
+            ]
+          },
+          {
+            "description": "Heading 5",
+            "fields": [
+              {
+                "name": "dynamicTextHeadingFiveFontFamily",
+                "default": "$headingFiveFontFamily",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h5",
+                    "properties": ["font-family"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFiveFontFamilyTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFiveFontFamilyDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font"
+              },
+              {
+                "name": "dynamicTextHeadingFiveSize",
+                "default": "$headingFiveSize",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h5",
+                    "properties": ["font-size"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFiveSizeTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFiveSizeDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "font"
+              },
+              {
+                "name": "dynamicTextHeadingFiveColor",
+                "default": "$headingFiveColor",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h5",
+                    "properties": ["color"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFiveColorTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFiveColorDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "color"
+              },
+              {
+                "name": "dynamicTextHeadingFiveWeight",
+                "default": "$headingFiveWeight",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h5",
+                    "properties": ["font-weight"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFiveWeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFiveWeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "properties": "weight"
+              },
+              {
+                "name": "dynamicTextHeadingFiveStyle",
+                "default": "$headingFiveStyle",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h5",
+                    "properties": ["font-style"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFiveStyleTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFiveStyleDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "properties": "italic"
+              },
+              {
+                "name": "dynamicTextHeadingFiveDecoration",
+                "default": "$headingFiveDecoration",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h5",
+                    "properties": ["text-decoration"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFiveDecorationTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFiveDecorationDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "subType": "decoration",
+                "properties": "underline"
+              },
+              {
+                "name": "dynamicTextHeadingFiveHeight",
+                "default": "$headingFiveHeight",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h5",
+                    "properties": ["line-height"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFiveHeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFiveHeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Line height",
+                "type": "size",
+                "subtype": "line-height"
+              },
+              {
+                "name": "dynamicTextHeadingFiveMarginTop",
+                "default": "0px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h5",
+                    "properties": ["margin-top"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFiveMarginTopTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFiveMarginTopDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Margin top",
+                "type": "size",
+                "subtype": "margin",
+                "allowNegative": true
+              },
+              {
+                "name": "dynamicTextHeadingFiveMarginBottom",
+                "default": "10px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h5",
+                    "properties": ["margin-bottom"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingFiveMarginBottomTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingFiveMarginBottomDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Margin bottom",
+                "type": "size",
+                "subtype": "margin",
+                "allowNegative": true
+              }
+            ]
+          },
+          {
+            "description": "Heading 6",
+            "fields": [
+              {
+                "name": "dynamicTextHeadingSixFontFamily",
+                "default": "$headingSixFontFamily",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h6",
+                    "properties": ["font-family"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingSixFontFamilyTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingSixFontFamilyDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font"
+              },
+              {
+                "name": "dynamicTextHeadingSixSize",
+                "default": "$headingSixSize",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h6",
+                    "properties": ["font-size"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingSixSizeTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingSixSizeDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "size",
+                "subtype": "font"
+              },
+              {
+                "name": "dynamicTextHeadingSixColor",
+                "default": "$headingSixColor",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h6",
+                    "properties": ["color"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingSixColorTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingSixColorDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "color"
+              },
+              {
+                "name": "dynamicTextHeadingSixWeight",
+                "default": "$headingSixWeight",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h6",
+                    "properties": ["font-weight"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingSixWeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingSixWeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "properties": "weight"
+              },
+              {
+                "name": "dynamicTextHeadingSixStyle",
+                "default": "$headingSixStyle",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h6",
+                    "properties": ["font-style"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingSixStyleTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingSixStyleDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "properties": "italic"
+              },
+              {
+                "name": "dynamicTextHeadingSixDecoration",
+                "default": "$headingSixDecoration",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h6",
+                    "properties": ["text-decoration"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingSixDecorationTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingSixDecorationDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "font-style",
+                "subType": "decoration",
+                "properties": "underline"
+              },
+              {
+                "name": "dynamicTextHeadingSixHeight",
+                "default": "$headingSixHeight",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h6",
+                    "properties": ["line-height"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingSixHeightTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingSixHeightDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Line height",
+                "type": "size",
+                "subtype": "line-height"
+              },
+              {
+                "name": "dynamicTextHeadingSixMarginTop",
+                "default": "0px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h6",
+                    "properties": ["margin-top"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingSixMarginTopTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingSixMarginTopDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Margin top",
+                "type": "size",
+                "subtype": "margin",
+                "allowNegative": true
+              },
+              {
+                "name": "dynamicTextHeadingSixMarginBottom",
+                "default": "10px",
+                "styles": [
+                  {
+                    "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                    "selectors": "h6",
+                    "properties": ["margin-bottom"]
+                  }
+                ],
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextHeadingSixMarginBottomTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "dynamicTextHeadingSixMarginBottomDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "label": "Margin bottom",
+                "type": "size",
+                "subtype": "margin",
+                "allowNegative": true
+              }
+            ]
+          },
+          {
+            "description": "Visibility",
+            "appSupportsContainers": true,
+            "fields": [
+              {
+                "name": "dynamicTextVisibility",
+                "default": "visible",
+                "columns": 12,
+                "breakpoints": {
+                  "tablet": {
+                    "name": "dynamicTextVisibilityTablet",
+                    "default": "inherit-mobile"
+                  },
+                  "desktop": {
+                    "name": "textVisibilityDesktop",
+                    "default": "inherit-tablet"
+                  }
+                },
+                "type": "toggle",
+                "subtype": "visibility"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }
