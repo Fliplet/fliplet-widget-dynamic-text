@@ -556,7 +556,6 @@ $variablePrefix: "dynamicText";
           shadowColor: map-get($configuration, dynamicText-dynamicTextShadowColorDesktop)));
     }
 
-    // .dynamic-text-container {
     p {
       color: map-get($configuration, dynamicText-paragraphTextColor);
       font-family: map-get($configuration, dynamicText-paragraphFontFamily);
@@ -844,8 +843,6 @@ $variablePrefix: "dynamicText";
         margin-bottom: map-get($configuration, dynamicText-dynamicTextHeadingSixMarginBottomDesktop);
       }
     }
-
-    // }
   }
 }
 

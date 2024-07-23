@@ -212,12 +212,12 @@ Fliplet.Widget.findParents({
     ];
 
     return Fliplet.Widget.generateInterface({
-      title: 'Dynamic Text',
+      title: 'Configure dynamic text',
       fields: [
         {
           type: 'html',
-          html: `<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;">List from ${dataSource.name}(ID: <span class="data-source-id">${dynamicContainer.dataSourceId}</span>)</p>
-                <p style="font-size: 10px; font-weight: 400; color: #E7961E;">To change Data source go to Data Container Settings</p>
+          html: `<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;">Get data from: ${dataSource.name}(ID: <span class="data-source-id">${dynamicContainer.dataSourceId}</span>)</p>
+                <p style="font-size: 10px; font-weight: 400; color: #E7961E;">To change this Data Source, go to parent data container</p>
                 <hr/>`
         },
         {
