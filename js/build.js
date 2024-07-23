@@ -59,15 +59,15 @@ Fliplet.Widget.instance({
         let recordContainer = null;
         let listRepeater = null;
 
-        widgets.forEach((widget) => {
-          if (widget.package === 'com.fliplet.dynamic-container') {
-            dynamicContainer = widget;
-          } else if (widget.package === 'com.fliplet.record-container') {
-            recordContainer = widget;
-          } else if (widget.package === 'com.fliplet.list-repeater') {
-            listRepeater = widget;
-          }
-        });
+        // widgets.forEach((widget) => {
+        //   if (widget.package === 'com.fliplet.dynamic-container') {
+        //     dynamicContainer = widget;
+        //   } else if (widget.package === 'com.fliplet.record-container') {
+        //     recordContainer = widget;
+        //   } else if (widget.package === 'com.fliplet.list-repeater') {
+        //     listRepeater = widget;
+        //   }
+        // });
 
         if (!dynamicContainer || !dynamicContainer.dataSourceId) {
           return Fliplet.UI.Toast(
@@ -162,12 +162,12 @@ Fliplet.Widget.instance({
           list.style.listStyle = 'disc';
         }
 
-        (MODE_INTERACT ? ARRAY_INTERACT_VALUES : (VALUE || [])).forEach(item => {
-          const li = document.createElement('li');
+        // (MODE_INTERACT ? ARRAY_INTERACT_VALUES : (VALUE || [])).forEach(item => {
+        //   const li = document.createElement('li');
 
-          li.textContent = item;
-          list.appendChild(li);
-        });
+        //   li.textContent = item;
+        //   list.appendChild(li);
+        // });
 
         $HELPER.find('.dynamic-text-container').html(list);
       }
