@@ -5,7 +5,10 @@
   "icon": "img/icon.png",
   "tags": ["type:component", "category:general", "beta:true"],
   "provider_only": false,
-  "references": [],
+  "references": [
+    "dynamicText:richContent",
+    "redirectEndScreen:page"
+  ],
   "settings": {
     "asyncRendering": true,
     "interfaceWidgetPackage": "com.fliplet.helper-configuration"

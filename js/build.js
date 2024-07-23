@@ -2,7 +2,7 @@
 Fliplet.Widget.instance({
   name: 'dynamic-text',
   displayName: 'Dynamic Text',
-  template: '<div class="dynamic-text-container"></div>',
+  template: '<div data-view="dynamicText" class="dynamic-text-container"></div>',
   data: {
     dataSourceId: null
   },
