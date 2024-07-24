@@ -154,53 +154,46 @@ Fliplet.Widget.findParents({
     });
 
     const DATE_FORMAT_OPTIONS = [
-      { label: 'MM-DD-YYYY', value: 'MM-DD-YYYY' },
-      { label: 'DD-MM-YYYY', value: 'DD-MM-YYYY' },
-      { label: 'YYYY-MM-DD', value: 'YYYY-MM-DD' },
-      { label: 'Month Day, Year', value: 'MMM DD, Year' }, // July 12, 2024
-      { label: 'Day Month Year', value: 'DD MMM Year' }, // 12 July 2024
-      { label: 'MM/DD/YYYY', value: 'MM/DD/YYYY' },
-      { label: 'DD/MM/YYYY', value: 'DD/MM/YYYY' },
-      { label: 'YYYY/MM/DD', value: 'YYYY/MM/DD' },
-      { label: 'MMM DD, YYYY', value: 'MMM DD, YYYY' }, // Jul 12, 2024
-      { label: 'DD MMM YYYY', value: 'DD MMM YYYY' }, // 12 Jul 2024
-      { label: 'Week Month Day', value: 'dddd MMM DD' }// Monday July 12
+      { label: '09/22/1986', value: 'L' },
+      { label: 'Sep 22,1986', value: 'll' },
+      { label: 'September 22,1986', value: 'LL' },
+      { label: 'Monday, September 22,1986', value: 'dddd, MMMM D, YYYY' } // TODO check this value
     ];
 
     const TIME_FORMAT_OPTIONS = [
-      { label: 'HH AM/PM', value: 'HH:MM A' }, // 08:30 AM
-      { label: 'HH:MM:SS AM/PM', value: 'HH:MM:SS A' }, // 08:30:45 AM
-      { label: 'HH (24-hour)', value: 'HH:MM' }, // 14:30
-      { label: 'HH:MM:SS (24-hour)', value: 'HH:MM:SS' }, // 14:30:45
-      { label: 'HHMM (military)', value: 'HHMM' }, // 1430
-      { label: 'HHMMSS (military', value: 'HHMMSS' } // 143045
+      { label: '08:30 PM', value: 'LT' },
+      { label: '08:30:45 PM', value: 'LTS' }
     ];
 
     const TIME_DATE_FORMAT_OPTIONS = [
-      { label: 'MM-DD-YYYY HH:MM AM/PM', value: 'MM-DD-YYYY HH:MM A' }, // 07-12-2024 08:30
-      { label: 'DD-MM-YYYY HH:MM AM/PM', value: 'DD-MM-YYYY HH:MM A' }, // 12-07-2024 08:30
-      { label: 'YYYY-MM-DD HH:MM', value: 'YYYY-MM-DD HH:MM' }, // 2024-07-12 14:30:45
-      { label: 'YYYY/MM/DD HH', value: 'YYYY/MM/DD HH' }, // 2024/07/12 14:30
-      { label: 'MMM DD, YYYY HH:MM AM/PM', value: 'MMM DD, YYYY HH:MM A' }, // Jul 12, 2024 08:30 AM
-      { label: 'Week, Month, Day, HH AM/PM', value: 'dddd, MMM, DD, HH A' }, // Monday, June, 12 08:30 AM
-      { label: 'Week, Month, Day, HH:MM', value: 'dddd, MMM, DD, HH:MM' } // Monday, June, 12 08:30
-    ];
-
-    const TIMEZONE_OPTIONS = [
-      {
-        label: 'display in device timezone',
-        value: 'device'
-      },
-      {
-        label: 'display data source value',
-        value: 'data_source'
-      }
+      { label: 'September 4, 1986 8:30 PM', value: 'LL LT' },
+      { label: 'Sep 4, 1986 8:30 PM', value: 'll LT' },
+      { label: 'Thursday, September 4, 1986 8:30 PM', value: 'LLLL' },
+      { label: 'Thu, Sep 4, 1986 8:30 PM', value: 'llll' }
     ];
 
     const TIMEZONES_OPTIONS = [
-      'London',
-      'New York',
-      'Los Angeles'
+      'America/New_York',
+      'America/Los_Angeles',
+      'America/Chicago',
+      'America/Denver',
+      'Europe/London',
+      'Europe/Paris',
+      'Europe/Berlin',
+      'Asia/Tokyo',
+      'Asia/Shanghai',
+      'Asia/Singapore',
+      'Australia/Sydney',
+      'Australia/Melbourne',
+      'Asia/Hong_Kong',
+      'Asia/Seoul',
+      'America/Sao_Paulo',
+      'America/Bogota',
+      'Europe/Moscow',
+      'Africa/Johannesburg',
+      'America/Argentina/Buenos_Aires',
+      'Asia/Dubai',
+      'Pacific/Auckland'
     ];
 
     return Fliplet.Widget.generateInterface({
@@ -245,21 +238,24 @@ Fliplet.Widget.findParents({
           name: 'urlALtText',
           type: 'text',
           label: 'Link label',
-          description: 'When configured, clicking on this link will open the URL',
+          description:
+            'When configured, clicking on this link will open the URL',
           placeholder: 'Specify text here e.g. “Tap to open”'
         },
         {
           name: 'phoneALtText',
           type: 'text',
           label: 'Label for phone number',
-          description: 'When configured, clicking on this link will initiate a call to the specified number.',
+          description:
+            'When configured, clicking on this link will initiate a call to the specified number.',
           placeholder: 'Specify text here e.g. “Tap to call”'
         },
         {
           name: 'mailALtText',
           type: 'text',
           label: 'Label for email',
-          description: 'When configured,  clicking on this link will compose a new email to the specified address',
+          description:
+            'When configured,  clicking on this link will compose a new email to the specified address',
           placeholder: 'Specify text here e.g. “Tap to send an email”'
         },
         {
@@ -287,18 +283,19 @@ Fliplet.Widget.findParents({
           type: 'dropdown',
           name: 'dataVisualization',
           label: 'Select data visualization',
-          description: 'Data should be formatted as an array: [“value”, “value”] or a coma-separated list:  value,value',
+          description:
+            'Data should be formatted as an array: [“value”, “value”] or a coma-separated list:  value,value',
           options: DATA_VISUALIZATION_OPTIONS
         },
         {
           type: 'dropdown',
           name: 'dateFormat',
           label: 'Select dataview type',
-          description: 'Note, date will be displayed in user\'s local device format',
-          options: DATE_FORMAT_OPTIONS // TODO check values
+          description:
+            "Note, date will be displayed in user's local device format",
+          options: DATE_FORMAT_OPTIONS
         },
         {
-          // TODO Convert to another timezone
           type: 'dropdown',
           name: 'timeFormat',
           label: 'Select dataview type',
@@ -309,7 +306,7 @@ Fliplet.Widget.findParents({
           name: 'timeTimezoneCheckbox',
           label: 'Convert to another timezone',
           options: [{ value: true, label: 'Yes' }],
-          default: [true],
+          default: [],
           change: function(value) {
             Fliplet.Helper.field('timeTimezone').toggle(value.includes(true));
           }
@@ -324,7 +321,8 @@ Fliplet.Widget.findParents({
           type: 'dropdown',
           name: 'timeDateFormat',
           label: 'Select dataview type',
-          description: 'Note, date & time will be displayed in user’s local device format',
+          description:
+            "Note, date & time will be displayed in user's local device format",
           options: TIME_DATE_FORMAT_OPTIONS
         },
         {
@@ -332,9 +330,11 @@ Fliplet.Widget.findParents({
           name: 'timeDateTimezoneCheckbox',
           label: 'Convert to another timezone',
           options: [{ value: true, label: 'Yes' }],
-          default: [true],
+          default: [],
           change: function(value) {
-            Fliplet.Helper.field('timeDateTimezone').toggle(value.includes(true));
+            Fliplet.Helper.field('timeDateTimezone').toggle(
+              value.includes(true)
+            );
           }
         },
         {
@@ -348,7 +348,8 @@ Fliplet.Widget.findParents({
           type: 'text',
           label: 'Provide regex',
           placeholder: '/[A-Z]/g',
-          description: 'We use the RegExp in javaScript. An example to find an uppercase string is /[A-Z]/g. See guide <a href="https://builtin.com/software-engineering-perspectives/javascript-regex" target="_blank">here<a/>'
+          description:
+            'We use the RegExp in javaScript. An example to find an uppercase string is /[A-Z]/g. See guide <a href="https://builtin.com/software-engineering-perspectives/javascript-regex" target="_blank">here<a/>'
         }
       ]
     });

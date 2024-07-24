@@ -19,6 +19,8 @@ Fliplet.Widget.instance({
       }
     },
     ready: async function() {
+      // timeTimezoneCheckbox
+      // timeDateTimezoneCheckbox
       const DYNAMIC_TEXT = this;
       const ENTRY = DYNAMIC_TEXT?.parent?.entry || {};
       const DYNAMIC_TEXT_INSTANCE_ID = DYNAMIC_TEXT.id;
@@ -40,8 +42,10 @@ Fliplet.Widget.instance({
           timeFormat: '',
           timeDateFormat: '',
           customRegex: '',
-          timeTimezone: 'data_source',
-          timeDateTimezone: 'data_source'
+          timeTimezone: 'London',
+          timeDateTimezone: 'London',
+          timeTimezoneCheckbox: [],
+          timeDateTimezoneCheckbox: []
         },
         DYNAMIC_TEXT.fields
       );
@@ -231,6 +235,8 @@ Fliplet.Widget.instance({
           toReturnValue = Number(MODE_INTERACT ? 555 : VALUE).toFixed(FIELDS.noDecimalRound);
         }
 
+        toReturnValue = new Intl.NumberFormat().format(toReturnValue);
+
         $HELPER
           .find('.dynamic-text-container')
           .html(`${FIELDS.symbolBefore}${toReturnValue}${FIELDS.symbolAfter}`);
@@ -257,6 +263,32 @@ Fliplet.Widget.instance({
         return !isNaN(date.getTime());
       }
 
+      // function renderTime() {
+      //   const INTERACT_VALUE = '2024-07-18T13:42:12.777Z';
+
+      //   if (!isValidDate(MODE_INTERACT ? INTERACT_VALUE : VALUE)) {
+      //     $HELPER.find('.dynamic-text-container').html('invalid date');
+
+      //     return;
+      //   }
+
+      //   const time = moment(MODE_INTERACT ? INTERACT_VALUE : VALUE).format('HH:mm:ss'); // todo check hh:mm:ss
+      //   const format = FIELDS.timeFormat || 'LT';
+      //   const timezone = FIELDS.timeTimezone;
+      //   const isCustomTimezone = FIELDS.timeTimezoneCheckbox.includes(true);
+
+      //   // todo check timezone conversion
+      //   debugger;
+
+      //   if (isCustomTimezone) {
+      //     $HELPER
+      //       .find('.dynamic-text-container')
+      //       .html(moment(convertUTCToLocal(MODE_INTERACT ? INTERACT_VALUE : VALUE)).format(format));
+      //   } else {
+      //     $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(time, { format: format }));
+      //   }
+      // }
+
       function renderTime() {
         const INTERACT_VALUE = '2024-07-18T13:42:12.777Z';
 
@@ -266,17 +298,10 @@ Fliplet.Widget.instance({
           return;
         }
 
-        const time = moment(MODE_INTERACT ? INTERACT_VALUE : VALUE);
-        const format = FIELDS.timeFormat || 'HH:MM A';
-        const timezone = FIELDS.timeTimezone === 'data_source' ? 'UTC' : '';
+        const time = moment(MODE_INTERACT ? INTERACT_VALUE : VALUE).format('HH:mm:ss'); // todo check hh:mm:ss
+        const format = FIELDS.timeFormat || 'LT';
 
-        if (timezone) {
-          $HELPER
-            .find('.dynamic-text-container')
-            .html(moment(convertUTCToLocal(MODE_INTERACT ? INTERACT_VALUE : VALUE)).format(format));
-        } else {
-          $HELPER.find('.dynamic-text-container').html(time.format(format));
-        }
+        $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(time, { format: format }));
       }
 
       function renderDate() {
@@ -288,10 +313,10 @@ Fliplet.Widget.instance({
           return;
         }
 
-        const date = moment(MODE_INTERACT ? INTERACT_VALUE : VALUE);
-        const format = FIELDS.dateFormat || 'MM-DD-YYYY';
+        const date = moment(MODE_INTERACT ? INTERACT_VALUE : VALUE).format('YYYY-MM-DD');
+        const format = FIELDS.dateFormat || 'L';
 
-        $HELPER.find('.dynamic-text-container').html(date.format(format));
+        $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(date, { format: format }));
       }
 
       function renderDateTime() {
@@ -303,16 +328,20 @@ Fliplet.Widget.instance({
           return;
         }
 
-        const date = moment(MODE_INTERACT ? INTERACT_VALUE : VALUE);
-        const format = FIELDS.timeDateFormat || 'HH:MM A';
-        const timezone = FIELDS.timeDateTimezone === 'data_source' ? 'UTC' : '';
+        const date = moment(MODE_INTERACT ? INTERACT_VALUE : VALUE).format('YYYY-MM-DD HH:mm:ss');
+        const format = FIELDS.timeDateFormat || 'LL LT';
+        const timezone = FIELDS.timeDateTimezone;
+        const isCustomTimezone = FIELDS.timeDateTimezoneCheckbox.includes(true);
 
-        if (timezone) {
+        if (isCustomTimezone) {
+          const utcMoment = moment.utc(date);
+          const localMoment = utcMoment.tz(timezone);
+
           $HELPER
             .find('.dynamic-text-container')
-            .html(moment(convertUTCToLocal(MODE_INTERACT ? INTERACT_VALUE : VALUE)).format(format));
+            .html(convertUTCToLocal(Fliplet.Locale.date(localMoment, { format: format })));
         } else {
-          $HELPER.find('.dynamic-text-container').html(date.format(format));
+          $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(date, { format: format }));
         }
       }
     }
