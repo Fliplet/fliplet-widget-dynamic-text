@@ -8,12 +8,10 @@ function hideAllFields() {
   Fliplet.Helper.field('dataVisualization').toggle(false);
   Fliplet.Helper.field('dateFormat').toggle(false);
   Fliplet.Helper.field('timeFormat').toggle(false);
-  Fliplet.Helper.field('timeTimezone').toggle(false);
   Fliplet.Helper.field('timeDateFormat').toggle(false);
-  Fliplet.Helper.field('customRegex').toggle(false);
-  Fliplet.Helper.field('timeTimezoneCheckbox').toggle(false);
   Fliplet.Helper.field('timeDateTimezone').toggle(false);
   Fliplet.Helper.field('timeDateTimezoneCheckbox').toggle(false);
+  Fliplet.Helper.field('customRegex').toggle(false);
 }
 
 function handleFieldVisibility(value) {
@@ -43,8 +41,6 @@ function handleFieldVisibility(value) {
       break;
     case 'time':
       Fliplet.Helper.field('timeFormat').toggle(true);
-      Fliplet.Helper.field('timeTimezoneCheckbox').toggle(true);
-      Fliplet.Helper.field('timeTimezone').toggle(true);
       break;
     case 'dateTime':
       Fliplet.Helper.field('timeDateFormat').toggle(true);
@@ -157,7 +153,7 @@ Fliplet.Widget.findParents({
       { label: '09/22/1986', value: 'L' },
       { label: 'Sep 22,1986', value: 'll' },
       { label: 'September 22,1986', value: 'LL' },
-      { label: 'Monday, September 22,1986', value: 'dddd, MMMM D, YYYY' } // TODO check this value
+      { label: 'Monday, September 22,1986', value: 'dddd, MMMM D, YYYY' }
     ];
 
     const TIME_FORMAT_OPTIONS = [
@@ -180,6 +176,7 @@ Fliplet.Widget.findParents({
       'Europe/London',
       'Europe/Paris',
       'Europe/Berlin',
+      'Europe/Moscow',
       'Asia/Tokyo',
       'Asia/Shanghai',
       'Asia/Singapore',
@@ -189,7 +186,6 @@ Fliplet.Widget.findParents({
       'Asia/Seoul',
       'America/Sao_Paulo',
       'America/Bogota',
-      'Europe/Moscow',
       'Africa/Johannesburg',
       'America/Argentina/Buenos_Aires',
       'Asia/Dubai',
@@ -302,22 +298,6 @@ Fliplet.Widget.findParents({
           options: TIME_FORMAT_OPTIONS
         },
         {
-          type: 'checkbox',
-          name: 'timeTimezoneCheckbox',
-          label: 'Convert to another timezone',
-          options: [{ value: true, label: 'Yes' }],
-          default: [],
-          change: function(value) {
-            Fliplet.Helper.field('timeTimezone').toggle(value.includes(true));
-          }
-        },
-        {
-          type: 'dropdown',
-          name: 'timeTimezone',
-          label: 'Select timezone',
-          options: TIMEZONES_OPTIONS
-        },
-        {
           type: 'dropdown',
           name: 'timeDateFormat',
           label: 'Select dataview type',
@@ -335,6 +315,11 @@ Fliplet.Widget.findParents({
             Fliplet.Helper.field('timeDateTimezone').toggle(
               value.includes(true)
             );
+          },
+          ready: function() {
+            let showTimezone = Fliplet.FormBuilder.field('timeDateTimezoneCheckbox').val().includes(true);
+
+            Fliplet.Helper.field('timeDateTimezone').toggle(showTimezone);
           }
         },
         {
