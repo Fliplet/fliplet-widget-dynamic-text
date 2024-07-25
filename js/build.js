@@ -48,7 +48,7 @@ Fliplet.Widget.instance({
 
       const FIELDS = DYNAMIC_TEXT.fields;
       const COLUMN = FIELDS.column;
-      let VALUE = ENTRY.data[COLUMN];
+      let VALUE = MODE_INTERACT ? '' : ENTRY.data[COLUMN];
       const DATA_FORMAT = FIELDS.dataFormat;
       const ARRAY_INTERACT_VALUES = ['array item 1', 'array item 2', 'array item 3'];
 
