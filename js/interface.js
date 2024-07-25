@@ -317,7 +317,7 @@ Fliplet.Widget.findParents({
             );
           },
           ready: function() {
-            let showTimezone = Fliplet.FormBuilder.field('timeDateTimezoneCheckbox').val().includes(true);
+            let showTimezone = Fliplet.Helper.field('timeDateTimezoneCheckbox').get().includes(true);
 
             Fliplet.Helper.field('timeDateTimezone').toggle(showTimezone);
           }
