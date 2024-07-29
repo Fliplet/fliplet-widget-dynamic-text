@@ -227,10 +227,11 @@ Fliplet.Widget.instance({
 
       function renderCustom() {
         const regex = FIELDS.customRegex;
+        let value = MODE_INTERACT ? 'Dynamic Text' : VALUE || '';
 
         $HELPER
           .find('.dynamic-text-container')
-          .html(VALUE.match(regex) ? (MODE_INTERACT ? 'Dynamic Text' : VALUE).match(regex)[0] : 'No match');
+          .html(value.replace(regex) || 'No match');
       }
 
       function renderNumber() {
