@@ -248,7 +248,7 @@ Fliplet.Widget.instance({
           fractionDigits = 0;
           toReturnValue = Math.round(Number(MODE_INTERACT ? 555 : VALUE, 10));
         } else if (FIELDS.noDecimalRound === '') {
-          fractionDigits = 1000;
+          fractionDigits = 20;
           toReturnValue = Number(MODE_INTERACT ? 555 : VALUE);
         } else {
           fractionDigits = FIELDS.noDecimalRound;
