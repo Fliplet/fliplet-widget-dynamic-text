@@ -326,7 +326,7 @@ Fliplet.Widget.instance({
         }
 
         const date = moment(MODE_INTERACT ? INTERACT_VALUE : VALUE).format('YYYY-MM-DD HH:mm:ss');
-        const format = FIELDS.timeDateFormat || 'LL LT';
+        const format = FIELDS.timeDateFormat || 'MM/DD/YYYY HH:mm:ss A';
         const timezone = FIELDS.timeDateTimezone;
         const isCustomTimezone = FIELDS.timeDateTimezoneCheckbox.includes(true);
 
