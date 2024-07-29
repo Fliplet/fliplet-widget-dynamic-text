@@ -60,6 +60,16 @@ Fliplet.Widget.findParents({
   filter: { package: 'com.fliplet.dynamic-container' }
 }).then(async(widgets) => {
   if (widgets.length === 0) {
+    Fliplet.Widget.generateInterface({
+      title: 'Configure dynamic text',
+      fields: [
+        {
+          type: 'html',
+          html: '<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;">This component needs to be placed inside a Dynamic Container</p>'
+        }
+      ]
+    });
+
     return Fliplet.UI.Toast(
       'This component needs to be placed inside a Dynamic Container'
     );
@@ -73,7 +83,7 @@ Fliplet.Widget.findParents({
       attributes: ['name', 'columns']
     }
   ).then((dataSource) => {
-    const DATA_SOURCE_COLUMNS_OPTIONS = dataSource.columns.map((el) => {
+    const DATA_SOURCE_COLUMNS_OPTIONS = (dataSource.columns || []).map((el) => {
       return {
         value: el,
         label: el
