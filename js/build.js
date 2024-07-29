@@ -226,12 +226,16 @@ Fliplet.Widget.instance({
       }
 
       function renderCustom() {
-        const regex = FIELDS.customRegex;
         let value = MODE_INTERACT ? 'Dynamic Text' : VALUE || '';
+        let parts = FIELDS.customRegex.split('/');
+        let pattern = parts[1];
+        let flags = parts[2];
+        let regex = new RegExp(pattern, flags);
+        let result = regex.test(value);
 
         $HELPER
           .find('.dynamic-text-container')
-          .html(value.replace(regex) || 'No match');
+          .html(result ? value : 'No match');
       }
 
       function renderNumber() {
