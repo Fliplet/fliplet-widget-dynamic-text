@@ -264,16 +264,31 @@ Fliplet.Widget.instance({
         return !isNaN(date.getTime());
       }
 
+      function isValidTime(timeString) {
+        // Regular expressions for HH:MM and HH:MM:SS formats
+        const regexHHMM = /^([01]\d|2[0-3]):([0-5]\d)$/;
+        const regexHHMMSS = /^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/;
+
+        return regexHHMM.test(timeString) || regexHHMMSS.test(timeString);
+      }
+
       function renderTime() {
         const INTERACT_VALUE = '2024-07-18T13:42:12.777Z';
 
-        if (!isValidDate(MODE_INTERACT ? INTERACT_VALUE : VALUE)) {
+        if (!isValidTime(MODE_INTERACT ? INTERACT_VALUE : VALUE) && !isValidDate(MODE_INTERACT ? INTERACT_VALUE : VALUE)) {
           $HELPER.find('.dynamic-text-container').html('invalid date');
 
           return;
         }
 
-        const time = moment(MODE_INTERACT ? INTERACT_VALUE : VALUE).format('HH:mm:ss');
+        var time = null;
+
+        if (isValidTime(MODE_INTERACT ? INTERACT_VALUE : VALUE)) {
+          time = moment(MODE_INTERACT ? INTERACT_VALUE : VALUE).format('HH:mm:ss');
+        } else {
+          time = VALUE;
+        }
+
         const format = FIELDS.timeFormat || 'LT';
 
         $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(time, { format: format }));
