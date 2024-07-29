@@ -79,7 +79,7 @@ Fliplet.Widget.instance({
           );
         } else if (!COLUMN) {
           $HELPER.find('.dynamic-text-container').html(`
-            <div data-view="not-configured" class="not-configured">
+            <div class="not-configured">
               <p>Configure Dynamic Text</p>
             </div>`
           );

@@ -1,7 +1,10 @@
 [data-widget-package="com.fliplet.dynamic-text"] .not-configured {
   border: 5px solid #D4D4D4 !important;
+  padding: 15px!important;
+}
+
+[data-widget-package="com.fliplet.dynamic-text"] .not-configured p {
   color: #6A6868 !important;
-  font-family: "Open Sans", sans-serif;
-  font-size: 12px;
-  padding: 15px;
+  font-family: "Open Sans", sans-serif!important;
+  font-size: 12px!important;
 }
