@@ -15,6 +15,8 @@ function hideAllFields() {
 }
 
 function handleFieldVisibility(value) {
+  hideAllFields();
+
   switch (value) {
     case 'text':
     case 'html':
@@ -230,8 +232,6 @@ Fliplet.Widget.findParents({
           options: DATA_FORMATS_OPTIONS,
           default: 'text',
           change: function(value) {
-            hideAllFields();
-
             handleFieldVisibility(value);
           },
           ready: function() {

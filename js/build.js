@@ -127,29 +127,34 @@ Fliplet.Widget.instance({
       }
 
       function renderURL() {
-        const LINK = document.createElement('a');
+        if (VALUE || MODE_INTERACT) {
+          const LINK = document.createElement('a');
 
-        LINK.href = MODE_INTERACT ? '#' : VALUE;
-        LINK.textContent = FIELDS.urlALtText || 'Tap to open';
+          LINK.href = MODE_INTERACT ? '#' : VALUE;
+          LINK.textContent = FIELDS.urlALtText || 'Tap to open';
 
-        // TODO missing form figma
-        // if (settings.inAppBrowser) {
-        //   LINK.setAttribute('target', '_self');
-        // } else {
-        //   LINK.setAttribute('target', '_blank');
-        // }
+          // TODO missing form figma
+          // if (settings.inAppBrowser) {
+          //   LINK.setAttribute('target', '_self');
+          // } else {
+          //   LINK.setAttribute('target', '_blank');
+          // }
 
-        $HELPER.find('.dynamic-text-container').html(LINK);
+          $HELPER.find('.dynamic-text-container').html(LINK);
+        }
       }
 
       function renderTelephone() {
-        const LINK = document.createElement('a');
+        if (VALUE || MODE_INTERACT) {
+          const LINK = document.createElement('a');
 
-        LINK.href = `tel:${MODE_INTERACT ? '123-123-123' : VALUE}`;
-        LINK.textContent = FIELDS.phoneALtText || 'Tap to call';
+          LINK.href = `tel:${MODE_INTERACT ? '123-123-123' : VALUE}`;
+          LINK.textContent = FIELDS.phoneALtText || 'Tap to call';
 
-        $HELPER.find('.dynamic-text-container').html(LINK);
+          $HELPER.find('.dynamic-text-container').html(LINK);
+        }
       }
+
 
       function createList() {
         const list = document.createElement(FIELDS.dataVisualization === 'Numbered List' ? 'ol' : 'ul');
@@ -173,12 +178,14 @@ Fliplet.Widget.instance({
       }
 
       function renderEmail() {
-        const LINK = document.createElement('a');
+        if (VALUE || MODE_INTERACT) {
+          const LINK = document.createElement('a');
 
-        LINK.href = `mailto:${MODE_INTERACT ? 'john@doe.com' : VALUE}`;
-        LINK.textContent = FIELDS.mailALtText || 'Tap to email';
+          LINK.href = `mailto:${MODE_INTERACT ? 'john@doe.com' : VALUE}`;
+          LINK.textContent = FIELDS.mailALtText || 'Tap to email';
 
-        $HELPER.find('.dynamic-text-container').html(LINK);
+          $HELPER.find('.dynamic-text-container').html(LINK);
+        }
       }
 
       function renderArray() {
