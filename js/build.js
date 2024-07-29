@@ -240,16 +240,25 @@ Fliplet.Widget.instance({
 
       function renderNumber() {
         let toReturnValue = '';
+        let fractionDigits = 0;
 
         if (isNaN(MODE_INTERACT ? 555 : VALUE)) {
           toReturnValue = 'N/A';
         } else if (FIELDS.noDecimalRound === 0) {
-          toReturnValue = parseInt(MODE_INTERACT ? 555 : VALUE, 10);
+          fractionDigits = 0;
+          toReturnValue = Math.round(Number(MODE_INTERACT ? 555 : VALUE, 10));
+        } else if (FIELDS.noDecimalRound === '') {
+          fractionDigits = 1000;
+          toReturnValue = Number(MODE_INTERACT ? 555 : VALUE);
         } else {
+          fractionDigits = FIELDS.noDecimalRound;
           toReturnValue = Number(MODE_INTERACT ? 555 : VALUE).toFixed(FIELDS.noDecimalRound);
         }
 
-        toReturnValue = new Intl.NumberFormat().format(toReturnValue);
+        toReturnValue = new Intl.NumberFormat(undefined, {
+          minimumFractionDigits: fractionDigits,
+          maximumFractionDigits: fractionDigits
+        }).format(toReturnValue);
 
         $HELPER
           .find('.dynamic-text-container')
