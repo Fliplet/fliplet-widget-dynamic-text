@@ -226,7 +226,7 @@ Fliplet.Widget.instance({
       }
 
       function renderCustom() {
-        const regex = new RegExp(FIELDS.customRegex);
+        const regex = FIELDS.customRegex;
 
         $HELPER
           .find('.dynamic-text-container')
