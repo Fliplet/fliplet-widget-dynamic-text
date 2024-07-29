@@ -331,7 +331,7 @@ Fliplet.Widget.instance({
         const isCustomTimezone = FIELDS.timeDateTimezoneCheckbox.includes(true);
 
         if (isCustomTimezone) {
-          const utcMoment = moment.utc(date);
+          const utcMoment = date; // moment.utc(date);
           const localMoment = utcMoment.tz(timezone);
 
           $HELPER
