@@ -78,6 +78,12 @@ Fliplet.Widget.instance({
             'This component needs to be placed inside a Record or List Repeater component'
           );
         } else if (!COLUMN) {
+          $HELPER.find('.dynamic-text-container').html(`
+            <div data-view="not-configured" class="not-configured">
+              <p>Configure Dynamic Text</p>
+            </div>`
+          );
+
           return Fliplet.UI.Toast(
             'This component needs to be configured, please select a column'
           );
