@@ -243,7 +243,8 @@ Fliplet.Widget.instance({
         let fractionDigits = 0;
 
         if (isNaN(MODE_INTERACT ? 555 : VALUE)) {
-          toReturnValue = 'N/A';
+          // toReturnValue = 'N/A';
+          return;
         } else if (FIELDS.noDecimalRound === 0) {
           fractionDigits = 0;
           toReturnValue = Math.round(Number(MODE_INTERACT ? 555 : VALUE, 10));
@@ -285,8 +286,7 @@ Fliplet.Widget.instance({
         const INTERACT_VALUE = '2024-07-18T13:42:12.777Z';
 
         if (!isValidTime(MODE_INTERACT ? INTERACT_VALUE : VALUE) && !isValidDate(MODE_INTERACT ? INTERACT_VALUE : VALUE)) {
-          $HELPER.find('.dynamic-text-container').html('invalid date');
-
+          // $HELPER.find('.dynamic-text-container').html('invalid date');
           return;
         }
 
@@ -307,8 +307,7 @@ Fliplet.Widget.instance({
         const INTERACT_VALUE = '2024-07-18T13:42:12.777Z';
 
         if (!isValidDate(MODE_INTERACT ? INTERACT_VALUE : VALUE)) {
-          $HELPER.find('.dynamic-text-container').html('invalid date');
-
+          // $HELPER.find('.dynamic-text-container').html('invalid date');
           return;
         }
 
@@ -322,8 +321,7 @@ Fliplet.Widget.instance({
         const INTERACT_VALUE = '2024-07-18T13:42:12.777Z';
 
         if (!isValidDate(MODE_INTERACT ? INTERACT_VALUE : VALUE)) {
-          $HELPER.find('.dynamic-text-container').html('invalid date');
-
+          // $HELPER.find('.dynamic-text-container').html('invalid date');
           return;
         }
 

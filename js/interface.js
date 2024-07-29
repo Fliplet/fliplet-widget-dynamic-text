@@ -48,6 +48,10 @@ function handleFieldVisibility(value) {
       Fliplet.Helper.field('timeDateFormat').toggle(true);
       Fliplet.Helper.field('timeDateTimezone').toggle(true);
       Fliplet.Helper.field('timeDateTimezoneCheckbox').toggle(true);
+
+      let showTimezone = Fliplet.Helper.field('timeDateTimezoneCheckbox').get().includes(true);
+
+      Fliplet.Helper.field('timeDateTimezone').toggle(showTimezone);
       break;
     case 'custom':
       Fliplet.Helper.field('customRegex').toggle(true);
