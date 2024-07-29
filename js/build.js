@@ -284,9 +284,9 @@ Fliplet.Widget.instance({
         var time = null;
 
         if (isValidTime(MODE_INTERACT ? INTERACT_VALUE : VALUE)) {
-          time = moment(MODE_INTERACT ? INTERACT_VALUE : VALUE).format('HH:mm:ss');
-        } else {
           time = VALUE;
+        } else {
+          time = moment(MODE_INTERACT ? INTERACT_VALUE : VALUE).format('HH:mm:ss');
         }
 
         const format = FIELDS.timeFormat || 'LT';
