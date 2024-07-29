@@ -135,9 +135,10 @@ Fliplet.Widget.instance({
       function renderURL() {
         if (VALUE || MODE_INTERACT) {
           const LINK = document.createElement('a');
+          const VAL = MODE_INTERACT ? '#' : VALUE;
 
           LINK.href = MODE_INTERACT ? '#' : VALUE;
-          LINK.textContent = FIELDS.urlALtText || 'Tap to open';
+          LINK.textContent = FIELDS.urlALtText || VAL; // 'Tap to open';
 
           // TODO missing form figma
           // if (settings.inAppBrowser) {
@@ -153,9 +154,10 @@ Fliplet.Widget.instance({
       function renderTelephone() {
         if (VALUE || MODE_INTERACT) {
           const LINK = document.createElement('a');
+          const VAL = MODE_INTERACT ? '123-123-123' : VALUE;
 
-          LINK.href = `tel:${MODE_INTERACT ? '123-123-123' : VALUE}`;
-          LINK.textContent = FIELDS.phoneALtText || 'Tap to call';
+          LINK.href = `tel:${VAL}`;
+          LINK.textContent = FIELDS.phoneALtText || VAL; // 'Tap to call';
 
           $HELPER.find('.dynamic-text-container').html(LINK);
         }
@@ -186,9 +188,10 @@ Fliplet.Widget.instance({
       function renderEmail() {
         if (VALUE || MODE_INTERACT) {
           const LINK = document.createElement('a');
+          const VAL = MODE_INTERACT ? 'john@doe.com' : VALUE;
 
-          LINK.href = `mailto:${MODE_INTERACT ? 'john@doe.com' : VALUE}`;
-          LINK.textContent = FIELDS.mailALtText || 'Tap to email';
+          LINK.href = `mailto:${VAL}`;
+          LINK.textContent = FIELDS.mailALtText || VAL; // 'Tap to email';
 
           $HELPER.find('.dynamic-text-container').html(LINK);
         }
