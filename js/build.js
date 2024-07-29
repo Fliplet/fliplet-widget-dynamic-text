@@ -256,7 +256,7 @@ Fliplet.Widget.instance({
         }
 
         toReturnValue = new Intl.NumberFormat(undefined, {
-          minimumFractionDigits: fractionDigits,
+          minimumFractionDigits: 0,
           maximumFractionDigits: fractionDigits
         }).format(toReturnValue);
 
