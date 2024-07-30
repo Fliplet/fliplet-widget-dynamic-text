@@ -65,13 +65,13 @@ function handleFieldVisibility(value) {
 Fliplet.Widget.findParents({
   filter: { package: 'com.fliplet.dynamic-container' }
 }).then(async(widgets) => {
-  if (widgets.length === 0) {
+  if (widgets.length === 0 || !widgets[0].dataSourceId) {
     Fliplet.Widget.generateInterface({
       title: 'Configure dynamic text',
       fields: [
         {
           type: 'html',
-          html: '<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;">This component needs to be placed inside a Dynamic Container</p>'
+          html: '<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;">This component needs to be placed inside a Dynamic Container with selected Data source</p>'
         }
       ]
     });
