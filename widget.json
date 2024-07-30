@@ -1246,7 +1246,7 @@
           "description": "Paragraph",
           "fields": [
             {
-              "name": "paragraphFontFamily",
+              "name": "dynamicTextParagraphFontFamily",
               "default": "$quickTextFontFamily",
               "styles": [
                 {
@@ -1261,18 +1261,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "paragraphFontFamilyTablet",
+                  "name": "dynamicTextParagraphFontFamilyTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "paragraphFontFamilyDesktop",
+                  "name": "dynamicTextParagraphFontFamilyDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "font"
             },
             {
-              "name": "paragraphFontSize",
+              "name": "dynamicTextParagraphFontSize",
               "default": "$bodyFontSize",
               "styles": [
                 {
@@ -1287,11 +1287,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "paragraphFontSizeTablet",
+                  "name": "dynamicTextParagraphFontSizeTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "paragraphFontSizeDesktop",
+                  "name": "dynamicTextParagraphFontSizeDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1299,7 +1299,7 @@
               "subtype": "font"
             },
             {
-              "name": "paragraphTextColor",
+              "name": "dynamicTextParagraphTextColor",
               "default": "$bodyTextColor",
               "styles": [
                 {
@@ -1378,18 +1378,18 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "paragraphTextColorTablet",
+                  "name": "dynamicTextParagraphTextColorTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "paragraphTextColorDesktop",
+                  "name": "dynamicTextParagraphTextColorDesktop",
                   "default": "inherit-tablet"
                 }
               },
               "type": "color"
             },
             {
-              "name": "paragraphFontWeight",
+              "name": "dynamicTextParagraphFontWeight",
               "default": "$bodyFontWeight",
               "styles": [
                 {
@@ -1404,11 +1404,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "paragraphFontWeightTablet",
+                  "name": "dynamicTextParagraphFontWeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "paragraphFontWeightDesktop",
+                  "name": "dynamicTextParagraphFontWeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1416,7 +1416,7 @@
               "properties": "weight"
             },
             {
-              "name": "paragraphFontStyle",
+              "name": "dynamicTextParagraphFontStyle",
               "default": "$bodyFontStyle",
               "styles": [
                 {
@@ -1431,11 +1431,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "paragraphFontStyleTablet",
+                  "name": "dynamicTextParagraphFontStyleTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "paragraphFontStyleDesktop",
+                  "name": "dynamicTextParagraphFontStyleDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1443,7 +1443,7 @@
               "properties": "italic"
             },
             {
-              "name": "paragraphFontDecoration",
+              "name": "dynamicTextParagraphFontDecoration",
               "default": "none",
               "styles": [
                 {
@@ -1454,11 +1454,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "paragraphFontDecorationTablet",
+                  "name": "dynamicTextParagraphFontDecorationTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "paragraphFontDecorationDesktop",
+                  "name": "dynamicTextParagraphFontDecorationDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1467,7 +1467,7 @@
               "properties": "underline"
             },
             {
-              "name": "paragraphLineHeight",
+              "name": "dynamicTextParagraphLineHeight",
               "default": "$bodyLineHeight",
               "styles": [
                 {
@@ -1482,11 +1482,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "paragraphLineHeightTablet",
+                  "name": "dynamicTextParagraphLineHeightTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "paragraphLineHeightDesktop",
+                  "name": "dynamicTextParagraphLineHeightDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1495,7 +1495,7 @@
               "subtype": "line-height"
             },
             {
-              "name": "paragraphMarginTop",
+              "name": "dynamicTextParagraphMarginTop",
               "default": "0px",
               "styles": [
                 {
@@ -1506,11 +1506,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "paragraphMarginTopTablet",
+                  "name": "dynamicTextParagraphMarginTopTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "paragraphMarginTopDesktop",
+                  "name": "dynamicTextParagraphMarginTopDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -1520,7 +1520,7 @@
               "allowNegative": true
             },
             {
-              "name": "paragraphMarginBottom",
+              "name": "dynamicTextParagraphMarginBottom",
               "default": "10px",
               "styles": [
                 {
@@ -1531,11 +1531,11 @@
               ],
               "breakpoints": {
                 "tablet": {
-                  "name": "paragraphMarginBottomTablet",
+                  "name": "dynamicTextParagraphMarginBottomTablet",
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "paragraphMarginBottomDesktop",
+                  "name": "dynamicTextParagraphMarginBottomDesktop",
                   "default": "inherit-tablet"
                 }
               },
@@ -2857,7 +2857,7 @@
                   "default": "inherit-mobile"
                 },
                 "desktop": {
-                  "name": "textVisibilityDesktop",
+                  "name": "dynamicTextVisibilityDesktop",
                   "default": "inherit-tablet"
                 }
               },
