@@ -54,32 +54,32 @@
               "logic": {
                 "None": {
                   "hide": [
-                    "dynamicTextBackgroundImage",
-                    "dynamicTextBackgroundPosX",
-                    "dynamicTextBackgroundPosY",
-                    "dynamicTextBackgroundSize",
-                    "dynamicTextBackgroundRepeat",
-                    "dynamicTextBackgroundColor"
+                    "dynamicText-dynamicTextBackgroundImage",
+                    "dynamicText-dynamicTextBackgroundPosX",
+                    "dynamicText-dynamicTextBackgroundPosY",
+                    "dynamicText-dynamicTextBackgroundSize",
+                    "dynamicText-dynamicTextBackgroundRepeat",
+                    "dynamicText-dynamicTextBackgroundColor"
                   ]
                 },
                 "Color": {
                   "hide": [
-                    "dynamicTextBackgroundImage",
-                    "dynamicTextBackgroundPosX",
-                    "dynamicTextBackgroundPosY",
-                    "dynamicTextBackgroundSize",
-                    "dynamicTextBackgroundRepeat"
+                    "dynamicText-dynamicTextBackgroundImage",
+                    "dynamicText-dynamicTextBackgroundPosX",
+                    "dynamicText-dynamicTextBackgroundPosY",
+                    "dynamicText-dynamicTextBackgroundSize",
+                    "dynamicText-dynamicTextBackgroundRepeat"
                   ],
-                  "show": ["dynamicTextBackgroundColor"]
+                  "show": ["dynamicText-dynamicTextBackgroundColor"]
                 },
                 "Image": {
-                  "hide": ["dynamicTextBackgroundColor"],
+                  "hide": ["dynamicText-dynamicTextBackgroundColor"],
                   "show": [
-                    "dynamicTextBackgroundImage",
-                    "dynamicTextBackgroundPosX",
-                    "dynamicTextBackgroundPosY",
-                    "dynamicTextBackgroundSize",
-                    "dynamicTextBackgroundRepeat"
+                    "dynamicText-dynamicTextBackgroundImage",
+                    "dynamicText-dynamicTextBackgroundPosX",
+                    "dynamicText-dynamicTextBackgroundPosY",
+                    "dynamicText-dynamicTextBackgroundSize",
+                    "dynamicText-dynamicTextBackgroundRepeat"
                   ]
                 }
               },
