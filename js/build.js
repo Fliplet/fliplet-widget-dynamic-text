@@ -299,13 +299,16 @@ Fliplet.Widget.instance({
 
         if (isValidTime(VALUE)) {
           time = VALUE;
-        } else {
-          time = moment(VALUE).format('HH:mm:ss');
+          $HELPER.find('.dynamic-text-container').html(time);
+
+          return;
         }
 
-        const format = FIELDS.timeFormat || 'LTS'; // 'LT' || 'LTS'
+        time = moment(VALUE).format('HH:mm:ss');
 
-        $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(time, { format: format }));
+        const format = FIELDS.timeFormat || 'LTS';
+
+        $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(time, { format: format, locale: navigator.language }));
       }
 
       function renderDate() {
