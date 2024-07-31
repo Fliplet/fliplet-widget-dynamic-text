@@ -237,6 +237,10 @@ Fliplet.Widget.instance({
         let regex = new RegExp(pattern, flags);
         let result = regex.test(VALUE);
 
+        if (result && Array.isArray(VALUE)) {
+          VALUE = VALUE.join(', ');
+        }
+
         $HELPER
           .find('.dynamic-text-container')
           .html(result ? VALUE : '');
@@ -287,7 +291,7 @@ Fliplet.Widget.instance({
       }
 
       function renderTime() {
-        if (!isValidTime(VALUE) && !isValidDate(VALUE)) {
+        if (!isValidTime(VALUE)) {
           return;
         }
 
@@ -299,7 +303,7 @@ Fliplet.Widget.instance({
           time = moment(VALUE).format('HH:mm:ss');
         }
 
-        const format = FIELDS.timeFormat || 'LT';
+        const format = FIELDS.timeFormat || 'LTS'; // 'LT' || 'LTS'
 
         $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(time, { format: format }));
       }
@@ -312,7 +316,7 @@ Fliplet.Widget.instance({
         const date = moment(VALUE).format('YYYY-MM-DD');
         const format = FIELDS.dateFormat || 'L';
 
-        $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(date, { format: format }));
+        $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(date, { format: format, locale: navigator.language }));
       }
 
       function renderDateTime() {
