@@ -2,7 +2,8 @@
 Fliplet.Widget.instance({
   name: 'dynamic-text',
   displayName: 'Dynamic Text',
-  template: '<div data-view="dynamicText" class="dynamic-text-container"></div>',
+  template:
+    '<div data-view="dynamicText" class="dynamic-text-container"></div>',
   data: {
     dataSourceId: null
   },
@@ -80,8 +81,7 @@ Fliplet.Widget.instance({
           $HELPER.find('.dynamic-text-container').html(`
             <div class="not-configured">
               <p>Configure Dynamic Text</p>
-            </div>`
-          );
+            </div>`);
 
           return Fliplet.UI.Toast(
             'This component needs to be configured, please select a column'
@@ -166,9 +166,10 @@ Fliplet.Widget.instance({
         }
       }
 
-
       function createList() {
-        const list = document.createElement(FIELDS.dataVisualization === 'Numbered List' ? 'ol' : 'ul');
+        const list = document.createElement(
+          FIELDS.dataVisualization === 'Numbered List' ? 'ol' : 'ul'
+        );
 
         list.style.paddingLeft = '20px';
 
@@ -178,7 +179,7 @@ Fliplet.Widget.instance({
           list.style.listStyle = 'disc';
         }
 
-        VALUE.forEach(item => {
+        VALUE.forEach((item) => {
           const li = document.createElement('li');
 
           li.textContent = item;
@@ -207,7 +208,7 @@ Fliplet.Widget.instance({
         }
 
         if (!Array.isArray(VALUE)) {
-          VALUE = VALUE.split(',').map(item => item.trim());
+          VALUE = VALUE.split(',').map((item) => item.trim());
         }
 
         switch (FIELDS.dataVisualization) {
@@ -241,9 +242,7 @@ Fliplet.Widget.instance({
           VALUE = VALUE.join(', ');
         }
 
-        $HELPER
-          .find('.dynamic-text-container')
-          .html(result ? VALUE : '');
+        $HELPER.find('.dynamic-text-container').html(result ? VALUE : '');
       }
 
       function renderNumber() {
@@ -291,6 +290,8 @@ Fliplet.Widget.instance({
       }
 
       function renderTime() {
+        const format = FIELDS.timeFormat || 'LTS';
+
         if (!isValidTime(VALUE)) {
           return;
         }
@@ -298,17 +299,24 @@ Fliplet.Widget.instance({
         var time = null;
 
         if (isValidTime(VALUE)) {
-          time = VALUE;
-          $HELPER.find('.dynamic-text-container').html(time);
+          let now = moment();
 
-          return;
+          now.set({
+            hour: VALUE.split(':')[0],
+            minute: VALUE.split(':')[1],
+            second: VALUE.split(':')[2] || '00'
+          });
+          VALUE = now.format('YYYY-MM-DD HH:mm:ss');
         }
 
         time = moment(VALUE).format('HH:mm:ss');
 
-        const format = FIELDS.timeFormat || 'LTS';
-
-        $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(time, { format: format, locale: navigator.language }));
+        $HELPER.find('.dynamic-text-container').html(
+          Fliplet.Locale.date(time, {
+            format: format,
+            locale: navigator.language
+          })
+        );
       }
 
       function renderDate() {
@@ -319,7 +327,12 @@ Fliplet.Widget.instance({
         const date = moment(VALUE).format('YYYY-MM-DD');
         const format = FIELDS.dateFormat || 'L';
 
-        $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(date, { format: format, locale: navigator.language }));
+        $HELPER.find('.dynamic-text-container').html(
+          Fliplet.Locale.date(date, {
+            format: format,
+            locale: navigator.language
+          })
+        );
       }
 
       function renderDateTime() {
@@ -340,7 +353,12 @@ Fliplet.Widget.instance({
             .find('.dynamic-text-container')
             .html(Fliplet.Locale.date(localMoment, { format: format }));
         } else {
-          $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(date, { format: format, locale: navigator.language }));
+          $HELPER.find('.dynamic-text-container').html(
+            Fliplet.Locale.date(date, {
+              format: format,
+              locale: navigator.language
+            })
+          );
         }
       }
     }
