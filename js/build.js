@@ -296,7 +296,7 @@ Fliplet.Widget.instance({
           return;
         }
 
-        var time = null;
+        // var time = null;
 
         if (isValidTime(VALUE)) {
           let now = moment();
@@ -307,9 +307,10 @@ Fliplet.Widget.instance({
             second: VALUE.split(':')[2] || '00'
           });
           VALUE = now.format('YYYY-MM-DD HH:mm:ss');
+        } else {
+          VALUE = moment(VALUE).format('HH:mm:ss');
         }
 
-        // time = moment(VALUE).format('HH:mm:ss');
 
         $HELPER.find('.dynamic-text-container').html(
           Fliplet.Locale.date(VALUE, {
