@@ -77,7 +77,7 @@ Fliplet.Widget.findParents({
     });
 
     return Fliplet.UI.Toast(
-      'This component needs to be placed inside a Dynamic Container'
+      'This component needs to be placed inside a Dynamic Container with selected Data source'
     );
   }
 

@@ -48,9 +48,8 @@ Fliplet.Widget.instance({
 
       const FIELDS = DYNAMIC_TEXT.fields;
       const COLUMN = FIELDS.column;
-      let VALUE = MODE_INTERACT ? '' : ENTRY.data[COLUMN];
+      let VALUE = MODE_INTERACT ? COLUMN : ENTRY.data[COLUMN];
       const DATA_FORMAT = FIELDS.dataFormat;
-      const ARRAY_INTERACT_VALUES = ['array item 1', 'array item 2', 'array item 3'];
 
       return Fliplet.Widget.findParents({
         instanceId: DYNAMIC_TEXT_INSTANCE_ID
@@ -89,16 +88,22 @@ Fliplet.Widget.instance({
           );
         }
 
+        if (MODE_INTERACT) {
+          $HELPER.find('.dynamic-text-container').html(COLUMN);
+
+          return;
+        }
+
         renderContent();
       });
 
       function renderContent() {
         switch (DATA_FORMAT) {
           case 'text':
-            $HELPER.find('.dynamic-text-container').text(MODE_INTERACT ? 'Dynamic Text' : (VALUE || ''));
+            $HELPER.find('.dynamic-text-container').text(VALUE);
             break;
           case 'html':
-            $HELPER.find('.dynamic-text-container').html(MODE_INTERACT ? 'Dynamic Text' : (VALUE || ''));
+            $HELPER.find('.dynamic-text-container').html(VALUE);
             break;
           case 'url':
             renderURL();
@@ -133,12 +138,11 @@ Fliplet.Widget.instance({
       }
 
       function renderURL() {
-        if (VALUE || MODE_INTERACT) {
+        if (VALUE) {
           const LINK = document.createElement('a');
-          const VAL = MODE_INTERACT ? '#' : VALUE;
 
-          LINK.href = MODE_INTERACT ? '#' : VALUE;
-          LINK.textContent = FIELDS.urlALtText || VAL; // 'Tap to open';
+          LINK.href = VALUE;
+          LINK.textContent = FIELDS.urlALtText || VALUE; // 'Tap to open';
 
           // TODO missing form figma
           // if (settings.inAppBrowser) {
@@ -152,12 +156,11 @@ Fliplet.Widget.instance({
       }
 
       function renderTelephone() {
-        if (VALUE || MODE_INTERACT) {
+        if (VALUE) {
           const LINK = document.createElement('a');
-          const VAL = MODE_INTERACT ? '123-123-123' : VALUE;
 
-          LINK.href = `tel:${VAL}`;
-          LINK.textContent = FIELDS.phoneALtText || VAL; // 'Tap to call';
+          LINK.href = `tel:${VALUE}`;
+          LINK.textContent = FIELDS.phoneALtText || VALUE;
 
           $HELPER.find('.dynamic-text-container').html(LINK);
         }
@@ -175,7 +178,7 @@ Fliplet.Widget.instance({
           list.style.listStyle = 'disc';
         }
 
-        (MODE_INTERACT ? ARRAY_INTERACT_VALUES : (VALUE || [])).forEach(item => {
+        VALUE.forEach(item => {
           const li = document.createElement('li');
 
           li.textContent = item;
@@ -186,12 +189,11 @@ Fliplet.Widget.instance({
       }
 
       function renderEmail() {
-        if (VALUE || MODE_INTERACT) {
+        if (VALUE) {
           const LINK = document.createElement('a');
-          const VAL = MODE_INTERACT ? 'john@doe.com' : VALUE;
 
-          LINK.href = `mailto:${VAL}`;
-          LINK.textContent = FIELDS.mailALtText || VAL; // 'Tap to email';
+          LINK.href = `mailto:${VALUE}`;
+          LINK.textContent = FIELDS.mailALtText || VALUE;
 
           $HELPER.find('.dynamic-text-container').html(LINK);
         }
@@ -204,7 +206,7 @@ Fliplet.Widget.instance({
           VALUE = [];
         }
 
-        if (!MODE_INTERACT && !Array.isArray(VALUE)) { // comma separated string
+        if (!Array.isArray(VALUE)) {
           VALUE = VALUE.split(',').map(item => item.trim());
         }
 
@@ -215,13 +217,13 @@ Fliplet.Widget.instance({
             createList();
             break;
           case 'Comma-separated list':
-            formattedData = (MODE_INTERACT ? ARRAY_INTERACT_VALUES : (VALUE || [])).join(', ');
+            formattedData = VALUE.join(', ');
             break;
           case 'Semicolon-Separated List':
-            formattedData = (MODE_INTERACT ? ARRAY_INTERACT_VALUES : (VALUE || [])).join('; ');
+            formattedData = VALUE.join('; ');
             break;
           default:
-            formattedData = (MODE_INTERACT ? ARRAY_INTERACT_VALUES : (VALUE || [])).join(', ');
+            formattedData = VALUE.join(', ');
             break;
         }
 
@@ -229,34 +231,33 @@ Fliplet.Widget.instance({
       }
 
       function renderCustom() {
-        let value = MODE_INTERACT ? 'Dynamic Text' : VALUE || '';
         let parts = FIELDS.customRegex.split('/');
         let pattern = parts[1];
         let flags = parts[2];
         let regex = new RegExp(pattern, flags);
-        let result = regex.test(value);
+        let result = regex.test(VALUE);
 
         $HELPER
           .find('.dynamic-text-container')
-          .html(result ? value : 'No match');
+          .html(result ? VALUE : '');
       }
 
       function renderNumber() {
         let toReturnValue = '';
         let fractionDigits = 0;
 
-        if (isNaN(MODE_INTERACT ? 555 : VALUE)) {
+        if (isNaN(VALUE)) {
           // toReturnValue = 'N/A';
           return;
         } else if (FIELDS.noDecimalRound === 0) {
           fractionDigits = 0;
-          toReturnValue = Math.round(Number(MODE_INTERACT ? 555 : VALUE, 10));
+          toReturnValue = Math.round(Number(VALUE, 10));
         } else if (FIELDS.noDecimalRound === '') {
           fractionDigits = 20;
-          toReturnValue = Number(MODE_INTERACT ? 555 : VALUE);
+          toReturnValue = Number(VALUE);
         } else {
           fractionDigits = FIELDS.noDecimalRound;
-          toReturnValue = Number(MODE_INTERACT ? 555 : VALUE).toFixed(FIELDS.noDecimalRound);
+          toReturnValue = Number(VALUE).toFixed(FIELDS.noDecimalRound);
         }
 
         toReturnValue = new Intl.NumberFormat(undefined, {
@@ -286,19 +287,16 @@ Fliplet.Widget.instance({
       }
 
       function renderTime() {
-        const INTERACT_VALUE = '2024-07-18T13:42:12.777Z';
-
-        if (!isValidTime(MODE_INTERACT ? INTERACT_VALUE : VALUE) && !isValidDate(MODE_INTERACT ? INTERACT_VALUE : VALUE)) {
-          // $HELPER.find('.dynamic-text-container').html('invalid date');
+        if (!isValidTime(VALUE) && !isValidDate(VALUE)) {
           return;
         }
 
         var time = null;
 
-        if (isValidTime(MODE_INTERACT ? INTERACT_VALUE : VALUE)) {
+        if (isValidTime(VALUE)) {
           time = VALUE;
         } else {
-          time = moment(MODE_INTERACT ? INTERACT_VALUE : VALUE).format('HH:mm:ss');
+          time = moment(VALUE).format('HH:mm:ss');
         }
 
         const format = FIELDS.timeFormat || 'LT';
@@ -307,28 +305,22 @@ Fliplet.Widget.instance({
       }
 
       function renderDate() {
-        const INTERACT_VALUE = '2024-07-18T13:42:12.777Z';
-
-        if (!isValidDate(MODE_INTERACT ? INTERACT_VALUE : VALUE)) {
-          // $HELPER.find('.dynamic-text-container').html('invalid date');
+        if (!isValidDate(VALUE)) {
           return;
         }
 
-        const date = moment(MODE_INTERACT ? INTERACT_VALUE : VALUE).format('YYYY-MM-DD');
+        const date = moment(VALUE).format('YYYY-MM-DD');
         const format = FIELDS.dateFormat || 'L';
 
         $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(date, { format: format }));
       }
 
       function renderDateTime() {
-        const INTERACT_VALUE = '2024-07-18T13:42:12.777Z';
-
-        if (!isValidDate(MODE_INTERACT ? INTERACT_VALUE : VALUE)) {
-          // $HELPER.find('.dynamic-text-container').html('invalid date');
+        if (!isValidDate(VALUE)) {
           return;
         }
 
-        const date = moment(MODE_INTERACT ? INTERACT_VALUE : VALUE).format('YYYY-MM-DD HH:mm:ss');
+        const date = moment(VALUE).format('YYYY-MM-DD HH:mm:ss');
         const format = FIELDS.timeDateFormat || 'MM/DD/YYYY HH:mm:ss A';
         const timezone = FIELDS.timeDateTimezone;
         const isCustomTimezone = FIELDS.timeDateTimezoneCheckbox.includes(true);
