@@ -346,12 +346,12 @@ Fliplet.Widget.instance({
 
           $HELPER
             .find('.dynamic-text-container')
-            .html(Fliplet.Locale.date(localMoment, { format: format }));
+            .html(Fliplet.Locale.date(localMoment, { format: format,
+              locale: navigator.language }));
         } else {
           $HELPER.find('.dynamic-text-container').html(
             Fliplet.Locale.date(date, {
-              format: format,
-              locale: navigator.language
+              format: format
             })
           );
         }
