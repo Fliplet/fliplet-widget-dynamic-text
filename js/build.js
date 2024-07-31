@@ -292,12 +292,6 @@ Fliplet.Widget.instance({
       function renderTime() {
         const format = FIELDS.timeFormat || 'LTS';
 
-        if (!isValidTime(VALUE)) {
-          return;
-        }
-
-        // var time = null;
-
         if (isValidTime(VALUE)) {
           let now = moment();
 
@@ -308,7 +302,7 @@ Fliplet.Widget.instance({
           });
           VALUE = now.format('YYYY-MM-DD HH:mm:ss');
         } else {
-          VALUE = moment(VALUE).format('HH:mm:ss');
+          VALUE = moment(VALUE); // .format('HH:mm:ss');
         }
 
 
