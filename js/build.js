@@ -337,7 +337,7 @@ Fliplet.Widget.instance({
             .find('.dynamic-text-container')
             .html(Fliplet.Locale.date(localMoment, { format: format }));
         } else {
-          $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(date, { format: format }));
+          $HELPER.find('.dynamic-text-container').html(Fliplet.Locale.date(date, { format: format, locale: navigator.language }));
         }
       }
     }
