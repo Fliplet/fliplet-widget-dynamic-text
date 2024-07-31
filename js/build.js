@@ -309,10 +309,10 @@ Fliplet.Widget.instance({
           VALUE = now.format('YYYY-MM-DD HH:mm:ss');
         }
 
-        time = moment(VALUE).format('HH:mm:ss');
+        // time = moment(VALUE).format('HH:mm:ss');
 
         $HELPER.find('.dynamic-text-container').html(
-          Fliplet.Locale.date(time, {
+          Fliplet.Locale.date(VALUE, {
             format: format,
             locale: navigator.language
           })
