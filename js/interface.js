@@ -533,7 +533,7 @@ Fliplet.Widget.findParents({
       'Pacific/Wallis',
       'Pacific/Apia',
       'Africa/Johannesburg'
-    ];
+    ].sort();
 
     return Fliplet.Widget.generateInterface({
       title: 'Configure dynamic text',
