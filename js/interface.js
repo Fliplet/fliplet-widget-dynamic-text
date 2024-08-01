@@ -12,6 +12,7 @@ function hideAllFields() {
   Fliplet.Helper.field('timeDateTimezone').toggle(false);
   Fliplet.Helper.field('timeDateTimezoneCheckbox').toggle(false);
   Fliplet.Helper.field('customRegex').toggle(false);
+  Fliplet.Helper.field('htmlTag').toggle(false);
 }
 
 function handleFieldVisibility(value) {
@@ -19,6 +20,8 @@ function handleFieldVisibility(value) {
 
   switch (value) {
     case 'text':
+      Fliplet.Helper.field('htmlTag').toggle(true);
+      break;
     case 'html':
       break;
     case 'url':
@@ -34,15 +37,18 @@ function handleFieldVisibility(value) {
       Fliplet.Helper.field('noDecimalRound').toggle(true);
       Fliplet.Helper.field('symbolBefore').toggle(true);
       Fliplet.Helper.field('symbolAfter').toggle(true);
+      Fliplet.Helper.field('htmlTag').toggle(true);
       break;
     case 'array':
       Fliplet.Helper.field('dataVisualization').toggle(true);
       break;
     case 'date':
       Fliplet.Helper.field('dateFormat').toggle(true);
+      Fliplet.Helper.field('htmlTag').toggle(true);
       break;
     case 'time':
       Fliplet.Helper.field('timeFormat').toggle(true);
+      Fliplet.Helper.field('htmlTag').toggle(true);
       break;
     case 'dateTime':
       Fliplet.Helper.field('timeDateFormat').toggle(true);
@@ -52,9 +58,11 @@ function handleFieldVisibility(value) {
       let showTimezone = Fliplet.Helper.field('timeDateTimezoneCheckbox').get().includes(true);
 
       Fliplet.Helper.field('timeDateTimezone').toggle(showTimezone);
+      Fliplet.Helper.field('htmlTag').toggle(true);
       break;
     case 'custom':
       Fliplet.Helper.field('customRegex').toggle(true);
+      Fliplet.Helper.field('htmlTag').toggle(true);
       break;
 
     default:
@@ -175,6 +183,16 @@ Fliplet.Widget.findParents({
     const TIME_FORMAT_OPTIONS = [
       { label: '08:30 PM', value: 'LT' },
       { label: '08:30:45 PM', value: 'LTS' }
+    ];
+
+    const HTML_TAGS_OPTIONS = [
+      { label: 'Paragraph', value: 'p' },
+      { label: 'Heading 1', value: 'h1' },
+      { label: 'Heading 2', value: 'h2' },
+      { label: 'Heading 3', value: 'h3' },
+      { label: 'Heading 4', value: 'h4' },
+      { label: 'Heading 5', value: 'h5' },
+      { label: 'Heading 6', value: 'h6' }
     ];
 
     const TIME_DATE_FORMAT_OPTIONS = [
@@ -677,6 +695,13 @@ Fliplet.Widget.findParents({
           placeholder: '/[A-Z]/g',
           description:
             'We use the RegExp in javaScript. An example to find an uppercase string is /[A-Z]/g. See guide <a href="https://builtin.com/software-engineering-perspectives/javascript-regex" target="_blank">here<a/>'
+        },
+        {
+          type: 'dropdown',
+          name: 'htmlTag',
+          label: 'Choose style',
+          default: '',
+          options: HTML_TAGS_OPTIONS
         }
       ]
     });

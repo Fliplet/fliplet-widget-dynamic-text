@@ -137,6 +137,16 @@ Fliplet.Widget.instance({
         }
       }
 
+      function applyHtmlTag(type = 'end') {
+        if (!FIELDS.htmlTag) {
+          return '';
+        } else if (type === 'start') {
+          return `<${FIELDS.htmlTag}>`;
+        }
+
+        return `</${FIELDS.htmlTag}>`;
+      }
+
       function renderURL() {
         if (VALUE) {
           const LINK = document.createElement('a');
@@ -242,7 +252,11 @@ Fliplet.Widget.instance({
           VALUE = VALUE.join(', ');
         }
 
-        $HELPER.find('.dynamic-text-container').html(result ? VALUE : '');
+        if (result) {
+          $HELPER
+            .find('.dynamic-text-container')
+            .html(`${applyHtmlTag('start')}${VALUE}${applyHtmlTag()}`);
+        }
       }
 
       function renderNumber() {
@@ -270,7 +284,11 @@ Fliplet.Widget.instance({
 
         $HELPER
           .find('.dynamic-text-container')
-          .html(`${FIELDS.symbolBefore}${toReturnValue}${FIELDS.symbolAfter}`);
+          .html(
+            `${applyHtmlTag('start')}${FIELDS.symbolBefore}${toReturnValue}${
+              FIELDS.symbolAfter
+            }${applyHtmlTag()}`
+          );
       }
 
       function isValidDate(dateStr) {
@@ -307,12 +325,11 @@ Fliplet.Widget.instance({
           VALUE = moment(VALUE); // .format('HH:mm:ss');
         }
 
-
         $HELPER.find('.dynamic-text-container').html(
-          Fliplet.Locale.date(VALUE, {
+          `${applyHtmlTag('start')}${Fliplet.Locale.date(VALUE, {
             format: format,
             locale: navigator.language
-          })
+          })}${applyHtmlTag()}`
         );
       }
 
@@ -324,12 +341,12 @@ Fliplet.Widget.instance({
         const date = moment(VALUE).format('YYYY-MM-DD');
         const format = FIELDS.dateFormat || 'L';
 
-        $HELPER.find('.dynamic-text-container').html(
-          Fliplet.Locale.date(date, {
-            format: format,
-            locale: navigator.language
-          })
-        );
+        $HELPER.find('.dynamic-text-container').html(`${applyHtmlTag('start')}
+          ${Fliplet.Locale.date(date, {
+    format: format,
+    locale: navigator.language
+  })}
+  ${applyHtmlTag()}`);
       }
 
       function renderDateTime() {
@@ -348,13 +365,19 @@ Fliplet.Widget.instance({
 
           $HELPER
             .find('.dynamic-text-container')
-            .html(Fliplet.Locale.date(localMoment, { format: format,
-              locale: navigator.language }));
+            .html(`${applyHtmlTag('start')}
+              ${Fliplet.Locale.date(localMoment, {
+    format: format,
+    locale: navigator.language
+  })}
+            ${applyHtmlTag()}`
+            );
         } else {
-          $HELPER.find('.dynamic-text-container').html(
-            Fliplet.Locale.date(date, {
-              format: format
-            })
+          $HELPER.find('.dynamic-text-container').html(`${applyHtmlTag('start')}
+            ${Fliplet.Locale.date(date, {
+    format: format
+  })}
+  ${applyHtmlTag()}`
           );
         }
       }
