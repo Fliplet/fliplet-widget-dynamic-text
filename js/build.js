@@ -100,7 +100,7 @@ Fliplet.Widget.instance({
       function renderContent() {
         switch (DATA_FORMAT) {
           case 'text':
-            $HELPER.find('.dynamic-text-container').text(`${applyHtmlTag('start')}${VALUE}${applyHtmlTag()}`);
+            $HELPER.find('.dynamic-text-container').text(VALUE);
             break;
           case 'html':
             $HELPER.find('.dynamic-text-container').html(VALUE);
