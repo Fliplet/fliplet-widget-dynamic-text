@@ -281,7 +281,7 @@ Fliplet.Widget.instance({
         return !isNaN(date.getTime());
       }
 
-      function isValidTime(timeString) {
+      function isTimeWithoutDate(timeString) {
         // Regular expressions for HH:MM and HH:MM:SS formats
         const regexHHMM = /^([01]\d|2[0-3]):([0-5]\d)$/;
         const regexHHMMSS = /^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/;
@@ -292,7 +292,9 @@ Fliplet.Widget.instance({
       function renderTime() {
         const format = FIELDS.timeFormat || 'LTS';
 
-        if (isValidTime(VALUE)) {
+        if (!VALUE) {
+          return;
+        } else if (isTimeWithoutDate(VALUE)) {
           let now = moment();
 
           now.set({
