@@ -691,6 +691,7 @@ Fliplet.Widget.findParents({
         {
           name: 'customRegex',
           type: 'text',
+          required: true,
           label: 'Provide regex',
           placeholder: '/[A-Z]/g',
           description:
