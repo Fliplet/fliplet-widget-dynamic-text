@@ -350,11 +350,12 @@ Fliplet.Widget.instance({
       }
 
       function renderDateTime() {
-        if (!isValidDate(VALUE)) {
+        if (!VALUE || !isValidDate(VALUE)) {
           return;
         }
 
-        const date = moment(VALUE).format('YYYY-MM-DD HH:mm:ss');
+        let date = moment(VALUE).format('YYYY-MM-DD HH:mm:ss');
+
         const format = FIELDS.timeDateFormat || 'L LTS';
         const timezone = FIELDS.timeDateTimezone;
         const isCustomTimezone = FIELDS.timeDateTimezoneCheckbox.includes(true);
@@ -373,9 +374,12 @@ Fliplet.Widget.instance({
             ${applyHtmlTag()}`
             );
         } else {
+          let date = moment.utc(VALUE).format('YYYY-MM-DD HH:mm:ss');
+
           $HELPER.find('.dynamic-text-container').html(`${applyHtmlTag('start')}
             ${Fliplet.Locale.date(date, {
-    format: format
+    format: format,
+    locale: navigator.language
   })}
   ${applyHtmlTag()}`
           );
