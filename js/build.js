@@ -242,6 +242,10 @@ Fliplet.Widget.instance({
       }
 
       function renderCustom() {
+        if (!VALUE) {
+          return;
+        }
+
         let parts = FIELDS.customRegex.split('/');
         let pattern = parts[1];
         let flags = parts[2];
