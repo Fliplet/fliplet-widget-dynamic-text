@@ -394,26 +394,26 @@
               "logic": {
                 "relative": {
                   "hide": [
-                    "dynamicTextPositionTop",
-                    "dynamicTextPositionRight",
-                    "dynamicTextPositionBottom",
-                    "dynamicTextPositionLeft"
+                    "dynamicText-dynamicTextPositionTop",
+                    "dynamicText-dynamicTextPositionRight",
+                    "dynamicText-dynamicTextPositionBottom",
+                    "dynamicText-dynamicTextPositionLeft"
                   ]
                 },
                 "absolute": {
                   "show": [
-                    "dynamicTextPositionTop",
-                    "dynamicTextPositionRight",
-                    "dynamicTextPositionBottom",
-                    "dynamicTextPositionLeft"
+                    "dynamicText-dynamicTextPositionTop",
+                    "dynamicText-dynamicTextPositionRight",
+                    "dynamicText-dynamicTextPositionBottom",
+                    "dynamicText-dynamicTextPositionLeft"
                   ]
                 },
                 "fixed": {
                   "show": [
-                    "dynamicTextPositionTop",
-                    "dynamicTextPositionRight",
-                    "dynamicTextPositionBottom",
-                    "dynamicTextPositionLeft"
+                    "dynamicText-dynamicTextPositionTop",
+                    "dynamicText-dynamicTextPositionRight",
+                    "dynamicText-dynamicTextPositionBottom",
+                    "dynamicText-dynamicTextPositionLeft"
                   ]
                 }
               },
@@ -423,10 +423,10 @@
                   "properties": ["position"],
                   "type": "position",
                   "siblings": {
-                    "top": "dynamicTextPositionTop",
-                    "right": "dynamicTextPositionRight",
-                    "bottom": "dynamicTextPositionBottom",
-                    "left": "dynamicTextPositionLeft"
+                    "top": "dynamicText-dynamicTextPositionTop",
+                    "right": "dynamicText-dynamicTextPositionRight",
+                    "bottom": "dynamicText-dynamicTextPositionBottom",
+                    "left": "dynamicText-dynamicTextPositionLeft"
                   }
                 }
               ],
@@ -448,10 +448,10 @@
               "columns": 12,
               "logic": {
                 "block": {
-                  "show": ["dynamicTextMarginAlign"]
+                  "show": ["dynamicText-dynamicTextMarginAlign"]
                 },
                 "inline-block": {
-                  "hide": ["dynamicTextMarginAlign"]
+                  "hide": ["dynamicText-dynamicTextMarginAlign"]
                 }
               },
               "styles": [
@@ -863,22 +863,22 @@
               "default": "none",
               "logic": {
                 "none": {
-                  "hide": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
+                  "hide": ["dynamicText-dynamicTextBorderWidth", "dynamicText-dynamicTextBorderStyle", "dynamicText-dynamicTextBorderColor"]
                 },
                 "all": {
-                  "show": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
+                  "show": ["dynamicText-dynamicTextBorderWidth", "dynamicText-dynamicTextBorderStyle", "dynamicText-dynamicTextBorderColor"]
                 },
                 "top": {
-                  "show": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
+                  "show": ["dynamicText-dynamicTextBorderWidth", "dynamicText-dynamicTextBorderStyle", "dynamicText-dynamicTextBorderColor"]
                 },
                 "right": {
-                  "show": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
+                  "show": ["dynamicText-dynamicTextBorderWidth", "dynamicText-dynamicTextBorderStyle", "dynamicText-dynamicTextBorderColor"]
                 },
                 "bottom": {
-                  "show": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
+                  "show": ["dynamicText-dynamicTextBorderWidth", "dynamicText-dynamicTextBorderStyle", "dynamicText-dynamicTextBorderColor"]
                 },
                 "left": {
-                  "show": ["dynamicTextBorderWidth", "dynamicTextBorderStyle", "dynamicTextBorderColor"]
+                  "show": ["dynamicText-dynamicTextBorderWidth", "dynamicText-dynamicTextBorderStyle", "dynamicText-dynamicTextBorderColor"]
                 }
               },
               "styles": [
@@ -887,10 +887,10 @@
                   "properties": ["border"],
                   "type": "border",
                   "siblings": {
-                    "sides": "dynamicTextBorderSides",
-                    "width": "dynamicTextBorderWidth",
-                    "style": "dynamicTextBorderStyle",
-                    "color": "dynamicTextBorderColor"
+                    "sides": "dynamicText-dynamicTextBorderSides",
+                    "width": "dynamicText-dynamicTextBorderWidth",
+                    "style": "dynamicText-dynamicTextBorderStyle",
+                    "color": "dynamicText-dynamicTextBorderColor"
                   }
                 }
               ],
@@ -916,10 +916,10 @@
                   "properties": ["border"],
                   "type": "border",
                   "siblings": {
-                    "sides": "dynamicTextBorderSides",
-                    "width": "dynamicTextBorderWidth",
-                    "style": "dynamicTextBorderStyle",
-                    "color": "dynamicTextBorderColor"
+                    "sides": "dynamicText-dynamicTextBorderSides",
+                    "width": "dynamicText-dynamicTextBorderWidth",
+                    "style": "dynamicText-dynamicTextBorderStyle",
+                    "color": "dynamicText-dynamicTextBorderColor"
                   }
                 }
               ],
@@ -944,10 +944,10 @@
                   "properties": ["border"],
                   "type": "border",
                   "siblings": {
-                    "sides": "dynamicTextBorderSides",
-                    "width": "dynamicTextBorderWidth",
-                    "style": "dynamicTextBorderStyle",
-                    "color": "dynamicTextBorderColor"
+                    "sides": "dynamicText-dynamicTextBorderSides",
+                    "width": "dynamicText-dynamicTextBorderWidth",
+                    "style": "dynamicText-dynamicTextBorderStyle",
+                    "color": "dynamicText-dynamicTextBorderColor"
                   }
                 }
               ],
@@ -973,10 +973,10 @@
                   "properties": ["border"],
                   "type": "border",
                   "siblings": {
-                    "sides": "dynamicTextBorderSides",
-                    "width": "dynamicTextBorderWidth",
-                    "style": "dynamicTextBorderStyle",
-                    "color": "dynamicTextBorderColor"
+                    "sides": "dynamicText-dynamicTextBorderSides",
+                    "width": "dynamicText-dynamicTextBorderWidth",
+                    "style": "dynamicText-dynamicTextBorderStyle",
+                    "color": "dynamicText-dynamicTextBorderColor"
                   }
                 }
               ],
@@ -1026,29 +1026,29 @@
               "logic": {
                 "none": {
                   "hide": [
-                    "dynamicTextShadowXoffset",
-                    "dynamicTextShadowYoffset",
-                    "dynamicTextShadowBlur",
-                    "dynamicTextShadowSpread",
-                    "dynamicTextShadowColor"
+                    "dynamicText-dynamicTextShadowXoffset",
+                    "dynamicText-dynamicTextShadowYoffset",
+                    "dynamicText-dynamicTextShadowBlur",
+                    "dynamicText-dynamicTextShadowSpread",
+                    "dynamicText-dynamicTextShadowColor"
                   ]
                 },
                 "outset": {
                   "show": [
-                    "dynamicTextShadowXoffset",
-                    "dynamicTextShadowYoffset",
-                    "dynamicTextShadowBlur",
-                    "dynamicTextShadowSpread",
-                    "dynamicTextShadowColor"
+                    "dynamicText-dynamicTextShadowXoffset",
+                    "dynamicText-dynamicTextShadowYoffset",
+                    "dynamicText-dynamicTextShadowBlur",
+                    "dynamicText-dynamicTextShadowSpread",
+                    "dynamicText-dynamicTextShadowColor"
                   ]
                 },
                 "inset": {
                   "show": [
-                    "dynamicTextShadowXoffset",
-                    "dynamicTextShadowYoffset",
-                    "dynamicTextShadowBlur",
-                    "dynamicTextShadowSpread",
-                    "dynamicTextShadowColor"
+                    "dynamicText-dynamicTextShadowXoffset",
+                    "dynamicText-dynamicTextShadowYoffset",
+                    "dynamicText-dynamicTextShadowBlur",
+                    "dynamicText-dynamicTextShadowSpread",
+                    "dynamicText-dynamicTextShadowColor"
                   ]
                 }
               },
@@ -1058,12 +1058,12 @@
                   "properties": ["box-shadow"],
                   "type": "shadow",
                   "siblings": {
-                    "style": "dynamicTextShadowStyle",
-                    "xoffset": "dynamicTextShadowXoffset",
-                    "yoffset": "dynamicTextShadowYoffset",
-                    "blur": "dynamicTextShadowBlur",
-                    "spread": "dynamicTextShadowSpread",
-                    "color": "dynamicTextShadowColor"
+                    "style": "dynamicText-dynamicTextShadowStyle",
+                    "xoffset": "dynamicText-dynamicTextShadowXoffset",
+                    "yoffset": "dynamicText-dynamicTextShadowYoffset",
+                    "blur": "dynamicText-dynamicTextShadowBlur",
+                    "spread": "dynamicText-dynamicTextShadowSpread",
+                    "color": "dynamicText-dynamicTextShadowColor"
                   }
                 }
               ],
@@ -1089,12 +1089,12 @@
                   "properties": ["box-shadow"],
                   "type": "shadow",
                   "siblings": {
-                    "style": "dynamicTextShadowStyle",
-                    "xoffset": "dynamicTextShadowXoffset",
-                    "yoffset": "dynamicTextShadowYoffset",
-                    "blur": "dynamicTextShadowBlur",
-                    "spread": "dynamicTextShadowSpread",
-                    "color": "dynamicTextShadowColor"
+                    "style": "dynamicText-dynamicTextShadowStyle",
+                    "xoffset": "dynamicText-dynamicTextShadowXoffset",
+                    "yoffset": "dynamicText-dynamicTextShadowYoffset",
+                    "blur": "dynamicText-dynamicTextShadowBlur",
+                    "spread": "dynamicText-dynamicTextShadowSpread",
+                    "color": "dynamicText-dynamicTextShadowColor"
                   }
                 }
               ],
@@ -1122,12 +1122,12 @@
                   "properties": ["box-shadow"],
                   "type": "shadow",
                   "siblings": {
-                    "style": "dynamicTextShadowStyle",
-                    "xoffset": "dynamicTextShadowXoffset",
-                    "yoffset": "dynamicTextShadowYoffset",
-                    "blur": "dynamicTextShadowBlur",
-                    "spread": "dynamicTextShadowSpread",
-                    "color": "dynamicTextShadowColor"
+                    "style": "dynamicText-dynamicTextShadowStyle",
+                    "xoffset": "dynamicText-dynamicTextShadowXoffset",
+                    "yoffset": "dynamicText-dynamicTextShadowYoffset",
+                    "blur": "dynamicText-dynamicTextShadowBlur",
+                    "spread": "dynamicText-dynamicTextShadowSpread",
+                    "color": "dynamicText-dynamicTextShadowColor"
                   }
                 }
               ],
@@ -1155,12 +1155,12 @@
                   "properties": ["box-shadow"],
                   "type": "shadow",
                   "siblings": {
-                    "style": "dynamicTextShadowStyle",
-                    "xoffset": "dynamicTextShadowXoffset",
-                    "yoffset": "dynamicTextShadowYoffset",
-                    "blur": "dynamicTextShadowBlur",
-                    "spread": "dynamicTextShadowSpread",
-                    "color": "dynamicTextShadowColor"
+                    "style": "dynamicText-dynamicTextShadowStyle",
+                    "xoffset": "dynamicText-dynamicTextShadowXoffset",
+                    "yoffset": "dynamicText-dynamicTextShadowYoffset",
+                    "blur": "dynamicText-dynamicTextShadowBlur",
+                    "spread": "dynamicText-dynamicTextShadowSpread",
+                    "color": "dynamicText-dynamicTextShadowColor"
                   }
                 }
               ],
@@ -1187,12 +1187,12 @@
                   "properties": ["box-shadow"],
                   "type": "shadow",
                   "siblings": {
-                    "style": "dynamicTextShadowStyle",
-                    "xoffset": "dynamicTextShadowXoffset",
-                    "yoffset": "dynamicTextShadowYoffset",
-                    "blur": "dynamicTextShadowBlur",
-                    "spread": "dynamicTextShadowSpread",
-                    "color": "dynamicTextShadowColor"
+                    "style": "dynamicText-dynamicTextShadowStyle",
+                    "xoffset": "dynamicText-dynamicTextShadowXoffset",
+                    "yoffset": "dynamicText-dynamicTextShadowYoffset",
+                    "blur": "dynamicText-dynamicTextShadowBlur",
+                    "spread": "dynamicText-dynamicTextShadowSpread",
+                    "color": "dynamicText-dynamicTextShadowColor"
                   }
                 }
               ],
@@ -1219,12 +1219,12 @@
                   "properties": ["box-shadow"],
                   "type": "shadow",
                   "siblings": {
-                    "style": "dynamicTextShadowStyle",
-                    "xoffset": "dynamicTextShadowXoffset",
-                    "yoffset": "dynamicTextShadowYoffset",
-                    "blur": "dynamicTextShadowBlur",
-                    "spread": "dynamicTextShadowSpread",
-                    "color": "dynamicTextShadowColor"
+                    "style": "dynamicText-dynamicTextShadowStyle",
+                    "xoffset": "dynamicText-dynamicTextShadowXoffset",
+                    "yoffset": "dynamicText-dynamicTextShadowYoffset",
+                    "blur": "dynamicText-dynamicTextShadowBlur",
+                    "spread": "dynamicText-dynamicTextShadowSpread",
+                    "color": "dynamicText-dynamicTextShadowColor"
                   }
                 }
               ],
