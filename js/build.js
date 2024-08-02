@@ -97,6 +97,16 @@ Fliplet.Widget.instance({
         renderContent();
       });
 
+      function isValidRegex(pattern) {
+        try {
+          new RegExp(pattern);
+
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+
       function renderContent() {
         switch (DATA_FORMAT) {
           case 'text':
@@ -242,7 +252,7 @@ Fliplet.Widget.instance({
       }
 
       function renderCustom() {
-        if (!VALUE || !FIELDS.customRegex) {
+        if (!VALUE || !FIELDS.customRegex || isValidRegex(VALUE)) {
           return;
         }
 
