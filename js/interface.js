@@ -23,15 +23,19 @@ function handleFieldVisibility(value) {
       Fliplet.Helper.field('htmlTag').toggle(true);
       break;
     case 'html':
+      Fliplet.Helper.field('htmlTag').set('');
       break;
     case 'url':
       Fliplet.Helper.field('urlALtText').toggle(true);
+      Fliplet.Helper.field('htmlTag').set('');
       break;
     case 'telephone':
       Fliplet.Helper.field('phoneALtText').toggle(true);
+      Fliplet.Helper.field('htmlTag').set('');
       break;
     case 'email':
       Fliplet.Helper.field('mailALtText').toggle(true);
+      Fliplet.Helper.field('htmlTag').set('');
       break;
     case 'numberCurrency':
       Fliplet.Helper.field('noDecimalRound').toggle(true);
@@ -41,6 +45,7 @@ function handleFieldVisibility(value) {
       break;
     case 'array':
       Fliplet.Helper.field('dataVisualization').toggle(true);
+      Fliplet.Helper.field('htmlTag').set('');
       break;
     case 'date':
       Fliplet.Helper.field('dateFormat').toggle(true);

@@ -89,7 +89,7 @@ Fliplet.Widget.instance({
         }
 
         if (MODE_INTERACT) {
-          $HELPER.find('.dynamic-text-container').html(COLUMN);
+          $HELPER.find('.dynamic-text-container').html(`${applyHtmlTag('start')}${COLUMN}${applyHtmlTag()}`);
 
           return;
         }
