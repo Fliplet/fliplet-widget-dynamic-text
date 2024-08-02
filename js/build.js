@@ -259,7 +259,7 @@ Fliplet.Widget.instance({
       }
 
       function renderCustom() {
-        if (!VALUE || !FIELDS.customRegex || isValidRegex(VALUE)) {
+        if (!VALUE || !FIELDS.customRegex || !isValidRegex(VALUE)) {
           return;
         }
 
