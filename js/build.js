@@ -110,6 +110,13 @@ Fliplet.Widget.instance({
       function renderContent() {
         switch (DATA_FORMAT) {
           case 'text':
+            if (FIELDS.htmlTag) {
+              $HELPER.find('.dynamic-text-container').html(`<${FIELDS.htmlTag} class="plain-text"></${FIELDS.htmlTag}>`);
+              $HELPER.find('.plain-text').text(VALUE);
+
+              return;
+            }
+
             $HELPER.find('.dynamic-text-container').text(VALUE);
             break;
           case 'html':
