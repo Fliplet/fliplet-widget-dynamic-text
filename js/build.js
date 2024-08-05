@@ -70,8 +70,18 @@ Fliplet.Widget.instance({
         });
 
         if (!dynamicContainer || !dynamicContainer.dataSourceId) {
+          $HELPER.find('.dynamic-text-container').html(`
+            <div class="not-configured">
+              <p>Configure Dynamic Text</p>
+            </div>`);
+
           return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Dynamic Container and select a data source');
         } else if (!recordContainer && !listRepeater) {
+          $HELPER.find('.dynamic-text-container').html(`
+            <div class="not-configured">
+              <p>Configure Dynamic Text</p>
+            </div>`);
+
           return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Record or List Repeater component');
         } else if (!COLUMN) {
           $HELPER.find('.dynamic-text-container').html(`
