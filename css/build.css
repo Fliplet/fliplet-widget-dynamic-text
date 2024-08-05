@@ -1,5 +1,5 @@
 [data-widget-package="com.fliplet.dynamic-text"] .not-configured {
-  border: 5px solid #D4D4D4 !important;
+  border: 1px dotted #D4D4D4 !important;
   padding: 15px!important;
   text-align: center!important;
 }
@@ -28,11 +28,11 @@
   z-index: 5;
 }
 
-.mode-interact [data-widget-package="com.fliplet.dynamic-text"]::before {
+.mode-interact [name="dynamic-text"]::before {
   content: 'Dynamic Text' !important;
 }
 
-.mode-interact [data-widget-package="com.fliplet.dynamic-text"]:before {
+.mode-interact [name="dynamic-text"]:before {
   border-bottom-right-radius: 10px;
   cursor: grab;
   position: relative;
