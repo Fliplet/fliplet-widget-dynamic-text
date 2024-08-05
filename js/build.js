@@ -21,6 +21,7 @@ Fliplet.Widget.instance({
     },
     ready: async function() {
       const DYNAMIC_TEXT = this;
+      const $DYNAMIC_TEXT = $(DYNAMIC_TEXT.$container);
       const ENTRY = DYNAMIC_TEXT?.parent?.entry || {};
       const DYNAMIC_TEXT_INSTANCE_ID = DYNAMIC_TEXT.id;
       const $HELPER = $(DYNAMIC_TEXT.$el);
@@ -70,13 +71,9 @@ Fliplet.Widget.instance({
         });
 
         if (!dynamicContainer || !dynamicContainer.dataSourceId) {
-          return Fliplet.UI.Toast(
-            'This component needs to be placed inside a Dynamic Container and select a data source'
-          );
+          return errorMessageStructureNotValid($DYNAMIC_TEXT, 'This component needs to be placed inside a Dynamic Container and select a data source');
         } else if (!recordContainer && !listRepeater) {
-          return Fliplet.UI.Toast(
-            'This component needs to be placed inside a Record or List Repeater component'
-          );
+          return errorMessageStructureNotValid($DYNAMIC_TEXT, 'This component needs to be placed inside a Record or List Repeater component');
         } else if (!COLUMN) {
           $HELPER.find('.dynamic-text-container').html(`
             <div class="not-configured">
@@ -96,6 +93,16 @@ Fliplet.Widget.instance({
 
         renderContent();
       });
+
+      function errorMessageStructureNotValid($elements, message) {
+        $elements.each(function(index) {
+          $(this).addClass('component-error-before');
+
+          if (index === 0) {
+            Fliplet.UI.Toast(message);
+          }
+        });
+      }
 
       function isValidRegex(pattern) {
         try {
