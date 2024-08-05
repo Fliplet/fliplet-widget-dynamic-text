@@ -269,6 +269,10 @@ Fliplet.Widget.instance({
         let regex = new RegExp(pattern, flags);
         let result = regex.test(VALUE);
 
+        if (!flags && !pattern) {
+          return;
+        }
+
         if (result && Array.isArray(VALUE)) {
           VALUE = VALUE.join(', ');
         }
