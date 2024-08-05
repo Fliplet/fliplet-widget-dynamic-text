@@ -28,11 +28,11 @@
   z-index: 5;
 }
 
-.mode-interact [data-name='dynamic-text']::before {
+.mode-interact [data-widget-package="com.fliplet.dynamic-text"]::before {
   content: 'Dynamic Text' !important;
 }
 
-.mode-interact [data-name='dynamic-text']:before {
+.mode-interact [data-widget-package="com.fliplet.dynamic-text"]:before {
   border-bottom-right-radius: 10px;
   cursor: grab;
   position: relative;
