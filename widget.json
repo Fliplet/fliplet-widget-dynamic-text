@@ -1554,7 +1554,7 @@
             "default": "$paragraphFontFamily",
             "styles": [
               {
-                "parentSelector": "[data-widget-package='com.fliplet.inline-link']",
+                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
                 "selectors": "a",
                 "properties": ["font-family"]
               }
@@ -1576,7 +1576,7 @@
             "default": "$paragraphFontSize",
             "styles": [
               {
-                "parentSelector": "[data-widget-package='com.fliplet.inline-link']",
+                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
                 "selectors": "a",
                 "properties": ["font-size"]
               }
@@ -1608,7 +1608,7 @@
                 "properties": ["color"]
               },
               {
-                "parentSelector": "[data-widget-package='com.fliplet.inline-link']",
+                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
                 "selectors": ["a", ".btn.btn-link"],
                 "properties": ["color"]
               },
@@ -1635,7 +1635,7 @@
             "default": "$paragraphFontWeight",
             "styles": [
               {
-                "parentSelector": "[data-widget-package='com.fliplet.inline-link']",
+                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
                 "selectors": "a",
                 "properties": ["font-weight"]
               }
@@ -1662,7 +1662,7 @@
                 "properties": ["font-style"]
               },
               {
-                "parentSelector": "[data-widget-package='com.fliplet.inline-link']",
+                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
                 "selectors": "a",
                 "properties": ["font-style"]
               }
@@ -1685,7 +1685,7 @@
             "default": "$paragraphFontDecoration",
             "styles": [
               {
-                "parentSelector": "[data-widget-package='com.fliplet.inline-link']",
+                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
                 "selectors": "a",
                 "properties": ["text-decoration"]
               }
