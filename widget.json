@@ -1618,7 +1618,7 @@
           },
           {
             "name": "dynamicTextLinkWeight",
-            "default": "$linkWeight",
+            "default": "500",
             "styles": [
               {
                 "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
@@ -1664,7 +1664,7 @@
           },
           {
             "name": "dynamicTextLinkDecoration",
-            "default": "$linkDecoration",
+            "default": "none",
             "styles": [
               {
                 "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
