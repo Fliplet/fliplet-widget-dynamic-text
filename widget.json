@@ -1641,7 +1641,7 @@
           },
           {
             "name": "dynamicTextLinkStyle",
-            "default": "$linkStyle",
+            "default": "none",
             "styles": [
               {
                 "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
