@@ -95,7 +95,7 @@ Fliplet.Widget.instance({
         }
 
         if (MODE_INTERACT) {
-          $HELPER.find('.dynamic-text-container').html(`${applyHtmlTag('start')}${COLUMN}${applyHtmlTag()}`);
+          $HELPER.find('.dynamic-text-container').html(`${COLUMN}`);
 
           return;
         }
@@ -163,16 +163,6 @@ Fliplet.Widget.instance({
           default:
             break;
         }
-      }
-
-      function applyHtmlTag(type = 'end') {
-        if (!FIELDS.htmlTag) {
-          return '';
-        } else if (type === 'start') {
-          return `<${FIELDS.htmlTag}>`;
-        }
-
-        return `</${FIELDS.htmlTag}>`;
       }
 
       function renderURL() {
@@ -291,7 +281,7 @@ Fliplet.Widget.instance({
         if (result) {
           $HELPER
             .find('.dynamic-text-container')
-            .html(`${applyHtmlTag('start')}${VALUE}${applyHtmlTag()}`);
+            .html(`${VALUE}`);
         }
       }
 
@@ -320,10 +310,7 @@ Fliplet.Widget.instance({
 
         $HELPER
           .find('.dynamic-text-container')
-          .html(
-            `${applyHtmlTag('start')}${FIELDS.symbolBefore}${toReturnValue}${
-              FIELDS.symbolAfter
-            }${applyHtmlTag()}`
+          .html(`${FIELDS.symbolBefore}${toReturnValue}${FIELDS.symbolAfter}`
           );
       }
 
@@ -361,11 +348,10 @@ Fliplet.Widget.instance({
           VALUE = moment(VALUE); // .format('HH:mm:ss');
         }
 
-        $HELPER.find('.dynamic-text-container').html(
-          `${applyHtmlTag('start')}${Fliplet.Locale.date(VALUE, {
-            format: format,
-            locale: navigator.language
-          })}${applyHtmlTag()}`
+        $HELPER.find('.dynamic-text-container').html(`${Fliplet.Locale.date(VALUE, {
+          format: format,
+          locale: navigator.language
+        })}`
         );
       }
 
@@ -377,12 +363,10 @@ Fliplet.Widget.instance({
         const date = moment(VALUE).format('YYYY-MM-DD');
         const format = FIELDS.dateFormat || 'L';
 
-        $HELPER.find('.dynamic-text-container').html(`${applyHtmlTag('start')}
-          ${Fliplet.Locale.date(date, {
-    format: format,
-    locale: navigator.language
-  })}
-  ${applyHtmlTag()}`);
+        $HELPER.find('.dynamic-text-container').html(`${Fliplet.Locale.date(date, {
+          format: format,
+          locale: navigator.language
+        })}`);
       }
 
       function renderDateTime() {
@@ -402,22 +386,18 @@ Fliplet.Widget.instance({
 
           $HELPER
             .find('.dynamic-text-container')
-            .html(`${applyHtmlTag('start')}
-              ${Fliplet.Locale.date(localMoment, {
-    format: format,
-    locale: navigator.language
-  })}
-            ${applyHtmlTag()}`
+            .html(`${Fliplet.Locale.date(localMoment, {
+              format: format,
+              locale: navigator.language
+            })}`
             );
         } else {
           let date = moment.utc(VALUE).format('YYYY-MM-DD HH:mm:ss');
 
-          $HELPER.find('.dynamic-text-container').html(`${applyHtmlTag('start')}
-            ${Fliplet.Locale.date(date, {
-    format: format,
-    locale: navigator.language
-  })}
-  ${applyHtmlTag()}`
+          $HELPER.find('.dynamic-text-container').html(`${Fliplet.Locale.date(date, {
+            format: format,
+            locale: navigator.language
+          })}`
           );
         }
       }

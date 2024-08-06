@@ -1547,47 +1547,47 @@
         ]
       },
       {
-        "description": "Heading 1",
+        "description": "Link",
         "fields": [
           {
-            "name": "dynamicTextHeadingOneFontFamily",
-            "default": "$headingOneFontFamily",
+            "name": "dynamicTextLinkFontFamily",
+            "default": "$linkFontFamily",
             "styles": [
               {
                 "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h1",
+                "selectors": "a",
                 "properties": ["font-family"]
               }
             ],
             "breakpoints": {
               "tablet": {
-                "name": "dynamicTextHeadingOneFontFamilyTablet",
+                "name": "dynamicTextLinkFontFamilyTablet",
                 "default": "inherit-mobile"
               },
               "desktop": {
-                "name": "dynamicTextHeadingOneFontFamilyDesktop",
+                "name": "dynamicTextLinkFontFamilyDesktop",
                 "default": "inherit-tablet"
               }
             },
             "type": "font"
           },
           {
-            "name": "dynamicTextHeadingOneSize",
-            "default": "$headingOneSize",
+            "name": "dynamicTextLinkSize",
+            "default": "$linkFontSize",
             "styles": [
               {
                 "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h1",
+                "selectors": "a",
                 "properties": ["font-size"]
               }
             ],
             "breakpoints": {
               "tablet": {
-                "name": "dynamicTextHeadingOneSizeTablet",
+                "name": "dynamicTextLinkSizeTablet",
                 "default": "inherit-mobile"
               },
               "desktop": {
-                "name": "dynamicTextHeadingOneSizeDesktop",
+                "name": "dynamicTextLinkSizeDesktop",
                 "default": "inherit-tablet"
               }
             },
@@ -1595,44 +1595,44 @@
             "subtype": "font"
           },
           {
-            "name": "dynamicTextHeadingOneColor",
-            "default": "$headingOneColor",
+            "name": "dynamicTextLinkColor",
+            "default": "$linkColor",
             "styles": [
               {
                 "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h1",
+                "selectors": "a",
                 "properties": ["color"]
               }
             ],
             "breakpoints": {
               "tablet": {
-                "name": "dynamicTextHeadingOneColorTablet",
+                "name": "dynamicTextLinkColorTablet",
                 "default": "inherit-mobile"
               },
               "desktop": {
-                "name": "dynamicTextHeadingOneColorDesktop",
+                "name": "dynamicTextLinkColorDesktop",
                 "default": "inherit-tablet"
               }
             },
             "type": "color"
           },
           {
-            "name": "dynamicTextHeadingOneWeight",
-            "default": "$headingOneWeight",
+            "name": "dynamicTextLinkWeight",
+            "default": "$linkWeight",
             "styles": [
               {
                 "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h1",
+                "selectors": "a",
                 "properties": ["font-weight"]
               }
             ],
             "breakpoints": {
               "tablet": {
-                "name": "dynamicTextHeadingOneWeightTablet",
+                "name": "dynamicTextLinkWeightTablet",
                 "default": "inherit-mobile"
               },
               "desktop": {
-                "name": "dynamicTextHeadingOneWeightDesktop",
+                "name": "dynamicTextLinkWeightDesktop",
                 "default": "inherit-tablet"
               }
             },
@@ -1640,22 +1640,22 @@
             "properties": "weight"
           },
           {
-            "name": "dynamicTextHeadingOneStyle",
-            "default": "$headingOneStyle",
+            "name": "dynamicTextLinkStyle",
+            "default": "$linkStyle",
             "styles": [
               {
                 "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h1",
+                "selectors": "a",
                 "properties": ["font-style"]
               }
             ],
             "breakpoints": {
               "tablet": {
-                "name": "dynamicTextHeadingOneStyleTablet",
+                "name": "dynamicTextLinkStyleTablet",
                 "default": "inherit-mobile"
               },
               "desktop": {
-                "name": "dynamicTextHeadingOneStyleDesktop",
+                "name": "dynamicTextLinkStyleDesktop",
                 "default": "inherit-tablet"
               }
             },
@@ -1663,1183 +1663,28 @@
             "properties": "italic"
           },
           {
-            "name": "dynamicTextHeadingOneDecoration",
-            "default": "$headingOneDecoration",
+            "name": "dynamicTextLinkDecoration",
+            "default": "$linkDecoration",
             "styles": [
               {
                 "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h1",
+                "selectors": "a",
                 "properties": ["text-decoration"]
               }
             ],
             "breakpoints": {
               "tablet": {
-                "name": "dynamicTextHeadingOneDecorationTablet",
+                "name": "dynamicTextLinkDecorationTablet",
                 "default": "inherit-mobile"
               },
               "desktop": {
-                "name": "dynamicTextHeadingOneDecorationDesktop",
+                "name": "dynamicTextLinkDecorationDesktop",
                 "default": "inherit-tablet"
               }
             },
             "type": "font-style",
             "subType": "decoration",
             "properties": "underline"
-          },
-          {
-            "name": "dynamicTextHeadingOneHeight",
-            "default": "$headingOneHeight",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h1",
-                "properties": ["line-height"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingOneHeightTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingOneHeightDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Line height",
-            "type": "size",
-            "subtype": "line-height"
-          },
-          {
-            "name": "dynamicTextHeadingOneMarginTop",
-            "default": "0px",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h1",
-                "properties": ["margin-top"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingOneMarginTopTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingOneMarginTopDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Margin top",
-            "type": "size",
-            "subtype": "margin",
-            "allowNegative": true
-          },
-          {
-            "name": "dynamicTextHeadingOneMarginBottom",
-            "default": "10px",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h1",
-                "properties": ["margin-bottom"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingOneMarginBottomTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingOneMarginBottomDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Margin bottom",
-            "type": "size",
-            "subtype": "margin",
-            "allowNegative": true
-          }
-        ]
-      },
-      {
-        "description": "Heading 2",
-        "fields": [
-          {
-            "name": "dynamicTextHeadingTwoFontFamily",
-            "default": "$headingTwoFontFamily",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h2",
-                "properties": ["font-family"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingTwoFontFamilyTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingTwoFontFamilyDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font"
-          },
-          {
-            "name": "dynamicTextHeadingTwoSize",
-            "default": "$headingTwoSize",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h2",
-                "properties": ["font-size"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingTwoSizeTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingTwoSizeDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "size",
-            "subtype": "font"
-          },
-          {
-            "name": "dynamicTextHeadingTwoColor",
-            "default": "$headingTwoColor",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h2",
-                "properties": ["color"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingTwoColorTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingTwoColorDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "color"
-          },
-          {
-            "name": "dynamicTextHeadingTwoWeight",
-            "default": "$headingTwoWeight",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h2",
-                "properties": ["font-weight"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingTwoWeightTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingTwoWeightDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font-style",
-            "properties": "weight"
-          },
-          {
-            "name": "dynamicTextHeadingTwoStyle",
-            "default": "$headingTwoStyle",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h2",
-                "properties": ["font-style"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingTwoStyleTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingTwoStyleDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font-style",
-            "properties": "italic"
-          },
-          {
-            "name": "dynamicTextHeadingTwoDecoration",
-            "default": "$headingTwoDecoration",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h2",
-                "properties": ["text-decoration"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingTwoDecorationTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingTwoDecorationDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font-style",
-            "subType": "decoration",
-            "properties": "underline"
-          },
-          {
-            "name": "dynamicTextHeadingTwoHeight",
-            "default": "$headingTwoHeight",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h2",
-                "properties": ["line-height"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingTwoHeightTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingTwoHeightDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Line height",
-            "type": "size",
-            "subtype": "line-height"
-          },
-          {
-            "name": "dynamicTextHeadingTwoMarginTop",
-            "default": "0px",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h2",
-                "properties": ["margin-top"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingTwoMarginTopTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingTwoMarginTopDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Margin top",
-            "type": "size",
-            "subtype": "margin",
-            "allowNegative": true
-          },
-          {
-            "name": "dynamicTextHeadingTwoMarginBottom",
-            "default": "10px",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h2",
-                "properties": ["margin-bottom"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingTwoMarginBottomTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingTwoMarginBottomDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Margin bottom",
-            "type": "size",
-            "subtype": "margin",
-            "allowNegative": true
-          }
-        ]
-      },
-      {
-        "description": "Heading 3",
-        "fields": [
-          {
-            "name": "dynamicTextHeadingThreeFontFamily",
-            "default": "$headingThreeFontFamily",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h3",
-                "properties": ["font-family"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingThreeFontFamilyTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingThreeFontFamilyDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font"
-          },
-          {
-            "name": "dynamicTextHeadingThreeSize",
-            "default": "$headingThreeSize",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h3",
-                "properties": ["font-size"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingThreeSizeTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingThreeSizeDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "size",
-            "subtype": "font"
-          },
-          {
-            "name": "dynamicTextHeadingThreeColor",
-            "default": "$headingThreeColor",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h3",
-                "ignore": [".fl-intro-layout h3"],
-                "properties": ["color"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingThreeColorTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingThreeColorDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "color"
-          },
-          {
-            "name": "dynamicTextHeadingThreeWeight",
-            "default": "$headingThreeWeight",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h3",
-                "properties": ["font-weight"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingThreeWeightTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingThreeWeightDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font-style",
-            "properties": "weight"
-          },
-          {
-            "name": "dynamicTextHeadingThreeStyle",
-            "default": "$headingThreeStyle",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h3",
-                "properties": ["font-style"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingThreeStyleTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingThreeStyleDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font-style",
-            "properties": "italic"
-          },
-          {
-            "name": "dynamicTextHeadingThreeDecoration",
-            "default": "$headingThreeDecoration",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h3",
-                "properties": ["text-decoration"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingThreeDecorationTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingThreeDecorationDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font-style",
-            "subType": "decoration",
-            "properties": "underline"
-          },
-          {
-            "name": "dynamicTextHeadingThreeHeight",
-            "default": "$headingThreeHeight",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h3",
-                "properties": ["line-height"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingThreeHeightTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingThreeHeightDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Line height",
-            "type": "size",
-            "subtype": "line-height"
-          },
-          {
-            "name": "dynamicTextHeadingThreeMarginTop",
-            "default": "0px",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h3",
-                "properties": ["margin-top"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingThreeMarginTopTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingThreeMarginTopDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Margin top",
-            "type": "size",
-            "subtype": "margin",
-            "allowNegative": true
-          },
-          {
-            "name": "dynamicTextHeadingThreeMarginBottom",
-            "default": "10px",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h3",
-                "properties": ["margin-bottom"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingThreeMarginBottomTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingThreeMarginBottomDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Margin bottom",
-            "type": "size",
-            "subtype": "margin",
-            "allowNegative": true
-          }
-        ]
-      },
-      {
-        "description": "Heading 4",
-        "fields": [
-          {
-            "name": "dynamicTextHeadingFourFontFamily",
-            "default": "$headingFourFontFamily",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h4",
-                "properties": ["font-family"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFourFontFamilyTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFourFontFamilyDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font"
-          },
-          {
-            "name": "dynamicTextHeadingFourSize",
-            "default": "$headingFourSize",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h4",
-                "properties": ["font-size"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFourSizeTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFourSizeDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "size",
-            "subtype": "font"
-          },
-          {
-            "name": "dynamicTextHeadingFourColor",
-            "default": "$headingFourColor",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h4",
-                "properties": ["color"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFourColorTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFourColorDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "color"
-          },
-          {
-            "name": "dynamicTextHeadingFourWeight",
-            "default": "$headingFourWeight",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h4",
-                "properties": ["font-weight"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFourWeightTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFourWeightDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font-style",
-            "properties": "weight"
-          },
-          {
-            "name": "dynamicTextHeadingFourStyle",
-            "default": "$headingFourStyle",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h4",
-                "properties": ["font-style"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFourStyleTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFourStyleDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font-style",
-            "properties": "italic"
-          },
-          {
-            "name": "dynamicTextHeadingFourDecoration",
-            "default": "$headingFourDecoration",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h4",
-                "properties": ["text-decoration"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFourDecorationTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFourDecorationDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font-style",
-            "subType": "decoration",
-            "properties": "underline"
-          },
-          {
-            "name": "dynamicTextHeadingFourHeight",
-            "default": "$headingFourHeight",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h4",
-                "properties": ["line-height"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFourHeightTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFourHeightDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Line height",
-            "type": "size",
-            "subtype": "line-height"
-          },
-          {
-            "name": "dynamicTextHeadingFourMarginTop",
-            "default": "0px",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h4",
-                "properties": ["margin-top"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFourMarginTopTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFourMarginTopDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Margin top",
-            "type": "size",
-            "subtype": "margin",
-            "allowNegative": true
-          },
-          {
-            "name": "dynamicTextHeadingFourMarginBottom",
-            "default": "10px",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h4",
-                "properties": ["margin-bottom"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFourMarginBottomTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFourMarginBottomDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Margin bottom",
-            "type": "size",
-            "subtype": "margin",
-            "allowNegative": true
-          }
-        ]
-      },
-      {
-        "description": "Heading 5",
-        "fields": [
-          {
-            "name": "dynamicTextHeadingFiveFontFamily",
-            "default": "$headingFiveFontFamily",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h5",
-                "properties": ["font-family"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFiveFontFamilyTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFiveFontFamilyDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font"
-          },
-          {
-            "name": "dynamicTextHeadingFiveSize",
-            "default": "$headingFiveSize",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h5",
-                "properties": ["font-size"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFiveSizeTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFiveSizeDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "size",
-            "subtype": "font"
-          },
-          {
-            "name": "dynamicTextHeadingFiveColor",
-            "default": "$headingFiveColor",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h5",
-                "properties": ["color"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFiveColorTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFiveColorDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "color"
-          },
-          {
-            "name": "dynamicTextHeadingFiveWeight",
-            "default": "$headingFiveWeight",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h5",
-                "properties": ["font-weight"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFiveWeightTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFiveWeightDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font-style",
-            "properties": "weight"
-          },
-          {
-            "name": "dynamicTextHeadingFiveStyle",
-            "default": "$headingFiveStyle",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h5",
-                "properties": ["font-style"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFiveStyleTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFiveStyleDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font-style",
-            "properties": "italic"
-          },
-          {
-            "name": "dynamicTextHeadingFiveDecoration",
-            "default": "$headingFiveDecoration",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h5",
-                "properties": ["text-decoration"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFiveDecorationTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFiveDecorationDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font-style",
-            "subType": "decoration",
-            "properties": "underline"
-          },
-          {
-            "name": "dynamicTextHeadingFiveHeight",
-            "default": "$headingFiveHeight",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h5",
-                "properties": ["line-height"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFiveHeightTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFiveHeightDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Line height",
-            "type": "size",
-            "subtype": "line-height"
-          },
-          {
-            "name": "dynamicTextHeadingFiveMarginTop",
-            "default": "0px",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h5",
-                "properties": ["margin-top"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFiveMarginTopTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFiveMarginTopDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Margin top",
-            "type": "size",
-            "subtype": "margin",
-            "allowNegative": true
-          },
-          {
-            "name": "dynamicTextHeadingFiveMarginBottom",
-            "default": "10px",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h5",
-                "properties": ["margin-bottom"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingFiveMarginBottomTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingFiveMarginBottomDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Margin bottom",
-            "type": "size",
-            "subtype": "margin",
-            "allowNegative": true
-          }
-        ]
-      },
-      {
-        "description": "Heading 6",
-        "fields": [
-          {
-            "name": "dynamicTextHeadingSixFontFamily",
-            "default": "$headingSixFontFamily",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h6",
-                "properties": ["font-family"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingSixFontFamilyTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingSixFontFamilyDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font"
-          },
-          {
-            "name": "dynamicTextHeadingSixSize",
-            "default": "$headingSixSize",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h6",
-                "properties": ["font-size"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingSixSizeTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingSixSizeDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "size",
-            "subtype": "font"
-          },
-          {
-            "name": "dynamicTextHeadingSixColor",
-            "default": "$headingSixColor",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h6",
-                "properties": ["color"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingSixColorTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingSixColorDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "color"
-          },
-          {
-            "name": "dynamicTextHeadingSixWeight",
-            "default": "$headingSixWeight",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h6",
-                "properties": ["font-weight"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingSixWeightTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingSixWeightDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font-style",
-            "properties": "weight"
-          },
-          {
-            "name": "dynamicTextHeadingSixStyle",
-            "default": "$headingSixStyle",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h6",
-                "properties": ["font-style"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingSixStyleTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingSixStyleDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font-style",
-            "properties": "italic"
-          },
-          {
-            "name": "dynamicTextHeadingSixDecoration",
-            "default": "$headingSixDecoration",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h6",
-                "properties": ["text-decoration"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingSixDecorationTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingSixDecorationDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "type": "font-style",
-            "subType": "decoration",
-            "properties": "underline"
-          },
-          {
-            "name": "dynamicTextHeadingSixHeight",
-            "default": "$headingSixHeight",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h6",
-                "properties": ["line-height"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingSixHeightTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingSixHeightDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Line height",
-            "type": "size",
-            "subtype": "line-height"
-          },
-          {
-            "name": "dynamicTextHeadingSixMarginTop",
-            "default": "0px",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h6",
-                "properties": ["margin-top"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingSixMarginTopTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingSixMarginTopDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Margin top",
-            "type": "size",
-            "subtype": "margin",
-            "allowNegative": true
-          },
-          {
-            "name": "dynamicTextHeadingSixMarginBottom",
-            "default": "10px",
-            "styles": [
-              {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "h6",
-                "properties": ["margin-bottom"]
-              }
-            ],
-            "breakpoints": {
-              "tablet": {
-                "name": "dynamicTextHeadingSixMarginBottomTablet",
-                "default": "inherit-mobile"
-              },
-              "desktop": {
-                "name": "dynamicTextHeadingSixMarginBottomDesktop",
-                "default": "inherit-tablet"
-              }
-            },
-            "label": "Margin bottom",
-            "type": "size",
-            "subtype": "margin",
-            "allowNegative": true
           }
         ]
       },
