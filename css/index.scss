@@ -156,28 +156,42 @@ $variablePrefix: "dynamicText";
         dynamicText-dynamicTextParagraphMarginTopDesktop: $dynamicText-dynamicTextParagraphMarginTopDesktop,
         dynamicText-dynamicTextParagraphMarginBottomDesktop: $dynamicText-dynamicTextParagraphMarginBottomDesktop,
         dynamicText-dynamicTextVisibilityDesktop: $dynamicText-dynamicTextVisibilityDesktop,
-        dynamicText-dynamicTextLinkColor: $dynamicText-dynamicTextLinkColor,
         dynamicText-dynamicTextLinkFontFamily: $dynamicText-dynamicTextLinkFontFamily,
-        dynamicText-dynamicTextLinkSize: $dynamicText-dynamicTextLinkSize,
-        dynamicText-dynamicTextLinkWeight: $dynamicText-dynamicTextLinkWeight,
-        dynamicText-dynamicTextLinkStyle: $dynamicText-dynamicTextLinkStyle,
-        dynamicText-dynamicTextLinkDecoration: $dynamicText-dynamicTextLinkDecoration,
-        dynamicText-dynamicTextLinkMarginTop: $dynamicText-dynamicTextLinkMarginTop,
-        dynamicText-dynamicTextLinkMarginBottom: $dynamicText-dynamicTextLinkMarginBottom,
-        dynamicText-dynamicTextLinkColorTablet: $dynamicText-dynamicTextLinkColorTablet,
+        dynamicText-dynamicTextLinkFontFamilyHover: $dynamicText-dynamicTextLinkFontFamilyHover,
         dynamicText-dynamicTextLinkFontFamilyTablet: $dynamicText-dynamicTextLinkFontFamilyTablet,
-        dynamicText-dynamicTextLinkSizeTablet: $dynamicText-dynamicTextLinkSizeTablet,
-        dynamicText-dynamicTextLinkWeightTablet: $dynamicText-dynamicTextLinkWeightTablet,
-        dynamicText-dynamicTextLinkStyleTablet: $dynamicText-dynamicTextLinkStyleTablet,
-        dynamicText-dynamicTextLinkDecorationTablet: $dynamicText-dynamicTextLinkDecorationTablet,
-        dynamicText-dynamicTextLinkMarginTopTablet: $dynamicText-dynamicTextLinkMarginTopTablet,
-        dynamicText-dynamicTextLinkMarginBottomTablet: $dynamicText-dynamicTextLinkMarginBottomTablet,
-        dynamicText-dynamicTextLinkColorDesktop: $dynamicText-dynamicTextLinkColorDesktop,
+        dynamicText-dynamicTextLinkFontFamilyHoverTablet: $dynamicText-dynamicTextLinkFontFamilyHoverTablet,
         dynamicText-dynamicTextLinkFontFamilyDesktop: $dynamicText-dynamicTextLinkFontFamilyDesktop,
-        dynamicText-dynamicTextLinkSizeDesktop: $dynamicText-dynamicTextLinkSizeDesktop,
-        dynamicText-dynamicTextLinkWeightDesktop: $dynamicText-dynamicTextLinkWeightDesktop,
-        dynamicText-dynamicTextLinkStyleDesktop: $dynamicText-dynamicTextLinkStyleDesktop,
-        dynamicText-dynamicTextLinkDecorationDesktop: $dynamicText-dynamicTextLinkDecorationDesktop),
+        dynamicText-dynamicTextLinkFontFamilyHoverDesktop: $dynamicText-dynamicTextLinkFontFamilyHoverDesktop,
+        dynamicText-dynamicTextLinkFontSize: $dynamicText-dynamicTextLinkFontSize,
+        dynamicText-dynamicTextLinkFontSizeHover: $dynamicText-dynamicTextLinkFontSizeHover,
+        dynamicText-dynamicTextLinkFontSizeTablet: $dynamicText-dynamicTextLinkFontSizeTablet,
+        dynamicText-dynamicTextLinkFontSizeHoverTablet: $dynamicText-dynamicTextLinkFontSizeHoverTablet,
+        dynamicText-dynamicTextLinkFontSizeDesktop: $dynamicText-dynamicTextLinkFontSizeDesktop,
+        dynamicText-dynamicTextLinkFontSizeHoverDesktop: $dynamicText-dynamicTextLinkFontSizeHoverDesktop,
+        dynamicText-dynamicTextLinkFontWeight: $dynamicText-dynamicTextLinkFontWeight,
+        dynamicText-dynamicTextLinkFontWeightHover: $dynamicText-dynamicTextLinkFontWeightHover,
+        dynamicText-dynamicTextLinkFontWeightTablet: $dynamicText-dynamicTextLinkFontWeightTablet,
+        dynamicText-dynamicTextLinkFontWeightHoverTablet: $dynamicText-dynamicTextLinkFontWeightHoverTablet,
+        dynamicText-dynamicTextLinkFontWeightDesktop: $dynamicText-dynamicTextLinkFontWeightDesktop,
+        dynamicText-dynamicTextLinkFontWeightHoverDesktop: $dynamicText-dynamicTextLinkFontWeightHoverDesktop,
+        dynamicText-dynamicTextLinkFontStyle: $dynamicText-dynamicTextLinkFontStyle,
+        dynamicText-dynamicTextLinkFontStyleHover: $dynamicText-dynamicTextLinkFontStyleHover,
+        dynamicText-dynamicTextLinkFontStyleTablet: $dynamicText-dynamicTextLinkFontStyleTablet,
+        dynamicText-dynamicTextLinkFontStyleHoverTablet: $dynamicText-dynamicTextLinkFontStyleHoverTablet,
+        dynamicText-dynamicTextLinkFontStyleDesktop: $dynamicText-dynamicTextLinkFontStyleDesktop,
+        dynamicText-dynamicTextLinkFontStyleHoverDesktop: $dynamicText-dynamicTextLinkFontStyleHoverDesktop,
+        dynamicText-dynamicTextLinkFontDecoration: $dynamicText-dynamicTextLinkFontDecoration,
+        dynamicText-dynamicTextLinkFontDecorationHover: $dynamicText-dynamicTextLinkFontDecorationHover,
+        dynamicText-dynamicTextLinkFontDecorationTablet: $dynamicText-dynamicTextLinkFontDecorationTablet,
+        dynamicText-dynamicTextLinkFontDecorationHoverTablet: $dynamicText-dynamicTextLinkFontDecorationHoverTablet,
+        dynamicText-dynamicTextLinkFontDecorationDesktop: $dynamicText-dynamicTextLinkFontDecorationDesktop,
+        dynamicText-dynamicTextLinkFontDecorationHoverDesktop: $dynamicText-dynamicTextLinkFontDecorationHoverDesktop,
+        dynamicText-dynamicTextLinkColor: $dynamicText-dynamicTextLinkColor,
+        dynamicText-dynamicTextLinkHoverColor: $dynamicText-dynamicTextLinkHoverColor,
+        dynamicText-dynamicTextLinkColorTablet: $dynamicText-dynamicTextLinkColorTablet,
+        dynamicText-dynamicTextLinkHoverColorTablet: $dynamicText-dynamicTextLinkHoverColorTablet,
+        dynamicText-dynamicTextLinkColorDesktop: $dynamicText-dynamicTextLinkColorDesktop,
+        dynamicText-dynamicTextLinkHoverColorDesktop: $dynamicText-dynamicTextLinkHoverColorDesktop),
       $options);
 
   $instanceSelector: '[data-widget-package="#{$packageName}"]';
@@ -459,37 +473,126 @@ $variablePrefix: "dynamicText";
     }
 
     a {
-      color: map-get($configuration, dynamicText-dynamicTextLinkColor);
       font-family: map-get($configuration, dynamicText-dynamicTextLinkFontFamily);
-      font-size: map-get($configuration, dynamicText-dynamicTextLinkSize);
-      font-style: map-get($configuration, dynamicText-dynamicTextLinkStyle);
-      text-decoration: map-get($configuration, dynamicText-dynamicTextLinkDecoration);
-      font-weight: map-get($configuration, dynamicText-dynamicTextLinkWeight);
-
-      margin-top: map-get($configuration, dynamicText-dynamicTextLinkMarginTop);
-      margin-bottom: map-get($configuration, dynamicText-dynamicTextLinkMarginBottom);
+      font-size: map-get($configuration, dynamicText-dynamicTextLinkFontSize);
+      font-weight: map-get($configuration, dynamicText-dynamicTextLinkFontWeight);
+      font-style: map-get($configuration, dynamicText-dynamicTextLinkFontStyle);
+      text-decoration: map-get($configuration, dynamicText-dynamicTextLinkFontDecoration);
+      color: map-get($configuration, dynamicText-dynamicTextLinkColor);
 
       // Styles for tablet
       @include above($tabletBreakpoint) {
-        color: map-get($configuration, dynamicText-dynamicTextLinkColorTablet);
         font-family: map-get($configuration, dynamicText-dynamicTextLinkFontFamilyTablet);
-        font-size: map-get($configuration, dynamicText-dynamicTextLinkSizeTablet);
-        font-style: map-get($configuration, dynamicText-dynamicTextLinkStyleTablet);
-        text-decoration: map-get($configuration, dynamicText-dynamicTextLinkDecorationTablet);
-        font-weight: map-get($configuration, dynamicText-dynamicTextLinkWeightTablet);
-
-        margin-top: map-get($configuration, dynamicText-dynamicTextLinkMarginTopTablet);
-        margin-bottom: map-get($configuration, dynamicText-dynamicTextLinkMarginBottomTablet);
+        font-size: map-get($configuration, dynamicText-dynamicTextLinkFontSizeTablet);
+        font-weight: map-get($configuration, dynamicText-dynamicTextLinkFontWeightTablet);
+        font-style: map-get($configuration, dynamicText-dynamicTextLinkFontStyleTablet);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextLinkFontDecorationTablet);
+        color: map-get($configuration, dynamicText-dynamicTextLinkColorTablet);
       }
 
       // Styles for desktop
       @include above($desktopBreakpoint) {
-        color: map-get($configuration, dynamicText-dynamicTextLinkColorDesktop);
         font-family: map-get($configuration, dynamicText-dynamicTextLinkFontFamilyDesktop);
-        font-size: map-get($configuration, dynamicText-dynamicTextLinkSizeDesktop);
-        font-style: map-get($configuration, dynamicText-dynamicTextLinkStyleDesktop);
-        text-decoration: map-get($configuration, dynamicText-dynamicTextLinkDecorationDesktop);
-        font-weight: map-get($configuration, dynamicText-dynamicTextLinkWeightDesktop);
+        font-size: map-get($configuration, dynamicText-dynamicTextLinkFontSizeDesktop);
+        font-weight: map-get($configuration, dynamicText-dynamicTextLinkFontWeightDesktop);
+        font-style: map-get($configuration, dynamicText-dynamicTextLinkFontStyleDesktop);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextLinkFontDecorationDesktop);
+        color: map-get($configuration, dynamicText-dynamicTextLinkColorDesktop);
+      }
+
+      &:hover,
+      &:focus,
+      &:active:hover,
+      &:active:focus {
+        outline: none;
+        font-family: map-get($configuration, dynamicText-dynamicTextLinkFontFamilyHover);
+        font-size: map-get($configuration, dynamicText-dynamicTextLinkFontSizeHover);
+        font-weight: map-get($configuration, dynamicText-dynamicTextLinkFontWeightHover);
+        font-style: map-get($configuration, dynamicText-dynamicTextLinkFontStyleHover);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextLinkFontDecorationHover);
+        color: map-get($configuration, dynamicText-dynamicTextLinkHoverColor);
+
+        // Styles for tablet
+        @include above($tabletBreakpoint) {
+          font-family: map-get($configuration, dynamicText-dynamicTextLinkFontFamilyHoverTablet);
+          font-size: map-get($configuration, dynamicText-dynamicTextLinkFontSizeHoverTablet);
+          font-weight: map-get($configuration, dynamicText-dynamicTextLinkFontWeightHoverTablet);
+          font-style: map-get($configuration, dynamicText-dynamicTextLinkFontStyleHoverTablet);
+          text-decoration: map-get($configuration, dynamicText-dynamicTextLinkFontDecorationHoverTablet);
+          color: map-get($configuration, dynamicText-dynamicTextLinkHoverColorTablet);
+        }
+
+        // Styles for desktop
+        @include above($desktopBreakpoint) {
+          font-family: map-get($configuration, dynamicText-dynamicTextLinkFontFamilyHoverDesktop);
+          font-size: map-get($configuration, dynamicText-dynamicTextLinkFontSizeHoverDesktop);
+          font-weight: map-get($configuration, dynamicText-dynamicTextLinkFontWeightHoverDesktop);
+          font-style: map-get($configuration, dynamicText-dynamicTextLinkFontStyleHoverDesktop);
+          text-decoration: map-get($configuration, dynamicText-dynamicTextLinkFontDecorationHoverDesktop);
+          color: map-get($configuration, dynamicText-dynamicTextLinkHoverColorDesktop);
+        }
+      }
+    }
+
+    .btn.btn-link {
+      font-family: map-get($configuration, dynamicText-dynamicTextLinkFontFamily);
+      font-size: map-get($configuration, dynamicText-dynamicTextLinkFontSize);
+      font-weight: map-get($configuration, dynamicText-dynamicTextLinkFontWeight);
+      font-style: map-get($configuration, dynamicText-dynamicTextLinkFontStyle);
+      text-decoration: map-get($configuration, dynamicText-dynamicTextLinkFontDecoration);
+      color: map-get($configuration, dynamicText-dynamicTextLinkColor);
+
+      // Styles for tablet
+      @include above($tabletBreakpoint) {
+        font-family: map-get($configuration, dynamicText-dynamicTextLinkFontFamilyTablet);
+        font-size: map-get($configuration, dynamicText-dynamicTextLinkFontSizeTablet);
+        font-weight: map-get($configuration, dynamicText-dynamicTextLinkFontWeightTablet);
+        font-style: map-get($configuration, dynamicText-dynamicTextLinkFontStyleTablet);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextLinkFontDecorationTablet);
+        color: map-get($configuration, dynamicText-dynamicTextLinkColorTablet);
+      }
+
+      // Styles for desktop
+      @include above($desktopBreakpoint) {
+        font-family: map-get($configuration, dynamicText-dynamicTextLinkFontFamilyDesktop);
+        font-size: map-get($configuration, dynamicText-dynamicTextLinkFontSizeDesktop);
+        font-weight: map-get($configuration, dynamicText-dynamicTextLinkFontWeightDesktop);
+        font-style: map-get($configuration, dynamicText-dynamicTextLinkFontStyleDesktop);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextLinkFontDecorationDesktop);
+        color: map-get($configuration, dynamicText-dynamicTextLinkColorDesktop);
+      }
+
+      &:hover,
+      &:focus,
+      &:active:hover,
+      &:active:focus {
+        outline: none;
+        font-family: map-get($configuration, dynamicText-dynamicTextLinkFontFamilyHover);
+        font-size: map-get($configuration, dynamicText-dynamicTextLinkFontSizeHover);
+        font-weight: map-get($configuration, dynamicText-dynamicTextLinkFontWeightHover);
+        font-style: map-get($configuration, dynamicText-dynamicTextLinkFontStyleHover);
+        text-decoration: map-get($configuration, dynamicText-dynamicTextLinkFontDecorationHover);
+        color: map-get($configuration, dynamicText-dynamicTextLinkHoverColor);
+
+        // Styles for tablet
+        @include above($tabletBreakpoint) {
+          font-family: map-get($configuration, dynamicText-dynamicTextLinkFontFamilyHoverTablet);
+          font-size: map-get($configuration, dynamicText-dynamicTextLinkFontSizeHoverTablet);
+          font-weight: map-get($configuration, dynamicText-dynamicTextLinkFontWeightHoverTablet);
+          font-style: map-get($configuration, dynamicText-dynamicTextLinkFontStyleHoverTablet);
+          text-decoration: map-get($configuration, dynamicText-dynamicTextLinkFontDecorationHoverTablet);
+          color: map-get($configuration, dynamicText-dynamicTextLinkHoverColorTablet);
+        }
+
+        // Styles for desktop
+        @include above($desktopBreakpoint) {
+          font-family: map-get($configuration, dynamicText-dynamicTextLinkFontFamilyHoverDesktop);
+          font-size: map-get($configuration, dynamicText-dynamicTextLinkFontSizeHoverDesktop);
+          font-weight: map-get($configuration, dynamicText-dynamicTextLinkFontWeightHoverDesktop);
+          font-style: map-get($configuration, dynamicText-dynamicTextLinkFontStyleHoverDesktop);
+          text-decoration: map-get($configuration, dynamicText-dynamicTextLinkFontDecorationHoverDesktop);
+          color: map-get($configuration, dynamicText-dynamicTextLinkHoverColorDesktop);
+        }
       }
     }
   }

@@ -1551,10 +1551,10 @@
         "fields": [
           {
             "name": "dynamicTextLinkFontFamily",
-            "default": "$linkFontFamily",
+            "default": "$paragraphFontFamily",
             "styles": [
               {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                "parentSelector": "[data-widget-package='com.fliplet.inline-link']",
                 "selectors": "a",
                 "properties": ["font-family"]
               }
@@ -1572,22 +1572,22 @@
             "type": "font"
           },
           {
-            "name": "dynamicTextLinkSize",
-            "default": "$linkFontSize",
+            "name": "dynamicTextLinkFontSize",
+            "default": "$paragraphFontSize",
             "styles": [
               {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                "parentSelector": "[data-widget-package='com.fliplet.inline-link']",
                 "selectors": "a",
                 "properties": ["font-size"]
               }
             ],
             "breakpoints": {
               "tablet": {
-                "name": "dynamicTextLinkSizeTablet",
+                "name": "dynamicTextLinkFontSizeTablet",
                 "default": "inherit-mobile"
               },
               "desktop": {
-                "name": "dynamicTextLinkSizeDesktop",
+                "name": "dynamicTextLinkFontSizeDesktop",
                 "default": "inherit-tablet"
               }
             },
@@ -1596,12 +1596,26 @@
           },
           {
             "name": "dynamicTextLinkColor",
-            "default": "$linkColor",
+            "default": "$highlightColor",
             "styles": [
               {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
-                "selectors": "a",
+                "selectors": [
+                  ".overlay-about-app .btn-link",
+                  ".overlay-update-notes .btn-link",
+                  ".overlay-about-app a",
+                  ".overlay-update-notes a"
+                ],
                 "properties": ["color"]
+              },
+              {
+                "parentSelector": "[data-widget-package='com.fliplet.inline-link']",
+                "selectors": ["a", ".btn.btn-link"],
+                "properties": ["color"]
+              },
+              {
+                "parentSelector": "[data-widget-package='com.fliplet.form-builder']",
+                "selectors": ".fl-form .spinner-overlay",
+                "properties": ["border-left-color"]
               }
             ],
             "breakpoints": {
@@ -1617,22 +1631,22 @@
             "type": "color"
           },
           {
-            "name": "dynamicTextLinkWeight",
-            "default": "500",
+            "name": "dynamicTextLinkFontWeight",
+            "default": "$paragraphFontWeight",
             "styles": [
               {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                "parentSelector": "[data-widget-package='com.fliplet.inline-link']",
                 "selectors": "a",
                 "properties": ["font-weight"]
               }
             ],
             "breakpoints": {
               "tablet": {
-                "name": "dynamicTextLinkWeightTablet",
+                "name": "dynamicTextLinkFontWeightTablet",
                 "default": "inherit-mobile"
               },
               "desktop": {
-                "name": "dynamicTextLinkWeightDesktop",
+                "name": "dynamicTextLinkFontWeightDesktop",
                 "default": "inherit-tablet"
               }
             },
@@ -1640,22 +1654,26 @@
             "properties": "weight"
           },
           {
-            "name": "dynamicTextLinkStyle",
-            "default": "none",
+            "name": "dynamicTextLinkFontStyle",
+            "default": "$paragraphFontStyle",
             "styles": [
               {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                "selectors": "body",
+                "properties": ["font-style"]
+              },
+              {
+                "parentSelector": "[data-widget-package='com.fliplet.inline-link']",
                 "selectors": "a",
                 "properties": ["font-style"]
               }
             ],
             "breakpoints": {
               "tablet": {
-                "name": "dynamicTextLinkStyleTablet",
+                "name": "dynamicTextLinkFontStyleTablet",
                 "default": "inherit-mobile"
               },
               "desktop": {
-                "name": "dynamicTextLinkStyleDesktop",
+                "name": "dynamicTextLinkFontStyleDesktop",
                 "default": "inherit-tablet"
               }
             },
@@ -1663,22 +1681,122 @@
             "properties": "italic"
           },
           {
-            "name": "dynamicTextLinkDecoration",
-            "default": "none",
+            "name": "dynamicTextLinkFontDecoration",
+            "default": "$paragraphFontDecoration",
             "styles": [
               {
-                "parentSelector": "[data-widget-package='com.fliplet.dynamic-text']",
+                "parentSelector": "[data-widget-package='com.fliplet.inline-link']",
                 "selectors": "a",
                 "properties": ["text-decoration"]
               }
             ],
             "breakpoints": {
               "tablet": {
-                "name": "dynamicTextLinkDecorationTablet",
+                "name": "dynamicTextLinkFontDecorationTablet",
                 "default": "inherit-mobile"
               },
               "desktop": {
-                "name": "dynamicTextLinkDecorationDesktop",
+                "name": "dynamicTextLinkFontDecorationDesktop",
+                "default": "inherit-tablet"
+              }
+            },
+            "type": "font-style",
+            "subType": "decoration",
+            "properties": "underline"
+          }
+        ]
+      },
+      {
+        "description": "Link Hover",
+        "fields": [
+          {
+            "name": "dynamicTextLinkFontFamilyHover",
+            "default": "$linkFontFamily",
+            "breakpoints": {
+              "tablet": {
+                "name": "dynamicTextLinkFontFamilyHoverTablet",
+                "default": "inherit-mobile"
+              },
+              "desktop": {
+                "name": "dynamicTextLinkFontFamilyHoverDesktop",
+                "default": "inherit-tablet"
+              }
+            },
+            "type": "font"
+          },
+          {
+            "name": "dynamicTextLinkFontSizeHover",
+            "default": "$linkFontSize",
+            "breakpoints": {
+              "tablet": {
+                "name": "dynamicTextLinkFontSizeHoverTablet",
+                "default": "inherit-mobile"
+              },
+              "desktop": {
+                "name": "dynamicTextLinkFontSizeHoverDesktop",
+                "default": "inherit-tablet"
+              }
+            },
+            "type": "size",
+            "subtype": "font"
+          },
+          {
+            "name": "dynamicTextLinkHoverColor",
+            "default": "#0096B8",
+            "breakpoints": {
+              "tablet": {
+                "name": "dynamicTextLinkHoverColorTablet",
+                "default": "inherit-mobile"
+              },
+              "desktop": {
+                "name": "dynamicTextLinkHoverColorDesktop",
+                "default": "inherit-tablet"
+              }
+            },
+            "type": "color"
+          },
+          {
+            "name": "dynamicTextLinkFontWeightHover",
+            "default": "$linkFontWeight",
+            "breakpoints": {
+              "tablet": {
+                "name": "dynamicTextLinkFontWeightHoverTablet",
+                "default": "inherit-mobile"
+              },
+              "desktop": {
+                "name": "dynamicTextLinkFontWeightHoverDesktop",
+                "default": "inherit-tablet"
+              }
+            },
+            "type": "font-style",
+            "properties": "weight"
+          },
+          {
+            "name": "dynamicTextLinkFontStyleHover",
+            "default": "$linkFontStyle",
+            "breakpoints": {
+              "tablet": {
+                "name": "dynamicTextLinkFontStyleHoverTablet",
+                "default": "inherit-mobile"
+              },
+              "desktop": {
+                "name": "dynamicTextLinkFontStyleHoverDesktop",
+                "default": "inherit-tablet"
+              }
+            },
+            "type": "font-style",
+            "properties": "italic"
+          },
+          {
+            "name": "dynamicTextLinkFontDecorationHover",
+            "default": "$linkFontDecoration",
+            "breakpoints": {
+              "tablet": {
+                "name": "dynamicTextLinkFontDecorationHoverTablet",
+                "default": "inherit-mobile"
+              },
+              "desktop": {
+                "name": "dynamicTextLinkFontDecorationHoverDesktop",
                 "default": "inherit-tablet"
               }
             },
