@@ -430,7 +430,7 @@ $variablePrefix: "dynamicText";
           shadowColor: map-get($configuration, dynamicText-dynamicTextShadowColorDesktop)));
     }
 
-    p {
+    * {
       color: map-get($configuration, dynamicText-dynamicTextParagraphTextColor);
       font-family: map-get($configuration, dynamicText-dynamicTextParagraphFontFamily);
       font-size: map-get($configuration, dynamicText-dynamicTextParagraphFontSize);
