@@ -10,3 +10,10 @@
   font-size: 12px!important;
   margin-bottom: 0!important;
 }
+
+[data-widget-package="com.fliplet.dynamic-text"] {
+  display: inline;
+  * {
+    display: inline;
+  }
+}
