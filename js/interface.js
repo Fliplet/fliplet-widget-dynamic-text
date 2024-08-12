@@ -177,16 +177,6 @@ Fliplet.Widget.findParents({
       { label: '08:30:45 PM', value: 'LTS' }
     ];
 
-    const HTML_TAGS_OPTIONS = [
-      { label: 'Paragraph', value: 'p' },
-      { label: 'Heading 1', value: 'h1' },
-      { label: 'Heading 2', value: 'h2' },
-      { label: 'Heading 3', value: 'h3' },
-      { label: 'Heading 4', value: 'h4' },
-      { label: 'Heading 5', value: 'h5' },
-      { label: 'Heading 6', value: 'h6' }
-    ];
-
     const TIME_DATE_FORMAT_OPTIONS = [
       { label: 'September 4, 1986 8:30 PM', value: 'LL LT' },
       { label: 'Sep 4, 1986 8:30 PM', value: 'll LT' },
