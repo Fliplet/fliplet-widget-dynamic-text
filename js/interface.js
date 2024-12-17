@@ -71,13 +71,13 @@ Fliplet.Widget.findParents({
       fields: [
         {
           type: 'html',
-          html: '<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;">This component needs to be placed inside a Dynamic Container with selected Data source</p>'
+          html: '<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;">This component needs to be placed inside a Data container with selected Data source</p>'
         }
       ]
     });
 
     return Fliplet.UI.Toast(
-      'This component needs to be placed inside a Dynamic Container with selected Data source'
+      'This component needs to be placed inside a Data container with selected Data source'
     );
   }
 
