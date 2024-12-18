@@ -202,10 +202,10 @@ Fliplet.Widget.instance({
         } else if (FIELDS.dataVisualization === 'Bullet Point List') {
           list.style.listStyle = 'disc';
         }
-        list.style.display = 'block';
 
         VALUE.forEach((item) => {
           const li = document.createElement('li');
+          li.style.display = 'block';
 
           li.textContent = item;
           list.appendChild(li);
