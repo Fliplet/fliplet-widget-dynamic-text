@@ -16,4 +16,10 @@
   * {
     display: inline-block;
   }
+  ul {
+    display: block;
+  }
+  li {
+    display: block;
+  }
 }
