@@ -10,16 +10,16 @@ Fliplet.Widget.instance({
   render: {
     async beforeReady() {
       if (Fliplet.DynamicContainer) {
-        this.dataSourceId = await Fliplet.DynamicContainer.get().then(function(
+        this.dataSourceId = await Fliplet.DynamicContainer.get().then(function (
           container
         ) {
-          return container.connection().then(function(connection) {
+          return container.connection().then(function (connection) {
             return connection.id;
           });
         });
       }
     },
-    ready: async function() {
+    ready: async function () {
       const DYNAMIC_TEXT = this;
       const ENTRY = DYNAMIC_TEXT?.parent?.entry || {};
       const DYNAMIC_TEXT_INSTANCE_ID = DYNAMIC_TEXT.id;
@@ -193,13 +193,16 @@ Fliplet.Widget.instance({
           FIELDS.dataVisualization === 'Numbered List' ? 'ol' : 'ul'
         );
 
-        list.style.paddingLeft = '20px';
+        list.style.paddingLeft = '0';
+        list.style.marginLeft = '20px';
+        list.style.display = 'block';
 
         if (FIELDS.dataVisualization === 'Alphabetic List') {
           list.style.listStyle = 'lower-alpha';
         } else if (FIELDS.dataVisualization === 'Bullet Point List') {
           list.style.listStyle = 'disc';
         }
+        list.style.display = 'block';
 
         VALUE.forEach((item) => {
           const li = document.createElement('li');
