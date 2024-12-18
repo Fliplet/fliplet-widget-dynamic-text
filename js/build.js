@@ -205,7 +205,7 @@ Fliplet.Widget.instance({
 
         VALUE.forEach((item) => {
           const li = document.createElement('li');
-          li.style.display = 'block';
+          li.style.display = 'list-item';
 
           li.textContent = item;
           list.appendChild(li);
