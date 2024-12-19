@@ -75,14 +75,14 @@ Fliplet.Widget.instance({
               <p>Configure Dynamic Text</p>
             </div>`);
 
-          return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Dynamic Container and select a data source');
+          return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Data container and select a data source');
         } else if (!recordContainer && !listRepeater) {
           $HELPER.find('.dynamic-text-container').html(`
             <div class="not-configured">
               <p>Configure Dynamic Text</p>
             </div>`);
 
-          return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Record or List Repeater component');
+          return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Record or Data list component');
         } else if (!COLUMN) {
           $HELPER.find('.dynamic-text-container').html(`
             <div class="not-configured">
