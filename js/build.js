@@ -10,16 +10,16 @@ Fliplet.Widget.instance({
   render: {
     async beforeReady() {
       if (Fliplet.DynamicContainer) {
-        this.dataSourceId = await Fliplet.DynamicContainer.get().then(function(
+        this.dataSourceId = await Fliplet.DynamicContainer.get().then(function (
           container
         ) {
-          return container.connection().then(function(connection) {
+          return container.connection().then(function (connection) {
             return connection.id;
           });
         });
       }
     },
-    ready: async function() {
+    ready: async function () {
       const DYNAMIC_TEXT = this;
       const ENTRY = DYNAMIC_TEXT?.parent?.entry || {};
       const DYNAMIC_TEXT_INSTANCE_ID = DYNAMIC_TEXT.id;
@@ -75,14 +75,14 @@ Fliplet.Widget.instance({
               <p>Configure Dynamic Text</p>
             </div>`);
 
-          return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Dynamic Container and select a data source');
+          return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Data container and select a data source');
         } else if (!recordContainer && !listRepeater) {
           $HELPER.find('.dynamic-text-container').html(`
             <div class="not-configured">
               <p>Configure Dynamic Text</p>
             </div>`);
 
-          return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Record or List Repeater component');
+          return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Record or Data list component');
         } else if (!COLUMN) {
           $HELPER.find('.dynamic-text-container').html(`
             <div class="not-configured">
@@ -193,7 +193,9 @@ Fliplet.Widget.instance({
           FIELDS.dataVisualization === 'Numbered List' ? 'ol' : 'ul'
         );
 
-        list.style.paddingLeft = '20px';
+        list.style.paddingLeft = '0';
+        list.style.marginLeft = '20px';
+        list.style.display = 'block';
 
         if (FIELDS.dataVisualization === 'Alphabetic List') {
           list.style.listStyle = 'lower-alpha';
@@ -203,6 +205,7 @@ Fliplet.Widget.instance({
 
         VALUE.forEach((item) => {
           const li = document.createElement('li');
+          li.style.display = 'list-item';
 
           li.textContent = item;
           list.appendChild(li);
