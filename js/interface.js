@@ -71,13 +71,13 @@ Fliplet.Widget.findParents({
       fields: [
         {
           type: 'html',
-          html: '<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;">This component needs to be placed inside a Dynamic Container with selected Data source</p>'
+          html: '<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;">This component needs to be placed inside a Data container with selected Data source</p>'
         }
       ]
     });
 
     return Fliplet.UI.Toast(
-      'This component needs to be placed inside a Dynamic Container with selected Data source'
+      'This component needs to be placed inside a Data container with selected Data source'
     );
   }
 
@@ -621,7 +621,7 @@ Fliplet.Widget.findParents({
           name: 'dataVisualization',
           label: 'Select data visualization',
           description:
-            'Data should be formatted as an array: [“value”, “value”] or a coma-separated list:  value,value',
+            'Data should be formatted as an array: [“value”, “value”] or a comma-separated list:  value,value',
           options: DATA_VISUALIZATION_OPTIONS
         },
         {
