@@ -1,7 +1,7 @@
 // Register this widget instance
 Fliplet.Widget.instance({
   name: 'dynamic-text',
-  displayName: 'Dynamic Text',
+  displayName: 'Data Text',
   template:
     '<div class="dynamic-text-container"></div>',
   data: {
@@ -72,21 +72,21 @@ Fliplet.Widget.instance({
         if (!dynamicContainer || !dynamicContainer.dataSourceId) {
           $HELPER.find('.dynamic-text-container').html(`
             <div class="not-configured">
-              <p>Configure Dynamic Text</p>
+              <p>Configure Data Text</p>
             </div>`);
 
           return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Data container and select a data source');
         } else if (!recordContainer && !listRepeater) {
           $HELPER.find('.dynamic-text-container').html(`
             <div class="not-configured">
-              <p>Configure Dynamic Text</p>
+              <p>Configure Data Text</p>
             </div>`);
 
           return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Record or Data list component');
         } else if (!COLUMN) {
           $HELPER.find('.dynamic-text-container').html(`
             <div class="not-configured">
-              <p>Configure Dynamic Text</p>
+              <p>Configure Data Text</p>
             </div>`);
 
           return Fliplet.UI.Toast(
