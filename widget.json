@@ -1,5 +1,5 @@
 {
-  "name": "Dynamic text",
+  "name": "Data text",
   "package": "com.fliplet.dynamic-text",
   "version": "1.0.0",
   "icon": "img/icon.png",
@@ -39,7 +39,7 @@
     "appAssets": []
   },
   "themeSettings": {
-    "name": "Dynamic Text",
+    "name": "Data Text",
     "variablePrefix": "dynamicText",
     "packages": ["com.fliplet.dynamic-text"],
     "appSupportsContainers": true,

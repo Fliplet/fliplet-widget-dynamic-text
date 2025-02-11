@@ -67,7 +67,7 @@ Fliplet.Widget.findParents({
 }).then(async(widgets) => {
   if (widgets.length === 0 || !widgets[0].dataSourceId) {
     Fliplet.Widget.generateInterface({
-      title: 'Configure dynamic text',
+      title: 'Configure data text',
       fields: [
         {
           type: 'html',
@@ -536,7 +536,7 @@ Fliplet.Widget.findParents({
     ].sort();
 
     return Fliplet.Widget.generateInterface({
-      title: 'Configure dynamic text',
+      title: 'Configure data text',
       fields: [
         {
           type: 'html',
