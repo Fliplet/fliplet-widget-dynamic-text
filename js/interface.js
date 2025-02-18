@@ -559,7 +559,7 @@ Fliplet.Widget.findParents({
         {
           type: 'dropdown',
           name: 'dataFormat',
-          label: 'Select data format',
+          label: 'Select format',
           options: DATA_FORMATS_OPTIONS,
           default: 'text',
           change: function(value) {
@@ -627,7 +627,7 @@ Fliplet.Widget.findParents({
         {
           type: 'dropdown',
           name: 'dateFormat',
-          label: 'Select dataview type',
+          label: 'Select format',
           description:
             "Note, date will be displayed in user's local device format",
           options: DATE_FORMAT_OPTIONS
@@ -635,14 +635,14 @@ Fliplet.Widget.findParents({
         {
           type: 'dropdown',
           name: 'timeFormat',
-          label: 'Select dataview type',
+          label: 'Select format',
           description: 'Note, time will be displayed in user\'s local device format',
           options: TIME_FORMAT_OPTIONS
         },
         {
           type: 'dropdown',
           name: 'timeDateFormat',
-          label: 'Select dataview type',
+          label: 'Select format',
           description:
             "Note, date & time will be displayed in user's local device format",
           options: TIME_DATE_FORMAT_OPTIONS
