@@ -44,7 +44,7 @@ Fliplet.Widget.instance({
       const $HELPER = $(DYNAMIC_TEXT.$el);
       const MODE_INTERACT = Fliplet.Env.get('interact');
 
-      DYNAMIC_TEXT.fields = _.assign(
+      DYNAMIC_TEXT.fields = Object.assign(
         {
           column: '',
           dataFormat: 'text',
