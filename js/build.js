@@ -8,7 +8,6 @@ Fliplet.Widget.instance({
     ready: async function () {
       const DYNAMIC_TEXT = this;
 
-
       const parents = await Fliplet.Widget.findParents({
         instanceId: this.data.id,
       });
@@ -39,7 +38,21 @@ Fliplet.Widget.instance({
         findParentDataWidget('ListRepeater', 'com.fliplet.list-repeater')
       ]);
 
-      const ENTRY = recordContainerInstance?.entry || listRepeaterInstance?.entry;
+      let ENTRY = null;
+
+      if (recordContainerInstance) {
+        ENTRY = recordContainerInstance.entry;
+      } else if (listRepeaterInstance) {
+        const closestListRepeaterRow = DYNAMIC_TEXT.parents().find(parent => parent.element.nodeName.toLowerCase() === 'fl-list-repeater-row');
+        if (closestListRepeaterRow) {
+          ENTRY = closestListRepeaterRow.entry;
+        }
+      }
+
+      if (!ENTRY) {
+        console.error('No entry found');
+        return;
+      }
 
       const $HELPER = $(DYNAMIC_TEXT.$el);
       const MODE_INTERACT = Fliplet.Env.get('interact');
