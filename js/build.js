@@ -4,29 +4,60 @@ Fliplet.Widget.instance({
   displayName: 'Data Text',
   template:
     '<div class="dynamic-text-container"></div>',
-  data: {
-    dataSourceId: null
-  },
   render: {
-    async beforeReady() {
-      if (Fliplet.DynamicContainer) {
-        this.dataSourceId = await Fliplet.DynamicContainer.get().then(function (
-          container
-        ) {
-          return container.connection().then(function (connection) {
-            return connection.id;
-          });
-        });
-      }
-    },
     ready: async function () {
       const DYNAMIC_TEXT = this;
-      const ENTRY = DYNAMIC_TEXT?.parent?.entry || {};
-      const DYNAMIC_TEXT_INSTANCE_ID = DYNAMIC_TEXT.id;
+
+      const parents = await Fliplet.Widget.findParents({
+        instanceId: this.data.id,
+      });
+
+      /**
+       * Finds and returns the parent widget and its entry data for a specified widget type
+       * @param {('RecordContainer'|'ListRepeater'|'DynamicContainer')} type - The type of parent widget to search for
+       * @returns {Promise<[Object|null, Object|null]>} A tuple containing:
+       *   - The parent widget configuration if found, null otherwise
+       *   - The parent widget instance if found, null otherwise
+       * @async
+       * @private
+       */
+      const findParentDataWidget = async (type, packageName) => {
+        const parent = parents.find((parent) => parent.package === packageName);
+
+        if (!parent) {
+          return [null, null];
+        }
+
+        const instance = await Fliplet[type].get({ id: parent.id });
+        return [parent, instance];
+      }
+
+      const [[ dynamicContainer ], [ recordContainer, recordContainerInstance ], [ listRepeater, listRepeaterInstance ]] = await Promise.all([
+        findParentDataWidget('DynamicContainer', 'com.fliplet.dynamic-container'),
+        findParentDataWidget('RecordContainer', 'com.fliplet.record-container'),
+        findParentDataWidget('ListRepeater', 'com.fliplet.list-repeater')
+      ]);
+
+      let ENTRY = null;
+
+      if (recordContainerInstance) {
+        ENTRY = recordContainerInstance.entry;
+      } else if (listRepeaterInstance) {
+        const closestListRepeaterRow = DYNAMIC_TEXT.parents().find(parent => parent.element.nodeName.toLowerCase() === 'fl-list-repeater-row');
+        if (closestListRepeaterRow) {
+          ENTRY = closestListRepeaterRow.entry;
+        }
+      }
+
+      if (!ENTRY) {
+        console.error('No entry found');
+        return;
+      }
+
       const $HELPER = $(DYNAMIC_TEXT.$el);
       const MODE_INTERACT = Fliplet.Env.get('interact');
 
-      DYNAMIC_TEXT.fields = _.assign(
+      DYNAMIC_TEXT.fields = Object.assign(
         {
           column: '',
           dataFormat: 'text',
@@ -51,57 +82,39 @@ Fliplet.Widget.instance({
       const COLUMN = FIELDS.column;
       let VALUE = MODE_INTERACT ? COLUMN : ENTRY.data[COLUMN];
       const DATA_FORMAT = FIELDS.dataFormat;
+    
+      if (!dynamicContainer || !dynamicContainer.dataSourceId) {
+        $HELPER.find('.dynamic-text-container').html(`
+          <div class="not-configured">
+            <p>Configure Data Text</p>
+          </div>`);
 
-      return Fliplet.Widget.findParents({
-        instanceId: DYNAMIC_TEXT_INSTANCE_ID
-      }).then((widgets) => {
-        let dynamicContainer = null;
-        let recordContainer = null;
-        let listRepeater = null;
+        return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Data container and select a data source');
+      } else if (!recordContainer && !listRepeater) {
+        $HELPER.find('.dynamic-text-container').html(`
+          <div class="not-configured">
+            <p>Configure Data Text</p>
+          </div>`);
 
-        widgets.forEach((widget) => {
-          if (widget.package === 'com.fliplet.dynamic-container') {
-            dynamicContainer = widget;
-          } else if (widget.package === 'com.fliplet.record-container') {
-            recordContainer = widget;
-          } else if (widget.package === 'com.fliplet.list-repeater') {
-            listRepeater = widget;
-          }
-        });
+        return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Record or Data list component');
+      } else if (!COLUMN) {
+        $HELPER.find('.dynamic-text-container').html(`
+          <div class="not-configured">
+            <p>Configure Data Text</p>
+          </div>`);
 
-        if (!dynamicContainer || !dynamicContainer.dataSourceId) {
-          $HELPER.find('.dynamic-text-container').html(`
-            <div class="not-configured">
-              <p>Configure Data Text</p>
-            </div>`);
+        return Fliplet.UI.Toast(
+          'This component needs to be configured, please select a column'
+        );
+      }
 
-          return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Data container and select a data source');
-        } else if (!recordContainer && !listRepeater) {
-          $HELPER.find('.dynamic-text-container').html(`
-            <div class="not-configured">
-              <p>Configure Data Text</p>
-            </div>`);
+      if (MODE_INTERACT) {
+        $HELPER.find('.dynamic-text-container').html(`${COLUMN}`);
 
-          return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Record or Data list component');
-        } else if (!COLUMN) {
-          $HELPER.find('.dynamic-text-container').html(`
-            <div class="not-configured">
-              <p>Configure Data Text</p>
-            </div>`);
+        return;
+      }
 
-          return Fliplet.UI.Toast(
-            'This component needs to be configured, please select a column'
-          );
-        }
-
-        if (MODE_INTERACT) {
-          $HELPER.find('.dynamic-text-container').html(`${COLUMN}`);
-
-          return;
-        }
-
-        renderContent();
-      });
+      renderContent();
 
       function errorMessageStructureNotValid($element, message) {
         // todo remove this function after product solution
@@ -120,43 +133,19 @@ Fliplet.Widget.instance({
       }
 
       function renderContent() {
-        switch (DATA_FORMAT) {
-          case 'text':
-            $HELPER.find('.dynamic-text-container').text(VALUE);
-            break;
-          case 'html':
-            $HELPER.find('.dynamic-text-container').html(VALUE);
-            break;
-          case 'url':
-            renderURL();
-            break;
-          case 'telephone':
-            renderTelephone();
-            break;
-          case 'email':
-            renderEmail();
-            break;
-          case 'numberCurrency':
-            renderNumber();
-            break;
-          case 'array':
-            renderArray();
-            break;
-          case 'date':
-            renderDate();
-            break;
-          case 'time':
-            renderTime();
-            break;
-          case 'dateTime':
-            renderDateTime();
-            break;
-          case 'custom':
-            renderCustom();
-            break;
-          default:
-            break;
-        }
+        return {
+          text: () => $HELPER.find('.dynamic-text-container').text(VALUE),
+          html: () => $HELPER.find('.dynamic-text-container').html(VALUE),
+          url: renderURL,
+          telephone: renderTelephone,
+          email: renderEmail,
+          numberCurrency: renderNumber,
+          array: renderArray,
+          date: renderDate,
+          time: renderTime,
+          dateTime: renderDateTime,
+          custom: renderCustom
+        }[DATA_FORMAT]?.();
       }
 
       function renderURL() {
