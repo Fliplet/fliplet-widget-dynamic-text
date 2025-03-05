@@ -152,15 +152,16 @@ Fliplet.Widget.instance({
         if (VALUE) {
           const LINK = document.createElement('a');
 
-          LINK.href = VALUE;
-          LINK.textContent = FIELDS.urlALtText || VALUE; // 'Tap to open';
-
           // TODO missing form figma
           // if (settings.inAppBrowser) {
           //   LINK.setAttribute('target', '_self');
           // } else {
           //   LINK.setAttribute('target', '_blank');
           // }
+          
+          LINK.href = VALUE;
+          LINK.textContent = FIELDS.urlALtText || VALUE;
+          LINK.setAttribute('aria-label', `${FIELDS.urlALtText || 'Visit'} ${VALUE}`);
 
           $HELPER.find('.dynamic-text-container').html(LINK);
         }
@@ -172,6 +173,7 @@ Fliplet.Widget.instance({
 
           LINK.href = `tel:${VALUE}`;
           LINK.textContent = FIELDS.phoneALtText || VALUE;
+          LINK.setAttribute('aria-label', `Call ${FIELDS.phoneALtText || VALUE}`);
 
           $HELPER.find('.dynamic-text-container').html(LINK);
         }
@@ -185,6 +187,8 @@ Fliplet.Widget.instance({
         list.style.paddingLeft = '0';
         list.style.marginLeft = '20px';
         list.style.display = 'block';
+        list.setAttribute('role', 'list');
+        list.setAttribute('aria-label', `${FIELDS.dataVisualization || 'List'}`);
 
         if (FIELDS.dataVisualization === 'Alphabetic List') {
           list.style.listStyle = 'lower-alpha';
@@ -192,9 +196,12 @@ Fliplet.Widget.instance({
           list.style.listStyle = 'disc';
         }
 
-        VALUE.forEach((item) => {
+        VALUE.forEach((item, index) => {
           const li = document.createElement('li');
           li.style.display = 'list-item';
+          li.setAttribute('role', 'listitem');
+          li.setAttribute('aria-setsize', VALUE.length);
+          li.setAttribute('aria-posinset', index + 1);
 
           li.textContent = item;
           list.appendChild(li);
@@ -209,6 +216,7 @@ Fliplet.Widget.instance({
 
           LINK.href = `mailto:${VALUE}`;
           LINK.textContent = FIELDS.mailALtText || VALUE;
+          LINK.setAttribute('aria-label', `Email ${FIELDS.mailALtText || VALUE}`);
 
           $HELPER.find('.dynamic-text-container').html(LINK);
         }
@@ -276,7 +284,6 @@ Fliplet.Widget.instance({
         let fractionDigits = 0;
 
         if (isNaN(VALUE)) {
-          // toReturnValue = 'N/A';
           return;
         } else if (FIELDS.noDecimalRound === 0) {
           fractionDigits = 0;
@@ -294,10 +301,11 @@ Fliplet.Widget.instance({
           maximumFractionDigits: fractionDigits
         }).format(toReturnValue);
 
+        const formattedValue = `${FIELDS.symbolBefore}${toReturnValue}${FIELDS.symbolAfter}`;
+        
         $HELPER
           .find('.dynamic-text-container')
-          .html(`${FIELDS.symbolBefore}${toReturnValue}${FIELDS.symbolAfter}`
-          );
+          .html(`<span role="text" aria-label="${formattedValue}">${formattedValue}</span>`);
       }
 
       function isValidDate(dateStr) {
@@ -361,31 +369,29 @@ Fliplet.Widget.instance({
         }
 
         let date = moment(VALUE).format('YYYY-MM-DD HH:mm:ss');
-
         const format = FIELDS.timeDateFormat || 'L LTS';
         const timezone = FIELDS.timeDateTimezone;
         const isCustomTimezone = FIELDS.timeDateTimezoneCheckbox.includes(true);
 
+        let formattedDate;
         if (isCustomTimezone) {
-          const utcMoment = moment(date); // moment.utc(date);
+          const utcMoment = moment(date);
           const localMoment = utcMoment.tz(timezone);
-
-          $HELPER
-            .find('.dynamic-text-container')
-            .html(`${Fliplet.Locale.date(localMoment, {
-              format: format,
-              locale: navigator.language
-            })}`
-            );
-        } else {
-          let date = moment.utc(VALUE).format('YYYY-MM-DD HH:mm:ss');
-
-          $HELPER.find('.dynamic-text-container').html(`${Fliplet.Locale.date(date, {
+          formattedDate = Fliplet.Locale.date(localMoment, {
             format: format,
             locale: navigator.language
-          })}`
-          );
+          });
+        } else {
+          date = moment.utc(VALUE).format('YYYY-MM-DD HH:mm:ss');
+          formattedDate = Fliplet.Locale.date(date, {
+            format: format,
+            locale: navigator.language
+          });
         }
+
+        $HELPER
+          .find('.dynamic-text-container')
+          .html(`<time datetime="${moment(VALUE).toISOString()}" aria-label="${formattedDate}">${formattedDate}</time>`);
       }
     }
   }
