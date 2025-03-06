@@ -43,7 +43,7 @@ Fliplet.Widget.instance({
       if (recordContainerInstance) {
         ENTRY = recordContainerInstance.entry;
       } else if (listRepeaterInstance) {
-        const closestListRepeaterRow = DYNAMIC_TEXT.parents().find(parent => parent.element && parent.element.nodeName.toLowerCase() === 'fl-list-repeater-row');
+        const closestListRepeaterRow = DYNAMIC_TEXT.parents().find(parent => parent.element.nodeName.toLowerCase() === 'fl-list-repeater-row');
         if (closestListRepeaterRow) {
           ENTRY = closestListRepeaterRow.entry;
         }
