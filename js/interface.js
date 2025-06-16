@@ -173,8 +173,8 @@ Fliplet.Widget.findParents({
     ];
 
     const TIME_FORMAT_OPTIONS = [
-      { label: '08:30 PM', value: 'LT' },
-      { label: '08:30:45 PM', value: 'LTS' }
+      { label: '08:30 PM / 20:30', value: 'LT' },
+      { label: '08:30:45 PM / 20:30:45', value: 'LTS' }
     ];
 
     const TIME_DATE_FORMAT_OPTIONS = [
@@ -542,7 +542,7 @@ Fliplet.Widget.findParents({
           type: 'html',
           html: `<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;"><strong>Get data from: </strong>
           </br>
-          <span class="data-source-id">${dynamicContainer.dataSourceId}</span> 
+          <span class="data-source-id">${dynamicContainer.dataSourceId}</span>
           ${dataSource.name}</p>
                 <p style="font-size: 10px; font-weight: 400; color: #8E8E8E;">To change this Data Source, go to parent data container</p>
                 <hr/>`
