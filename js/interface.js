@@ -542,7 +542,7 @@ Fliplet.Widget.findParents({
           type: 'html',
           html: `<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;"><strong>Get data from: </strong>
           </br>
-          <span class="data-source-id">${dynamicContainer.dataSourceId}</span> 
+          <span class="data-source-id">${dynamicContainer.dataSourceId}</span>
           ${dataSource.name}</p>
                 <p style="font-size: 10px; font-weight: 400; color: #8E8E8E;">To change this Data Source, go to parent data container</p>
                 <hr/>`
@@ -559,9 +559,11 @@ Fliplet.Widget.findParents({
         {
           type: 'dropdown',
           name: 'dataFormat',
-          label: 'Select format',
+          label: 'Select data format:',
           options: DATA_FORMATS_OPTIONS,
           default: 'text',
+          description:
+          'Choose "Custom (format with regex)" if you need to define a specific data format that is not already available, such as a custom date, alphanumeric code, or other pattern.',
           change: function(value) {
             handleFieldVisibility(value);
           },
@@ -627,7 +629,7 @@ Fliplet.Widget.findParents({
         {
           type: 'dropdown',
           name: 'dateFormat',
-          label: 'Select format',
+          label: 'Select format:',
           description:
             "Note, date will be displayed in user's local device format",
           options: DATE_FORMAT_OPTIONS
@@ -635,14 +637,14 @@ Fliplet.Widget.findParents({
         {
           type: 'dropdown',
           name: 'timeFormat',
-          label: 'Select format',
+          label: 'Select format:',
           description: 'Note, time will be displayed in user\'s local device format',
           options: TIME_FORMAT_OPTIONS
         },
         {
           type: 'dropdown',
           name: 'timeDateFormat',
-          label: 'Select format',
+          label: 'Select format:',
           description:
             "Note, date & time will be displayed in user's local device format",
           options: TIME_DATE_FORMAT_OPTIONS
@@ -677,7 +679,13 @@ Fliplet.Widget.findParents({
           label: 'Provide regex',
           placeholder: '/[A-Z]/g',
           description:
-            'We use the RegExp in javaScript. An example to find an uppercase string is /[A-Z]/g. See guide <a href="https://builtin.com/software-engineering-perspectives/javascript-regex" target="_blank">here<a/>'
+            'Enter a regular expression (regex) to define your custom format. Regex allows you to specify patterns for data validation. For example:<br><br>' +
+            '<ul style="margin-left: -20px;">' +
+            '<li>Date in DD-MM-YYYY format: <code>/\\d{2}-\\d{2}-\\d{4}/</code></li>' +
+            '<li>Uppercase letters only: <code>/^[A-Z]+$/</code></li>' +
+            '<li>Alphanumeric code (6 characters): <code>/^[A-Za-z0-9]{6}$/</code></li>' +
+            '</ul><br>' +
+            'Click <a href="https://builtin.com/software-engineering-perspectives/javascript-regex" target="_blank">here</a> for examples and a guide to common regex patterns.'
         }
       ]
     });
