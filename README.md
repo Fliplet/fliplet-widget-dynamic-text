@@ -1,1 +1,0 @@
-# fliplet-widget-dynamic-text
