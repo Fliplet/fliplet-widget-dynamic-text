@@ -559,9 +559,11 @@ Fliplet.Widget.findParents({
         {
           type: 'dropdown',
           name: 'dataFormat',
-          label: 'Select format',
+          label: 'Select data format:',
           options: DATA_FORMATS_OPTIONS,
           default: 'text',
+          description:
+          'Choose "Custom (format with regex)" if you need to define a specific data format that is not already available, such as a custom date, alphanumeric code, or other pattern.',
           change: function(value) {
             handleFieldVisibility(value);
           },
@@ -677,7 +679,13 @@ Fliplet.Widget.findParents({
           label: 'Provide regex',
           placeholder: '/[A-Z]/g',
           description:
-            'We use the RegExp in javaScript. An example to find an uppercase string is /[A-Z]/g. See guide <a href="https://builtin.com/software-engineering-perspectives/javascript-regex" target="_blank">here<a/>'
+            'Enter a regular expression (regex) to define your custom format. Regex allows you to specify patterns for data validation. For example:<br><br>' +
+            '<ul style="margin-left: -20px;">' +
+            '<li>Date in DD-MM-YYYY format: <code>/\\d{2}-\\d{2}-\\d{4}/</code></li>' +
+            '<li>Uppercase letters only: <code>/^[A-Z]+$/</code></li>' +
+            '<li>Alphanumeric code (6 characters): <code>/^[A-Za-z0-9]{6}$/</code></li>' +
+            '</ul><br>' +
+            'Click <a href="https://builtin.com/software-engineering-perspectives/javascript-regex" target="_blank">here</a> for examples and a guide to common regex patterns.'
         }
       ]
     });
