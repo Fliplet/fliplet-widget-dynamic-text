@@ -5,11 +5,11 @@ Fliplet.Widget.instance({
   template:
     '<div class="dynamic-text-container"></div>',
   render: {
-    ready: async function() {
+    ready: async function () {
       const DYNAMIC_TEXT = this;
 
       const parents = await Fliplet.Widget.findParents({
-        instanceId: this.data.id
+        instanceId: this.data.id,
       });
 
       /**
@@ -21,7 +21,7 @@ Fliplet.Widget.instance({
        * @async
        * @private
        */
-      const findParentDataWidget = async(type, packageName) => {
+      const findParentDataWidget = async (type, packageName) => {
         const parent = parents.find((parent) => parent.package === packageName);
 
         if (!parent) {
@@ -29,9 +29,8 @@ Fliplet.Widget.instance({
         }
 
         const instance = await Fliplet[type].get({ id: parent.id });
-
         return [parent, instance];
-      };
+      }
 
       const [[ dynamicContainer ], [ recordContainer, recordContainerInstance ], [ listRepeater, listRepeaterInstance ]] = await Promise.all([
         findParentDataWidget('DynamicContainer', 'com.fliplet.dynamic-container'),
@@ -45,21 +44,18 @@ Fliplet.Widget.instance({
         ENTRY = recordContainerInstance.entry;
       } else if (listRepeaterInstance) {
         const closestListRepeaterRow = DYNAMIC_TEXT.parents().find(parent => parent.element && parent.element.nodeName.toLowerCase() === 'fl-list-repeater-row');
-
         if (closestListRepeaterRow) {
           ENTRY = closestListRepeaterRow.entry;
         }
       }
 
-      const MODE_INTERACT = Fliplet.Env.get('interact');
-
-      if (!ENTRY && (!MODE_INTERACT && !DYNAMIC_TEXT.fields)) {
+      if (!ENTRY) {
         console.error('No entry found');
-
         return;
       }
 
       const $HELPER = $(DYNAMIC_TEXT.$el);
+      const MODE_INTERACT = Fliplet.Env.get('interact');
 
       DYNAMIC_TEXT.fields = Object.assign(
         {
@@ -86,12 +82,8 @@ Fliplet.Widget.instance({
       const COLUMN = FIELDS.column;
       let VALUE = MODE_INTERACT ? COLUMN : ENTRY.data[COLUMN];
       const DATA_FORMAT = FIELDS.dataFormat;
-
-      if (!DYNAMIC_TEXT.attr.package) {
-        return;
-      }
-
-      if (!dynamicContainer || !dynamicContainer.dataSourceId ) {
+    
+      if (!dynamicContainer || !dynamicContainer.dataSourceId) {
         $HELPER.find('.dynamic-text-container').html(`
           <div class="not-configured">
             <p>Configure Data Text</p>
@@ -117,20 +109,9 @@ Fliplet.Widget.instance({
       }
 
       if (MODE_INTERACT) {
-        if (COLUMN) {
-          $HELPER.find('.dynamic-text-container').html(`${COLUMN}`);
+        $HELPER.find('.dynamic-text-container').html(`${COLUMN}`);
 
-          return;
-        }
-
-        $HELPER.find('.dynamic-text-container').html(`
-          <div class="not-configured">
-            <p>Configure Data Text</p>
-          </div>`);
-
-        return Fliplet.UI.Toast(
-          'This component needs to be configured, please select a column'
-        );
+        return;
       }
 
       renderContent();
@@ -177,7 +158,7 @@ Fliplet.Widget.instance({
           // } else {
           //   LINK.setAttribute('target', '_blank');
           // }
-
+          
           LINK.href = VALUE;
           LINK.textContent = FIELDS.urlALtText || VALUE;
           LINK.setAttribute('aria-label', `${FIELDS.urlALtText || 'Visit'} ${VALUE}`);
@@ -217,7 +198,6 @@ Fliplet.Widget.instance({
 
         VALUE.forEach((item, index) => {
           const li = document.createElement('li');
-
           li.style.display = 'list-item';
           li.setAttribute('role', 'listitem');
           li.setAttribute('aria-setsize', VALUE.length);
@@ -322,7 +302,7 @@ Fliplet.Widget.instance({
         }).format(toReturnValue);
 
         const formattedValue = `${FIELDS.symbolBefore}${toReturnValue}${FIELDS.symbolAfter}`;
-
+        
         $HELPER
           .find('.dynamic-text-container')
           .html(`<span role="text" aria-label="${formattedValue}">${formattedValue}</span>`);
@@ -394,11 +374,9 @@ Fliplet.Widget.instance({
         const isCustomTimezone = FIELDS.timeDateTimezoneCheckbox.includes(true);
 
         let formattedDate;
-
         if (isCustomTimezone) {
           const utcMoment = moment(date);
           const localMoment = utcMoment.tz(timezone);
-
           formattedDate = Fliplet.Locale.date(localMoment, {
             format: format,
             locale: navigator.language
