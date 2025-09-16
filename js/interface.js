@@ -62,11 +62,25 @@ function handleFieldVisibility(value) {
   }
 }
 
-Fliplet.Widget.findParents({
-  filter: { package: 'com.fliplet.dynamic-container' }
-}).then(async(widgets) => {
-  if (widgets.length === 0 || !widgets[0].dataSourceId) {
-    Fliplet.Widget.generateInterface({
+const findParentDataWidget = async(packageName, parents) => {
+  const parent = parents.find((parent) => parent.package === packageName);
+
+  if (!parent) {
+    return [null];
+  }
+
+  return [parent];
+};
+
+Fliplet.Widget.findParents().then(async(widgets) => {
+  const [[ dynamicContainer ], [ recordContainer ], [ listRepeater ]] = await Promise.all([
+    findParentDataWidget('com.fliplet.dynamic-container', widgets),
+    findParentDataWidget('com.fliplet.record-container', widgets),
+    findParentDataWidget('com.fliplet.list-repeater', widgets)
+  ]);
+
+  if (!dynamicContainer || !dynamicContainer.dataSourceId) {
+    return Fliplet.Widget.generateInterface({
       title: 'Configure data text',
       fields: [
         {
@@ -75,13 +89,17 @@ Fliplet.Widget.findParents({
         }
       ]
     });
-
-    return Fliplet.UI.Toast(
-      'This component needs to be placed inside a Data container with selected Data source'
-    );
+  } else if (!recordContainer && !listRepeater) {
+    return Fliplet.Widget.generateInterface({
+      title: 'Configure data text',
+      fields: [
+        {
+          type: 'html',
+          html: '<p style="color: #A5A5A5; font-size: 12px; font-weight: 400;">This component needs to be placed inside a Record or Data list component</p>'
+        }
+      ]
+    });
   }
-
-  const dynamicContainer = widgets[0];
 
   return Fliplet.DataSources.getById(
     dynamicContainer && dynamicContainer.dataSourceId,
