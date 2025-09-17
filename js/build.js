@@ -4,6 +4,9 @@ Fliplet.Widget.instance({
   displayName: 'Data Text',
   template:
     '<div class="dynamic-text-container"></div>',
+  data: {
+    dataSourceId: null
+  },
   render: {
     ready: async function() {
       const DYNAMIC_TEXT = this;
@@ -61,7 +64,7 @@ Fliplet.Widget.instance({
 
       const $HELPER = $(DYNAMIC_TEXT.$el);
 
-      DYNAMIC_TEXT.fields = Object.assign(
+      DYNAMIC_TEXT.fields = _.assign(
         {
           column: '',
           dataFormat: 'text',
@@ -152,19 +155,43 @@ Fliplet.Widget.instance({
       }
 
       function renderContent() {
-        return {
-          text: () => $HELPER.find('.dynamic-text-container').text(VALUE),
-          html: () => $HELPER.find('.dynamic-text-container').html(VALUE),
-          url: renderURL,
-          telephone: renderTelephone,
-          email: renderEmail,
-          numberCurrency: renderNumber,
-          array: renderArray,
-          date: renderDate,
-          time: renderTime,
-          dateTime: renderDateTime,
-          custom: renderCustom
-        }[DATA_FORMAT]?.();
+        switch (DATA_FORMAT) {
+          case 'text':
+            $HELPER.find('.dynamic-text-container').text(VALUE);
+            break;
+          case 'html':
+            $HELPER.find('.dynamic-text-container').html(VALUE);
+            break;
+          case 'url':
+            renderURL();
+            break;
+          case 'telephone':
+            renderTelephone();
+            break;
+          case 'email':
+            renderEmail();
+            break;
+          case 'numberCurrency':
+            renderNumber();
+            break;
+          case 'array':
+            renderArray();
+            break;
+          case 'date':
+            renderDate();
+            break;
+          case 'time':
+            renderTime();
+            break;
+          case 'dateTime':
+            renderDateTime();
+            break;
+          case 'custom':
+            renderCustom();
+            break;
+          default:
+            break;
+        }
       }
 
       function renderURL() {
