@@ -97,14 +97,14 @@ Fliplet.Widget.instance({
             <p>Configure Data Text</p>
           </div>`);
 
-        return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Data container and select a data source');
+        return Fliplet.UI.Toast('This component needs to be placed inside a Data container and select a data source');
       } else if (!recordContainer && !listRepeater) {
         $HELPER.find('.dynamic-text-container').html(`
           <div class="not-configured">
             <p>Configure Data Text</p>
           </div>`);
 
-        return errorMessageStructureNotValid($(DYNAMIC_TEXT.$el), 'This component needs to be placed inside a Record or Data list component');
+        return Fliplet.UI.Toast('This component needs to be placed inside a Data record or Data list component');
       } else if (!COLUMN) {
         $HELPER.find('.dynamic-text-container').html(`
           <div class="not-configured">
@@ -134,12 +134,6 @@ Fliplet.Widget.instance({
       }
 
       renderContent();
-
-      function errorMessageStructureNotValid($element, message) {
-        // todo remove this function after product solution
-        $element.addClass('component-error-before-todo');
-        Fliplet.UI.Toast(message);
-      }
 
       function isValidRegex(pattern) {
         try {
