@@ -1,0 +1,19 @@
+{
+  "name": "fliplet-widget-dynamic-text",
+  "version": "1.0.0",
+  "description": "Fliplet component that renders a single value from a data source as text",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fliplet/fliplet-widget-dynamic-text.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}
