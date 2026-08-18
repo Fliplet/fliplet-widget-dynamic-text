@@ -13,7 +13,8 @@
   "scripts": {
     "test": "node --test"
   },
-  "dependencies": {
+  "//": "This version is npm bookkeeping only. Do NOT sync it to widget.json: the API matches an existing widget on exact package+version, so bumping that one creates a new widget row and strands existing instances on the old build. See DEV-1686.",
+  "devDependencies": {
     "moment": "^2.29.4"
   }
 }

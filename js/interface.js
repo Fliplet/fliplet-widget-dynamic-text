@@ -202,6 +202,10 @@ Fliplet.Widget.findParents().then(async(widgets) => {
       { label: 'Thu, Sep 4, 1986 8:30 PM', value: 'llll' }
     ];
 
+    // Every name here must exist in the bundled data in js/moment-timezone.js:
+    // an unknown zone does not throw, it silently leaves the time unconverted.
+    // test/timezone-data.test.js reads this list and checks each one, so keep the
+    // declaration on one line -- the test locates it by string match. See DEV-1813.
     const TIMEZONES_OPTIONS = [
       'Europe/Andorra',
       'Asia/Dubai',
