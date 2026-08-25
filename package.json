@@ -1,0 +1,20 @@
+{
+  "name": "fliplet-widget-dynamic-text",
+  "version": "1.0.0",
+  "description": "Fliplet component that renders a single value from a data source as text",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fliplet/fliplet-widget-dynamic-text.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "//": "This version is npm bookkeeping only. Do NOT sync it to widget.json: the API matches an existing widget on exact package+version, so bumping that one creates a new widget row and strands existing instances on the old build. See DEV-1686.",
+  "devDependencies": {
+    "moment": "^2.29.4"
+  }
+}
